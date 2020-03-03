@@ -14,7 +14,7 @@
 /**
  * welcome page
  */
-Route::view('/', 'welcome');
+Route::get('/', 'Site\HomeController@index');
 
 /**
  * Parent authentication

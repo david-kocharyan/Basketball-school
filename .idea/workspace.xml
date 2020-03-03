@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b47a909-9821-4c03-bf63-a168e922646b" name="Default Changelist" comment="" />
+    <list default="true" id="8b47a909-9821-4c03-bf63-a168e922646b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +29,17 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -132,23 +146,25 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/plugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/site/images" />
       <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
       <recent name="C:\xampp\htdocs\cilicia\public\assets\plugins" />
       <recent name="C:\xampp\htdocs\cilicia\resources\views\admin\player" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
       <recent name="C:\xampp\htdocs\cilicia\public\assets\plugins" />
       <recent name="C:\xampp\htdocs\cilicia\resources\views\admin" />
       <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\cilicia\resources\views\admin\coaches" />
-      <recent name="C:\xampp\htdocs\cilicia\resources\views\admin\player" />
     </key>
   </component>
   <component name="RunManager">
@@ -199,6 +215,8 @@
       <workItem from="1580470222730" duration="12757000" />
       <workItem from="1580539925992" duration="24351000" />
       <workItem from="1580716430887" duration="11258000" />
+      <workItem from="1583157532125" duration="3013000" />
+      <workItem from="1583213025523" duration="27564000" />
     </task>
     <servers />
   </component>
@@ -226,18 +244,20 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="218" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1579264146170" />
-    <state x="772" y="428" key="NewPhpFileDialog" timestamp="1579273131840">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="772" y="460" width="399" height="149" key="NewPhpFileDialog" timestamp="1583157763611">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="772" y="428" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579273131840" />
+    <state x="772" y="460" width="399" height="149" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583157763611" />
     <state x="516" y="137" width="887" height="766" key="find.popup" timestamp="1580558785236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="516" y="137" width="887" height="766" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580558785236" />
-    <state x="532" y="237" key="run.anything.popup" timestamp="1580564506045">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="532" y="267" key="run.anything.popup" timestamp="1583233881886">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580564506045" />
+    <state x="532" y="267" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583233881886" />
     <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1580286279339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
