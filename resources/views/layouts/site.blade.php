@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <title>Cilicia</title>
     <link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/style/style.css") }}">
@@ -58,13 +58,13 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-6 submenu submenu-left">
                             <div class="left-menu justify-content-end pr-5">
-                                <a href="#" class="mb-0 text-decoration-none text-white">ssadsadsad</a>
+                                <a href="#" class="mb-0 text-decoration-none text-white">Contact Us</a>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>
                         <div class="col-md-5 col-sm-6 submenu submenu-right">
                             <div class="right-menu pl-5">
-                                <a href="#" class="mb-0 mr-5">ssadsadsad</a>
+                                <a href="#" class="mb-0 text-decoration-none text-white">Shop</a>
                             </div>
                         </div>
                     </div>

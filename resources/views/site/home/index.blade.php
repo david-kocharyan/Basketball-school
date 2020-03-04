@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}')">
+                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}')">
+                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}')">
+                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}')">
+                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -229,7 +229,7 @@
                     <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs</h2>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
@@ -243,7 +243,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
@@ -257,7 +257,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
@@ -271,7 +271,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3">
                     <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
@@ -668,6 +668,7 @@
                 }
                 .main-box{
                     margin-bottom: 10px;
+                    background-size: cover!important;
                 }
                 .left-borders{
                     font-size: 13px;
