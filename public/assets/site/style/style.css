@@ -18,7 +18,29 @@ body{
     font-family: Roboto-Condensed-Regular, sans-serif;
 }
 /*menu*/
-
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    padding-top: 0!important;
+}
+.sticky + div {
+    padding-top: 120px;
+}
+.sticky .firstline {
+    background-image: radial-gradient(circle farthest-side, transparent 0, #141515 0);
+}
+.sticky .logo-wrap:before, .sticky .logo-wrap:after {
+    opacity: 0;
+}
+.sticky .logo-wrap {
+    background: none;
+}
+.sticky .logo{
+    width: 120px;
+    top: -75px;
+}
 .firstline{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -32,6 +54,7 @@ body{
     background-image: -webkit-radial-gradient(circle farthest-side, transparent 101px, #141515 0);
     max-height: 70px;
     background-image: radial-gradient(circle farthest-side, transparent 101px, #141515 0);
+    transition: .5s;
 }
 .header {
     padding-top: 50px;
@@ -76,6 +99,7 @@ body{
     -o-transform: skewX(40deg);
     transform: skewX(40deg);
     z-index: 501;
+    /*transition: .3s;*/
 }
 .logo-wrap:after {
     content: '';
@@ -93,7 +117,55 @@ body{
     -o-transform: skewX(-40deg);
     transform: skewX(-40deg);
     z-index: 500;
+    /*transition: .3s;*/
 }
+.sticky .bottomline {
+    transform: translateY(-100%);
+}
+.bottomline{
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    z-index: 150;
+    position: absolute;
+    transition: .3s;
+}
+.main-submenu-wrapmiddle{
+    background: #6c6c6e;
+}
+.submenu{
+    background-color: #6c6c6e;
+    position: relative;
+    min-height: 36px;
+}
+.submenu-left:before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    width: 0;
+    height: 100%;
+    border-style: solid;
+    border-width: 0 35px 35px 0;
+    border-color: transparent #6c6c6e transparent transparent;
+}
+.left-menu, .right-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.submenu-right:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -35px;
+    width: 0;
+    height: 100%;
+    border-style: solid;
+    border-width: 35px 35px 0 0;
+    border-color: #6c6c6e transparent transparent transparent;
+}
+
 .firstline .navbar {
     border-bottom: 2px solid white;
 }
@@ -106,6 +178,7 @@ body{
     left: -14px;
     top: -95px;
     max-width: none;
+    transition: .3s;
 }
 /*menu*/
 /*content*/
@@ -128,3 +201,9 @@ body{
     color: #9c1d24;
 }
 /*content*/
+
+@media all and (max-width: 1023px) {
+    .header {
+        display: none;
+    }
+}

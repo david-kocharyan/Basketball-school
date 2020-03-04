@@ -23,11 +23,11 @@
     <div class="shop-line d-flex align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <p class="text-white m-0">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
+                <div class="col-md-6 d-flex align-items-lg-center shop-text-cont">
+                    <p class="text-white m-0 shop-text">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
                 </div>
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <a href="#" class="visit-btn text-center">VISIT SHOP</a>
+                <div class="col-md-6 d-flex align-items-lg-center justify-content-lg-end shop-btn-cont">
+                    <a href="#" class="visit-btn text-center shop-btn">VISIT SHOP</a>
                 </div>
             </div>
         </div>
@@ -36,15 +36,15 @@
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
         <div class="container">
             <div class="row">
-                <div class="gallery-demo">
-                    <ul id="imageGallery">
-                        @for($i = 1; $i <= 10; $i ++)
-                        <li data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg">
-                            <img src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" />
-                        </li>
-                        @endfor
-                    </ul>
-                </div>
+{{--                <div class="gallery-demo">--}}
+{{--                    <ul id="imageGallery">--}}
+{{--                        @for($i = 1; $i <= 10; $i ++)--}}
+{{--                        <li data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg">--}}
+{{--                            <img src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" />--}}
+{{--                        </li>--}}
+{{--                        @endfor--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -230,7 +230,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main">
+                    <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
                         </div>
@@ -238,12 +238,13 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main">
+                    <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
                         </div>
@@ -251,12 +252,13 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main">
+                    <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
                         </div>
@@ -264,12 +266,13 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main">
+                    <div class="main overflow-hidden">
                         <div class="img-cont text-center">
                             <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
                         </div>
@@ -277,6 +280,7 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
                         </div>
                     </div>
                 </div>
@@ -331,6 +335,51 @@
                 <div class="col-md-4">
                     <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">About Us</p>
                     <p class="text-white text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ducimus inventore laboriosam laudantium quae ratione repellat sunt! Ab architecto aut blanditiis eligendi incidunt laboriosam maiores, molestias obcaecati quaerat repudiandae, totam?</p>
+                </div>
+                <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block">
+                    <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Useful Links</p>
+                    <ul class="d-inline-block left-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">My Account</a></li>
+                    </ul>
+                    <ul class="d-inline-block float-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">My Account</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 pl-lg-5">
+                    <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Contact Us</p>
+                    <div class="icon-section">
+                        <div class="block d-flex mb-3">
+                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
+                                <img style="height: 15px" src="{{ asset("assets/site/images/home/phone-icon.svg") }}" alt="Phone Icon">
+                            </p>
+                            <p class="left-block d-flex align-items-center justify-content-center left-borders">+374 96 123 456</p>
+                        </div>
+
+                        <div class="block d-flex mb-3">
+                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
+                                <img style="height: 15px" src="{{ asset("assets/site/images/home/email-icon.svg") }}" alt="Email Icon">
+                            </p>
+                            <p class="left-block d-flex align-items-center justify-content-center left-borders">info@cilicia.com</p>
+                        </div>
+
+                        <div class="block d-flex mb-3">
+                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
+                                <img style="height: 15px" src="{{ asset("assets/site/images/home/map-icon.svg") }}" alt="Email Icon">
+                            </p>
+                            <p class="left-block d-flex align-items-center justify-content-center left-borders">Vardanants 3, Yerevan, Armenia 001</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <hr style="border-bottom: 1px solid #9c1d24">
                 </div>
             </div>
         </div>
@@ -500,6 +549,27 @@
                 border: 1px solid #ccced2;
                 border-radius: 8px;
                 padding: 10px 20px;
+                transition: .3s;
+                position: relative;
+            }
+            .gallery .main:hover  {
+                border: 1px solid #9c1d24;
+            }
+            .gallery .main:hover .quick-view {
+                bottom: 0;
+            }
+            .quick-view {
+                background: #9c1d24;
+                text-align: center;
+                position: absolute;
+                bottom: -39px;
+                width: 100%;
+                left: 0;
+                height: 39px;
+                margin-bottom: 0;
+                color: white;
+                transition: .3s;
+                cursor: pointer;
             }
             .prod{
                 height: 200px;
@@ -523,12 +593,19 @@
                 bottom: 0;
                 transform: translateY(50%) translateX(-50%) rotate(45deg);
                 left: 50%;
+                cursor: pointer;
+                background: #141414;
+                transition: .1s;
+            }
+            .up:hover{
+                transform: translateY(50%) translateX(-50%) rotate(45deg) scale(1.1);
             }
             .up img{
                 transform: rotate(45deg);
             }
             .footer{
-                background: black;
+                background: url("{{ asset("assets/site/images/home/footer_bg.jpg") }}");
+                background-repeat: no-repeat;
                 padding: 50px 0 0 25px;
             }
             .footer .section-title {
@@ -537,6 +614,64 @@
             .text-about{
                 font-size: 14px;
                 font-family: Roboto-Condensed-Regular, sans-serif;
+            }
+            .footer li a{
+                color: white;
+                text-decoration: none!important;
+                font-size: 14px;
+                font-family: Roboto-Condensed-Regular, sans-serif;
+            }
+            .left-list{
+                padding-left: 20px;
+            }
+            .section-title img {
+                margin-right: 10px;
+                margin-bottom: 3px;
+            }
+            .left-block{
+                height: 30px;
+                margin-bottom: 0;
+                background: white;
+                color: #9c1d24;
+                padding: 10px;
+            }
+            .right-borders{
+                border-radius: 8px 0 0 8px;
+                width: 30px;
+            }
+            .left-borders{
+                border-radius: 0 8px 8px 0;
+            }
+            @media all and (max-width: 460px) {
+                .slider-title{
+                    font-size: 30px;
+                    margin-top: 80px;
+                }
+                .shop-text {
+                    font-size: 12px;
+                    margin-bottom: 10px!important;
+                }
+                .shop-text-cont{
+                    justify-content: center;
+                }
+                .shop-btn-cont{
+                    justify-content: center;
+                }
+                .shop-btn{
+                    padding: 5px;
+                    height: 30px;
+                    width: 120px;
+                    font-size: 12px;
+                }
+                .section-title{
+                    font-size: 25px;
+                }
+                .main-box{
+                    margin-bottom: 10px;
+                }
+                .left-borders{
+                    font-size: 13px;
+                }
             }
 
         </style>
@@ -551,15 +686,6 @@
                     margin: 1,
                     // autoHeight:true,
                     responsiveClass:true,
-                });
-                $('#imageGallery').lightSlider({
-                    gallery:true,
-                    item:1,
-                    loop:true,
-                    thumbItem:9,
-                    slideMargin:0,
-                    enableDrag: true,
-                    currentPagerPosition:'left',
                 });
                 $('#partnerGallery').lightSlider({
                     item:4,
@@ -587,7 +713,11 @@
                         }
                     ]
                 });
+                $(".up").click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                });
             });
+
         </script>
     @endpush
 @endsection

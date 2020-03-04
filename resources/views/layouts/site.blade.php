@@ -13,7 +13,7 @@
 
 <body>
     <div class="page-wrapper">
-        <div class="header fixed-header">
+        <div class="header fixed-header" id="header">
             <div class="firstline">
                 <div class="container">
                     <div class="row">
@@ -53,6 +53,23 @@
                     </div>
                 </div>
             </div>
+            <div class="bottomline">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6 submenu submenu-left">
+                            <div class="left-menu justify-content-end pr-5">
+                                <a href="#" class="mb-0 text-decoration-none text-white">ssadsadsad</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>
+                        <div class="col-md-5 col-sm-6 submenu submenu-right">
+                            <div class="right-menu pl-5">
+                                <a href="#" class="mb-0 mr-5">ssadsadsad</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content">
             @yield("content")
@@ -60,6 +77,20 @@
     </div>
 </body>
 <script src="{{ asset("assets/site/jquery/jquery.min.js") }}"></script>
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementById("header");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky + 50) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
 @stack('footer')
 
 </html>
