@@ -137,7 +137,7 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs</h2>
+                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Players Of The Month</h2>
                 </div>
 
                 <div class="col-md-3">
@@ -193,7 +193,7 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs</h2>
+                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery</h2>
                 </div>
 
                 <div class="col-md-6 img-box px-0">
@@ -226,7 +226,7 @@
             </div>
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs</h2>
+                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop</h2>
                 </div>
 
                 <div class="col-md-3 mb-3">
