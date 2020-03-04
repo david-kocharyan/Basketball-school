@@ -60,7 +60,9 @@ body{
     padding-top: 50px;
 }
 .navbar {
-    min-height: 70px;
+    min-height: 68px;
+    position: relative;
+    z-index: 99999999;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -166,9 +168,9 @@ body{
     border-color: #6c6c6e transparent transparent transparent;
 }
 
-.firstline .navbar {
-    border-bottom: 2px solid white;
-}
+/*.firstline .navbar {*/
+/*    border-bottom: 2px solid white;*/
+/*}*/
 .logo {
     position: relative;
     display: inline-block;
