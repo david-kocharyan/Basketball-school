@@ -177,7 +177,7 @@ body{
     left: -14px;
     top: -95px;
     max-width: none;
-    transition: .3s;
+    transition: all .3s ease;
 }
 /*menu*/
 /*content*/
@@ -274,7 +274,7 @@ span.red {
 .up img{
     transform: rotate(45deg);
 }
-.background-section .title{
+.title{
     color: #9c1d24;
     font-size: 30px;
     letter-spacing: 2px;
@@ -282,10 +282,10 @@ span.red {
     font-family: Agency, sans-serif;
     font-weight: 700;
 }
-.background-section .subtitle{
+.subtitle{
     color: white;
 }
-.background-section .title img{
+.title img{
     margin-right: 10px;
     margin-bottom: 3px;
 }
