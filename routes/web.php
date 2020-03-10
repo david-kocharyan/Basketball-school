@@ -11,10 +11,14 @@
 |
 */
 
+
 /**
- * welcome page
+ * Website Links
  */
+
 Route::get('/', 'Site\HomeController@index');
+Route::get('/about-us', 'Site\AboutController@index');
+Route::get('/academy-members', 'Site\AcademyMembersController@index');
 
 /**
  * Parent authentication

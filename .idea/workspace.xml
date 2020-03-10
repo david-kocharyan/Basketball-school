@@ -4,7 +4,9 @@
     <list default="true" id="8b47a909-9821-4c03-bf63-a168e922646b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/site/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/site/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,25 +149,25 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site/members" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/site/members" />
+      <recent name="$PROJECT_DIR$/resources/views/site/about" />
+      <recent name="$PROJECT_DIR$/resources/views/site/home" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/site/images" />
       <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
       <recent name="C:\xampp\htdocs\cilicia\public\assets\plugins" />
       <recent name="C:\xampp\htdocs\cilicia\resources\views\admin\player" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
-      <recent name="C:\xampp\htdocs\cilicia\public\assets\plugins" />
-      <recent name="C:\xampp\htdocs\cilicia\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,7 +220,10 @@
       <workItem from="1580716430887" duration="11258000" />
       <workItem from="1583157532125" duration="3013000" />
       <workItem from="1583213025523" duration="27654000" />
-      <workItem from="1583300202136" duration="17303000" />
+      <workItem from="1583300202136" duration="18490000" />
+      <workItem from="1583388465700" duration="1313000" />
+      <workItem from="1583392237912" duration="661000" />
+      <workItem from="1583818523668" duration="21023000" />
     </task>
     <servers />
   </component>
@@ -234,10 +239,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="638" y="305" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579705552655" />
-    <state x="630" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579517441754">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="630" y="27" width="476" height="846" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583842222088">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="630" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579517441754" />
+    <state x="630" y="27" width="476" height="846" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583842222088" />
     <state x="627" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580560777896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -255,11 +261,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="516" y="137" width="887" height="766" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580558785236" />
-    <state x="532" y="267" key="run.anything.popup" timestamp="1583300852493">
+    <state x="532" y="267" key="run.anything.popup" timestamp="1583842429641">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580564506045" />
-    <state x="532" y="267" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583300852493" />
+    <state x="532" y="267" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583842429641" />
     <state x="532" y="-5" width="840" height="1032" key="search.everywhere.popup" timestamp="1580286279339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

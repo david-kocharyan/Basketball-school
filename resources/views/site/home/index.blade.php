@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
+                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -152,7 +152,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
+                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
+                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background: url('{{ asset("assets/site/images/home/player.jpg") }}') no-repeat">
+                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -294,105 +294,10 @@
         </div>
     </div>
 
-    <div class="partners d-flex align-items-center position-relative">
-        <div class="container">
-            <div class="row">
-                <ul id="partnerGallery">
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor3.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor5.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor3.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor5.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor3.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor5.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor3.png") }}" />
-                    </li>
-                    <li>
-                        <img src="{{ asset("assets/site/images/home/sponsor5.png") }}" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="up position-absolute text-center d-flex align-items-center justify-content-center">
-            <img style="height: 25px" src="{{ asset("assets/site/images/home/left-arrow.png") }}" alt="">
-        </div>
-    </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">About Us</p>
-                    <p class="text-white text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ducimus inventore laboriosam laudantium quae ratione repellat sunt! Ab architecto aut blanditiis eligendi incidunt laboriosam maiores, molestias obcaecati quaerat repudiandae, totam?</p>
-                </div>
-                <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block">
-                    <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Useful Links</p>
-                    <ul class="d-inline-block left-list">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">My Account</a></li>
-                    </ul>
-                    <ul class="d-inline-block float-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">My Account</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 pl-lg-5">
-                    <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Contact Us</p>
-                    <div class="icon-section">
-                        <div class="block d-flex mb-3">
-                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
-                                <img style="height: 15px" src="{{ asset("assets/site/images/home/phone-icon.svg") }}" alt="Phone Icon">
-                            </p>
-                            <p class="left-block d-flex align-items-center justify-content-center left-borders">+374 96 123 456</p>
-                        </div>
-
-                        <div class="block d-flex mb-3">
-                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
-                                <img style="height: 15px" src="{{ asset("assets/site/images/home/email-icon.svg") }}" alt="Email Icon">
-                            </p>
-                            <p class="left-block d-flex align-items-center justify-content-center left-borders">info@cilicia.com</p>
-                        </div>
-
-                        <div class="block d-flex mb-3">
-                            <p class="mr-1 left-block d-flex align-items-center justify-content-center right-borders">
-                                <img style="height: 15px" src="{{ asset("assets/site/images/home/map-icon.svg") }}" alt="Email Icon">
-                            </p>
-                            <p class="left-block d-flex align-items-center justify-content-center left-borders">Vardanants 3, Yerevan, Armenia 001</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mt-3">
-                    <hr style="border-bottom: 1px solid #9c1d24">
-                </div>
-            </div>
-        </div>
-    </div>
-
     @push('head')
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
         <style>
-            span.red {
-                color: #9c1d24;
-            }
             .owl-carousel {
                 height: 90vh;
             }
@@ -494,41 +399,6 @@
                 -webkit-background-size: cover;
                 background-size: cover;
             }
-            .main-box {
-                height: 310px;
-                position: relative;
-                overflow: hidden;
-            }
-            .name-box p{
-                color: white;
-                font-family: Roboto-Condensed-Bold, sans-serif;
-                letter-spacing: 1px;
-                font-weight: 700;
-                text-transform: uppercase;
-                position: absolute;
-            }
-            .name-box {
-                width: 350px;
-                transform: rotate(-90deg) translate(-130px,-155px);
-                position: absolute;
-                background: #9c1d24;
-                height: 40px;
-                z-index: 10;
-            }
-            .age-box p{
-                color: white;
-                font-family: Roboto-Condensed-Bold, sans-serif;
-                letter-spacing: 1px;
-                font-weight: 700;
-                width: 100%;
-            }
-            .age-box{
-                background: #25252573;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                height: 40px;
-            }
             .img-box{
                 flex: 0 0 50%;
             }
@@ -582,66 +452,7 @@
                 color: #6c6c6e;
                 font-size: 16px;
             }
-            .partners{
-                height: 120px;
-                background: #151515;
-            }
-            .up{
-                height: 50px;
-                width: 50px;
-                border: 2px solid white;
-                bottom: 0;
-                transform: translateY(50%) translateX(-50%) rotate(45deg);
-                left: 50%;
-                cursor: pointer;
-                background: #141414;
-                transition: .1s;
-            }
-            .up:hover{
-                transform: translateY(50%) translateX(-50%) rotate(45deg) scale(1.1);
-            }
-            .up img{
-                transform: rotate(45deg);
-            }
-            .footer{
-                background: url("{{ asset("assets/site/images/home/footer_bg.jpg") }}");
-                background-repeat: no-repeat;
-                padding: 50px 0 0 25px;
-            }
-            .footer .section-title {
-                font-size: 16px;
-            }
-            .text-about{
-                font-size: 14px;
-                font-family: Roboto-Condensed-Regular, sans-serif;
-            }
-            .footer li a{
-                color: white;
-                text-decoration: none!important;
-                font-size: 14px;
-                font-family: Roboto-Condensed-Regular, sans-serif;
-            }
-            .left-list{
-                padding-left: 20px;
-            }
-            .section-title img {
-                margin-right: 10px;
-                margin-bottom: 3px;
-            }
-            .left-block{
-                height: 30px;
-                margin-bottom: 0;
-                background: white;
-                color: #9c1d24;
-                padding: 10px;
-            }
-            .right-borders{
-                border-radius: 8px 0 0 8px;
-                width: 30px;
-            }
-            .left-borders{
-                border-radius: 0 8px 8px 0;
-            }
+
             @media all and (max-width: 460px) {
                 .slider-title{
                     font-size: 30px;
@@ -670,16 +481,12 @@
                     margin-bottom: 10px;
                     background-size: cover!important;
                 }
-                .left-borders{
-                    font-size: 13px;
-                }
             }
 
         </style>
     @endpush
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
-        <script src="{{ asset("assets/site/lightslider/dist/js/lightslider.min.js") }}"></script>
         <script>
             $(document).ready(function(){
                 $(".owl-carousel").owlCarousel({
@@ -687,35 +494,6 @@
                     margin: 1,
                     // autoHeight:true,
                     responsiveClass:true,
-                });
-                $('#partnerGallery').lightSlider({
-                    item:4,
-                    loop:false,
-                    slideMove:1,
-                    easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-                    speed:600,
-                    pager: false,
-                    controls: false,
-                    responsive : [
-                        {
-                            breakpoint:800,
-                            settings: {
-                                item:3,
-                                slideMove:1,
-                                slideMargin:6,
-                            }
-                        },
-                        {
-                            breakpoint:480,
-                            settings: {
-                                item:2,
-                                slideMove:1
-                            }
-                        }
-                    ]
-                });
-                $(".up").click(function(){
-                    $("html, body").animate({ scrollTop: 0 }, "slow");
                 });
             });
 
