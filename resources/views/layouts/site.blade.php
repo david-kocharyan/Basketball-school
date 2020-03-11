@@ -7,7 +7,7 @@
     <title>Cilicia</title>
     <link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/site/style/stylev2.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/site/style/stylev3.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
     @stack('head')
 </head>
@@ -34,6 +34,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/academy-members">Members</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/contact-us">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -49,7 +52,6 @@
                                         <a class="nav-item nav-link" href="/">Home</a>
                                         <a class="nav-item nav-link" href="/about-us">About Us</a>
                                         <a class="nav-item nav-link" href="/academy-members">Members</a>
-                                        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                                     </div>
                                 </div>
                             </nav>
@@ -83,7 +85,7 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-6 submenu submenu-left">
                             <div class="left-menu justify-content-end pr-5">
-                                <a href="#" class="mb-0 text-decoration-none text-white">Contact Us</a>
+                                <a href="/contact-us" class="mb-0 text-decoration-none text-white">Contact Us</a>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>

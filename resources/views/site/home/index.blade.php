@@ -336,17 +336,6 @@
                 top: -50px;
                 text-align: center;
             }
-            .rounded-button {
-                background: #9c1d24;
-                border-radius: 5px;
-                border: none;
-                width: 100px;
-                height: 35px;
-                font-family: Roboto-Condensed-Bold, sans-serif;
-                color: white;
-                font-size: 13px;
-                letter-spacing: 1px;
-            }
             .shop-line{
                 height: 70px;
                 background: #151515;

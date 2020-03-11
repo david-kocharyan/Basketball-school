@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b47a909-9821-4c03-bf63-a168e922646b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/ContactController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/address.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/contact_shop-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/contact_training_scedule-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/contact_working_hours-min.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/site/images/contact/phone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/site/style/stylev1.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/site/style/stylev2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/site/style/stylev2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/site/style/stylev3.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,25 +157,26 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site/members" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site/contact" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/site/about" />
+      <recent name="$PROJECT_DIR$/resources/views/site/contact" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
+      <recent name="$PROJECT_DIR$/public/assets/site/images" />
+      <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/site/contact" />
       <recent name="$PROJECT_DIR$/resources/views/site/members" />
       <recent name="$PROJECT_DIR$/resources/views/site/about" />
       <recent name="$PROJECT_DIR$/resources/views/site/home" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/site/images" />
-      <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\cilicia\public\assets\plugins" />
-      <recent name="C:\xampp\htdocs\cilicia\resources\views\admin\player" />
     </key>
   </component>
   <component name="RunManager">
@@ -221,7 +232,8 @@
       <workItem from="1583300202136" duration="18490000" />
       <workItem from="1583388465700" duration="1313000" />
       <workItem from="1583392237912" duration="661000" />
-      <workItem from="1583818523668" duration="22801000" />
+      <workItem from="1583818523668" duration="23426000" />
+      <workItem from="1583903546184" duration="9189000" />
     </task>
     <servers />
   </component>
