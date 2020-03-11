@@ -37,6 +37,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/contact-us">Contact Us</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/gallery">Gallery</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -52,6 +55,7 @@
                                         <a class="nav-item nav-link" href="/">Home</a>
                                         <a class="nav-item nav-link" href="/about-us">About Us</a>
                                         <a class="nav-item nav-link" href="/academy-members">Members</a>
+                                        <a class="nav-item nav-link" href="/gallery">Gallery</a>
                                     </div>
                                 </div>
                             </nav>

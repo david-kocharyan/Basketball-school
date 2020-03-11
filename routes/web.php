@@ -20,6 +20,7 @@ Route::get('/', 'Site\HomeController@index');
 Route::get('/about-us', 'Site\AboutController@index');
 Route::get('/academy-members', 'Site\AcademyMembersController@index');
 Route::get('/contact-us', 'Site\ContactController@index');
+Route::get('/gallery', 'Site\GalleryController@index');
 
 /**
  * Parent authentication
