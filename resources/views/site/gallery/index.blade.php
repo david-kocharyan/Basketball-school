@@ -36,8 +36,11 @@
                                 <a class="example-image-link" href="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" data-lightbox="set0"><img class="example-image" src="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" alt=""/></a>
                                 <div class="overlay-hover">
                                     <div class="detail">
-                                        <p class="text-capitalize text-white m-0">Practise makes perfect for harrel</p>
+                                        <p class="text-capitalize text-white m-0">Practise makes perfect.</p>
                                         <button class="rounded-button">12 photos</button>
+                                    </div>
+                                    <div class="triangle">
+                                        <span>+</span>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +84,32 @@
             }
             p{
                 font-family: Roboto-Condensed-Regular, sans-serif;
+            }
+            .sticky + .content{
+                padding-top: 70px;
+            }
+            .triangle{
+                position: absolute;
+                height: 60px;
+                width: 60px;
+                display: flex;
+                background-color: #9c1d24;
+                transform: rotate(45deg);
+                right: -100px;
+                bottom: -100px;
+                color: white;
+                transition: .5s;
+            }
+            .triangle span{
+                position: absolute;
+                display: block;
+                transform: rotate(-45deg);
+                top: 15px;
+                left: 9px;
+            }
+            .main-box:hover .overlay-hover .triangle{
+                right: -30px;
+                bottom: -30px;
             }
             .main-box{
                 height: auto;

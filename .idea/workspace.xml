@@ -4,6 +4,10 @@
     <list default="true" id="8b47a909-9821-4c03-bf63-a168e922646b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/gallery/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/gallery/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/members/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/members/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,26 +151,26 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site/gallery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site/shop" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/site/shop" />
+      <recent name="$PROJECT_DIR$/resources/views/site/auth" />
+      <recent name="$PROJECT_DIR$/resources/views/site/gallery" />
+      <recent name="$PROJECT_DIR$/resources/views/site/contact" />
+      <recent name="$PROJECT_DIR$/resources/views/site/members" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/site/about" />
       <recent name="$PROJECT_DIR$/resources/views/site/contact" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Site" />
       <recent name="$PROJECT_DIR$/public/assets/site/images" />
       <recent name="C:\xampp\htdocs\cilicia\app\Http\Controllers\Admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/site/gallery" />
-      <recent name="$PROJECT_DIR$/resources/views/site/contact" />
-      <recent name="$PROJECT_DIR$/resources/views/site/members" />
-      <recent name="$PROJECT_DIR$/resources/views/site/about" />
-      <recent name="$PROJECT_DIR$/resources/views/site/home" />
     </key>
   </component>
   <component name="RunManager">
@@ -223,7 +227,8 @@
       <workItem from="1583388465700" duration="1313000" />
       <workItem from="1583392237912" duration="661000" />
       <workItem from="1583818523668" duration="23426000" />
-      <workItem from="1583903546184" duration="20983000" />
+      <workItem from="1583903546184" duration="21910000" />
+      <workItem from="1583993437606" duration="8292000" />
     </task>
     <servers />
   </component>
@@ -257,15 +262,16 @@
     </state>
     <state x="772" y="428" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579273131840" />
     <state x="772" y="460" width="399" height="149" key="NewPhpFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583157763611" />
-    <state x="516" y="137" width="887" height="766" key="find.popup" timestamp="1580558785236">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="516" y="166" width="887" height="776" key="find.popup" timestamp="1584015149864">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="516" y="137" width="887" height="766" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580558785236" />
-    <state x="532" y="267" key="run.anything.popup" timestamp="1583842429641">
+    <state x="516" y="166" width="887" height="776" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1584015149864" />
+    <state x="532" y="267" key="run.anything.popup" timestamp="1583994696531">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580564506045" />
-    <state x="532" y="267" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583842429641" />
+    <state x="532" y="267" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583994696531" />
     <state x="532" y="22" width="840" height="1045" key="search.everywhere.popup" timestamp="1583931860253">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

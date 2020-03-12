@@ -166,6 +166,9 @@
             p{
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
+            .sticky + .content{
+                padding-top: 70px;
+            }
             .red-overlay{
                 position: absolute;
                 height: 100%;
@@ -185,7 +188,7 @@
                 padding: 0;
             }
             .sticky + .content{
-                padding-top: 68px;
+                padding-top: 70px;
             }
             .contact-section{
                 background-color: #ebebeb;

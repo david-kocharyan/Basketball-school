@@ -21,6 +21,8 @@ Route::get('/about-us', 'Site\AboutController@index');
 Route::get('/academy-members', 'Site\AcademyMembersController@index');
 Route::get('/contact-us', 'Site\ContactController@index');
 Route::get('/gallery', 'Site\GalleryController@index');
+Route::get('/sign-in', 'Site\AuthController@signIn');
+Route::get('/shop', 'Site\ShopController@index');
 
 /**
  * Parent authentication

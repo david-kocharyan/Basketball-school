@@ -84,6 +84,12 @@
 
     @push("head")
         <style>
+            .header {
+                padding-top: 0;
+            }
+            .sticky + .content{
+                padding-top: 70px;
+            }
             .nav-tabs{
                 background: #151515;
                 border-radius: 10px;

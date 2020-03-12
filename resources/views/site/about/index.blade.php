@@ -136,7 +136,7 @@
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
             .sticky + .content{
-                padding-top: 68px;
+                padding-top: 70px;
             }
             .story-section{
                 background-color: #ebebeb;

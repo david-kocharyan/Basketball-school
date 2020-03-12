@@ -40,6 +40,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/gallery">Gallery</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/sign-in">Login</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,6 +59,7 @@
                                         <a class="nav-item nav-link" href="/about-us">About Us</a>
                                         <a class="nav-item nav-link" href="/academy-members">Members</a>
                                         <a class="nav-item nav-link" href="/gallery">Gallery</a>
+                                        <a class="nav-item nav-link" href="/shop">Shop</a>
                                     </div>
                                 </div>
                             </nav>
@@ -73,10 +77,7 @@
                             <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                     <div class="navbar-nav">
-                                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                                        <a class="nav-item nav-link" href="#">Features</a>
-                                        <a class="nav-item nav-link" href="#">Pricing</a>
-                                        <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                        <a class="nav-item nav-link" href="/sign-in">Login</a>
                                     </div>
                                 </div>
                             </nav>
@@ -95,7 +96,7 @@
                         <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>
                         <div class="col-md-5 col-sm-6 submenu submenu-right">
                             <div class="right-menu pl-5">
-                                <a href="#" class="mb-0 text-decoration-none text-white">Shop</a>
+                                <a href="/shop" class="mb-0 text-decoration-none text-white">Shop</a>
                             </div>
                         </div>
                     </div>
@@ -206,9 +207,10 @@
 
     var header = document.getElementById("header");
     var sticky = header.offsetTop;
-
+    let url = window.location.pathname;
+    let number = url == "/" ? 50 : 0;
     function myFunction() {
-        if (window.pageYOffset > sticky + 50) {
+        if (window.pageYOffset > sticky + number) {
             header.classList.add("sticky");
         } else {
             header.classList.remove("sticky");
