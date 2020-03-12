@@ -98,7 +98,6 @@ class PlayersController extends Controller
         $player->password = Hash::make($request->password);
         $player->notes = $request->notes;
         $player->save();
-
         $last_player_id = $player->id;
 
         if ($last_player_id) {
@@ -116,8 +115,16 @@ class PlayersController extends Controller
                 }
             }
 
-//          add team
-            $this->add_to_team($last_player_id, $request->gender, $request->dob);
+//            add player to team
+            if ($request->team == null){
+                $this->add_to_team($last_player_id, $request->gender, $request->dob);
+            }
+            else{
+                $team_player = new TeamPlayer;
+                $team_player->player_id = $last_player_id;
+                $team_player->team_id = $request->team;
+                $team_player->save();
+            }
 
 //          sending email
             $details = [
@@ -204,6 +211,11 @@ class PlayersController extends Controller
         $player->notes = $request->notes;
         $player->save();
 
+//        change team
+        $team = TeamPlayer::where('player_id', $player->id)->first();
+        $team->team_id = $request->team;
+        $team->save();
+
 //        upload player document
         if ($request->doc_image) {
             foreach ($request->doc_image as $key) {
@@ -247,35 +259,66 @@ class PlayersController extends Controller
      */
     private function add_to_team($id, $gender, $dob)
     {
-        $team = [];
-        if ($gender == 1) {
-            $team = Team::where('gender', '=', 1)->orderBy('age', 'asc')->get();
+        $team = Team::where(array(['gender', '=', $gender], ['age', '=', Carbon::parse($dob)->age]))->orderBy('age', 'asc')->get();
+        $senior = Team::where(array(['gender', '=', $gender], ['age', '=', 25]))->get();
+
+
+//      for $senior
+        if ($senior->isEmpty() AND Carbon::parse($dob)->age >= 25) {
+            $new_senior = new Team;
+            $new_senior->name = "Senior 25_" . $gender;
+            $new_senior->gender = $gender;
+            $new_senior->age = 25;
+            $new_senior->save();
+
+            $team_player = new TeamPlayer;
+            $team_player->player_id = $id;
+            $team_player->team_id = $new_senior->id;
+            $team_player->save();
+        }
+        if ($senior->isEmpty() == false AND Carbon::parse($dob)->age >= 25) {
+            $team_player = new TeamPlayer;
+            $team_player->player_id = $id;
+            $team_player->team_id = $senior->id;
+            $team_player->save();
+        }
+
+//      for other team
+        if ($team->isEmpty() AND Carbon::parse($dob)->age < 25) {
+            $new_team = new Team;
+            $new_team->name = "U" . Carbon::parse($dob)->age . "_" . $gender;
+            $new_team->gender = $gender;
+            $new_team->age = Carbon::parse($dob)->age;
+            $new_team->save();
+
+            $team_player = new TeamPlayer;
+            $team_player->player_id = $id;
+            $team_player->team_id = $new_team->id;
+            $team_player->save();
         } else {
-            $team = Team::where('gender', '=', 0)->orderBy('age', 'asc')->get();
-        }
+            foreach ($team as $key) {
+                if (Carbon::parse($dob)->age <= $key->age) {
+                    $team_player = new TeamPlayer;
+                    $team_player->player_id = $id;
+                    $team_player->team_id = $key->id;
+                    $team_player->save();
+                    break;
+                } else {
+                    $new_team = new Team;
+                    $new_team->name = "U" . Carbon::parse($dob)->age . "_" . $gender;
+                    $new_team->gender = $gender;
+                    $new_team->age = Carbon::parse($dob)->age;
+                    $new_team->save();
 
-        if (Carbon::parse($dob)->age >= 25 AND $gender == 1) {
-            $senior = Team::where(array(['gender', '=', 1], ['age', '=', 25]))->get();
-            $team_player = new TeamPlayer;
-            $team_player->player_id = $id;
-            $team_player->team_id = $senior[0]->id;
-            $team_player->save();
-        } elseif (Carbon::parse($dob)->age >= 25 AND $gender == 0) {
-            $senior = Team::where(array(['gender', '=', 0], ['age', '=', 25]))->get();
-            $team_player = new TeamPlayer;
-            $team_player->player_id = $id;
-            $team_player->team_id = $senior[0]->id;
-            $team_player->save();
-        }
-
-        foreach ($team as $key) {
-            if (Carbon::parse($dob)->age <= $key->age) {
-                $team_player = new TeamPlayer;
-                $team_player->player_id = $id;
-                $team_player->team_id = $key->id;
-                $team_player->save();
-                break;
+                    $team_player = new TeamPlayer;
+                    $team_player->player_id = $id;
+                    $team_player->team_id = $new_team->id;
+                    $team_player->save();
+                    break;
+                }
             }
         }
+
     }
+
 }

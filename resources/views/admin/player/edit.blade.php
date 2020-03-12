@@ -135,7 +135,6 @@
                                 <input type="text" class="form-control" id="emergency_phone"
                                        placeholder="Emergency contact phone" name="emergency_phone" value="{{$player->emergency_phone}}">
                             </div>
-
                             {{--team--}}
                             <div class="form-group">
                                 <label for="team">Team</label>
@@ -145,7 +144,7 @@
                                 <select name="team" id="team" class="form-control">
                                     <option value="">--Choose Team--</option>
                                     @foreach($teams as $key)
-                                        <option value="{{$key->id}}" {{$player->team_id == $key->id ? 'selected' : "" }}>{{$key->name}}</option>
+                                        <option value="{{$key->id}}" {{$player->teamPlayers[0]->id == $key->id ? 'selected' : "" }}>{{$key->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

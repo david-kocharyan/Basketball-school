@@ -136,6 +136,20 @@
                                        placeholder="Emergency contact phone" name="emergency_phone" value="{{old('emergency_phone')}}">
                             </div>
 
+                            {{--team--}}
+                            <div class="form-group">
+                                <label for="team">Team</label>
+                                @error('team')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                                <select name="team" id="team" class="form-control">
+                                    <option value="">--Choose Team--</option>
+                                    @foreach($teams as $key)
+                                        <option value="{{$key->id}}">{{$key->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             {{--username password--}}
                             <div class="form-group">
                                 <label for="email">Email</label>

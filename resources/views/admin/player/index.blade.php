@@ -43,7 +43,9 @@
                                 <td>{{$val->dob}}</td>
                                 <td>{{$val->phone_number}}</td>
                                 <td>
-                                    {{$val->teamPlayers[0]->name}}
+                                    @foreach($val->teamPlayers as $bin)
+                                        {{$bin->name}}
+                                    @endforeach
                                 </td>
                                 <td>{{$val->emergency_name}}</td>
                                 <td>{{$val->emergency_phone}}</td>
