@@ -52,11 +52,11 @@ Route::post('/player/logout', 'Auth\LoginController@playerLogout')->middleware('
  */
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
     Route::resource('/', 'AdminsController');
-    Route::resource('players', 'PlayersController');
-    Route::resource('teams', 'TeamsController');
-    Route::resource('coaches', 'CoachController');
-    Route::resource('center', 'CenterController');
-    Route::resource('league', 'LeagueController');
+    Route::resource('/players', 'PlayersController');
+    Route::resource('/teams', 'TeamsController');
+    Route::resource('/coaches', 'CoachController');
+    Route::resource('/center', 'CenterController');
+    Route::resource('/league', 'LeagueController');
 });
 
 /**

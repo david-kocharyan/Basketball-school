@@ -87,9 +87,7 @@
             .header {
                 padding-top: 0;
             }
-            .sticky + .content{
-                padding-top: 70px;
-            }
+ parent
             .nav-tabs{
                 background: #151515;
                 border-radius: 10px;
