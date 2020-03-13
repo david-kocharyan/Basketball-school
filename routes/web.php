@@ -57,6 +57,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('coaches', 'CoachController');
     Route::resource('center', 'CenterController');
     Route::resource('league', 'LeagueController');
+    Route::resource('categories', 'CategoryController');
+
+    Route::delete('/products/{product_id}/destroy-image/{id}', 'ProductController@destroy_image');
+    Route::resource('products', 'ProductController');
 });
 
 /**

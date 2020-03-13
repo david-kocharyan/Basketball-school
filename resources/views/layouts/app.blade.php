@@ -24,6 +24,7 @@
     @stack('datepicker')
     @stack('dropify')
     @stack('magnific')
+    @stack('custom-style')
 
 </head>
 
@@ -113,6 +114,24 @@
 
                         <li><a href="/admin/league" class="waves-effect"><i class="mdi mdi-windows fa-fw"></i>
                                 <span class="hide-menu">Teams (League)</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+
+{{--market--}}
+                <li class="devider"></li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
+                            class="hide-menu">Shop<span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/categories" class="waves-effect"><i class="mdi mdi-playlist-plus fa-fw"></i>
+                                <span class="hide-menu">Categories</span></a>
+                        </li>
+
+                        <li><a href="/admin/products" class="waves-effect"><i class="mdi mdi-scale fa-fw"></i>
+                                <span class="hide-menu">Products</span></a>
                         </li>
                     </ul>
                 </li>
