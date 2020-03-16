@@ -103,11 +103,10 @@ class CategoryController extends Controller
         if ($request->icon) {
             Storage::disk('public')->delete("category/$category->icon");
             $img_name = Storage::disk('public')->put('category', $request->icon);
+            $category->icon = basename($img_name);
         }
-
         $category->name = $request->name;
         $category->title = $request->title;
-        $category->icon = basename($img_name);
         $category->save();
 
         return redirect(self::ROUTE);
