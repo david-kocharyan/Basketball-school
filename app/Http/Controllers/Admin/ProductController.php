@@ -67,13 +67,11 @@ class ProductController extends Controller
 
         if ($product->id) {
             foreach ($request->image as $key) {
-                $product_image_name = 'product_' . $product->id . "_" . random_int(1, 9999999) . '.' . $key->getClientOriginalExtension();
+                $product_image_name =  Storage::disk('public')->put('product', $key);
                 $image = new ProductImage;
                 $image->product_id = $product->id;
-                $image->name = $product_image_name;
+                $image->name = basename($product_image_name);
                 $image->save();
-
-                Storage::disk('public')->putFileAs('product/', $key, $product_image_name);
             }
         }
 
@@ -129,13 +127,11 @@ class ProductController extends Controller
 
         if ($request->image) {
             foreach ($request->image as $key) {
-                $product_image_name = 'product_' . $product->id . "_" . random_int(1, 9999999) . '.' . $key->getClientOriginalExtension();
+                $product_image_name = Storage::disk('public')->put('product', $key);
                 $image = new ProductImage;
                 $image->product_id = $product->id;
-                $image->name = $product_image_name;
+                $image->name = basename($product_image_name);
                 $image->save();
-
-                Storage::disk('public')->putFileAs('product/', $key, $product_image_name);
             }
         }
 
