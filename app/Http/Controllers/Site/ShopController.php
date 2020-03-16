@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Category;
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -18,6 +20,8 @@ class ShopController extends Controller
     public function index()
     {
         $title = self::TITLE;
-        return view(self::VIEW . ".index", compact("title"));
+        $categories = Category::paginate(100);
+        $products = Product::with(["getImages", "getCategory"])->get();
+        return view(self::VIEW . ".index", compact("title", "categories", "products"));
     }
 }
