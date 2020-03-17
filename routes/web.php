@@ -23,6 +23,7 @@ Route::get('/contact-us', 'Site\ContactController@index');
 Route::get('/gallery', 'Site\GalleryController@index');
 Route::get('/sign-in', 'Site\AuthController@signIn');
 Route::get('/shop', 'Site\ShopController@index');
+Route::get('/shop/{slug}', 'Site\ShopController@category');
 
 /**
  * Parent authentication

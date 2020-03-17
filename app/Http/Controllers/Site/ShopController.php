@@ -11,17 +11,27 @@ class ShopController extends Controller
 {
     const VIEW = "site.shop";
     const TITLE = "Shop";
+
     /**
      * About Us
-     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
     public function index()
     {
         $title = self::TITLE;
-        $categories = Category::paginate(100);
-        $products = Product::with(["getImages", "getCategory"])->get();
+        $categories = Category::all();
+        $products = Product::with("getImages")->paginate(25);
         return view(self::VIEW . ".index", compact("title", "categories", "products"));
+    }
+
+    public function category($slug)
+    {
+        $title = self::TITLE;
+        $categories = Category::all();
+        $products = Product::whereHas('getCategory', function ($query) use ($slug) {
+            $query->where('title', $slug);
+        })->with('getImages')->paginate(25);
+        return view(self::VIEW . ".index", compact("title", "categories", "products", 'slug'));
     }
 }

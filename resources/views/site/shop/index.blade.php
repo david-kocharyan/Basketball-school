@@ -1,14 +1,21 @@
 @extends("layouts.site")
 @section("content")
 
-    <div class="background-section d-flex align-items-lg-end align-items-center" style="background-image: url('{{ asset("assets/site/images/about/background.jpg") }}')">
+    <div class="background-section d-flex align-items-lg-end align-items-center"
+         style="background-image: url('{{ asset("assets/site/images/about/background.jpg") }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
-                        <p class="title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span class="greater">&gt;</span> {{ strtoupper($title) }}</p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players competiting at all levels from local team galas</p>
+                        <p class="title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
+                            Home <span class="greater">&gt;</span> {{ strtoupper($title) }}
+                            @if(isset($slug))
+                                <span class="greater">&gt;</span> {{strtoupper($slug)}}
+                            @endif
+                        </p>
+                        <p class="subtitle">We are competitive professional basketball club - with our players
+                            competiting at all levels from local team galas</p>
                     </div>
                 </div>
             </div>
@@ -26,7 +33,8 @@
                     <div class="category-part pt-3 pb-2 pl-3 mb-3">
                         @foreach($categories as $category)
                             <a href="/shop/{{ $category->title }}" class="text-uppercase d-block mb-3 link text-black">
-                                <img style="height: 20px; margin-right: 5px;" src="{{ asset("uploads/category/$category->icon") }}" alt="">
+                                <img style="height: 20px; margin-right: 5px;"
+                                     src="{{ asset("uploads/category/$category->icon") }}" alt="">
                                 <b>{{ $category->name }}</b>
                             </a>
                         @endforeach
@@ -40,23 +48,30 @@
                         <div class="col-xl-4 mb-3">
                             <div class="main overflow-hidden">
                                 <div class="img-cont text-center">
-                                    <img class="img-fluid prod" src="{{ asset("uploads/product") . "/" . ($product->getImages[0]->name ?? "") }}" alt="">
+                                    <img class="img-fluid prod"
+                                         src="{{ asset("uploads/product") . "/" . ($product->getImages[0]->name ?? "") }}"
+                                         alt="">
                                 </div>
                                 <div class="desc">
                                     <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                     <h4 class="color-red text-center">{{ $product->name }}</h4>
                                     <p class="text-center price mb-1">${{ $product->price }}</p>
-                                    <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                                    <p data-info="{{ json_encode($product) }}"
+                                       class="quick-view d-flex justify-content-center align-items-center text-uppercase">
+                                        Quick View</p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+
                 </div>
+                {{$products->links()}}
             </div>
         </div>
     </div>
 
-    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content" style="background-color: #e2e2e2">
                 <div class="modal-body row">
@@ -71,33 +86,42 @@
             .header {
                 padding-top: 0;
             }
-            p{
+
+            p {
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
-            .sticky + .content{
+
+            .sticky + .content {
                 padding-top: 70px;
             }
-            .head-part{
+
+            .head-part {
                 background-color: #9c1d24;
             }
-            .box-part{
+
+            .box-part {
                 border-radius: 8px 8px 0 0;
                 overflow: hidden;
             }
-            .text-black{
+
+            .text-black {
                 color: black;
             }
-            .link{
-                text-decoration: none!important;
+
+            .link {
+                text-decoration: none !important;
             }
-            .link:hover{
+
+            .link:hover {
                 color: black;
             }
-            .category-part{
+
+            .category-part {
                 border: 1px solid grey;
                 border-top: none;
                 border-radius: 0 0 8px 8px;
             }
+
             .main {
                 border: 1px solid #ccced2;
                 border-radius: 8px;
@@ -105,12 +129,15 @@
                 transition: .3s;
                 position: relative;
             }
-            .main:hover  {
+
+            .main:hover {
                 border: 1px solid #9c1d24;
             }
+
             .main:hover .quick-view {
                 bottom: 0;
             }
+
             .quick-view {
                 background: #9c1d24;
                 text-align: center;
@@ -124,33 +151,39 @@
                 transition: .3s;
                 cursor: pointer;
             }
-            .prod{
+
+            .prod {
                 height: 200px;
             }
-            .category{
+
+            .category {
                 color: #6c6c6e;
                 font-size: 12px;
             }
-            .price{
+
+            .price {
                 color: #6c6c6e;
                 font-size: 16px;
             }
-            #lightSlider .img-cont{
+
+            #lightSlider .img-cont {
                 text-align: center;
             }
-            .description{
+
+            .description {
                 color: #5b5b5b;
             }
-            .lSSlideWrapper.usingCss{
+
+            .lSSlideWrapper.usingCss {
                 border: 1px solid gray;
             }
         </style>
-        <link type="text/css" rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.css") }}" />
+        <link type="text/css" rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.css") }}"/>
     @endpush
     @push("footer")
         <script>
             let asset_url = '{{ asset("uploads/product") . "/" }}';
-            $(document).on("click", ".quick-view", function(){
+            $(document).on("click", ".quick-view", function () {
                 let data = JSON.parse($(this).attr("data-info"));
                 let images = data.get_images;
                 let html = "<div class='col-xl-8'>"
@@ -164,7 +197,6 @@
                 html += `<p class='name color-red'><b>${data.name}</b></p>`;
                 html += `<p class="price"><b>$${data.price}</b></p>`;
                 html += `<p class="description">${data.description}</p>`;
-                console.log(data)
                 html += `<p><b>Category: </b> <span class="color-red">${data.get_category.name}</span></p>`;
                 html += "</div>";
                 $(".modal-body").html(html);
@@ -172,7 +204,7 @@
                 $('#lightSlider').lightSlider({
                     gallery: true,
                     item: 1,
-                    loop:true,
+                    loop: true,
                     slideMargin: 0,
                     thumbItem: 9
                 });
