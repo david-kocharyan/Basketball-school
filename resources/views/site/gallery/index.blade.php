@@ -19,25 +19,23 @@
         <div class="row pb-4">
             <div class="col-md-12">
                 <ul class="nav nav-tabs" style="border-bottom: 0">
-                    <li><a class="active" data-toggle="tab" href="#home">Home</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                    <li><a class="active" data-toggle="tab" href="#academy">Academy</a></li>
+                    <li><a data-toggle="tab" href="#games">Games</a></li>
                 </ul>
             </div>
         </div>
         <div class="tab-content">
 
-            <div id="home" class="tab-pane fade in active show">
+            <div id="academy" class="tab-pane fade in active show">
                 <div class="row">
-
-                    @for($i = 0; $i < 10; $i++)
+                    @foreach($academy as $bin => $key)
                         <div class="col-xl-4 col-md-6" style="padding: 5px">
                             <div class="main-box">
-                                <a class="example-image-link" href="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" data-lightbox="set0"><img class="example-image" src="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" alt=""/></a>
+                                    <img class="example-image" src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
                                 <div class="overlay-hover">
                                     <div class="detail">
-                                        <p class="text-capitalize text-white m-0">Practise makes perfect.</p>
-                                        <button class="rounded-button">12 photos</button>
+                                        <p class="text-capitalize text-white m-0">{{$key->name}}</p>
+                                        <a href="/gallery/{{ $key->id }}"><button class="rounded-button">{{count($key->images)}} photos</button></a>
                                     </div>
                                     <div class="triangle">
                                         <span>+</span>
@@ -45,32 +43,28 @@
                                 </div>
                             </div>
                         </div>
-                    @endfor
-
+                    @endforeach
                 </div>
             </div>
 
-            <div id="menu1" class="tab-pane fade in">
+            <div id="games" class="tab-pane fade in ">
                 <div class="row">
-                    @for($i = 0; $i < 5; $i++)
+                    @foreach($games as $bin => $key)
                         <div class="col-xl-4 col-md-6" style="padding: 5px">
                             <div class="main-box">
-                                <a class="link2" href="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" data-lightbox="set1"><img class="example-image" src="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" alt=""/></a>
+                                <img class="example-image" src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
+                                <div class="overlay-hover">
+                                    <div class="detail">
+                                        <p class="text-capitalize text-white m-0">{{$key->name}}</p>
+                                        <a href="/gallery/{{ $key->id }}"><button class="rounded-button">{{count($key->images)}} photos</button></a>
+                                    </div>
+                                    <div class="triangle">
+                                        <span>+</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    @endfor
-                </div>
-            </div>
-
-            <div id="menu2" class="tab-pane fade in">
-                <div class="row">
-                    @for($i = 0; $i < 20; $i++)
-                        <div class="col-xl-4 col-md-6" style="padding: 5px">
-                            <div class="main-box">
-                                <a class="link2" href="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" data-lightbox="set3"><img class="example-image" src="{{ asset("assets/site/images/gallery/gallery_img2-min.jpg") }}" alt=""/></a>
-                            </div>
-                        </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
 

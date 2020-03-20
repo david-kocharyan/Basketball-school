@@ -30,7 +30,6 @@
             </div>
         </div>
         <div class="tab-content">
-
             @foreach($teams as $bin => $key)
                 <div id="{{'menu_'.$key->id}}" class="tab-pane fade in @if($bin == 0) active show @endif">
                     <div class="row">
@@ -39,7 +38,7 @@
                                 <div class="main-box"
                                      style="background-image: url('{{ asset("uploads/player/$val->image") }}');">
                                     <div class="name-box d-flex align-items-center">
-                                        <p class="pl-5 m-0">{{'#' . $val->jersey_number . $val->full_name}} </p>
+                                        <p class="pl-5 m-0">{{'#' . $val->jersey_number ." ". $val->full_name}} </p>
                                     </div>
                                     <div class="age-box d-flex align-items-center">
                                         <p class="text-center m-0">{{$key->name}}</p>
@@ -47,12 +46,9 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
             @endforeach
-
-
         </div>
     </div>
 

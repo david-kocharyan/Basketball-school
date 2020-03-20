@@ -156,7 +156,9 @@ class ProductController extends Controller
     }
 
     /**
+     * @param $product
      * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy_image($product, $id)
     {

@@ -21,6 +21,7 @@ Route::get('/about-us', 'Site\AboutController@index');
 Route::get('/academy-members', 'Site\AcademyMembersController@index');
 Route::get('/contact-us', 'Site\ContactController@index');
 Route::get('/gallery', 'Site\GalleryController@index');
+Route::get('/gallery/{id}', 'Site\GalleryController@gallery');
 Route::get('/sign-in', 'Site\AuthController@signIn');
 Route::get('/shop', 'Site\ShopController@index');
 Route::get('/shop/{slug}', 'Site\ShopController@category');
@@ -62,6 +63,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::delete('/products/{product_id}/destroy-image/{id}', 'ProductController@destroy_image');
     Route::resource('products', 'ProductController');
+
+    Route::delete('/gallery/{gallery_id}/destroy-image/{id}', 'GalleryController@destroy_image');
+    Route::resource('gallery', 'GalleryController');
+
 });
 
 /**

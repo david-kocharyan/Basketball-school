@@ -118,7 +118,6 @@
                     </ul>
                 </li>
 
-
 {{--market--}}
                 <li class="devider"></li>
                 <li>
@@ -134,6 +133,12 @@
                                 <span class="hide-menu">Products</span></a>
                         </li>
                     </ul>
+                </li>
+
+{{--gallery--}}
+                <li class="devider"></li>
+                <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i>
+                        <span class="hide-menu">Gallery</span></a>
                 </li>
 
             </ul>
