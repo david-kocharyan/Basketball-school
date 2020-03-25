@@ -42,28 +42,67 @@
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
         <div class="container-fluid">
             <div class="row">
-                <div class="swiper-container gallery-top col-md-8">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 1</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 2</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 3</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 4</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 5</div></div>
+                <div class="col-lg-12">
+                    <div class="red-header col-md-8 m-auto"></div>
+                    <div class="swiper-container gallery-top col-md-8">
+                        <div class="swiper-wrapper">
+
+                            @for($i = 0; $i < 4; $i++)
+                                <div class="swiper-slide d-flex flex-column justify-content-center">
+
+                                    <div class="first-row  d-flex justify-content-around align-items-center">
+                                        <div class="logo-cont">
+                                            <img src="{{ asset("assets/site/images/clubs/club-logo.png") }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="team-cont">
+                                            <span class="team">Team1</span>
+                                        </div>
+                                        <div class="time-cont">
+                                            <span class="time">6:35 PM</span>
+                                        </div>
+                                        <div class="team-cont">
+                                            <span>Team2</span>
+                                        </div>
+                                        <div class="logo-cont">
+                                            <img src="{{ asset("assets/site/images/clubs/club-logo.png") }}" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="second-row d-flex flex-column align-items-center">
+                                        <span class="finals mb-3 text-white text-uppercase">NBA finals april 28, 2021</span>
+                                        <span class="stadium text-white text-uppercase">bentleigh</span>
+                                    </div>
+
+                                </div>
+                            @endfor
+
+                        </div>
                     </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-                <div class="swiper-container gallery-thumbs col-md-8">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 1</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 2</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 3</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 4</div></div>
-                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 5</div></div>
+                    <div class="swiper-container gallery-thumbs col-md-8">
+                        <div class="swiper-wrapper">
+                            @for($i = 0; $i < 4; $i++)
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-container">
+                                        <div class="first-row d-flex flex-column align-items-center">
+                                            <div class="date-cont">
+                                                <span class="date text-uppercase">March 10, 2019</span>
+                                            </div>
+                                            <div class="score-cont d-flex justify-content-around">
+                                                <span class="score-team text-uppercase"><b>98</b></span>
+                                                <span class="red text-uppercase time-final"><b>Final</b></span>
+                                                <span class="score-team text-uppercase"><b>50</b></span>
+                                            </div>
+                                        </div>
+                                        <div class="second-row red-bg d-flex align-items-end justify-content-center">
+                                            <span class="finals text-uppercase"><b>NBA finals</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
                 </div>
             </div>
 
@@ -350,29 +389,11 @@
             .swiper-container {
                 width: 100%;
                 height: 300px;
-                margin: 20px auto;
+                margin: 0 auto;
             }
 
             .swiper-slide-container {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
-                height:100%;
-                max-width: 600px;
-                margin:auto;
-                /* Center slide text vertically */
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                -webkit-align-items: center;
-                align-items: center;
+
             }
 
             .gallery-top {
@@ -380,7 +401,7 @@
                 width: 100%;
             }
             .gallery-thumbs {
-                height: 20%;
+                height: 120px;
                 box-sizing: border-box;
                 padding: 10px 0;
             }
@@ -391,6 +412,79 @@
             }
             .gallery-thumbs .swiper-slide-active {
                 opacity: 1;
+            }
+            .gallery-top{
+                background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
+                background-repeat: no-repeat;
+                height: 320px;
+                background-size: cover;
+            }
+            .gallery-top .logo-cont img{
+                height: 150px;
+            }
+            .gallery-top .team-cont span{
+                font-family: Agency, sans-serif;
+                color: white;
+                font-size: 35px;
+                letter-spacing: 2px;
+            }
+            .gallery-top .time{
+                padding: 10px 15px;
+                background-color: #9c1d24;
+                color: white;
+                font-size: 20px;
+            }
+            .red-header{
+                height: 30px;
+                width: 100%;
+                background-color: #9c1d24;
+            }
+            .gallery-top .swiper-slide{
+                align-items: center;
+                justify-content: space-around;
+            }
+            .gallery-top .first-row {
+                width: 100%;
+            }
+            .gallery-top .finals, .gallery-top .stadium{
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+            .gallery-thumbs .first-row{
+                background-color: white;
+                position: relative;
+            }
+            .gallery-thumbs .score-cont{
+                width: 100%;
+            }
+            .gallery-thumbs .score-cont .date, .gallery-thumbs .score-cont .score-team{
+                color: black;
+            }
+            .gallery-thumbs .first-row:after{
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 23px solid transparent;
+                border-right: 23px solid transparent;
+                border-top: 12px solid #fff;
+                position: absolute;
+                bottom: 0;
+                transform: translateY(100%);
+            }
+            .gallery-thumbs .finals {
+                font-family: Agency, sans-serif;
+                color: white;
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .gallery-thumbs .second-row{
+                height: 55px;
+            }
+            .second-row.red-bg{
+                background-color: #9c1d24;
+            }
+            .gallery-thumbs .first-row, .gallery-thumbs .second-row{
+                padding: 5px;
             }
         </style>
 
@@ -504,6 +598,7 @@
                 height: 500px;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
+                padding-top: 20px;
             }
 
             .table-section {
@@ -634,6 +729,16 @@
                 background-size: cover !important;
             }
 
+            @media (max-width: 480px) {
+                .gallery-top .swiper-slide{
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .gallery-top .logo-cont img{
+                    height: 50px;
+                }
+            }
         </style>
     @endpush
     @push("footer")
@@ -668,7 +773,24 @@
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-                    loopedSlides: 4
+                    loopedSlides: 4,
+                    breakpoints: {
+                        // when window width is >= 320px
+                        320: {
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        // when window width is >= 480px
+                        480: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        // when window width is >= 640px
+                        640: {
+                            slidesPerView: 6,
+                            spaceBetween: 40
+                        }
+                    }
                 });
                 galleryTop.controller.control = galleryTop;
                 galleryThumbs.controller.control = galleryTop;
