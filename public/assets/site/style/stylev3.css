@@ -289,12 +289,18 @@ span.red {
     background: #9c1d24;
     border-radius: 5px;
     border: none;
-    width: 100px;
+    width: 120px;
     height: 35px;
     font-family: Roboto-Condensed-Bold, sans-serif;
     color: white;
     font-size: 13px;
     letter-spacing: 1px;
+}
+.rounded-button a{
+    color: #fff;
+}
+.rounded-button a:hover{
+    text-decoration: none;
 }
 .title img{
     margin-right: 10px;

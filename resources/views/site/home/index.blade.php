@@ -9,13 +9,9 @@
                     <div class="container m-auto">
                         <div class="row">
                             <div class="col-md-7">
-                                <p class="slider-title"><span class="red">Challengers</span> path <br> to the playoffs
+                                <p class="slider-title"><span class="red">Love </span> Basketball <span class="red">?</span>
                                 </p>
-                                <p class="slider-text">Until building time sit amet, consectetur adipisicing elit. Alias
-                                    aut deleniti dolore doloremque eos est eum excepturi harum illum magnam minima,
-                                    obcaecati optio quibusdam quo repudiandae veritatis voluptate! Excepturi,
-                                    repellendus! </p>
-                                <button class="rounded-button">READ MORE</button>
+                                <button class="rounded-button"><a href="/academy-members">GROW WITH US</a></button>
                             </div>
                         </div>
                     </div>
@@ -33,7 +29,7 @@
                     <p class="text-white m-0 shop-text">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-lg-center justify-content-lg-end shop-btn-cont">
-                    <a href="#" class="visit-btn text-center shop-btn">VISIT SHOP</a>
+                    <a href="/shop" class="visit-btn text-center shop-btn">VISIT SHOP</a>
                 </div>
             </div>
         </div>
@@ -41,10 +37,15 @@
 
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row ">
+                <div class="title-cont col-md-8 mb-4 mt-4" style="margin: 0 auto;">
+                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid"
+                                                   src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">NEXT GAME
+                    </h2>
+                </div>
                 <div class="col-lg-12">
                     <div class="red-header col-md-8 m-auto"></div>
-                    <div class="swiper-container gallery-top col-md-8">
+                    <div class="swiper-container gallery-top col-md-8 m-b-20">
                         <div class="swiper-wrapper">
 
                             @for($i = 0; $i < 4; $i++)
@@ -300,7 +301,7 @@
 
                 </div>
                 <div class="col-md-12 text-center">
-                    <button class="rounded-button">Club Shop</button>
+                    <button class="rounded-button"><a href="/gallery">OUR GALLERY</a></button>
                 </div>
             </div>
             <div class="row">
@@ -373,7 +374,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 mt-3 text-center">
-                    <button class="rounded-button">SHOP NOW</button>
+                    <button class="rounded-button"><a href="/shop">SHOP NOW</a></button>
                 </div>
             </div>
         </div>
@@ -382,18 +383,13 @@
     @push('head')
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
-{{--swiper--}}
+        {{--swiper--}}
         <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
-
         <style>
             .swiper-container {
                 width: 100%;
                 height: 300px;
                 margin: 0 auto;
-            }
-
-            .swiper-slide-container {
-
             }
 
             .gallery-top {
@@ -416,8 +412,9 @@
             .gallery-top{
                 background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
                 background-repeat: no-repeat;
-                height: 320px;
+                height: 500px;
                 background-size: cover;
+                margin-bottom: 2%;
             }
             .gallery-top .logo-cont img{
                 height: 150px;
@@ -485,43 +482,6 @@
             }
             .gallery-thumbs .first-row, .gallery-thumbs .second-row{
                 padding: 5px;
-            }
-        </style>
-
-        <style>
-            #myCarousel .list-inline {
-                white-space: nowrap;
-                overflow-x: auto;
-            }
-
-            #myCarousel .carousel-item {
-                width: 100%;
-                height: 590px;
-                background: url('{{asset("assets/site/images/match-bg.png")}}');
-                background-repeat: no-repeat !important;
-                background-size: cover !important;
-            }
-
-            #myCarousel > .carousel-control-next {
-                right: -15%;
-            }
-
-            #myCarousel > .carousel-control-prev {
-                left: -15%;
-            }
-
-            #myCarousel  .carousel-control-next-icon,  #myCarousel .carousel-control-prev-icon {
-                width: 50px;
-                height: 50px;
-            }
-            #myCarousel .item-data{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                border: 1px solid red;
-                height: auto;
-                margin-top: 50px;
             }
         </style>
 
@@ -595,7 +555,7 @@
             }
 
             .match-slider {
-                height: 500px;
+                height: 100vh;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
                 padding-top: 20px;
