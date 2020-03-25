@@ -4,18 +4,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="owl-carousel">
-                <div class="slider-item d-flex align-items-center" style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')">
+                <div class="slider-item d-flex align-items-center"
+                     style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')">
                     <div class="container m-auto">
                         <div class="row">
                             <div class="col-md-7">
-                                <p class="slider-title"> <span class="red">Challengers</span>  path <br> to the playoffs</p>
-                                <p class="slider-text">Until building time sit amet, consectetur adipisicing elit. Alias aut deleniti dolore doloremque eos est eum excepturi harum illum magnam minima, obcaecati optio quibusdam quo repudiandae veritatis voluptate! Excepturi, repellendus! </p>
+                                <p class="slider-title"><span class="red">Challengers</span> path <br> to the playoffs
+                                </p>
+                                <p class="slider-text">Until building time sit amet, consectetur adipisicing elit. Alias
+                                    aut deleniti dolore doloremque eos est eum excepturi harum illum magnam minima,
+                                    obcaecati optio quibusdam quo repudiandae veritatis voluptate! Excepturi,
+                                    repellendus! </p>
                                 <button class="rounded-button">READ MORE</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="slider-item" style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')"></div>
+                <div class="slider-item"
+                     style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')"></div>
             </div>
         </div>
     </div>
@@ -34,26 +40,48 @@
     </div>
 
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
-        <div class="container">
-            <div class="row">
-{{--                <div class="gallery-demo">--}}
-{{--                    <ul id="imageGallery">--}}
-{{--                        @for($i = 1; $i <= 10; $i ++)--}}
-{{--                        <li data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg">--}}
-{{--                            <img src="http://sachinchoolur.github.io/lightslider/img/cS-{{ $i }}.jpg" />--}}
-{{--                        </li>--}}
-{{--                        @endfor--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
+        <div class="container-fluid">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 offset-lg-2" id="slider">
+                    <div id="myCarousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active carousel-item" data-slide-number="0">
+                                <div class="item-data">
+                                    <div class="col-md-4">10</div>
+                                    <div class="col-md-4">10</div>
+                                    <div class="col-md-4">10</div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-slide-number="1">
+                                <div class="item-data">
+                                    <div class="col-md-4">10</div>
+                                    <div class="col-md-4">10</div>
+                                    <div class="col-md-4">10</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                </div>
+                </div>
             </div>
         </div>
+
     </div>
 
     <div class="table-section">
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4">
-                    <h2 class="section-title"><img style="height: 30px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
+                    <h2 class="section-title"><img style="height: 30px"
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
+                        Table</h2>
                 </div>
 
                 <div class="col-md-4">
@@ -70,7 +98,9 @@
                         @for($i = 1; $i <=10; $i++)
                             <tr>
                                 <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia</td>
+                                <td><img class="img-fluid" style="height: 20px"
+                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
+                                </td>
                                 <td>9/4</td>
                                 <td>22</td>
                             </tr>
@@ -92,7 +122,9 @@
                         @for($i = 1; $i <=10; $i++)
                             <tr>
                                 <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia</td>
+                                <td><img class="img-fluid" style="height: 20px"
+                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
+                                </td>
                                 <td>9/4</td>
                                 <td>22</td>
                             </tr>
@@ -114,7 +146,9 @@
                         @for($i = 1; $i <=10; $i++)
                             <tr>
                                 <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia</td>
+                                <td><img class="img-fluid" style="height: 20px"
+                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
+                                </td>
                                 <td>9/4</td>
                                 <td>22</td>
                             </tr>
@@ -124,7 +158,9 @@
             </div>
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs</h2>
+                    <h2 class="section-title"><img style="height: 30px"
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs
+                    </h2>
                 </div>
                 <div class="col-md-12">
                     <img class="img-fluid" src="{{ asset("assets/site/images/home/playoffs.png") }}" alt="">
@@ -137,11 +173,14 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Players Of The Month</h2>
+                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid"
+                                                              src="{{ asset("assets/site/images/ball-white.svg") }}"
+                                                              alt="">Players Of The Month</h2>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
+                    <div class="main-box"
+                         style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -152,7 +191,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
+                    <div class="main-box"
+                         style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -163,7 +203,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
+                    <div class="main-box"
+                         style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -174,7 +215,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="main-box" style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
+                    <div class="main-box"
+                         style="background-image: url('{{ asset("assets/site/images/home/player.jpg") }}');">
                         <div class="name-box d-flex align-items-center">
                             <p class="pl-5 m-0">#144 Name Surname</p>
                         </div>
@@ -193,7 +235,9 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery</h2>
+                    <h2 class="section-title"><img style="height: 30px" class="img-fluid"
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery
+                    </h2>
                 </div>
 
                 <div class="col-md-6 img-box px-0">
@@ -226,7 +270,9 @@
             </div>
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop</h2>
+                    <h2 class="section-title"><img style="height: 30px" class="img-fluid"
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop
+                    </h2>
                 </div>
 
                 <div class="col-md-3 mb-3">
@@ -238,7 +284,8 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
+                                View</p>
                         </div>
                     </div>
                 </div>
@@ -252,7 +299,8 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
+                                View</p>
                         </div>
                     </div>
                 </div>
@@ -266,7 +314,8 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
+                                View</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +329,8 @@
                             <p class="text-center category mb-2">Sport Shoes</p>
                             <h4 class="color-red text-center">Gray Sneakers</h4>
                             <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
+                                View</p>
                         </div>
                     </div>
                 </div>
@@ -297,23 +347,64 @@
     @push('head')
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
+
+        <style>
+            #myCarousel .list-inline {
+                white-space: nowrap;
+                overflow-x: auto;
+            }
+
+            #myCarousel .carousel-item {
+                width: 100%;
+                height: 590px;
+                background: url('{{asset("assets/site/images/match-bg.png")}}');
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+            }
+
+            #myCarousel > .carousel-control-next {
+                right: -15%;
+            }
+
+            #myCarousel > .carousel-control-prev {
+                left: -15%;
+            }
+
+            #myCarousel  .carousel-control-next-icon,  #myCarousel .carousel-control-prev-icon {
+                width: 50px;
+                height: 50px;
+            }
+            #myCarousel .item-data{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                border: 1px solid red;
+                height: auto;
+                margin-top: 50px;
+            }
+        </style>
+
         <style>
             .owl-carousel {
                 height: 90vh;
             }
+
             .slider-item {
                 height: 90vh;
                 width: 100%;
-                background-repeat: no-repeat!important;
-                background-size: cover!important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
             }
+
             .owl-dots button {
                 width: 15px;
                 height: 15px;
-                border: 2px solid #141515!important;
-                background: transparent!important;
+                border: 2px solid #141515 !important;
+                background: transparent !important;
                 margin: 5px;
             }
+
             .slider-title {
                 font-size: 60px;
                 text-transform: uppercase;
@@ -322,32 +413,38 @@
                 color: white;
                 letter-spacing: 4px;
             }
-            .slider-text{
+
+            .slider-text {
                 color: white;
                 font-family: Roboto-Condensed-Regular, sans-serif, sans-serif;
                 font-size: 15px;
                 letter-spacing: 1px;
             }
-            .owl-dots .owl-dot.active{
-                background: white!important;
+
+            .owl-dots .owl-dot.active {
+                background: white !important;
             }
+
             .owl-dots {
                 position: relative;
                 top: -50px;
                 text-align: center;
             }
-            .shop-line{
+
+            .shop-line {
                 height: 70px;
                 background: #151515;
             }
-            .visit-btn:hover{
+
+            .visit-btn:hover {
                 text-decoration: none;
                 color: white;
             }
-            .visit-btn{
+
+            .visit-btn {
                 border-radius: 8px;
                 text-decoration: none;
-                border: 2px solid #9c1d24 ;
+                border: 2px solid #9c1d24;
                 width: 140px;
                 height: 40px;
                 font-family: Roboto-Condensed-Bold, sans-serif;
@@ -356,54 +453,63 @@
                 letter-spacing: 1px;
                 padding: 7px;
             }
-            .match-slider{
-                height: 530px;
-                background-repeat:no-repeat!important;
-                background-size: cover!important;
+
+            .match-slider {
+                /*height: 800px;*/
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
             }
-            .gallery-demo{
-                width: 500px;
-            }
-            .table-section{
+
+            .table-section {
                 padding: 50px 0;
                 background: #ebebeb;
             }
+
             .sub-head {
-                background: #6c6c6e!important;
+                background: #6c6c6e !important;
             }
+
             .table-section th, .table-section td {
-                border: none!important;
+                border: none !important;
                 text-align: center;
             }
+
             .sub-head td {
                 color: white;
             }
+
             .table-striped tbody tr:nth-of-type(even) {
                 background: white;
             }
-            .group-section{
+
+            .group-section {
                 padding: 50px 0;
                 height: auto;
                 background: url("{{ asset("assets/site/images/home/match_bg.jpeg") }}") no-repeat;
                 -webkit-background-size: cover;
                 background-size: cover;
             }
-            .img-box{
+
+            .img-box {
                 flex: 0 0 50%;
             }
-            .img-box a{
+
+            .img-box a {
                 display: inline-block;
                 vertical-align: top;
                 float: left;
                 margin: 15px;
             }
-            .img-box img{
+
+            .img-box img {
                 width: 100%;
             }
+
             .gallery {
                 background: #ebebeb;
                 padding: 50px 0;
             }
+
             .main {
                 border: 1px solid #ccced2;
                 border-radius: 8px;
@@ -411,12 +517,15 @@
                 transition: .3s;
                 position: relative;
             }
-            .gallery .main:hover  {
+
+            .gallery .main:hover {
                 border: 1px solid #9c1d24;
             }
+
             .gallery .main:hover .quick-view {
                 bottom: 0;
             }
+
             .quick-view {
                 background: #9c1d24;
                 text-align: center;
@@ -430,46 +539,53 @@
                 transition: .3s;
                 cursor: pointer;
             }
-            .prod{
+
+            .prod {
                 height: 200px;
             }
-            .category{
+
+            .category {
                 color: #6c6c6e;
                 font-size: 12px;
             }
-            .price{
+
+            .price {
                 color: #6c6c6e;
                 font-size: 16px;
             }
 
-            @media all and (max-width: 460px) {
-                .slider-title{
-                    font-size: 30px;
-                    margin-top: 80px;
-                }
-                .shop-text {
-                    font-size: 12px;
-                    margin-bottom: 10px!important;
-                }
-                .shop-text-cont{
-                    justify-content: center;
-                }
-                .shop-btn-cont{
-                    justify-content: center;
-                }
-                .shop-btn{
-                    padding: 5px;
-                    height: 30px;
-                    width: 120px;
-                    font-size: 12px;
-                }
-                .section-title{
-                    font-size: 25px;
-                }
-                .main-box{
-                    margin-bottom: 10px;
-                    background-size: cover!important;
-                }
+            .slider-title {
+                font-size: 30px;
+                margin-top: 80px;
+            }
+
+            .shop-text {
+                font-size: 12px;
+                margin-bottom: 10px !important;
+            }
+
+            .shop-text-cont {
+                justify-content: center;
+            }
+
+            .shop-btn-cont {
+                justify-content: center;
+            }
+
+            .shop-btn {
+                padding: 5px;
+                height: 30px;
+                width: 120px;
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .main-box {
+                margin-bottom: 10px;
+                background-size: cover !important;
             }
 
         </style>
@@ -477,15 +593,14 @@
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
         <script>
-            $(document).ready(function(){
+            $(document).ready(function () {
                 $(".owl-carousel").owlCarousel({
                     items: 1,
                     margin: 1,
                     // autoHeight:true,
-                    responsiveClass:true,
+                    responsiveClass: true,
                 });
             });
-
         </script>
     @endpush
 @endsection
