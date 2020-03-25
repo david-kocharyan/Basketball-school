@@ -41,36 +41,32 @@
 
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
         <div class="container-fluid">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-lg-8 offset-lg-2" id="slider">
-                    <div id="myCarousel" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="active carousel-item" data-slide-number="0">
-                                <div class="item-data">
-                                    <div class="col-md-4">10</div>
-                                    <div class="col-md-4">10</div>
-                                    <div class="col-md-4">10</div>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-slide-number="1">
-                                <div class="item-data">
-                                    <div class="col-md-4">10</div>
-                                    <div class="col-md-4">10</div>
-                                    <div class="col-md-4">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+            <div class="row">
+                <div class="swiper-container gallery-top col-md-8">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 1</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 2</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 3</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 4</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 5</div></div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
+                <div class="swiper-container gallery-thumbs col-md-8">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 1</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 2</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 3</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 4</div></div>
+                        <div class="swiper-slide"><div class="swiper-slide-container">Slide 5</div></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
+
         </div>
 
     </div>
@@ -347,6 +343,56 @@
     @push('head')
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
+{{--swiper--}}
+        <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
+
+        <style>
+            .swiper-container {
+                width: 100%;
+                height: 300px;
+                margin: 20px auto;
+            }
+
+            .swiper-slide-container {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                height:100%;
+                max-width: 600px;
+                margin:auto;
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+
+            .gallery-top {
+                height: 80%;
+                width: 100%;
+            }
+            .gallery-thumbs {
+                height: 20%;
+                box-sizing: border-box;
+                padding: 10px 0;
+            }
+            .gallery-thumbs .swiper-slide {
+                width: 20%;
+                height: 100%;
+                opacity: 0.4;
+            }
+            .gallery-thumbs .swiper-slide-active {
+                opacity: 1;
+            }
+        </style>
 
         <style>
             #myCarousel .list-inline {
@@ -455,7 +501,7 @@
             }
 
             .match-slider {
-                /*height: 800px;*/
+                height: 500px;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
             }
@@ -592,6 +638,7 @@
     @endpush
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
+        <script src="{{ asset("assets/site/swiper/package/js/swiper.min.js") }}"></script>
         <script>
             $(document).ready(function () {
                 $(".owl-carousel").owlCarousel({
@@ -600,6 +647,32 @@
                     // autoHeight:true,
                     responsiveClass: true,
                 });
+
+                var galleryTop = new Swiper('.gallery-top', {
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    loop: true,
+                    loopedSlides: 4
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    touchRatio: 0.2,
+                    slideToClickedSlide: true,
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    loopedSlides: 4
+                });
+                galleryTop.controller.control = galleryTop;
+                galleryThumbs.controller.control = galleryTop;
+
             });
         </script>
     @endpush
