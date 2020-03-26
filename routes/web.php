@@ -67,6 +67,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::delete('/gallery/{gallery_id}/destroy-image/{id}', 'GalleryController@destroy_image');
     Route::resource('gallery', 'GalleryController');
 
+    Route::resource('month-players', 'MonthPlayerController');
 });
 
 /**

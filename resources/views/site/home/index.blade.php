@@ -16,8 +16,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="slider-item"
-                     style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')"></div>
+                <div class="slider-item d-flex align-items-center"
+                     style="background: url('{{ asset("assets/site/images/home/main-banner.jpg") }}')">
+                    <div class="container m-auto">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="slider-title"><span class="red">Summer </span> School
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -101,8 +110,8 @@
                             @endfor
                         </div>
                         <div class="swiper-buttons">
-                            <div class="prev">Prev</div>
-                            <div class="next">Next</div>
+                            <div class="prev"><img src="{{asset('assets/site/images/home/slider-left.png')}}" alt=""></div>
+                            <div class="next"><img src="{{asset('assets/site/images/home/slider-right.png')}}" alt=""></div>
                         </div>
                     </div>
 
@@ -481,7 +490,7 @@
             }
             .swiper-buttons{
                 position: absolute;
-                width: 100px;
+                width: 60px;
                 top: 20px;
                 right: 0;
                 color: white;
