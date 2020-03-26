@@ -44,8 +44,8 @@
                     </h2>
                 </div>
                 <div class="col-lg-12">
-                    <div class="red-header col-md-8 m-auto"></div>
-                    <div class="swiper-container gallery-top col-md-8 m-b-20">
+                    <div class="red-header col-md-12 col-lg-8 col-xl-8 m-auto"></div>
+                    <div class="swiper-container gallery-top col-md-12 col-lg-8 col-xl-8 m-b-20">
                         <div class="swiper-wrapper">
 
                             @for($i = 0; $i < 4; $i++)
@@ -78,7 +78,7 @@
 
                         </div>
                     </div>
-                    <div class="swiper-container gallery-thumbs col-md-8">
+                    <div class="swiper-container gallery-thumbs col-md-12 col-lg-8 col-xl-8">
                         <div class="swiper-wrapper">
                             @for($i = 0; $i < 4; $i++)
                                 <div class="swiper-slide">
@@ -100,8 +100,10 @@
                                 </div>
                             @endfor
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-buttons">
+                            <div class="prev">Prev</div>
+                            <div class="next">Next</div>
+                        </div>
                     </div>
 
                 </div>
@@ -388,18 +390,19 @@
         <style>
             .swiper-container {
                 width: 100%;
-                height: 300px;
                 margin: 0 auto;
             }
 
             .gallery-top {
-                height: 80%;
+                background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
+                background-repeat: no-repeat;
+                height: 500px;
+                background-size: cover;
                 width: 100%;
             }
             .gallery-thumbs {
-                height: 120px;
                 box-sizing: border-box;
-                padding: 10px 0;
+                padding: 60px 0 10px 0;
             }
             .gallery-thumbs .swiper-slide {
                 width: 20%;
@@ -408,13 +411,6 @@
             }
             .gallery-thumbs .swiper-slide-active {
                 opacity: 1;
-            }
-            .gallery-top{
-                background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
-                background-repeat: no-repeat;
-                height: 500px;
-                background-size: cover;
-                margin-bottom: 2%;
             }
             .gallery-top .logo-cont img{
                 height: 150px;
@@ -482,6 +478,19 @@
             }
             .gallery-thumbs .first-row, .gallery-thumbs .second-row{
                 padding: 5px;
+            }
+            .swiper-buttons{
+                position: absolute;
+                width: 100px;
+                top: 20px;
+                right: 0;
+                color: white;
+                display: flex;
+                align-items: unset;
+                justify-content: space-around;
+            }
+            .swiper-buttons .next, .swiper-buttons .prev{
+                cursor: pointer;
             }
         </style>
 
@@ -555,10 +564,10 @@
             }
 
             .match-slider {
-                height: 100vh;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
                 padding-top: 20px;
+                padding-bottom: 20px;
             }
 
             .table-section {
@@ -696,8 +705,18 @@
                     justify-content: center;
                 }
                 .gallery-top .logo-cont img{
-                    height: 50px;
+                    height: 90px;
                 }
+                .gallery-top .first-row{
+                    height: 100%;
+                    flex-direction: column;
+                }
+            }
+            @media (max-width: 768px) {
+                .gallery-top .logo-cont img{
+                    height: 100px;
+                }
+
             }
         </style>
     @endpush
@@ -715,10 +734,6 @@
 
                 var galleryTop = new Swiper('.gallery-top', {
                     spaceBetween: 10,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
                     loop: true,
                     loopedSlides: 4
                 });
@@ -730,28 +745,18 @@
                     slideToClickedSlide: true,
                     loop: true,
                     navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
+                        nextEl: '.next',
+                        prevEl: '.prev',
                     },
                     loopedSlides: 4,
                     breakpoints: {
                         // when window width is >= 320px
                         320: {
-                            slidesPerView: 1,
-                            spaceBetween: 20
-                        },
-                        // when window width is >= 321px
-                        425: {
                             slidesPerView: 2,
                             spaceBetween: 10
                         },
-                        // when window width is >= 480px
-                        480: {
-                            slidesPerView: 3,
-                            spaceBetween: 30
-                        },
-                        // when window width is >= 769
-                        769: {
+                        // when window width is >= 768
+                        768: {
                             slidesPerView: 3,
                             spaceBetween: 30
                         },
