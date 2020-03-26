@@ -416,7 +416,7 @@
             .gallery-thumbs .swiper-slide {
                 width: 20%;
                 height: 100%;
-                opacity: 0.4;
+                opacity: 1;
             }
             .gallery-thumbs .swiper-slide-active {
                 opacity: 1;
