@@ -656,7 +656,7 @@
             }
 
             .slider-title {
-                font-size: 30px;
+                font-size: 35px;
                 margin-top: 80px;
             }
 
@@ -725,7 +725,7 @@
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 10,
                     centeredSlides: true,
-                    slidesPerView: 'auto',
+                    slidesPerView: 5,
                     touchRatio: 0.2,
                     slideToClickedSlide: true,
                     loop: true,
@@ -737,17 +737,27 @@
                     breakpoints: {
                         // when window width is >= 320px
                         320: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                             spaceBetween: 20
+                        },
+                        // when window width is >= 321px
+                        425: {
+                            slidesPerView: 2,
+                            spaceBetween: 10
                         },
                         // when window width is >= 480px
                         480: {
                             slidesPerView: 3,
                             spaceBetween: 30
                         },
-                        // when window width is >= 640px
-                        640: {
-                            slidesPerView: 6,
+                        // when window width is >= 769
+                        769: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        // when window width is >= 1025
+                        1025: {
+                            slidesPerView: 5,
                             spaceBetween: 40
                         }
                     }

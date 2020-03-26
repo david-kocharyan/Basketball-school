@@ -54,12 +54,10 @@
                         <div class="col-md-5">
                             <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
                                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                    <div class="navbar-nav">
+                                    <div class="nav navbar-nav">
                                         <a class="nav-item nav-link" href="/">Home</a>
-                                        <a class="nav-item nav-link" href="/about-us">About Us</a>
-                                        <a class="nav-item nav-link" href="/academy-members">Members</a>
                                         <a class="nav-item nav-link" href="/gallery">Gallery</a>
-                                        <a class="nav-item nav-link" href="/shop">Shop</a>
+                                        <a class="nav-item nav-link" href="/about-us">About Us</a>
                                     </div>
                                 </div>
                             </nav>
@@ -77,6 +75,9 @@
                             <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                     <div class="navbar-nav">
+                                        <a class="nav-item nav-link" href="/academy-members">Academy</a>
+                                        <a class="nav-item nav-link" href="#">Our teams</a>
+                                        <a class="nav-item nav-link" href="#">Standings</a>
                                         <a class="nav-item nav-link" href="/sign-in">Login</a>
                                     </div>
                                 </div>
@@ -152,18 +153,18 @@
                     <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block">
                         <p class="section-title little"><img style="height: 15px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Useful Links</p>
                         <ul class="d-inline-block left-list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-us">About Us</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/contact-us">Contact Us</a></li>
                             <li><a href="#">My Account</a></li>
                         </ul>
                         <ul class="d-inline-block float-right">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Training schedule</a></li>
+                            <li><a href="#">Our Teams</a></li>
+                            <li><a href="#">Standings</a></li>
+                            <li><a href="/academy-members">Academy members</a></li>
+                            <li><a href="/shop">Shop</a></li>
                         </ul>
                     </div>
                     <div class="col-md-5 pl-lg-5">
