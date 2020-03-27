@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Partner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PartnerController extends Controller
 {
+//    Path To the View Folder
+    const FOLDER = "admin.partners";
+//    Resource Title
+    const TITLE = "Partners";
+//    Resource Route
+    const ROUTE = "/admin/partners";
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,10 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        //
+        $partners = Partner::all();
+        $route = self::ROUTE;
+        $title = self::TITLE;
+        return view(self::FOLDER.".index", compact('route','title', 'partners'));
     }
 
     /**
