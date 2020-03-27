@@ -6,7 +6,7 @@
             <div class="white-box">
                 <h3 class="box-title">{{$title}}</h3>
                 <a href="{{$route."/create"}}" class="btn btn-success m-b-30"><i class="fas fa-plus"></i> Add
-                    Gallery</a>
+                    Album</a>
 
                 {{--table--}}
                 <div class="table-responsive">
@@ -15,7 +15,7 @@
                         <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Name</th>
+                            <th>Album Name</th>
                             <th>Type</th>
                             <th>Options</th>
                         </tr>
@@ -25,7 +25,7 @@
                         @foreach($gallery as $key=>$val)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td>{{$val->name}}</td>
+                                <td class="text_{{ $val->id }}">{{$val->name}}</td>
                                 <td>@if($val->type == 0)
                                         Academy
                                     @else
@@ -44,12 +44,11 @@
                                         <i class="fas fa-edit"></i>
                                     </a>
 
-                                    <form
-                                        onsubmit="if(confirm('Do You Really Want To Delete The Coach?') == false) return false;"
-                                        style="display: inline-block" action="{{ $route."/".$val->id }}" method="post">
+                                    <form style="display: inline-block" action="{{ $route."/".$val->id }}"
+                                          method="post" id="work-for-form">
                                         @csrf
                                         @method("DELETE")
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:;" class="delForm" data-id ="{{$val->id}}">
                                             <button data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     class="btn btn-danger btn-circle tooltip-danger"><i
@@ -67,11 +66,71 @@
     </div>
 @endsection
 
-@push('custom-datatable')
+@push('custom-style')
+    <link rel="stylesheet" href="{{asset('assets/plugins/sweetalert/sweetalert.css')}}">
+@endpush
+
+@push('custom-script')
+    <script src="{{asset('assets/plugins/sweetalert/sweetalert.min.js')}}"></script>
     <script>
-        $('#datatable').DataTable();
+        $('.delForm').on('click', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+            var text = $('.text_'+id).html();
+
+            swal({
+                title: "Are you sure you want to delete the album?",
+                text: text,
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function(isConfirm){
+                if (isConfirm) {
+                    $("#work-for-form").submit();
+                } else {
+                   swal.close()
+                }
+            });
+        })
     </script>
 @endpush
+
+@push('custom-datatable')
+    <script>
+        $('#datatable').DataTable({
+            columnDefs: [
+                {"orderable": false, "targets": [2, 3]},
+            ],
+            initComplete: function () {
+                this.api().columns(2).every(function () {
+                    var column = this;
+                    var eachHeader = $(column.header())[0];
+                    var headingVal = eachHeader.getAttribute("value");
+                    var select = $('<select class="m-l-10"><option value="">' + 'All' + '</option></select>')
+                        .appendTo($(column.header()))
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
+            },
+        });
+    </script>
+@endpush
+
 
 
 

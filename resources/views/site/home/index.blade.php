@@ -11,7 +11,7 @@
                             <div class="col-md-7">
                                 <p class="slider-title"><span class="red">Love </span> Basketball <span class="red">?</span>
                                 </p>
-                                <button class="rounded-button"><a href="/academy-members">GROW WITH US</a></button>
+                                <button class="rounded-button header-btn"><a href="/academy-members">GROW WITH US</a></button>
                             </div>
                         </div>
                     </div>
@@ -698,6 +698,10 @@
                 font-size: 12px;
             }
 
+            .shop-btn:hover{
+                background: #9c1d24;
+            }
+
             .section-title {
                 font-size: 25px;
             }
@@ -705,6 +709,10 @@
             .main-box {
                 margin-bottom: 10px;
                 background-size: cover !important;
+            }
+
+            .header-btn:hover{
+                border: 1px solid white;
             }
 
             @media (max-width: 480px) {

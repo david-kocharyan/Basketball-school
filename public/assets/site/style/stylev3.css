@@ -152,6 +152,12 @@ body{
     display: flex;
     align-items: center;
 }
+.left-menu a:hover{
+    color: #1f2022 !important;
+}
+.right-menu a:hover{
+    color: #1f2022 !important;
+}
 
 .submenu-right:after{
     content: '';

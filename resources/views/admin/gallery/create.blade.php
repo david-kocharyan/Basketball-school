@@ -64,7 +64,7 @@
                                 @enderror
                                 <input type="file" name="image[]" id="file-1" class="inputfile inputfile-1"
                                        data-multiple-caption="<i class='mdi mdi-cloud-upload fa-fw'></i>  {count} files selected" multiple>
-                                <label for="file-1"><span> <i class="mdi mdi-cloud-upload fa-fw"></i> Choose an image…</span></label>
+                                <label for="file-1"><span> <i class="mdi mdi-cloud-upload fa-fw"></i> Select Image(s)</span></label>
                             </div>
 
 

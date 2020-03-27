@@ -91,13 +91,13 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-6 submenu submenu-left">
                             <div class="left-menu justify-content-end pr-5">
-                                <a href="/contact-us" class="mb-0 text-decoration-none text-white">Contact Us</a>
+                                <a href="/contact-us" class="mb-0 text-decoration-none text-white ">Contact Us</a>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>
                         <div class="col-md-5 col-sm-6 submenu submenu-right">
                             <div class="right-menu pl-5">
-                                <a href="/shop" class="mb-0 text-decoration-none text-white">Shop</a>
+                                <a href="/shop" class="mb-0 text-decoration-none text-white ">Shop</a>
                             </div>
                         </div>
                     </div>
