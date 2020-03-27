@@ -755,7 +755,7 @@
                     loopedSlides: 4
                 });
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
-                    spaceBetween: 10,
+                    spaceBetween: 100,
                     centeredSlides: true,
                     slidesPerView: 5,
                     touchRatio: 0.2,
@@ -780,7 +780,7 @@
                         // when window width is >= 1025
                         1025: {
                             slidesPerView: 5,
-                            spaceBetween: 40
+                            spaceBetween: 10
                         }
                     }
                 });
