@@ -54,8 +54,6 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-user animated flipInY">
-                        <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                        <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                         <li>
                             <a href="#"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -85,8 +83,24 @@
 
             <ul class="nav" id="side-menu">
 
-                <li><a href="/admin" class="waves-effect"><i class="mdi mdi-home fa-fw"></i>
-                        <span class="hide-menu">Home</span></a>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-home fa-fw"></i> <span
+                            class="hide-menu">Home<span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+
+                        <li><a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type fa-fw"></i>
+                                <span class="hide-menu">Standings</span></a>
+                        </li>
+
+                        <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i>
+                                <span class="hide-menu">Gallery</span></a>
+                        </li>
+
+                        <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
+                                <span class="hide-menu">Players of the month</span></a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="devider"></li>
@@ -100,7 +114,7 @@
                 </li>
 
                 <li><a href="/admin/center" class="waves-effect"><i class="mdi mdi-stadium fa-fw"></i>
-                        <span class="hide-menu">Centers</span></a>
+                        <span class="hide-menu">Venues</span></a>
                 </li>
 
                 <li>
@@ -133,17 +147,6 @@
                                 <span class="hide-menu">Products</span></a>
                         </li>
                     </ul>
-                </li>
-
-{{--gallery--}}
-                <li class="devider"></li>
-                <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i>
-                        <span class="hide-menu">Gallery</span></a>
-                </li>
-
-                <li class="devider"></li>
-                <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
-                        <span class="hide-menu">Players of the month</span></a>
                 </li>
 
             </ul>

@@ -11,7 +11,7 @@ class CenterController extends Controller
 //    Path To the View Folder
     const FOLDER = "admin.center";
 //    Resource Title
-    const TITLE = "Centers";
+    const TITLE = "Venues";
 //    Resource Route
     const ROUTE = "/admin/center";
     /**

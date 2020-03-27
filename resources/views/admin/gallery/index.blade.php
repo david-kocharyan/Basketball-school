@@ -67,11 +67,15 @@
 @endsection
 
 @push('custom-style')
-    <link rel="stylesheet" href="{{asset('assets/plugins/sweetalert/sweetalert.css')}}">
+    <style>
+        .swal-modal {
+            width: 660px !important;
+        }
+    </style>
 @endpush
 
 @push('custom-script')
-    <script src="{{asset('assets/plugins/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $('.delForm').on('click', function (event) {
             event.preventDefault();
@@ -81,20 +85,16 @@
             swal({
                 title: "Are you sure you want to delete the album?",
                 text: text,
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, function(isConfirm){
-                if (isConfirm) {
-                    $("#work-for-form").submit();
-                } else {
-                   swal.close()
-                }
-            });
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                    if (willDelete) {
+                        $("#work-for-form").submit();
+                    } else {
+                        swal.close();
+                    }
+                });
         })
     </script>
 @endpush

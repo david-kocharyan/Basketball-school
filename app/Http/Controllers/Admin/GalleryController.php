@@ -141,7 +141,6 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        dd(10);
         if (!empty($gallery->images)) {
             foreach ($gallery->images as $key) {
                 Storage::disk('public')->delete("gallery/$key->name");
