@@ -57,12 +57,12 @@ class ProductController extends Controller
             "description" => "required",
             "image" => "max:5000|required",
         ]);
-
         $product = new Product;
         $product->category_id = $request->category;
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
+        $product->show_in_home = $request->show ?? 1;
         $product->save();
 
         if ($product->id) {
@@ -123,6 +123,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
+        $product->show_in_home = (null == $request->show) ? 0 : 1;
         $product->save();
 
         if ($request->image) {

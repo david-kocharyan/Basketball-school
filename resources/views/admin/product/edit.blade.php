@@ -72,6 +72,11 @@
                                 </select>
                             </div>
 
+                            <div class="form-group" style="display: flex; align-items: center">
+                                <label for="category">Show In Home Page</label>
+                                <input style="width: 50px; margin-left: 30px;" type="checkbox" @if($product->show_in_home == 1) checked @endif name="show" value="1" class="form-control">
+                            </div>
+
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 @error('description')

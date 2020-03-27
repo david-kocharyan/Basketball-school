@@ -321,66 +321,22 @@
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop
                     </h2>
                 </div>
-
-                <div class="col-md-3 mb-3">
-                    <div class="main overflow-hidden">
-                        <div class="img-cont text-center">
-                            <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="text-center category mb-2">Sport Shoes</p>
-                            <h4 class="color-red text-center">Gray Sneakers</h4>
-                            <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
-                                View</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 mb-3">
-                    <div class="main overflow-hidden">
-                        <div class="img-cont text-center">
-                            <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="text-center category mb-2">Sport Shoes</p>
-                            <h4 class="color-red text-center">Gray Sneakers</h4>
-                            <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
-                                View</p>
+                @foreach($products as $product)
+                    <div class="col-md-3 mb-3">
+                        <div class="main overflow-hidden">
+                            <div class="img-cont text-center">
+                                <img class="img-fluid prod" id="{{ $product->id }}" src="{{ asset("uploads/product/" . ($product->getImages[0]->name ?? '')) }}" alt="">
+                            </div>
+                            <div class="desc">
+                                <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
+                                <h4 class="color-red text-center">{{ $product->name }}</h4>
+                                <p class="text-center price mb-1">{{ $product->price }}</p>
+                                <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
+                                    View</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 mb-3">
-                    <div class="main overflow-hidden">
-                        <div class="img-cont text-center">
-                            <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="text-center category mb-2">Sport Shoes</p>
-                            <h4 class="color-red text-center">Gray Sneakers</h4>
-                            <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
-                                View</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 mb-3">
-                    <div class="main overflow-hidden">
-                        <div class="img-cont text-center">
-                            <img class="img-fluid prod" src="{{ asset("assets/site/images/home/product.png") }}" alt="">
-                        </div>
-                        <div class="desc">
-                            <p class="text-center category mb-2">Sport Shoes</p>
-                            <h4 class="color-red text-center">Gray Sneakers</h4>
-                            <p class="text-center price mb-1">$55</p>
-                            <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick
-                                View</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
             <div class="row">
