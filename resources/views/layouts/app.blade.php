@@ -93,10 +93,6 @@
                                 <span class="hide-menu">Standings</span></a>
                         </li>
 
-                        <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i>
-                                <span class="hide-menu">Gallery</span></a>
-                        </li>
-
                         <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
                                 <span class="hide-menu">Players of the month</span></a>
                         </li>
@@ -149,6 +145,21 @@
                     </ul>
                 </li>
 
+{{--gallery--}}
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i> <span
+                            class="hide-menu">Gallery<span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-image-album fa-fw"></i>
+                                <span class="hide-menu">Gallery (Academy, Game)</span></a>
+                        </li>
+
+                        <li><a href="/admin/gallery-home" class="waves-effect"><i class="mdi mdi-image-area fa-fw"></i>
+                                <span class="hide-menu">Gallery (For Home Page)</span></a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
