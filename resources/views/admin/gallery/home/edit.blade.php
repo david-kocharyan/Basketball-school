@@ -7,7 +7,7 @@
                 <div class="panel-heading">{{$title}}</div>
                 <div class="panel-wrapper collapse in" aria-expanded="true">
                     <div class="panel-body">
-                        <form method="post" action="{{ $route."/".$homeGallery->id}}">
+                        <form method="post" action="{{ $route."/".$homeGallery->id}}" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
 
