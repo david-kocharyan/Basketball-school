@@ -71,6 +71,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('month-players', 'MonthPlayerController');
     Route::resource('gallery-home', 'HomeGalleryController');
     Route::resource('partners', 'PartnerController');
+    Route::resource('about-us-team', 'OurTeamController');
+    Route::resource('about-us-story', 'AboutController');
+
 });
 
 /**

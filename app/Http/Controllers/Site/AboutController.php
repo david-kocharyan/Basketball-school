@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\About;
 use App\Http\Controllers\Controller;
+use App\OurTeam;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -17,7 +19,9 @@ class AboutController extends Controller
 
     public function index()
     {
+        $members = OurTeam::all();
+        $about = About::first();
         $title = self::TITLE;
-        return view(self::VIEW . ".index", compact("title"));
+        return view(self::VIEW . ".index", compact("title", "members", 'about'));
     }
 }

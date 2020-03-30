@@ -164,6 +164,23 @@
                         </li>
                     </ul>
                 </li>
+
+{{--about_us--}}
+                <li class="devider"></li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-pen fa-fw"></i> <span
+                            class="hide-menu">About Us<span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/about-us-team" class="waves-effect"><i class="mdi mdi-human-male-female fa-fw"></i>
+                                <span class="hide-menu">Our Team</span></a>
+                        </li>
+
+                        <li><a href="/admin/about-us-story" class="waves-effect"><i class="mdi mdi-history fa-fw"></i>
+                                <span class="hide-menu">Our Story</span></a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
