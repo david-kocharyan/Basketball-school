@@ -18,41 +18,23 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="full_name">Full Name</label>
-                                @error('full_name')
+                                <label for="url">Url</label>
+                                @error('url')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="text" class="form-control" id="full_name"
-                                       placeholder="Full name" name="full_name" value="{{old('full_name')}}">
-                            </div>
-
-                            {{--notes and image --}}
-                            <div class="form-group">
-                                <label for="bio">Biography</label>
-                                @error('bio')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                <textarea name="bio" id="bio" cols="30" rows="10" class="form-control"
-                                          style="resize: none;">{{old('bio')}}</textarea>
+                                <input type="text" class="form-control" id="url"
+                                       placeholder="aimtech.am" name="url" value="{{old('url')}}">
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Upload Image</label>
+                                <label for="image">Image</label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
                                 <input type="file" id="image" name="image" class="dropify"/>
                             </div>
 
-                            <div class="form-group">
-                                <label for="doc_image">Upload Certificate Image</label>
-                                @error('doc_image')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                <input type="file" id="doc_image" name="doc_image[]" multiple />
-                            </div>
-
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Coaches
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Partners
                             </button>
                         </form>
                     </div>

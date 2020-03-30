@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Partner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
@@ -35,7 +36,9 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        $route = self::ROUTE;
+        $title = 'Create '.self::TITLE;
+        return view(self::FOLDER.".create", compact('route','title'));
     }
 
     /**
@@ -46,7 +49,21 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "url" => "required",
+            "image" => "required|mimes:jpeg,jpg,png|max:5000",
+        ]);
+
+        if ($request->image){
+            $image_name =  Storage::disk('public')->put('partner/', $request->image);
+        }
+
+        $partner = new Partner;
+        $partner->url = $request->url;
+        $partner->image = basename($image_name);
+        $partner->save();
+
+        return redirect(self::ROUTE);
     }
 
     /**
@@ -68,7 +85,9 @@ class PartnerController extends Controller
      */
     public function edit(Partner $partner)
     {
-        //
+        $route = self::ROUTE;
+        $title = 'Edit '.self::TITLE;
+        return view(self::FOLDER.".edit", compact('route','title', 'partner'));
     }
 
     /**
@@ -80,7 +99,20 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {
-        //
+        $request->validate([
+            "url" => "required",
+            "image" => "mimes:jpeg,jpg,png|max:5000",
+        ]);
+
+        if ($request->image){
+            Storage::disk('public')->delete("partner/$partner->image");
+            $image_name =  Storage::disk('public')->put('partner/', $request->image);
+            $partner->image = basename($image_name);
+        }
+        $partner->url = $request->url;
+        $partner->save();
+
+        return redirect(self::ROUTE);
     }
 
     /**
@@ -91,6 +123,9 @@ class PartnerController extends Controller
      */
     public function destroy(Partner $partner)
     {
-        //
+        Storage::disk('public')->delete("partner/$partner->image");
+        Partner::destroy($partner->id);
+
+        return redirect(self::ROUTE);
     }
 }

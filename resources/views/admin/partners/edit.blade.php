@@ -14,42 +14,25 @@
                 <div class="panel-heading">{{$title}}</div>
                 <div class="panel-wrapper collapse in" aria-expanded="true">
                     <div class="panel-body">
-                        <form method="post" action="{{ $route."/".$coach->id }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ $route."/".$partner->id }}" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
 
                             <div class="form-group">
-                                <label for="full_name">Full Name</label>
-                                @error('full_name')
+                                <label for="url">Url</label>
+                                @error('url')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="text" class="form-control" id="full_name"
-                                       placeholder="Full name" name="full_name" value="{{$coach->full_name}}">
+                                <input type="text" class="form-control" id="url"
+                                       placeholder="aimtech.am" name="url" value="{{ $partner->url }}">
                             </div>
 
                             <div class="form-group">
-                                <label for="bio">Biography</label>
-                                @error('bio')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                <textarea name="bio" id="bio" cols="30" rows="10" class="form-control"
-                                          style="resize: none;">{{$coach->bio}}</textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="image">Upload Image</label>
+                                <label for="image">Image</label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset("uploads/coaches/$coach->image")}}"/>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="doc_image">Upload Certificate Image</label>
-                                @error('doc_image')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                <input type="file" id="doc_image" name="doc_image[]" multiple />
+                                <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset("uploads/partner/$partner->image")}}"/>
                             </div>
 
                             <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Coach

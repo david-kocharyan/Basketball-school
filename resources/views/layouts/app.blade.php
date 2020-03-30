@@ -93,6 +93,10 @@
                                 <span class="hide-menu">Standings</span></a>
                         </li>
 
+                        <li><a href="/admin/partners" class="waves-effect"><i class="mdi mdi-heart fa-fw"></i>
+                                <span class="hide-menu">Partners</span></a>
+                        </li>
+
                         <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
                                 <span class="hide-menu">Players of the month</span></a>
                         </li>
