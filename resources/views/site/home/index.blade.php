@@ -260,9 +260,24 @@
                 <div class="col-md-6 img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin <= 2)
-                            <a href="/gallery/{{$key->album_id}}">
-                                <img src='{{ asset("uploads/home_gallery/$key->image") }}' alt="">
-                            </a>
+                            <div class="gallery-main-box">
+                                <div class="rect-camera d-flex align-items-center">
+                                    <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
+                                </div>
+                                <img class="example-image" src="{{ asset("uploads/home_gallery/$key->image") }}"
+                                     alt=""/>
+                                <div class="overlay-hover">
+                                    <div class="detail">
+                                        <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
+                                        <a href="/gallery/{{ $key->album_id }}">
+                                            <button class="rounded-button">Go To Gallery</button>
+                                        </a>
+                                    </div>
+                                    <div class="triangle">
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                            </div>
                         @else
                             @continue
                         @endif
@@ -272,9 +287,24 @@
                 <div class="col-md-6 img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin > 2)
-                            <a href="/gallery/{{$key->album_id}}">
-                                <img src='{{ asset("uploads/home_gallery/$key->image") }}' alt="">
-                            </a>
+                            <div class="gallery-main-box">
+                                <div class="rect-camera d-flex align-items-center">
+                                    <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
+                                </div>
+                                <img class="example-image" src="{{ asset("uploads/home_gallery/$key->image") }}"
+                                     alt=""/>
+                                <div class="overlay-hover">
+                                    <div class="detail">
+                                        <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
+                                        <a href="/gallery/{{ $key->album_id }}">
+                                            <button class="rounded-button">Go To Gallery</button>
+                                        </a>
+                                    </div>
+                                    <div class="triangle">
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                            </div>
                         @else
                             @continue
                         @endif
@@ -324,6 +354,7 @@
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
         {{--swiper--}}
         <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
+{{--slider style--}}
         <style>
             .swiper-container {
                 width: 100%;
@@ -451,6 +482,148 @@
             }
         </style>
 
+{{--gallery style--}}
+        <style>
+            p {
+                font-family: Roboto-Condensed-Regular, sans-serif;
+            }
+
+            .sticky + .content {
+                padding-top: 70px;
+            }
+
+            .triangle {
+                position: absolute;
+                height: 60px;
+                width: 60px;
+                display: flex;
+                background-color: #9c1d24;
+                transform: rotate(45deg);
+                right: -100px;
+                bottom: -100px;
+                color: white;
+                transition: .5s;
+            }
+
+            .triangle span {
+                position: absolute;
+                display: block;
+                transform: rotate(-45deg);
+                top: 15px;
+                left: 9px;
+            }
+
+            .img-box {
+                flex: 0 0 50%;
+            }
+
+            .img-box .gallery-main-box {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                margin: 15px;
+            }
+
+            .img-box img {
+                width: 100%;
+            }
+
+            .gallery-main-box:hover .overlay-hover .triangle {
+                right: -30px;
+                bottom: -30px;
+            }
+
+            .gallery-main-box {
+                height: auto;
+                box-shadow: 3px 0 10px -1px grey;
+                position: relative;
+                cursor: initial !important;
+            }
+
+            .overlay-hover {
+                position: absolute;
+                height: 25%;
+                padding: 20px 0;
+                width: 100%;
+                background-color: #0000009e;
+                bottom: 0;
+                z-index: 10;
+                transition: .5s;
+            }
+
+            .gallery-main-box:hover .overlay-hover {
+                height: 100%;
+            }
+
+            .overlay-hover p {
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                transition: .5s;
+            }
+
+            .overlay-hover button {
+                position: absolute;
+                margin-top: 50px;
+                left: 20px;
+                top: 20px;
+                transition: .5s;
+            }
+
+            .rounded-button {
+                width: auto;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            .gallery-main-box:hover .overlay-hover p {
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                top: 50%;
+                text-align: center;
+            }
+
+            .gallery-main-box:hover .overlay-hover button {
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                top: 50%;
+                text-align: center;
+            }
+
+            .nav-tabs {
+                background: #151515;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .gallery-main-box img {
+                height: 100%;
+                width: 100%;
+            }
+
+            .nav-tabs li {
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-tabs a {
+                padding: 8px 25px;
+                text-decoration: none;
+                color: white;
+            }
+
+            .nav-tabs .active {
+                background: #9c1d24;
+            }
+
+            .tab-content .row {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        </style>
+
+{{--other--}}
         <style>
             .owl-carousel {
                 height: 90vh;
@@ -557,21 +730,6 @@
                 background-size: cover;
             }
 
-            .img-box {
-                flex: 0 0 50%;
-            }
-
-            .img-box a {
-                display: inline-block;
-                vertical-align: top;
-                float: left;
-                margin: 15px;
-            }
-
-            .img-box img {
-                width: 100%;
-            }
-
             .gallery {
                 background: #ebebeb;
                 padding: 50px 0;
@@ -661,6 +819,21 @@
 
             .header-btn:hover {
                 border: 1px solid white;
+            }
+
+            .gallery-main-box {
+                height: 255px;
+                position: relative;
+                overflow: hidden;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .rect-camera {
+                position: absolute;
+                width: 30px;
+                top: 10px;
+                left: 10px;
             }
 
             @media (max-width: 480px) {
