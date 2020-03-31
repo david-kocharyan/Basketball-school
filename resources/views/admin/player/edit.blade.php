@@ -25,7 +25,7 @@
                             @csrf
                             @method("PUT")
                             <div class="form-group">
-                                <label for="full_name">Full Name</label>
+                                <label for="full_name">Full Name <strong style="color: red;"> &#42; </strong></label>
                                 @error('full_name')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -34,7 +34,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="dob">Date Of Birth</label>
+                                <label for="dob">Date Of Birth <strong style="color: red;"> &#42; </strong></label>
                                 @error('dob')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="phone_number">Phone Number</label>
+                                <label for="phone_number">Phone Number <strong style="color: red;"> &#42; </strong></label>
                                 @error('phone_number')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -52,7 +52,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="gender">Gender</label>
+                                <label for="gender">Gender <strong style="color: red;"> &#42; </strong></label>
                                 @error('gender')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="height">Height (cm)</label>
+                                <label for="height">Height (cm) <strong style="color: red;"> &#42; </strong></label>
                                 @error('height')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="nationality">Nationality</label>
+                                <label for="nationality">Nationality <strong style="color: red;"> &#42; </strong></label>
                                 @error('nationality')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="jersey_number">Jersey Number</label>
+                                <label for="jersey_number">Jersey Number <strong style="color: red;"> &#42; </strong></label>
                                 @error('jersey_number')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="jersey_size">Jersey Size</label>
+                                <label for="jersey_size">Jersey Size <strong style="color: red;"> &#42; </strong></label>
                                 @error('jersey_size')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="position">Position</label>
+                                <label for="position">Position <strong style="color: red;"> &#42; </strong></label>
                                 @error('position')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -151,7 +151,7 @@
 
                             {{--username password--}}
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">Email <strong style="color: red;"> &#42; </strong></label>
                                 @error('email')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -162,7 +162,7 @@
 
                             {{--notes and image --}}
                             <div class="form-group">
-                                <label for="notes">Notes</label>
+                                <label for="notes">Notes <strong style="color: red;"> &#42; </strong></label>
                                 @error('notes')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
