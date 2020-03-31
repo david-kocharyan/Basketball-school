@@ -273,7 +273,8 @@
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
-                                        <a href="/gallery/{{ $key->album_id }}">
+                                        <a href="javascript:void(0);" class="gallery-open-link"
+                                           data-id="{{ $key->album_id }}">
                                             <button class="gallery-rounded-button rounded-button">Watch Album</button>
                                         </a>
                                     </div>
@@ -300,7 +301,8 @@
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
-                                        <a href="/gallery/{{ $key->album_id }}">
+                                        <a href="javascript:void(0);" class="gallery-open-link"
+                                           data-id="{{ $key->album_id }}">
                                             <button class="gallery-rounded-button rounded-button">Watch Album</button>
                                         </a>
                                     </div>
@@ -356,9 +358,10 @@
     @push('head')
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.css") }}">
         {{--swiper--}}
         <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
-{{--slider style--}}
+        {{--slider style--}}
         <style>
             .swiper-container {
                 width: 100%;
@@ -486,7 +489,7 @@
                 cursor: pointer;
             }
 
-            .gallery-top-buttons{
+            .gallery-top-buttons {
                 position: absolute;
                 width: 1200px;
                 left: 0;
@@ -499,12 +502,12 @@
                 justify-content: space-between;
             }
 
-            .gallery-top-buttons .prev-top:hover, .gallery-top-buttons .next-top:hover{
+            .gallery-top-buttons .prev-top:hover, .gallery-top-buttons .next-top:hover {
                 cursor: pointer;
             }
         </style>
 
-{{--gallery style--}}
+        {{--gallery style--}}
         <style>
             p {
                 font-family: Roboto-Condensed-Regular, sans-serif;
@@ -600,11 +603,13 @@
                 top: 50%;
                 text-align: center;
             }
-            .gallery-thumbs .swiper-slide-container{
+
+            .gallery-thumbs .swiper-slide-container {
                 padding: 2px;
                 border: 1px solid transparent;
             }
-            .gallery-thumbs .swiper-slide-container:hover, .gallery-thumbs .swiper-slide-active .swiper-slide-container{
+
+            .gallery-thumbs .swiper-slide-container:hover, .gallery-thumbs .swiper-slide-active .swiper-slide-container {
                 border: 1px solid #9c1d24;
                 cursor: pointer;
             }
@@ -649,7 +654,7 @@
             }
         </style>
 
-{{--other--}}
+        {{--other--}}
         <style>
             .owl-carousel {
                 height: 90vh;
@@ -843,7 +848,7 @@
                 background-size: cover !important;
             }
 
-            .header-btn:hover , .rounded-button:hover{
+            .header-btn:hover, .rounded-button:hover {
                 border: 1px solid white;
                 background: #151515;
                 background-position: 0 -100%;
@@ -879,18 +884,22 @@
                     height: 100%;
                     flex-direction: column;
                 }
-                .gallery-top-buttons{
+
+                .gallery-top-buttons {
                     display: none;
                 }
             }
+
             @media (max-width: 1024px) {
                 .gallery-top, .gallery-thumbs, .red-header {
                     width: 697px;
                 }
+
                 .gallery-top {
                     height: 329px;
                 }
-                .gallery-top-buttons{
+
+                .gallery-top-buttons {
                     width: 900px;
                 }
             }
@@ -899,30 +908,36 @@
                 .gallery-top .logo-cont img {
                     height: 100px;
                 }
-                .gallery-top, .gallery-thumbs, .red-header{
+
+                .gallery-top, .gallery-thumbs, .red-header {
                     width: 100%;
                 }
+
                 .gallery-top {
                     height: 500px;
                 }
-                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left{
+
+                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left {
                     position: relative;
                     left: 0;
                     top: -250%;
                 }
 
-                .match-slider .swiper-slide .logo-cont:last-child, .match-slider .swiper-slide .right{
+                .match-slider .swiper-slide .logo-cont:last-child, .match-slider .swiper-slide .right {
                     position: relative;
                     right: 0;
                     bottom: -250%;
                 }
-                .match-slider .swiper-slide.swiper-slide-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-active .left, .match-slider .swiper-slide.swiper-slide-duplicate-active .left{
+
+                .match-slider .swiper-slide.swiper-slide-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-active .left, .match-slider .swiper-slide.swiper-slide-duplicate-active .left {
                     top: 0;
                 }
-                .match-slider .swiper-slide.swiper-slide-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-active .right, .match-slider .swiper-slide.swiper-slide-duplicate-active .right{
+
+                .match-slider .swiper-slide.swiper-slide-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-active .right, .match-slider .swiper-slide.swiper-slide-duplicate-active .right {
                     bottom: 0;
                 }
-                .gallery-top-buttons{
+
+                .gallery-top-buttons {
                     display: none;
                 }
             }
@@ -931,8 +946,24 @@
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
         <script src="{{ asset("assets/site/swiper/package/js/swiper.min.js") }}"></script>
+        <script src="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.js") }}"></script>
         <script>
             $(document).ready(function () {
+                $('.gallery-open-link').click(function () {
+                    let id = $(this).data('id');
+                    $.ajax({
+                        url: '/home-gallery-ajax',
+                        type: 'post',
+                        data: { "_token": "{{ csrf_token() }}", "id": id},
+                        dataType: 'json',
+                        success: function (result) {
+                            SimpleLightbox.open({
+                                items: result
+                            });
+                        }
+                    })
+                });
+
                 $(".owl-carousel").owlCarousel({
                     items: 1,
                     margin: 1,

@@ -26,6 +26,7 @@ Route::get('/sign-in', 'Site\AuthController@signIn');
 Route::get('/shop', 'Site\ShopController@index');
 Route::get('/shop/{slug}', 'Site\ShopController@category');
 
+Route::post('/home-gallery-ajax', 'Site\GalleryController@home_ajax');
 /**
  * Parent authentication
  */
