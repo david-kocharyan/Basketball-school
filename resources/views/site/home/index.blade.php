@@ -57,6 +57,12 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="red-header m-auto"></div>
+                    <div class="gallery-top-buttons swiper-buttons">
+                        <div class="prev-top"><img src="{{asset('assets/site/images/home/big-left.png')}}" alt="">
+                        </div>
+                        <div class="next-top"><img src="{{asset('assets/site/images/home/big-right.png')}}" alt="">
+                        </div>
+                    </div>
                     <div class="swiper-container gallery-top m-b-20">
                         <div class="swiper-wrapper">
 
@@ -92,12 +98,7 @@
                             @endfor
 
                         </div>
-                        <div class="swiper-buttons">
-                            <div class="prev-top"><img src="{{asset('assets/site/images/home/slider-left.png')}}" alt="">
-                            </div>
-                            <div class="next-top"><img src="{{asset('assets/site/images/home/slider-right.png')}}" alt="">
-                            </div>
-                        </div>
+
                     </div>
                     <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
@@ -128,12 +129,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </div>
 
     <div class="table-section">
@@ -276,7 +274,7 @@
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
                                         <a href="/gallery/{{ $key->album_id }}">
-                                            <button class="rounded-button">Go To Gallery</button>
+                                            <button class="gallery-rounded-button rounded-button">Watch Album</button>
                                         </a>
                                     </div>
                                     <div class="triangle">
@@ -303,7 +301,7 @@
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
                                         <a href="/gallery/{{ $key->album_id }}">
-                                            <button class="rounded-button">Go To Gallery</button>
+                                            <button class="gallery-rounded-button rounded-button">Watch Album</button>
                                         </a>
                                     </div>
                                     <div class="triangle">
@@ -487,6 +485,23 @@
             .gallery-thumbs .swiper-buttons .next, .gallery-thumbs .swiper-buttons .prev {
                 cursor: pointer;
             }
+
+            .gallery-top-buttons{
+                position: absolute;
+                width: 1200px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 175px;
+                color: white;
+                display: flex;
+                align-items: unset;
+                justify-content: space-between;
+            }
+
+            .gallery-top-buttons .prev-top:hover, .gallery-top-buttons .next-top:hover{
+                cursor: pointer;
+            }
         </style>
 
 {{--gallery style--}}
@@ -573,7 +588,7 @@
                 transition: .5s;
             }
 
-            .rounded-button {
+            .gallery-rounded-button {
                 width: auto;
                 height: auto;
                 border-radius: 8px;
@@ -828,8 +843,10 @@
                 background-size: cover !important;
             }
 
-            .header-btn:hover {
+            .header-btn:hover , .rounded-button:hover{
                 border: 1px solid white;
+                background: #151515;
+                background-position: 0 -100%;
             }
 
             .gallery-main-box {
@@ -862,6 +879,9 @@
                     height: 100%;
                     flex-direction: column;
                 }
+                .gallery-top-buttons{
+                    display: none;
+                }
             }
             @media (max-width: 1024px) {
                 .gallery-top, .gallery-thumbs, .red-header {
@@ -869,6 +889,9 @@
                 }
                 .gallery-top {
                     height: 329px;
+                }
+                .gallery-top-buttons{
+                    width: 900px;
                 }
             }
 
@@ -898,6 +921,9 @@
                 }
                 .match-slider .swiper-slide.swiper-slide-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-active .right, .match-slider .swiper-slide.swiper-slide-duplicate-active .right{
                     bottom: 0;
+                }
+                .gallery-top-buttons{
+                    display: none;
                 }
             }
         </style>
