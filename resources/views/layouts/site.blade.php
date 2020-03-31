@@ -209,12 +209,9 @@
     let url = window.location.pathname;
     let number = url == "/" ? 50 : 0;
 
+    let sum = sticky + number;
     function myFunction() {
-        if (window.pageYOffset > sticky + number) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
+        window.pageYOffset > sum ? header.classList.add("sticky") : header.classList.remove("sticky");
     }
 
     $(document).ready(function () {

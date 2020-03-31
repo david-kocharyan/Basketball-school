@@ -56,8 +56,8 @@
                     </h2>
                 </div>
                 <div class="col-lg-12">
-                    <div class="red-header col-md-12 col-lg-8 col-xl-8 m-auto"></div>
-                    <div class="swiper-container gallery-top col-md-12 col-lg-8 col-xl-8 m-b-20">
+                    <div class="red-header m-auto"></div>
+                    <div class="swiper-container gallery-top m-b-20">
                         <div class="swiper-wrapper">
 
                             @for($i = 0; $i < 4; $i++)
@@ -68,13 +68,13 @@
                                             <img src="{{ asset("assets/site/images/clubs/club-logo.png") }}"
                                                  class="img-fluid" alt="">
                                         </div>
-                                        <div class="team-cont">
+                                        <div class="team-cont left">
                                             <span class="team">Team1</span>
                                         </div>
                                         <div class="time-cont">
                                             <span class="time">6:35 PM</span>
                                         </div>
-                                        <div class="team-cont">
+                                        <div class="team-cont right">
                                             <span>Team2</span>
                                         </div>
                                         <div class="logo-cont">
@@ -92,8 +92,14 @@
                             @endfor
 
                         </div>
+                        <div class="swiper-buttons">
+                            <div class="prev-top"><img src="{{asset('assets/site/images/home/slider-left.png')}}" alt="">
+                            </div>
+                            <div class="next-top"><img src="{{asset('assets/site/images/home/slider-right.png')}}" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="swiper-container gallery-thumbs col-md-12 col-lg-8 col-xl-8">
+                    <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
                             @for($i = 0; $i < 4; $i++)
                                 <div class="swiper-slide">
@@ -364,14 +370,15 @@
             .gallery-top {
                 background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
                 background-repeat: no-repeat;
-                height: 500px;
+                height: 444px;
+                width: 941px;
                 background-size: cover;
-                width: 100%;
             }
 
             .gallery-thumbs {
                 box-sizing: border-box;
                 padding: 60px 0 10px 0;
+                width: 941px;
             }
 
             .gallery-thumbs .swiper-slide {
@@ -404,7 +411,7 @@
 
             .red-header {
                 height: 30px;
-                width: 100%;
+                width: 941px;
                 background-color: #9c1d24;
             }
 
@@ -466,7 +473,7 @@
                 padding: 5px;
             }
 
-            .swiper-buttons {
+            .gallery-thumbs .swiper-buttons {
                 position: absolute;
                 width: 60px;
                 top: 20px;
@@ -477,7 +484,7 @@
                 justify-content: space-around;
             }
 
-            .swiper-buttons .next, .swiper-buttons .prev {
+            .gallery-thumbs .swiper-buttons .next, .gallery-thumbs .swiper-buttons .prev {
                 cursor: pointer;
             }
         </style>
@@ -486,10 +493,6 @@
         <style>
             p {
                 font-family: Roboto-Condensed-Regular, sans-serif;
-            }
-
-            .sticky + .content {
-                padding-top: 70px;
             }
 
             .triangle {
@@ -581,6 +584,14 @@
                 transform: translateX(-50%) translateY(-50%);
                 top: 50%;
                 text-align: center;
+            }
+            .gallery-thumbs .swiper-slide-container{
+                padding: 2px;
+                border: 1px solid transparent;
+            }
+            .gallery-thumbs .swiper-slide-container:hover, .gallery-thumbs .swiper-slide-active .swiper-slide-container{
+                border: 1px solid #9c1d24;
+                cursor: pointer;
             }
 
             .gallery-main-box:hover .overlay-hover button {
@@ -852,12 +863,42 @@
                     flex-direction: column;
                 }
             }
+            @media (max-width: 1024px) {
+                .gallery-top, .gallery-thumbs, .red-header {
+                    width: 697px;
+                }
+                .gallery-top {
+                    height: 329px;
+                }
+            }
 
             @media (max-width: 768px) {
                 .gallery-top .logo-cont img {
                     height: 100px;
                 }
+                .gallery-top, .gallery-thumbs, .red-header{
+                    width: 100%;
+                }
+                .gallery-top {
+                    height: 500px;
+                }
+                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left{
+                    position: relative;
+                    left: 0;
+                    top: -250%;
+                }
 
+                .match-slider .swiper-slide .logo-cont:last-child, .match-slider .swiper-slide .right{
+                    position: relative;
+                    right: 0;
+                    bottom: -250%;
+                }
+                .match-slider .swiper-slide.swiper-slide-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-active .left, .match-slider .swiper-slide.swiper-slide-duplicate-active .left{
+                    top: 0;
+                }
+                .match-slider .swiper-slide.swiper-slide-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-active .right, .match-slider .swiper-slide.swiper-slide-duplicate-active .right{
+                    bottom: 0;
+                }
             }
         </style>
     @endpush
@@ -876,7 +917,11 @@
                 var galleryTop = new Swiper('.gallery-top', {
                     spaceBetween: 10,
                     loop: true,
-                    loopedSlides: 4
+                    loopedSlides: 4,
+                    navigation: {
+                        nextEl: '.next-top',
+                        prevEl: '.prev-top',
+                    },
                 });
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 100,
