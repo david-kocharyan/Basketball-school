@@ -59,13 +59,10 @@
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-9">
-                <div class="tab-content" id="myTabContent">
+                <div class="tab-content p-3" id="myTabContent">
                     <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                         <p><strong>Personal Information</strong></p>
                         <p>Your <strong>Email and password</strong> can be updated via your <strong class="text-danger">Account Settings</strong></p>
-                        <div>
-
-                        </div>
                     </div>
                     <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="player-tab">
                         20
@@ -101,6 +98,11 @@
 
         #myTab{
             border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .nav-item:not(:last-child){
+            border-bottom: 1px solid #dcdcdc;
         }
 
         .tab-content {
@@ -108,6 +110,36 @@
             border-radius: 15px;
             margin-left: 30px;
         }
-
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+            background-color: #ebebeb;
+        }
+        .nav-link{
+            background-color: #ebebeb;
+            color: black;
+        }
+        .nav-item:hover .nav-link{
+            color: #dc3545;
+        }
+        .nav-link.active{
+            color: #dc3545!important;
+        }
+        .nav-pills .nav-link{
+            border-radius: 0;
+        }
+        .nav-item{
+            position: relative;
+        }
+        .nav-link.active:before {
+            content: '';
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid #dc3545;
+        }
     </style>
 @endpush
