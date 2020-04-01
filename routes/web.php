@@ -22,7 +22,6 @@ Route::get('/academy-members', 'Site\AcademyMembersController@index');
 Route::get('/contact-us', 'Site\ContactController@index');
 Route::get('/gallery', 'Site\GalleryController@index');
 Route::get('/gallery/{id}', 'Site\GalleryController@gallery');
-Route::get('/sign-in', 'Site\AuthController@signIn');
 Route::get('/shop', 'Site\ShopController@index');
 Route::get('/shop/{slug}', 'Site\ShopController@category');
 
@@ -46,7 +45,7 @@ Route::post('/admin/logout', 'Auth\LoginController@adminLogout')->middleware('au
 /**
  * Player Login part
  */
-Route::get('/player/login', 'Auth\LoginController@showPlayerLoginForm');
+Route::get('/sign-in', 'Site\AuthController@signIn');
 Route::post('/player/login', 'Auth\LoginController@playerLogin')->name('player_login');
 Route::post('/player/logout', 'Auth\LoginController@playerLogout')->middleware('auth:player');
 
@@ -90,7 +89,5 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:web'], function () {
  * all players route
  */
 Route::group(['prefix' => 'player', 'middleware' => 'auth:player'], function () {
-    Route::get('/', function () {
-        dd(Auth::user());
-    });
+    Route::get('/', "Site\PlayerController@index");
 });

@@ -22,15 +22,17 @@
                     <div class="header-part pt-2 pb-2">
                         <p class="m-0 text-center text-uppercase text-white">My Account</p>
                     </div>
-                    <form action="">
+                    <form method="POST" action="{{ route('player_login') }}">
+                        @csrf
                         <div class="input-part p-4">
 
-                            <label for="username">Username Or Email Address <span class="red">*</span></label>
+                            <label for="email"> Email Address <span class="red">*</span></label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend mr-2">
                                     <span class="input-group-text" id="basic-addon1"><img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/auth/user_black.svg") }}" alt="Lock"></span>
                                 </div>
-                                <input type="text" id="username" class="form-control" name="username">
+                                <input type="text" id="email" class="form-control @error('email') is-invalid @enderror"
+                                       name="email" value="{{ old('email') }}">
                             </div>
 
                             <label for="password">Password <span class="red">*</span></label>
@@ -38,7 +40,8 @@
                                 <div class="input-group-prepend mr-2">
                                     <span class="input-group-text" id="basic-addon1"><img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/auth/lock_black.svg") }}" alt="Lock"></span>
                                 </div>
-                                <input type="password" id="password" class="form-control" name="password">
+                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
+                                       name="password">
                             </div>
 
                             <div class="input-group mb-3">

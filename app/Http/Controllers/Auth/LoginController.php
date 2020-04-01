@@ -76,19 +76,19 @@ class LoginController extends Controller
     public function playerLogin(Request $request)
     {
         $this->validate($request, [
-            'username'   => 'required',
+            'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
 
-        if (Auth::guard('player')->attempt(['username' => $request->username, 'password' => $request->password])) {
+        if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/player');
         }
-        return back()->withInput($request->only('username'));
+        return back()->withInput($request->only('email'));
     }
 
     public function playerLogout(Request $request)
     {
         Auth::guard('player')->logout();
-        return redirect('/player/login');
+        return redirect('/sign-in');
     }
 }
