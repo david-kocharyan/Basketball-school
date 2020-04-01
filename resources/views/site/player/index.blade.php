@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                <ul class="nav nav-pills flex-column control-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab"
                            aria-controls="personal" aria-selected="true">Personal Information</a>
@@ -101,7 +101,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        .nav-item:not(:last-child){
+        .control-tabs .nav-item:not(:last-child){
             border-bottom: 1px solid #dcdcdc;
         }
 
@@ -113,23 +113,23 @@
         .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
             background-color: #ebebeb;
         }
-        .nav-link{
+        .control-tabs .nav-link{
             background-color: #ebebeb;
             color: black;
         }
-        .nav-item:hover .nav-link{
+        .control-tabs .nav-item:hover .nav-link{
             color: #dc3545;
         }
-        .nav-link.active{
+        .control-tabs .nav-link.active{
             color: #dc3545!important;
         }
-        .nav-pills .nav-link{
+        .control-tabs .nav-pills .nav-link{
             border-radius: 0;
         }
-        .nav-item{
+        .control-tabs .nav-item{
             position: relative;
         }
-        .nav-link.active:before {
+        .control-tabs .nav-link.active:before {
             content: '';
             width: 0;
             height: 0;
