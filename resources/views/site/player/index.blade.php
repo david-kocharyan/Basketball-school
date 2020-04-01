@@ -40,36 +40,40 @@
             <div class="col-md-3 mb-3">
                 <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                           aria-controls="home" aria-selected="true">Home</a>
+                        <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab"
+                           aria-controls="personal" aria-selected="true">Personal Information</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                           aria-controls="profile" aria-selected="false">Profile</a>
+                        <a class="nav-link" id="player-tab" data-toggle="tab" href="#player" role="tab"
+                           aria-controls="player" aria-selected="false">Player's Information</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                           aria-controls="contact" aria-selected="false">Contact</a>
+                        <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab"
+                           aria-controls="account" aria-selected="false">Account Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                           aria-controls="contact" aria-selected="false">Contact1</a>
+                        <a class="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab"
+                           aria-controls="payment" aria-selected="false">Payment Details</a>
                     </li>
                 </ul>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-9">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        10
+                    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                        <p><strong>Personal Information</strong></p>
+                        <p>Your <strong>Email and password</strong> can be updated via your <strong class="text-danger">Account Settings</strong></p>
+                        <div>
+
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="player-tab">
                         20
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
                         30
                     </div>
-                    <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
                         40
                     </div>
                 </div>
