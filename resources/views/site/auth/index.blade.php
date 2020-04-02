@@ -47,7 +47,7 @@
                             <div class="input-group mb-3">
                                 <div class="check d-flex align-items-center">
                                     <button class="rounded-button">LOG IN</button>
-                                    <input type="checkbox" id="remember" class="d-inline-block ml-3" name="password">
+                                    <input type="checkbox" id="remember" class="d-inline-block ml-3" name="remember" value="1">
                                     <label class="label label-custom m-0 ml-2" for="remember">Remember Me</label>
                                 </div>
                             </div>

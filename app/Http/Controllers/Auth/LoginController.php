@@ -80,7 +80,9 @@ class LoginController extends Controller
             'password' => 'required|min:6'
         ]);
 
-        if (Auth::guard('player')->attempt(['email' => $request->email, 'password' => $request->password])) {
+        $remember = $request->remember == 1 ? true : false;
+
+        if (Auth::guard('player')->attempt(array('email' => $request->email, 'password' => $request->password), $remember)) {
             return redirect()->intended('/player');
         }
         return back()->withInput($request->only('email'));
