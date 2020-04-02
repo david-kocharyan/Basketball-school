@@ -90,4 +90,5 @@ Route::group(['prefix' => 'parent', 'middleware' => 'auth:web'], function () {
  */
 Route::group(['prefix' => 'player', 'middleware' => 'auth:player'], function () {
     Route::get('/', "Site\PlayerController@index");
+    Route::post('settings', "Site\PlayerController@settings");
 });
