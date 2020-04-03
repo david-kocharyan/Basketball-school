@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="container pt-5 pb-5">
+    <div class="container container-lg pt-5 pb-5">
         <div class="row">
             <div class="col-md-12 pb-3">
                 <div class="player-info">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-xl-3 col-md-3 col-sm-12 mb-3">
                 <ul class="nav nav-pills flex-column control-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#personal" role="tab"
@@ -58,38 +58,42 @@
                 </ul>
             </div>
             <!-- /.col-md-4 -->
-            <div class="col-md-9">
-                <div class="tab-content p-3" id="myTabContent">
-                    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
-                        <p><strong>Personal Information</strong></p>
-                        <p>Your <strong>Email and password</strong> can be updated via your <strong class="text-danger">Account
-                                Settings</strong></p>
-                        <div class="info-list">
+            <div class="col-xl-9 col-md-9 col-sm-12">
+                <div class="tab-content p-md-3 p-2" id="myTabContent">
+                    <div class="tab-pane fade show row active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                        <div class="col-md-12">
+                            <p><strong>Personal Information</strong></p>
+                            <p>Your <strong>Email and password</strong> can be updated via your <strong class="text-danger">Account Settings</strong></p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
                             <p><b>Full Name: </b> {{$player->full_name}}</p>
-                            <p><b>Email: </b> {{$player->email}}</p>
-                            <p><b>Phone Number: </b> {{$player->phone_number}}</p>
-                        </div>
-                        <div class="info-list">
                             <p><b>Date of Birthday: </b> {{$player->dob}}</p>
-                            <p><b>Gender: </b> {{$player->gender}}</p>
-                        </div>
-                        <div class="info-list">
                             <p><b>Emergency Name: </b> {{$player->emergency_name}}</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <p><b>Email: </b> {{$player->email}}</p>
+                            <p><b>Gender: </b> {{$player->gender}}</p>
                             <p><b>Emergency Phone: </b> {{$player->emergency_phone}}</p>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="player-tab">
-                        <p><strong>Personal Information</strong></p>
-                        <p>Your <strong>payment details history</strong> can be visible on the <strong
-                                class="text-danger">Payment Details </strong><b>page.</b></p>
-                        <div class="info-list">
-                            <p><b>Team: </b> {{$player->full_name}}</p>
-                            <p><b>Height: </b> {{$player->height}}</p>
-                            <p><b>Position: </b> {{$player->position}}</p>
+                        <div class="col-md-4 col-sm-6">
+                            <p><b>Phone Number: </b> {{$player->phone_number}}</p>
                         </div>
-                        <div class="info-list">
+                    </div>
+                    <div class="tab-pane fade row" id="player" role="tabpanel" aria-labelledby="player-tab">
+                        <div class="col-md-12">
+                            <p><strong>Personal Information</strong></p>
+                            <p>Your <strong>payment details history</strong> can be visible on the <strong class="text-danger">Payment Details </strong><b>page.</b></p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <p><b>Team: </b> {{$player->full_name}}</p>
                             <p><b>Jersey Number: </b> {{$player->jersey_number}}</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <p><b>Height: </b> {{$player->height}}</p>
                             <p><b>Jersey Size: </b> {{$player->jersey_size}}</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <p><b>Position: </b> {{$player->position}}</p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
@@ -140,8 +144,9 @@
                     </div>
                     <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
                         <p><strong>Payment Details</strong></p>
-                        <div class="payment-list p-2">
-                            <div class="swiper-slide">
+                        <div class="payment-list p-2 row">
+
+                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
                                 <div class="swiper-slide-container">
                                     <div class="first-row d-flex flex-column align-items-center">
                                         <div class="date-cont">
@@ -157,7 +162,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+
+                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
                                 <div class="swiper-slide-container">
                                     <div class="first-row d-flex flex-column align-items-center">
                                         <div class="date-cont">
@@ -173,7 +179,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+
+                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
                                 <div class="swiper-slide-container">
                                     <div class="first-row d-flex flex-column align-items-center">
                                         <div class="date-cont">
@@ -189,6 +196,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -199,10 +207,14 @@
 
 @push("head")
     <style>
-        .swiper-slide {
-            background-color: #ebebeb;
+        .sticky + .content{
+            padding-top: 70px!important;
+        }
+        .swiper-slide{
             position: relative;
-            width: 30%;
+        }
+        .swiper-slide-container{
+            background-color: #ebebeb;
         }
 
         .swiper-slide .score-cont .date, .swiper-slide .score-cont .score-team {
@@ -217,7 +229,7 @@
             border-right: 23px solid transparent;
             border-top: 12px solid #ebebeb;
             position: absolute;
-            top: 40%;
+            top: 35%;
             transform: translateY(100%);
         }
 
@@ -240,14 +252,7 @@
             padding: 5px;
         }
 
-        .payment-list {
-            display: flex;
-            justify-content: flex-start;
-        }
 
-        .payment-list .swiper-slide {
-            margin-left: 20px;
-        }
     </style>
     <style>
         .header {
@@ -334,12 +339,35 @@
             margin-bottom: 5px;
             width: 33%;
         }
+        @media (max-width: 991px) {
+            .tab-content{
+                margin-left: 0;
+            }
+
+            .tab-pane p{
+                font-size: 13px;
+            }
+        }
 
         @media (max-width: 768px) {
             .tab-content{
                 margin-left: 0;
             }
+            .tab-pane p{
+                font-size: 14px;
+            }
 
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container-lg{
+                max-width: 100%;
+            }
+            .content .nav-link{
+                font-size: 15px;
+            }
+        }
+        .tab-content>.active.row{
+            display: flex;
         }
     </style>
 @endpush
