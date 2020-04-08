@@ -7,7 +7,7 @@
     <title>Cilicia</title>
     <link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/site/style/stylev3.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/site/style/style.v4.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
     @stack('head')
 </head>
@@ -122,7 +122,9 @@
                     <ul id="partnerGallery">
                         @foreach(\App\Partner::all() as $key)
                             <li>
-                                  <img src="{{ asset("uploads/partner/$key->image") }}"/>
+                                <a href="{{ $key->url }}" target="_blank">
+                                    <img src="{{ asset("uploads/partner/$key->image") }}"/>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
@@ -227,7 +229,7 @@
             item: 4,
             loop: false,
             slideMove: 1,
-            easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+            // easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
             speed: 600,
             pager: false,
             controls: false,

@@ -395,7 +395,8 @@ span.red {
     overflow: hidden;
 }
 .match-slider .swiper-slide .logo-cont, .match-slider .swiper-slide .left, .match-slider .swiper-slide .right {
-    transition: .6s;
+    transition: .6s!important;
+    position: relative;
 }
 .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left{
     position: relative;
@@ -408,8 +409,29 @@ span.red {
 }
 .match-slider .swiper-slide.swiper-slide-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:first-child, .match-slider .swiper-slide.swiper-slide-active .left, .match-slider .swiper-slide.swiper-slide-duplicate-active .left{
     left: 0;
+    transition: .6s!important;
 }
 .match-slider .swiper-slide.swiper-slide-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-duplicate-active .logo-cont:last-child, .match-slider .swiper-slide.swiper-slide-active .right, .match-slider .swiper-slide.swiper-slide-duplicate-active .right{
     right: 0;
+    transition: .6s!important;
 }
 
+.animate .logo-cont:first-child, .animate .left{
+    position: relative;
+    left: -100%!important;
+}
+.animate .logo-cont:last-child, .animate .right{
+    position: relative;
+    right: -100%!important;
+}
+
+#partnerGallery img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: .3s;
+}
+#partnerGallery img:hover{
+    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
+    transition: .3s;
+}

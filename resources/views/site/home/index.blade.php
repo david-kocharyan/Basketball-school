@@ -63,7 +63,7 @@
                         <div class="next-top"><img src="{{asset('assets/site/images/home/big-right.png')}}" alt="">
                         </div>
                     </div>
-                    <div class="swiper-container gallery-top m-b-20">
+                    <div class="swiper-container gallery-top m-b-20 animate">
                         <div class="swiper-wrapper">
 
                             @for($i = 0; $i < 4; $i++)
@@ -138,12 +138,10 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4">
-                    <h2 class="section-title"><img style="height: 30px"
-                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
-                        Table</h2>
+                    <h2 class="section-title"><img style="height: 30px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
                 </div>
 
-                <div class="col-md-4">
+                <div class="d-md-block col-md-4">
                     <table class="table table-striped">
                         <tr>
                             <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
@@ -167,7 +165,7 @@
                     </table>
                 </div>
 
-                <div class="col-md-4">
+                <div class="d-none d-md-block col-md-4">
                     <table class="table table-striped">
                         <tr>
                             <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
@@ -191,7 +189,7 @@
                     </table>
                 </div>
 
-                <div class="col-md-4">
+                <div class="d-none d-md-block col-md-4">
                     <table class="table table-striped">
                         <tr>
                             <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
@@ -215,16 +213,16 @@
                     </table>
                 </div>
             </div>
-            <div class="row">
-                <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px"
-                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs
-                    </h2>
-                </div>
-                <div class="col-md-12">
-                    <img class="img-fluid" src="{{ asset("assets/site/images/home/playoffs.png") }}" alt="">
-                </div>
-            </div>
+{{--            <div class="row">--}}
+{{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
+{{--                    <h2 class="section-title"><img style="height: 30px"--}}
+{{--                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs--}}
+{{--                    </h2>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <img class="img-fluid" src="{{ asset("assets/site/images/home/playoffs.png") }}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </div>
 
@@ -338,9 +336,7 @@
                                 <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                 <h4 class="color-red text-center">{{ $product->name }}</h4>
                                 <p class="text-center price mb-1">{{ $product->price }}</p>
-                                <p class="quick-view d-flex justify-content-center align-items-center text-uppercase">
-                                    Quick
-                                    View</p>
+                                <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">View</p>
                             </div>
                         </div>
                     </div>
@@ -350,6 +346,17 @@
             <div class="row">
                 <div class="col-md-12 mt-3 text-center">
                     <button class="rounded-button"><a href="/shop">SHOP NOW</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content" style="background-color: #e2e2e2">
+                <div class="modal-body row">
+
                 </div>
             </div>
         </div>
@@ -917,13 +924,13 @@
                     height: 500px;
                 }
 
-                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left {
+                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left, .animate .logo-cont:first-child, .animate .left{
                     position: relative;
                     left: 0;
                     top: -250%;
                 }
 
-                .match-slider .swiper-slide .logo-cont:last-child, .match-slider .swiper-slide .right {
+                .match-slider .swiper-slide .logo-cont:last-child, .match-slider .swiper-slide .right, .animate .logo-cont:last-child, .animate .right {
                     position: relative;
                     right: 0;
                     bottom: -250%;
@@ -940,6 +947,18 @@
                 .gallery-top-buttons {
                     display: none;
                 }
+            }
+
+            #lightSlider-modal .img-cont {
+                text-align: center;
+            }
+
+            #lightSlider-modal .description {
+                color: #5b5b5b;
+            }
+
+            #lightSlider-modal .lSSlideWrapper.usingCss {
+                border: 1px solid gray;
             }
         </style>
     @endpush
@@ -1013,7 +1032,47 @@
                 galleryTop.controller.control = galleryTop;
                 galleryThumbs.controller.control = galleryTop;
 
+                let match_offset = $(".gallery-top").offset().top;
+                let current_offset_top = $(window).scrollTop();
+                removeMatchAnimation(match_offset, current_offset_top)
+                $(document).on("scroll", function(){
+                    removeMatchAnimation(match_offset, $(window).scrollTop())
+                });
+
+                let asset_url = '{{ asset("uploads/product") . "/" }}';
+                $(document).on("click", ".quick-view", function () {
+                    let data = JSON.parse($(this).attr("data-info"));
+                    let images = data.get_images;
+                    let html = "<div class='col-xl-8'>"
+                    html += "<ul id='lightSlider-modal' style='display: flex; align-items: center'>";
+                    images.forEach(e => {
+                        html += `<li class='img-cont' data-thumb="${asset_url + e.name}">
+                                <img class="img-fluid" style="max-height: 300px;" src="${asset_url + e.name}" />`
+                    });
+                    html += "</ul></div>";
+                    html += "<div class='col-lg-4'>";
+                    html += `<p class='name color-red'><b>${data.name}</b></p>`;
+                    html += `<p class="price"><b>$${data.price}</b></p>`;
+                    html += `<p class="description">${data.description}</p>`;
+                    html += `<p><b>Category: </b> <span class="color-red">${data.get_category.name}</span></p>`;
+                    html += "</div>";
+                    $(".modal-body").html(html);
+                    $(".modal").modal();
+                    $('#lightSlider-modal').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        loop: true,
+                        slideMargin: 0,
+                        thumbItem: 9
+                    });
+                });
+
             });
+            let removeMatchAnimation = (match_offset, current_offset_top) => {
+                if(current_offset_top >= match_offset - 350){
+                    $(".gallery-top").removeClass("animate");
+                }
+            }
         </script>
     @endpush
 @endsection

@@ -56,9 +56,7 @@
                                     <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                     <h4 class="color-red text-center">{{ $product->name }}</h4>
                                     <p class="text-center price mb-1">${{ $product->price }}</p>
-                                    <p data-info="{{ json_encode($product) }}"
-                                       class="quick-view d-flex justify-content-center align-items-center text-uppercase">
-                                        Quick View</p>
+                                    <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
                                 </div>
                             </div>
                         </div>
