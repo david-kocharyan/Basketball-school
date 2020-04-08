@@ -74,6 +74,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('about-us-team', 'OurTeamController');
     Route::resource('about-us-story', 'AboutController');
 
+    Route::resource('clubs', 'ClubController');
+
 });
 
 /**

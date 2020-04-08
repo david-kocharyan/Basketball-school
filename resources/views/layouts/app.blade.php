@@ -150,6 +150,9 @@
 {{--market--}}
                 <li class="devider"></li>
 
+                <li><a href="/admin/clubs" class="waves-effect"><i class="mdi mdi-fire fa-fw"></i>
+                        <span class="hide-menu">Clubs</span></a>
+                </li>
 
                 <li><a href="/admin/partners" class="waves-effect"><i class="mdi mdi-heart fa-fw"></i>
                         <span class="hide-menu">Partners</span></a>

@@ -34,8 +34,8 @@
                     <div class="category-part pt-3 pb-2 pl-3 mb-3">
                         @if(count($categories) >= 2 )
                             <a href="/shop" class="text-uppercase d-block mb-3 link text-black">
-                                <img style="height: 20px; margin-right: 5px;"
-                                     src="{{ asset("assets/site/images/red-icon-tag.svg") }}" alt="">
+                                <img style="width:30px; margin-right: 5px;"
+                                     src="{{ asset("assets/site/images/red-icon.png") }}" alt="All" class="img-responsive">
                                 <b>All</b>
                             </a>
                         @endif
