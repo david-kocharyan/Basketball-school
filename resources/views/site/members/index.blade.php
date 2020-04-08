@@ -21,7 +21,7 @@
     <div class="container pt-5 pb-5">
         <div class="row pb-4">
             <div class="col-md-12">
-                <ul class="nav nav-tabs bg-dark" style="border-bottom: 0">
+                <ul class="nav nav-tabs" style="border-bottom: 0">
                     @foreach($teams as $bin=>$key)
                         <li><a @if($bin == 0)class="active" @endif data-toggle="tab"
                                href="{{"#menu_".$key->id}}">{{$key->name}}</a></li>
@@ -35,10 +35,9 @@
                     <div class="row">
                         @foreach($key->players as $val)
                             <div class="col-xl-3 col-md-6" style="padding: 5px">
-                                <div class="main-box"
-                                     style="background-image: url('{{ asset("uploads/player/$val->image") }}');">
+                                <div class="main-box" style="background-image: url('{{ asset("uploads/player/$val->image") }}');">
                                     <div class="name-box d-flex align-items-center">
-                                        <p class="pl-5 m-0">{{'#' . $val->jersey_number ." ". $val->full_name}} </p>
+                                        <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span class="mr-3">{{" ". $val->full_name}}</span></p>
                                     </div>
                                     <div class="age-box d-flex align-items-center">
                                         <p class="text-center m-0">{{$key->name}}</p>
@@ -58,7 +57,6 @@
                 padding-top: 0;
             }
 
-            parent
             .nav-tabs {
                 background: #151515;
                 border-radius: 10px;

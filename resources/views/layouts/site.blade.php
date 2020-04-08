@@ -254,6 +254,13 @@
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");
         });
+        $(document).on("click", ".gallery .main", function(){
+            console.log("clicked")
+            $(this).find(".quick-view").trigger("click")
+        });
+        $(document).on("click", ".quick-view", function (e) {
+            e.stopPropagation();
+        })
     });
 </script>
 @stack('footer')

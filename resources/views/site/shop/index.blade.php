@@ -49,8 +49,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-9">
+            <div class="col-xl-9 gallery">
                 <div class="row">
                     @foreach($products as $product)
                         <div class="col-xl-4 mb-3">
@@ -64,7 +63,7 @@
                                     <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                     <h4 class="color-red text-center">{{ $product->name }}</h4>
                                     <p class="text-center price mb-1">${{ $product->price }}</p>
-                                    <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">Quick View</p>
+                                    <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">View</p>
                                 </div>
                             </div>
                         </div>
@@ -168,21 +167,34 @@
                 font-size: 12px;
             }
 
-            .price {
+            #lightSlider-modal .price {
                 color: #6c6c6e;
                 font-size: 16px;
             }
-
-            #lightSlider .img-cont {
+            #lightSlider-modal .img-cont {
                 text-align: center;
             }
 
-            .description {
+            #lightSlider-modal .description {
                 color: #5b5b5b;
             }
 
-            .lSSlideWrapper.usingCss {
-                border: 1px solid gray;
+            /*ss*/
+            .modal-content .lSSlideWrapper.usingCss {
+                border: 1px solid #d0d2d4;
+            }
+            #lightSlider-modal{
+                height: 300px;
+            }
+            .modal-content .lSPager li{
+                border: 1px solid #d0d2d4;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .modal-content .lSPager li img{
+                max-height: 80px;
             }
         </style>
         <link type="text/css" rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.css") }}"/>
@@ -194,9 +206,9 @@
                 let data = JSON.parse($(this).attr("data-info"));
                 let images = data.get_images;
                 let html = "<div class='col-xl-8'>"
-                html += "<ul id='lightSlider' style='display: flex; align-items: center'>";
+                html += "<ul id='lightSlider-modal'>";
                 images.forEach(e => {
-                    html += `<li class='img-cont' data-thumb="${asset_url + e.name}">
+                    html += `<li class='img-cont' style='display: flex; align-items: center; justify-content: center; height: 100%' data-thumb="${asset_url + e.name}">
                                 <img class="img-fluid" style="max-height: 300px;" src="${asset_url + e.name}" />`
                 });
                 html += "</ul></div>";
@@ -208,12 +220,13 @@
                 html += "</div>";
                 $(".modal-body").html(html);
                 $(".modal").modal();
-                $('#lightSlider').lightSlider({
+                $('#lightSlider-modal').lightSlider({
                     gallery: true,
                     item: 1,
                     loop: true,
                     slideMargin: 0,
-                    thumbItem: 9
+                    thumbItem: 4,
+                    thumbMargin: 10,
                 });
             });
         </script>

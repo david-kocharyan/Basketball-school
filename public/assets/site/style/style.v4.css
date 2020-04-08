@@ -295,11 +295,11 @@ span.red {
     background: #9c1d24;
     border-radius: 5px;
     border: none;
-    width: 120px;
     height: 35px;
     font-family: Roboto-Condensed-Bold, sans-serif;
     color: white;
-    font-size: 13px;
+    font-size: 16px;
+    padding: 2px 9px 0 9px;
     letter-spacing: 1px;
 }
 .rounded-button a{
@@ -331,6 +331,7 @@ span.red {
     font-weight: 700;
     text-transform: uppercase;
     position: absolute;
+    font-size: 18px;
 }
 .name-box {
     width: 350px;
@@ -348,7 +349,7 @@ span.red {
     width: 100%;
 }
 .age-box{
-    background: #25252573;
+    background: #000000cc;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -434,4 +435,20 @@ span.red {
     -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
     filter: grayscale(0);
     transition: .3s;
+}
+
+.desc h4{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Roboto-Condensed-Bold, sans-serif;
+}
+
+.gallery .main{
+    cursor: pointer;
+}
+.slider-title.lg{
+    font-size: 70px;
+}
+.table-section .table-head{
+    font-size: 22px;
 }

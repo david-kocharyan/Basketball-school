@@ -182,7 +182,7 @@
                 border-bottom: 148px solid transparent;
                 position: absolute;
                 bottom: 0;
-                transform: translateX(-100%);
+                transform: translateX(-98%);
                 border-right: 25px solid #9c1d24;
             }
 

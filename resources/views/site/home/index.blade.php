@@ -9,7 +9,7 @@
                     <div class="container m-auto">
                         <div class="row">
                             <div class="col-md-7">
-                                <p class="slider-title"><span class="red">Love </span> Basketball <span
+                                <p class="slider-title lg"><span class="red">Love </span> Basketball <span
                                         class="red">?</span>
                                 </p>
                                 <button class="rounded-button header-btn"><a href="/academy-members">GROW WITH US</a>
@@ -23,7 +23,7 @@
                     <div class="container m-auto">
                         <div class="row">
                             <div class="col-md-7">
-                                <p class="slider-title"><span class="red">Summer </span> School
+                                <p class="slider-title lg"><span class="red">Summer </span> School
                                 </p>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
         <div class="container-fluid">
             <div class="row ">
                 <div class="title-cont col-md-8 mb-4 mt-4" style="margin: 0 auto;">
-                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid"
+                    <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">NEXT GAME
                     </h2>
@@ -138,7 +138,7 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4">
-                    <h2 class="section-title"><img style="height: 30px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
+                    <h2 class="section-title"><img style="height: 25px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
                 </div>
 
                 <div class="d-md-block col-md-4">
@@ -215,7 +215,7 @@
             </div>
 {{--            <div class="row">--}}
 {{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
-{{--                    <h2 class="section-title"><img style="height: 30px"--}}
+{{--                    <h2 class="section-title"><img style="height: 25px"--}}
 {{--                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs--}}
 {{--                    </h2>--}}
 {{--                </div>--}}
@@ -230,16 +230,15 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title text-white"><img style="height: 30px" class="img-fluid"
+                    <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">Players Of The Month</h2>
                 </div>
                 @foreach($best_players as $key)
                     <div class="col-md-3">
-                        <div class="main-box"
-                             style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}');">
+                        <div class="main-box" style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}');">
                             <div class="name-box d-flex align-items-center">
-                                <p class="pl-5 m-0">{{"#".$key->players->jersey_number ." ". $key->players->full_name}}</p>
+                                <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span class="mr-3">{{" ". $key->players->full_name}}</span></p>
                             </div>
                             <div class="age-box d-flex align-items-center">
                                 <p class="text-center m-0">{{$key->team}}</p>
@@ -255,7 +254,7 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid"
+                    <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery
                     </h2>
                 </div>
@@ -320,7 +319,7 @@
             </div>
             <div class="row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
-                    <h2 class="section-title"><img style="height: 30px" class="img-fluid"
+                    <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop
                     </h2>
                 </div>
@@ -709,7 +708,7 @@
             }
 
             .shop-line {
-                height: 70px;
+                height: 60px;
                 background: #151515;
             }
 
@@ -824,12 +823,7 @@
             }
 
             .shop-text {
-                font-size: 12px;
-                margin-bottom: 10px !important;
-            }
-
-            .shop-text-cont {
-                justify-content: center;
+                font-size: 16px;
             }
 
             .shop-btn-cont {
@@ -837,10 +831,10 @@
             }
 
             .shop-btn {
-                padding: 5px;
+                padding-top: 2px;
                 height: 30px;
                 width: 120px;
-                font-size: 12px;
+                font-size: 16px;
             }
 
             .shop-btn:hover {
@@ -848,7 +842,7 @@
             }
 
             .section-title {
-                font-size: 25px;
+                font-size: 35px;
             }
 
             .main-box {
@@ -950,16 +944,34 @@
                 }
             }
 
+            /*ss*/
+            .modal-content .lSSlideWrapper.usingCss {
+                border: 1px solid #d0d2d4;
+            }
+            #lightSlider-modal{
+                height: 300px;
+            }
+            .modal-content .lSPager li{
+                border: 1px solid #d0d2d4;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .modal-content .lSPager li img{
+                max-height: 80px;
+            }
+
+            #lightSlider-modal .price {
+                color: #6c6c6e;
+                font-size: 16px;
+            }
             #lightSlider-modal .img-cont {
                 text-align: center;
             }
 
             #lightSlider-modal .description {
                 color: #5b5b5b;
-            }
-
-            #lightSlider-modal .lSSlideWrapper.usingCss {
-                border: 1px solid gray;
             }
         </style>
     @endpush
@@ -1047,9 +1059,9 @@
                     let data = JSON.parse($(this).attr("data-info"));
                     let images = data.get_images;
                     let html = "<div class='col-xl-8'>"
-                    html += "<ul id='lightSlider-modal' style='display: flex; align-items: center'>";
+                    html += "<ul id='lightSlider-modal'>";
                     images.forEach(e => {
-                        html += `<li class='img-cont' data-thumb="${asset_url + e.name}">
+                        html += `<li class='img-cont' style='display: flex; align-items: center; justify-content: center; height: 100%' data-thumb="${asset_url + e.name}">
                                 <img class="img-fluid" style="max-height: 300px;" src="${asset_url + e.name}" />`
                     });
                     html += "</ul></div>";
@@ -1066,7 +1078,8 @@
                         item: 1,
                         loop: true,
                         slideMargin: 0,
-                        thumbItem: 9
+                        thumbItem: 4,
+                        thumbMargin: 10,
                     });
                 });
 
