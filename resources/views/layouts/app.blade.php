@@ -93,12 +93,27 @@
                                 <span class="hide-menu">Standings</span></a>
                         </li>
 
-                        <li><a href="/admin/partners" class="waves-effect"><i class="mdi mdi-heart fa-fw"></i>
-                                <span class="hide-menu">Partners</span></a>
-                        </li>
-
                         <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
                                 <span class="hide-menu">Players of the month</span></a>
+                        </li>
+
+                        <li><a href="/admin/gallery-home" class="waves-effect"><i class="mdi mdi-image-area fa-fw"></i>
+                                <span class="hide-menu">Gallery (For Home Page)</span></a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
+                                    class="hide-menu">Shop<span class="fa arrow"></span></span>
+                            </a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/admin/categories" class="waves-effect"><i class="mdi mdi-playlist-plus fa-fw"></i>
+                                        <span class="hide-menu">Categories</span></a>
+                                </li>
+
+                                <li><a href="/admin/products" class="waves-effect"><i class="mdi mdi-scale fa-fw"></i>
+                                        <span class="hide-menu">Products</span></a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -134,35 +149,15 @@
 
 {{--market--}}
                 <li class="devider"></li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
-                            class="hide-menu">Shop<span class="fa arrow"></span></span>
-                    </a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="/admin/categories" class="waves-effect"><i class="mdi mdi-playlist-plus fa-fw"></i>
-                                <span class="hide-menu">Categories</span></a>
-                        </li>
 
-                        <li><a href="/admin/products" class="waves-effect"><i class="mdi mdi-scale fa-fw"></i>
-                                <span class="hide-menu">Products</span></a>
-                        </li>
-                    </ul>
+
+                <li><a href="/admin/partners" class="waves-effect"><i class="mdi mdi-heart fa-fw"></i>
+                        <span class="hide-menu">Partners</span></a>
                 </li>
 
 {{--gallery--}}
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-photos fa-fw"></i> <span
-                            class="hide-menu">Gallery<span class="fa arrow"></span></span>
-                    </a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-image-album fa-fw"></i>
-                                <span class="hide-menu">Gallery (Academy, Game)</span></a>
-                        </li>
-
-                        <li><a href="/admin/gallery-home" class="waves-effect"><i class="mdi mdi-image-area fa-fw"></i>
-                                <span class="hide-menu">Gallery (For Home Page)</span></a>
-                        </li>
-                    </ul>
+                <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-image-album fa-fw"></i>
+                        <span class="hide-menu">Gallery (Academy, Game)</span></a>
                 </li>
 
 {{--about_us--}}

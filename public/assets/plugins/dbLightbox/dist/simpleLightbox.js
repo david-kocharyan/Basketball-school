@@ -90,7 +90,7 @@
         closeBtnCaption: 'Close',
         nextBtnCaption: 'Next',
         prevBtnCaption: 'Previous',
-        loadingCaption: 'Loading...',
+        loadingCaption: '',
 
         bindToItems: true, // set click event handler to trigger lightbox on provided $items
         closeOnOverlayClick: true,
@@ -102,7 +102,7 @@
         urlAttribute: 'href', // where to expect large image
 
         startAt: 0, // start gallery at custom index
-        loadingTimeout: 100, // time after loading element will appear
+        loadingTimeout: 0, // time after loading element will appear
 
         appendTarget: 'body', // append elsewhere if needed
 

@@ -24,7 +24,7 @@
                         @foreach($category as $key=>$val)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td><img src="{{ asset("/uploads/category/$val->icon")}}" alt="{{$val->title}}" style="width: 100px; height: 100px;"></td>
+                                <td><img src="{{ asset("/uploads/category/$val->icon")}}" alt="{{$val->title}}" width="100" class="img-responsive"></td>
                                 <td>{{$val->name}}</td>
                                 <td>
                                     <a href="{{$route."/".$val->id."/edit"}}" data-toggle="tooltip"

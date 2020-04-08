@@ -8,7 +8,8 @@
             <div class="row">
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
-                        <p class="title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
+                        <p class="title"><img style="height: 30px" class="img-fluid"
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
                             Home <span class="greater">&gt;</span> {{ strtoupper($title) }}
                             @if(isset($slug))
                                 <span class="greater">&gt;</span> {{strtoupper($slug)}}
@@ -31,10 +32,17 @@
                         <p class="text-white pl-3 cat m-0 text-uppercase">product categories</p>
                     </div>
                     <div class="category-part pt-3 pb-2 pl-3 mb-3">
+                        @if(count($categories) >= 2 )
+                            <a href="/shop" class="text-uppercase d-block mb-3 link text-black">
+                                <img style="height: 20px; margin-right: 5px;"
+                                     src="{{ asset("assets/site/images/red-icon-tag.svg") }}" alt="">
+                                <b>All</b>
+                            </a>
+                        @endif
                         @foreach($categories as $category)
                             <a href="/shop/{{ $category->title }}" class="text-uppercase d-block mb-3 link text-black">
-                                <img style="height: 20px; margin-right: 5px;"
-                                     src="{{ asset("uploads/category/$category->icon") }}" alt="">
+                                <img style="width:30px; margin-right: 5px;"
+                                     src="{{ asset("uploads/category/$category->icon") }}" alt="{{ $category->name }}" class="img-responsive">
                                 <b>{{ $category->name }}</b>
                             </a>
                         @endforeach
@@ -47,10 +55,10 @@
                     @foreach($products as $product)
                         <div class="col-xl-4 mb-3">
                             <div class="main overflow-hidden">
-                                <div class="img-cont text-center">
-                                    <img class="img-fluid prod"
+                                <div class="img-cont text-center prod">
+                                    <img class="img-fluid"
                                          src="{{ asset("uploads/product") . "/" . ($product->getImages[0]->name ?? "") }}"
-                                         alt="">
+                                         alt="{{ $product->name }}">
                                 </div>
                                 <div class="desc">
                                     <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
@@ -152,6 +160,7 @@
 
             .prod {
                 height: 200px;
+                line-height: 200px;
             }
 
             .category {

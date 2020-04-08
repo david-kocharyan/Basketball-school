@@ -327,10 +327,10 @@
                 @foreach($products as $product)
                     <div class="col-md-3 mb-3">
                         <div class="main overflow-hidden">
-                            <div class="img-cont text-center">
-                                <img class="img-fluid prod" id="{{ $product->id }}"
+                            <div class="img-cont text-center prod">
+                                <img class="img-fluid" id="{{ $product->id }}"
                                      src="{{ asset("uploads/product/" . ($product->getImages[0]->name ?? '')) }}"
-                                     alt="">
+                                     alt="{{ $product->name }}" width="200">
                             </div>
                             <div class="desc">
                                 <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
@@ -805,6 +805,7 @@
 
             .prod {
                 height: 200px;
+                line-height: 200px;
             }
 
             .category {
@@ -965,7 +966,7 @@
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
         <script src="{{ asset("assets/site/swiper/package/js/swiper.min.js") }}"></script>
-        <script src="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.js") }}"></script>
+        <script src="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.js") }}"></script>
         <script>
             $(document).ready(function () {
                 $('.gallery-open-link').click(function () {
@@ -977,7 +978,9 @@
                         dataType: 'json',
                         success: function (result) {
                             SimpleLightbox.open({
-                                items: result
+                                items: result,
+                                closeOnOverlayClick: false,
+                                loadingTimeout: 0,
                             });
                         }
                     })

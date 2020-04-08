@@ -26,7 +26,8 @@
                         @foreach($product as $key=>$val)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td><img src="{{ asset("/uploads/product/".$val->getImages[0]->name)}}" alt="{{$val->name}}" style="width: 100px; height: 100px;"></td>
+                                <td><img src="{{ asset("/uploads/product/".$val->getImages[0]->name)}}" alt="{{$val->name}}"
+                                         class="img-responsive" style="width: 150px;"></td>
                                 <td>{{$val->name}}</td>
                                 <td>{{$val->getCategory->name}}</td>
                                 <td>{{$val->price}}</td>
