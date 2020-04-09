@@ -135,7 +135,7 @@
             </div>
         </div>
     </div>
-    <div class="footer" style="background: url('{{ asset("assets/site/images/home/footer_bg.jpg") }}')">
+    <div class="footer" style="background: url('{{ asset("assets/site/images/home/footer_bg.jpg") }}'); background-repeat: no-repeat; background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -200,6 +200,17 @@
                 </div>
                 <div class="col-md-12 mt-3">
                     <hr style="border-bottom: 1px solid #9c1d24">
+                </div>
+                <div class="col-md-12 mt-3 text-center">
+                    <h3>
+                        <a href="http://aimtech.am" style="padding: 5px">
+                            <img src="{{asset("assets/site/images/home/fb.png")}}" alt="Facebook">
+                        </a>
+                        <a href="http://aimtech.am" style="padding: 5px">
+                            <img src="{{asset("assets/site/images/home/insta.png")}}" alt="Instagram">
+                        </a>
+                    </h3>
+                    <p style="color: white; font-size: 18px;">Copyright Cilicia team</p>
                 </div>
             </div>
         </div>

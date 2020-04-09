@@ -20,12 +20,15 @@ Route::get('/', 'Site\HomeController@index');
 Route::get('/about-us', 'Site\AboutController@index');
 Route::get('/academy-members', 'Site\AcademyMembersController@index');
 Route::get('/contact-us', 'Site\ContactController@index');
-Route::get('/gallery', 'Site\GalleryController@index');
-Route::get('/gallery/{id}', 'Site\GalleryController@gallery');
 Route::get('/shop', 'Site\ShopController@index');
 Route::get('/shop/{slug}', 'Site\ShopController@category');
 
+Route::get('/gallery', 'Site\GalleryController@index');
+Route::get('/gallery/{id}', 'Site\GalleryController@gallery');
 Route::post('/home-gallery-ajax', 'Site\GalleryController@home_ajax');
+Route::post('/gallery-ajax', 'Site\GalleryController@home_ajax');
+
+
 /**
  * Parent authentication
  */
@@ -75,6 +78,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('about-us-story', 'AboutController');
 
     Route::resource('clubs', 'ClubController');
+    Route::resource('tournaments', 'TournamentController');
+    Route::resource('tournament-clubs', 'TournamentClubController');
 
 });
 

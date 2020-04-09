@@ -1,14 +1,18 @@
 @extends("layouts.site")
 @section("content")
 
-    <div class="background-section d-flex align-items-lg-end align-items-center" style="background-image: url('{{ asset("assets/site/images/about/background.jpg") }}')">
+    <div class="background-section d-flex align-items-lg-end align-items-center"
+         style="background-image: url('{{ asset("assets/site/images/about/background.jpg") }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
-                        <p class="title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span class="greater">&gt;</span> {{ strtoupper($title) }}</p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players competiting at all levels from local team galas</p>
+                        <p class="title"><img style="height: 30px" class="img-fluid"
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span
+                                class="greater">&gt;</span> {{ strtoupper($title) }}</p>
+                        <p class="subtitle">We are competitive professional basketball club - with our players
+                            competiting at all levels from local team galas</p>
                     </div>
                 </div>
             </div>
@@ -19,23 +23,46 @@
         <div class="row pb-4">
             <div class="col-md-12">
                 <ul class="nav nav-tabs" style="border-bottom: 0">
-                    <li><a class="active" data-toggle="tab" href="#academy">Academy</a></li>
+                    <li><a class="active" data-toggle="tab" href="#all">Filter All</a></li>
+                    <li><a data-toggle="tab" href="#academy">Academy</a></li>
                     <li><a data-toggle="tab" href="#games">Games</a></li>
                 </ul>
             </div>
         </div>
         <div class="tab-content">
-
-            <div id="academy" class="tab-pane fade in active show">
+            <div id="all" class="tab-pane fade in active show">
                 <div class="row">
-                    @foreach($academy as $bin => $key)
+                    @foreach($all as $bin => $key)
                         <div class="col-xl-4 col-md-6" style="padding: 5px">
-                            <div class="main-box">
-                                    <img class="example-image" src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
+                            <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
+                                <img class="example-image"
+                                     src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->name}}</p>
-                                        <a href="/gallery/{{ $key->id }}"><button class="rounded-button">{{count($key->images)}} photos</button></a>
+                                        <button class="rounded-button">{{count($key->images)}} photos</button>
+                                    </div>
+                                    <div class="triangle">
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div id="academy" class="tab-pane fade in">
+                <div class="row">
+                    @foreach($academy as $bin => $key)
+                        <div class="col-xl-4 col-md-6" style="padding: 5px">
+                            <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
+                                <img class="example-image"
+                                     src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
+                                <div class="overlay-hover">
+                                    <div class="detail">
+                                        <p class="text-capitalize text-white m-0">{{$key->name}}</p>
+                                        <button class="rounded-button">{{count($key->images)}} photos</button>
                                     </div>
                                     <div class="triangle">
                                         <span>+</span>
@@ -51,12 +78,13 @@
                 <div class="row">
                     @foreach($games as $bin => $key)
                         <div class="col-xl-4 col-md-6" style="padding: 5px">
-                            <div class="main-box">
-                                <img class="example-image" src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
+                            <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
+                                <img class="example-image"
+                                     src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->name}}</p>
-                                        <a href="/gallery/{{ $key->id }}"><button class="rounded-button">{{count($key->images)}} photos</button></a>
+                                        <button class="rounded-button">{{count($key->images)}} photos</button>
                                     </div>
                                     <div class="triangle">
                                         <span>+</span>
@@ -71,18 +99,21 @@
         </div>
     </div>
     @push('head')
-        <link rel="stylesheet" href="{{ asset("assets/site/lightbox/dist/css/lightbox.min.css") }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.css") }}">
         <style>
             .header {
                 padding-top: 0;
             }
-            p{
+
+            p {
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
-            .sticky + .content{
+
+            .sticky + .content {
                 padding-top: 70px;
             }
-            .triangle{
+
+            .triangle {
                 position: absolute;
                 height: 60px;
                 width: 60px;
@@ -94,24 +125,28 @@
                 color: white;
                 transition: .5s;
             }
-            .triangle span{
+
+            .triangle span {
                 position: absolute;
                 display: block;
                 transform: rotate(-45deg);
                 top: 15px;
                 left: 9px;
             }
-            .main-box:hover .overlay-hover .triangle{
+
+            .main-box:hover .overlay-hover .triangle {
                 right: -30px;
                 bottom: -30px;
             }
-            .main-box{
+
+            .main-box {
                 height: auto;
                 box-shadow: 3px 0 10px -1px grey;
                 position: relative;
-                cursor: initial!important;
+                cursor: initial !important;
             }
-            .overlay-hover{
+
+            .overlay-hover {
                 position: absolute;
                 height: 25%;
                 padding: 20px 0;
@@ -121,68 +156,109 @@
                 z-index: 10;
                 transition: .5s;
             }
-            .main-box:hover .overlay-hover{
+
+            .main-box:hover .overlay-hover {
                 height: 100%;
+                cursor: pointer;
             }
-            .overlay-hover p{
+
+            .overlay-hover p {
                 position: absolute;
                 left: 20px;
                 top: 20px;
                 transition: .5s;
             }
-            .overlay-hover button{
+
+            .overlay-hover button {
                 position: absolute;
                 margin-top: 50px;
                 left: 20px;
                 top: 20px;
                 transition: .5s;
             }
-            .rounded-button{
+
+            .rounded-button {
                 width: auto;
                 height: auto;
                 border-radius: 8px;
             }
-            .main-box:hover .overlay-hover p{
+
+            .main-box:hover .overlay-hover p {
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 top: 50%;
                 text-align: center;
             }
-            .main-box:hover .overlay-hover button{
+
+            .main-box:hover .overlay-hover button {
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 top: 50%;
                 text-align: center;
             }
-            .nav-tabs{
+
+            .overlay-hover:hover {
+                cursor: pointer;
+            }
+
+            .nav-tabs {
                 background: #151515;
                 border-radius: 10px;
                 overflow: hidden;
             }
-            .main-box img{
+
+            .main-box img {
                 height: 100%;
                 width: 100%;
             }
-            .nav-tabs li{
+
+            .nav-tabs li {
                 height: 40px;
                 display: flex;
                 align-items: center;
             }
-            .nav-tabs a{
+
+            .nav-tabs a {
                 padding: 8px 25px;
                 text-decoration: none;
                 color: white;
             }
-            .nav-tabs .active{
+
+            .nav-tabs .active {
                 background: #9c1d24;
             }
-            .tab-content .row{
+
+            .tab-content .row {
                 padding-left: 10px;
                 padding-right: 10px;
             }
         </style>
     @endpush
     @push("footer")
-        <script src="{{ asset("assets/site/lightbox/dist/js/lightbox.min.js") }}"></script>
+        <script src="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.js") }}"></script>
+
+        <script !src="">
+            $(document).ready(function () {
+
+                $('.gallery-open-link').click(function () {
+                    let id = $(this).data('id');
+                    $.ajax({
+                        url: '/gallery-ajax',
+                        type: 'post',
+                        data: {"_token": "{{ csrf_token() }}", "id": id},
+                        dataType: 'json',
+                        success: function (result) {
+                            SimpleLightbox.open({
+                                items: result,
+                                closeOnOverlayClick: false,
+                                loadingTimeout: 0,
+                            });
+                        }
+                    })
+                })
+            })
+        </script>
+
+
     @endpush
 @endsection

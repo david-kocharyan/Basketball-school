@@ -1,42 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+   <div class="row">
         <div class="col-md-12">
             <div class="white-box">
                 <h3 class="box-title">{{$title}}</h3>
-                @if(count($month_players) < 4)
-                    <a href="{{$route."/create"}}" class="btn btn-success m-b-30"><i class="fas fa-plus"></i> Add Players of the Month</a>
-                @endif
-                {{--table--}}
+                <a href="{{$route."/create"}}" class="btn btn-success m-b-30"><i class="fas fa-plus"></i> Create New Tournament Club</a>
 
+                {{--table--}}
                 <div class="table-responsive">
-                    <table id="datatable" class="display table table-hover table-striped" cellspacing="0"
+                    <table id="datatable" class="display table table-hover table-striped nowrap" cellspacing="0"
                            width="100%">
                         <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Team</th>
-                            <th>Options</th>
-                        </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Tournament</th>
+                                <th>Club</th>
+                                <th>Rank</th>
+                                <th>Wins/Losses</th>
+                                <th>Points</th>
+                                <th>Options</th>
+                            </tr>
                         </thead>
+
                         <tbody>
-                        @foreach($month_players as $key=>$val)
+                        @foreach($clubs as $key=>$val)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td><img src='{{asset("uploads/player")."/".$val->players->image}}' alt="{{$val->players->full_name}}" class="img-responsive" width="200"></td>
-                                <td>{{$val->players->full_name}}</td>
-                                <td>{{$val->team}}</td>
+                                <td>{{$val->tournament->name}}</td>
+                                <td>{{$val->club->name}}</td>
+                                <td>{{$val->rank}}</td>
+                                <td>{{$val->win." / ". $val->lose}}</td>
+                                <td>{{$val->points}}</td>
                                 <td>
+
                                     <a href="{{$route."/".$val->id."/edit"}}" data-toggle="tooltip"
                                        data-placement="top" title="Edit" class="btn btn-info btn-circle tooltip-info">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
                                     <form
-                                        onsubmit="if(confirm('Do You Really Want To Delete The Player Of The Month?') == false) return false;"
+                                        onsubmit="if(confirm('Do You Really Want To Delete The Tournament Club?') == false) return false;"
                                         style="display: inline-block" action="{{ $route."/".$val->id }}" method="post">
                                         @csrf
                                         @method("DELETE")
@@ -56,16 +60,13 @@
             </div>
         </div>
     </div>
-
-    @push('custom-datatable')
-        <script>
-            $('#datatable').DataTable();
-        </script>
-    @endpush
-
 @endsection
 
-
+@push('custom-datatable')
+    <script>
+        $('#datatable').DataTable();
+    </script>
+@endpush
 
 
 

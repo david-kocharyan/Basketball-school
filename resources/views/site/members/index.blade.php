@@ -35,7 +35,7 @@
                     <div class="row">
                         @foreach($key->players as $val)
                             <div class="col-xl-3 col-md-6" style="padding: 5px">
-                                <div class="main-box" style="background-image: url('{{ asset("uploads/player/$val->image") }}');">
+                                <div class="main-box" style="background-image: url('{{ asset("uploads/player/$val->image") }}');transition: all 1s;">
                                     <div class="name-box d-flex align-items-center">
                                         <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span class="mr-3">{{" ". $val->full_name}}</span></p>
                                     </div>
@@ -82,6 +82,10 @@
             .tab-content .row {
                 padding-left: 10px;
                 padding-right: 10px;
+            }
+
+            .main-box:hover{
+                transform: scale(1.2);
             }
         </style>
     @endpush

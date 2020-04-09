@@ -141,77 +141,32 @@
                     <h2 class="section-title"><img style="height: 25px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
                 </div>
 
-                <div class="d-md-block col-md-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
-                        </tr>
-                        <tr class="sub-head">
-                            <td>#</td>
-                            <td>Team</td>
-                            <td>W/L</td>
-                            <td>Points</td>
-                        </tr>
-                        @for($i = 1; $i <=10; $i++)
+                @foreach($standings as $key=>$val)
+                    <div class="d-md-block col-md-4">
+                        <table class="table table-striped">
                             <tr>
-                                <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px"
-                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
-                                </td>
-                                <td>9/4</td>
-                                <td>22</td>
+                                <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
                             </tr>
-                        @endfor
-                    </table>
-                </div>
-
-                <div class="d-none d-md-block col-md-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
-                        </tr>
-                        <tr class="sub-head">
-                            <td>#</td>
-                            <td>Team</td>
-                            <td>W/L</td>
-                            <td>Points</td>
-                        </tr>
-                        @for($i = 1; $i <=10; $i++)
-                            <tr>
-                                <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px"
-                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
-                                </td>
-                                <td>9/4</td>
-                                <td>22</td>
+                            <tr class="sub-head">
+                                <td>#</td>
+                                <td class="text-left" style="width: 50%;">Team</td>
+                                <td>W/L</td>
+                                <td>Points</td>
                             </tr>
-                        @endfor
-                    </table>
-                </div>
-
-                <div class="d-none d-md-block col-md-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th class="bg-red text-center text-white table-head" colspan="4">ARMENIAN CUP</th>
-                        </tr>
-                        <tr class="sub-head">
-                            <td>#</td>
-                            <td>Team</td>
-                            <td>W/L</td>
-                            <td>Points</td>
-                        </tr>
-                        @for($i = 1; $i <=10; $i++)
-                            <tr>
-                                <td>1</td>
-                                <td><img class="img-fluid" style="height: 20px"
-                                         src="{{ asset("assets/site/images/logo.png") }}" alt="">Cilicia
-                                </td>
-                                <td>9/4</td>
-                                <td>22</td>
-                            </tr>
-                        @endfor
-                    </table>
-                </div>
+                            @foreach($val->tournament_clubs as $b=>$v)
+                                @if($b > 10) @break @endif
+                                <tr>
+                                    <td>{{$b + 1}}</td>
+                                    <td class="text-left"><img class="img-fluid" style="height: 20px; margin-right: 10px"
+                                             src="{{ asset("uploads/clubs")."/".$val->clubs[$b]->image }}" alt="">{{$val->clubs[$b]->name}}
+                                    </td>
+                                    <td>{{$v->win." / ".$v->lose}}</td>
+                                    <td>{{$v->points}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                @endforeach
             </div>
 {{--            <div class="row">--}}
 {{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
@@ -236,7 +191,7 @@
                 </div>
                 @foreach($best_players as $key)
                     <div class="col-md-3">
-                        <div class="main-box" style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}');">
+                        <div class="main-box" style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}'); transition: all 1s;">
                             <div class="name-box d-flex align-items-center">
                                 <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span class="mr-3">{{" ". $key->players->full_name}}</span></p>
                             </div>
@@ -352,7 +307,7 @@
 
     <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
          aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-dialog  modal-lg" role="document">
             <div class="modal-content" style="background-color: #e2e2e2">
                 <div class="modal-body row">
 
@@ -848,6 +803,9 @@
             .main-box {
                 margin-bottom: 10px;
                 background-size: cover !important;
+            }
+            .main-box:hover{
+                transform: scale(1.2);
             }
 
             .header-btn:hover, .rounded-button:hover {

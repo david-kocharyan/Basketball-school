@@ -21,16 +21,9 @@ class GalleryController extends Controller
     {
         $academy = Gallery::where('type', '0')->with('images')->get();
         $games = Gallery::where('type', '1')->with('images')->get();
+        $all = Gallery::with('images')->get();
         $title = self::TITLE;
-        return view(self::VIEW . ".index", compact("title", 'academy', 'games'));
-    }
-
-
-    public function gallery($id)
-    {
-        $gallery = Gallery::with('images')->find($id);
-        $title = self::TITLE;
-        return view(self::VIEW . ".show", compact("title", 'gallery'));
+        return view(self::VIEW . ".index", compact("title", 'academy', 'games', "all"));
     }
 
     public function home_ajax(Request $request)

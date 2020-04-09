@@ -35,7 +35,7 @@
         <div class="navbar-header">
             <div class="top-left-part">
                 <a class="logo" href="/admin">
-{{--                    add image for logo --}}
+                    {{--                    add image for logo --}}
                 </a>
             </div>
 
@@ -89,10 +89,6 @@
                     </a>
                     <ul class="nav nav-second-level">
 
-                        <li><a href="#" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type fa-fw"></i>
-                                <span class="hide-menu">Standings</span></a>
-                        </li>
-
                         <li><a href="/admin/month-players" class="waves-effect"><i class="mdi mdi-diamond fa-fw"></i>
                                 <span class="hide-menu">Players of the month</span></a>
                         </li>
@@ -101,20 +97,6 @@
                                 <span class="hide-menu">Gallery (For Home Page)</span></a>
                         </li>
 
-                        <li>
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
-                                    class="hide-menu">Shop<span class="fa arrow"></span></span>
-                            </a>
-                            <ul class="nav nav-second-level">
-                                <li><a href="/admin/categories" class="waves-effect"><i class="mdi mdi-playlist-plus fa-fw"></i>
-                                        <span class="hide-menu">Categories</span></a>
-                                </li>
-
-                                <li><a href="/admin/products" class="waves-effect"><i class="mdi mdi-scale fa-fw"></i>
-                                        <span class="hide-menu">Products</span></a>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
 
@@ -147,9 +129,7 @@
                     </ul>
                 </li>
 
-{{--market--}}
                 <li class="devider"></li>
-
                 <li><a href="/admin/clubs" class="waves-effect"><i class="mdi mdi-fire fa-fw"></i>
                         <span class="hide-menu">Clubs</span></a>
                 </li>
@@ -158,24 +138,54 @@
                         <span class="hide-menu">Partners</span></a>
                 </li>
 
-{{--gallery--}}
+                {{--gallery--}}
                 <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-image-album fa-fw"></i>
-                        <span class="hide-menu">Gallery (Academy, Game)</span></a>
+                        <span class="hide-menu">Gallery</span></a>
                 </li>
 
-{{--about_us--}}
+                {{--about_us--}}
                 <li class="devider"></li>
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-pen fa-fw"></i> <span
                             class="hide-menu">About Us<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/about-us-team" class="waves-effect"><i class="mdi mdi-human-male-female fa-fw"></i>
+                        <li><a href="/admin/about-us-team" class="waves-effect"><i
+                                    class="mdi mdi-human-male-female fa-fw"></i>
                                 <span class="hide-menu">Our Team</span></a>
                         </li>
 
                         <li><a href="/admin/about-us-story" class="waves-effect"><i class="mdi mdi-history fa-fw"></i>
                                 <span class="hide-menu">Our Story</span></a>
+                        </li>
+                    </ul>
+                </li>
+                {{--market--}}
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
+                            class="hide-menu">Shop<span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/categories" class="waves-effect"><i class="mdi mdi-playlist-plus fa-fw"></i>
+                                <span class="hide-menu">Categories</span></a>
+                        </li>
+
+                        <li><a href="/admin/products" class="waves-effect"><i class="mdi mdi-scale fa-fw"></i>
+                                <span class="hide-menu">Products</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type fa-fw"></i>
+                        <span class="hide-menu">Standings<span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/tournaments" class="waves-effect"><i class="mdi mdi-auto-fix fa-fw"></i>
+                                <span class="hide-menu">Tournaments</span></a>
+                        </li>
+
+                        <li><a href="/admin/tournament-clubs" class="waves-effect"><i class="mdi mdi-apps fa-fw"></i>
+                                <span class="hide-menu">Tournament`s Clubs</span></a>
                         </li>
                     </ul>
                 </li>
@@ -199,7 +209,7 @@
             <!-- .row -->
 
         </div>
-        <footer class="footer text-center"> 2020 &copy; Created By Aimtech LLC </footer>
+        <footer class="footer text-center"> 2020 &copy; Created By Aimtech LLC</footer>
     </div>
 </div>
 
