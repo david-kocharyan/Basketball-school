@@ -40,7 +40,7 @@
                                 @error('rank')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="text" class="form-control" id="rank"
+                                <input type="number" class="form-control" id="rank"
                                        placeholder="Rank" name="rank" value="{{old('rank')}}">
                             </div>
 

@@ -94,7 +94,7 @@
                         </li>
 
                         <li><a href="/admin/gallery-home" class="waves-effect"><i class="mdi mdi-image-area fa-fw"></i>
-                                <span class="hide-menu">Gallery (For Home Page)</span></a>
+                                <span class="hide-menu">Gallery ( Home )</span></a>
                         </li>
 
                     </ul>
@@ -130,9 +130,6 @@
                 </li>
 
                 <li class="devider"></li>
-                <li><a href="/admin/clubs" class="waves-effect"><i class="mdi mdi-fire fa-fw"></i>
-                        <span class="hide-menu">Clubs</span></a>
-                </li>
 
                 <li><a href="/admin/partners" class="waves-effect"><i class="mdi mdi-heart fa-fw"></i>
                         <span class="hide-menu">Partners</span></a>
@@ -180,6 +177,11 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type fa-fw"></i>
                         <span class="hide-menu">Standings<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
+
+                        <li><a href="/admin/clubs" class="waves-effect"><i class="mdi mdi-fire fa-fw"></i>
+                                <span class="hide-menu">Clubs</span></a>
+                        </li>
+
                         <li><a href="/admin/tournaments" class="waves-effect"><i class="mdi mdi-auto-fix fa-fw"></i>
                                 <span class="hide-menu">Tournaments</span></a>
                         </li>

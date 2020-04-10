@@ -9,7 +9,7 @@ class Tournament extends Model
 
     public function tournament_clubs()
     {
-        return $this->hasMany('App\TournamentClub', "tournament_id", "id");
+        return $this->hasMany('App\TournamentClub', "tournament_id", "id")->orderBy('rank', 'ASC');
     }
 
     public function clubs()

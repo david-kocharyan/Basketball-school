@@ -37,7 +37,7 @@
                                           method="post" id="work-for-form">
                                         @csrf
                                         @method("DELETE")
-                                        <a href="javascript:;" class="delForm" data-id ="{{$val->id}}">
+                                        <a href="javascript:void(0);" class="delForm" data-id ="{{$val->id}}">
                                             <button data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     class="btn btn-danger btn-circle tooltip-danger"><i
@@ -53,50 +53,47 @@
             </div>
         </div>
     </div>
-
-    @push('custom-style')
-        <style>
-            .swal-modal {
-                width: 660px !important;
-            }
-        </style>
-    @endpush
-
-    @push('custom-datatable')
-        <script>
-            $('#datatable').DataTable();
-        </script>
-    @endpush
-
-    @push('custom-script')
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            $('.delForm').on('click', function (event) {
-                event.preventDefault();
-                var id = $(this).data('id');
-                var text = $('.text_'+id).html();
-
-                swal({
-                    title: "Are you sure you want to delete the image?",
-                    text: text,
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                }).then((willDelete) => {
-                    if (willDelete) {
-                        $("#work-for-form").submit();
-                    } else {
-                        swal.close();
-                    }
-                });
-            })
-        </script>
-    @endpush
-
 @endsection
 
 
+@push('custom-style')
+    <style>
+        .swal-modal {
+            width: 660px !important;
+        }
+    </style>
+@endpush
 
+@push('custom-datatable')
+    <script>
+        $('#datatable').DataTable();
+    </script>
+@endpush
+
+@push('custom-script')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $('.delForm').on('click', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+            var text = $('.text_'+id).html();
+
+            swal({
+                title: "Are you sure you want to delete the image?",
+                text: text,
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $("#work-for-form").submit();
+                } else {
+                    swal.close();
+                }
+            });
+        })
+    </script>
+@endpush
 
 
 

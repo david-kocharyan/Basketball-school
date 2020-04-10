@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Upload Club Logo</label>
+                                <label for="image">Upload Club Logo <b class="text-danger"> ( recommended size 850x1024 ) </b></label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror

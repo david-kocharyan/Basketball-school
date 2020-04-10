@@ -26,13 +26,13 @@
                     <p class="title pb-3"><img style="height: 30px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Story
                     </p>
-                    <p class="subtitle"> {{$about->story}} </p>
+                    <p class="subtitle"> {{$about->story ?? ""}} </p>
                 </div>
                 <div class="col-md-6">
                     <p class="title pb-3"><img style="height: 30px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Why
                         Cilicia</p>
-                    <p class="subtitle"> {{$about->why}} </p>
+                    <p class="subtitle"> {{$about->why ?? ""}} </p>
                 </div>
             </div>
         </div>
@@ -44,19 +44,22 @@
                             <p class="title pb-3"><img style="height: 30px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our
                                 Mission</p>
-                            <p class="subtitle"> {{$about->mission}} </p>
+                            <p class="subtitle"> {{$about->mission ?? ""}} </p>
                         </div>
-                        @foreach(json_decode($about->mission_list) as $bin)
-                            <div class="col-xl-8 col-sm-12 d-flex justify-content-center pt-3 list-section">
-                                <div class="icon-cont d-flex align-items-center justify-content-center">
-                                    <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}" alt="">
+                        @if(isset($about->mission_list) )
+                            @foreach(json_decode($about->mission_list) as $bin)
+                                <div class="col-xl-8 col-sm-12 d-flex justify-content-center pt-3 list-section">
+                                    <div class="icon-cont d-flex align-items-center justify-content-center">
+                                        <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}"
+                                             alt="">
+                                    </div>
+                                    <div class="value-part ml-4">
+                                        <p class="value-title">{{$bin->mission_list_title}}</p>
+                                        <p class="value-text">{{$bin->mission_list_text}}</p>
+                                    </div>
                                 </div>
-                                <div class="value-part ml-4">
-                                    <p class="value-title">{{$bin->mission_list_title}}</p>
-                                    <p class="value-text">{{$bin->mission_list_text}}</p>
-                                </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

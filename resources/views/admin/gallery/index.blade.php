@@ -48,7 +48,7 @@
                                           method="post" id="work-for-form">
                                         @csrf
                                         @method("DELETE")
-                                        <a href="javascript:;" class="delForm" data-id ="{{$val->id}}">
+                                        <a href="javascript:void(0);" class="delForm" data-id ="{{$val->id}}">
                                             <button data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     class="btn btn-danger btn-circle tooltip-danger"><i

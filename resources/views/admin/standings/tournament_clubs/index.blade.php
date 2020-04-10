@@ -39,12 +39,11 @@
                                         <i class="fas fa-edit"></i>
                                     </a>
 
-                                    <form
-                                        onsubmit="if(confirm('Do You Really Want To Delete The Tournament Club?') == false) return false;"
-                                        style="display: inline-block" action="{{ $route."/".$val->id }}" method="post">
+                                    <form style="display: inline-block" action="{{ $route."/".$val->id }}"
+                                          method="post" id="work-for-form">
                                         @csrf
                                         @method("DELETE")
-                                        <a href="javascript:void(0)">
+                                        <a href="javascript:void(0);" class="delForm" data-id ="{{$val->id}}">
                                             <button data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     class="btn btn-danger btn-circle tooltip-danger"><i
@@ -61,6 +60,40 @@
         </div>
     </div>
 @endsection
+
+@push('custom-style')
+    <style>
+        .swal-modal {
+            width: 660px !important;
+        }
+    </style>
+@endpush
+
+@push('custom-script')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $('.delForm').on('click', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+            var text = $('.text_'+id).html();
+
+            swal({
+                title: "Are you sure you want to delete the tournament's club?",
+                text: text,
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $("#work-for-form").submit();
+                } else {
+                    swal.close();
+                }
+            });
+        })
+    </script>
+@endpush
+
 
 @push('custom-datatable')
     <script>

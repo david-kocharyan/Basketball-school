@@ -118,7 +118,7 @@
             }
 
             .link:hover {
-                color: black;
+                color: #9c1d24;
             }
 
             .category-part {

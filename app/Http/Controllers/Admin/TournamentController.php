@@ -49,7 +49,7 @@ class TournamentController extends Controller
 
         $tournament = new Tournament;
         $tournament->name = $request->name;
-        $tournament->show_in_home = $request->show ?? 1;
+        $tournament->show_in_home = $request->show ?? 0;
         $tournament->save();
 
         return redirect(self::ROUTE);

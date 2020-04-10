@@ -61,7 +61,7 @@
                                        placeholder="Longitude" name="lng" value="{{old('lng')}}" readonly>
                             </div>
 
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Coaches
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Venues
                             </button>
                         </form>
                     </div>
