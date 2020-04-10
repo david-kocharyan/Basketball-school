@@ -58,8 +58,13 @@ class PartnerController extends Controller
             $image_name =  Storage::disk('public')->put('partner/', $request->image);
         }
 
+        $link = $request->url;
+        if (strpos($link, 'http://') === false) {
+            $link = "http://" . $link;
+        }
+
         $partner = new Partner;
-        $partner->url = $request->url;
+        $partner->url = $link;
         $partner->image = basename($image_name);
         $partner->save();
 
@@ -109,7 +114,11 @@ class PartnerController extends Controller
             $image_name =  Storage::disk('public')->put('partner/', $request->image);
             $partner->image = basename($image_name);
         }
-        $partner->url = $request->url;
+        $link = $request->url;
+        if (strpos($link, 'http://') === false) {
+            $link = "http://" . $link;
+        }
+        $partner->url = $link;
         $partner->save();
 
         return redirect(self::ROUTE);
