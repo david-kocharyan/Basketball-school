@@ -28,6 +28,8 @@ Route::get('/gallery/{id}', 'Site\GalleryController@gallery');
 Route::post('/home-gallery-ajax', 'Site\GalleryController@home_ajax');
 Route::post('/gallery-ajax', 'Site\GalleryController@home_ajax');
 
+Route::get('/standings', 'Site\StandingController@index');
+
 
 /**
  * Parent authentication
@@ -63,7 +65,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('center', 'CenterController');
     Route::resource('league', 'LeagueController');
     Route::resource('categories', 'CategoryController');
-    Route::resource('/partners', 'PartnerController');
+    Route::resource('partners', 'PartnerController');
 
     Route::delete('/products/{product_id}/destroy-image/{id}', 'ProductController@destroy_image');
     Route::resource('products', 'ProductController');
@@ -80,6 +82,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('clubs', 'ClubController');
     Route::resource('tournaments', 'TournamentController');
     Route::resource('tournament-clubs', 'TournamentClubController');
+
+    Route::resource('games', 'GameController');
+    Route::get('game-finish/{id}', 'GameController@finish');
+    Route::put('game-finish/{id}', 'GameController@finish_game');
 
 });
 

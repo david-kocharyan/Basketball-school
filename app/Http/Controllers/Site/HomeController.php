@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Game;
 use App\HomeGallery;
 use App\MonthPlayer;
 use App\Product;
@@ -34,6 +35,10 @@ class HomeController extends Controller
 
         $best_players = MonthPlayer::with('players')->get();
         $home_gallery = HomeGallery::with('album')->get();
+//        $game = Game::with(['game_club', 'club', 'tournament', 'center'])->get();
+//        $game = Game::with(['game_club', 'club', 'tournament', 'center'])->get();
+
+        //todo
         return view(self::VIEW . ".index", compact("products", "standings", "best_players", "home_gallery"));
     }
 }

@@ -106,6 +106,10 @@
                         <span class="hide-menu">Players</span></a>
                 </li>
 
+                <li><a href="/admin/games" class="waves-effect"><i class="mdi mdi-gamepad-variant fa-fw"></i>
+                        <span class="hide-menu">Games</span></a>
+                </li>
+
                 <li><a href="/admin/coaches" class="waves-effect"><i class="mdi mdi-android-studio fa-fw"></i>
                         <span class="hide-menu">Coaches</span></a>
                 </li>

@@ -196,6 +196,43 @@
             .modal-content .lSPager li img{
                 max-height: 80px;
             }
+
+            .page-link{
+                position: relative;
+                display: block;
+                padding: .5rem .75rem;
+                margin-left: 5px;
+                line-height: 1.25;
+                color: #9c1d24;
+                background-color: #dddddd;
+                border: 1px solid #dddddd;
+            }
+
+            .page-item.disabled .page-link{
+                position: relative;
+                display: block;
+                padding: .5rem .75rem;
+                margin-left: 5px;
+                line-height: 1.25;
+                color: #9c1d24;
+                background-color: #dddddd;
+                border: 1px solid #dddddd;
+            }
+
+            .page-item.active .page-link{
+                z-index: 1;
+                color: #fff;
+                background-color: #9c1d24;
+                border-color: #9c1d24;
+            }
+
+            .page-link:hover {
+                z-index: 2;
+                color: #fff;
+                text-decoration: none;
+                background-color: #9c1d24;
+                border-color: #9c1d24;
+            }
         </style>
         <link type="text/css" rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.css") }}"/>
     @endpush

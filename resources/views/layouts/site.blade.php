@@ -82,7 +82,7 @@
                                 <div class="navbar-nav">
                                     <a class="nav-item nav-link" href="/academy-members">Academy</a>
                                     <a class="nav-item nav-link" href="#">Our teams</a>
-                                    <a class="nav-item nav-link" href="#">Standings</a>
+                                    <a class="nav-item nav-link" href="/standings">Standings</a>
                                     @if(Auth::guard('player')->check())
                                         <a class="nav-item nav-link" href="/player">Account</a>
                                     @else
