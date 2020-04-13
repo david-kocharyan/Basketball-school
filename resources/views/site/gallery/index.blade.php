@@ -8,9 +8,7 @@
             <div class="row">
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
-                        <p class="title"><img style="height: 30px" class="img-fluid"
-                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span
-                                class="greater">&gt;</span> {{ strtoupper($title) }}</p>
+                        <p class="title"><img style="height: 30px" class="img-fluid" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span class="greater">&gt;</span> {{ strtoupper($title) }}</p>
                         <p class="subtitle">We are competitive professional basketball club - with our players
                             competiting at all levels from local team galas</p>
                     </div>

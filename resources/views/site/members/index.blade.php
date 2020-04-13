@@ -83,10 +83,6 @@
                 padding-left: 10px;
                 padding-right: 10px;
             }
-
-            .main-box:hover{
-                transform: scale(1.2);
-            }
         </style>
     @endpush
 @endsection

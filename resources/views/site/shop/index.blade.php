@@ -78,7 +78,7 @@
     <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content" style="background-color: #e2e2e2">
+            <div class="modal-content">
                 <div class="modal-body row">
 
                 </div>
@@ -227,6 +227,7 @@
                     slideMargin: 0,
                     thumbItem: 4,
                     thumbMargin: 10,
+                    controls: false
                 });
             });
         </script>

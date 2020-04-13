@@ -17,6 +17,9 @@
 body{
     font-family: Roboto-Condensed-Regular, sans-serif;
 }
+.modal-open .header{
+    padding-right: 17px;
+}
 /*menu*/
 .sticky {
     position: fixed;
@@ -317,12 +320,20 @@ span.red {
     font-weight: 500;
     margin-bottom: 5px;
 }
+.main-box:hover .name-box{
+    transform: rotate(-90deg) translate(-130px,-155px);
+}
+.main-box .name-box{
+    transform: rotate(-90deg) translate(-130px,-255px);
+    transition: .3s;
+}
 .main-box {
     height: 310px;
     position: relative;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .name-box p{
     color: white;
@@ -452,4 +463,14 @@ span.red {
 }
 .table-section .table-head{
     font-size: 22px;
+}
+#exampleModalCenter .modal-content .name{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+#exampleModalCenter .modal-content{
+    background-color: #f7f7f7;
+}
+#exampleModalCenter .modal-content .price{
+    color: #6a6a6a;
 }

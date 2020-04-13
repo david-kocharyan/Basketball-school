@@ -47,9 +47,9 @@
     </div>
 
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row ">
-                <div class="title-cont col-md-8 mb-4 mt-4" style="margin: 0 auto;">
+                <div class="title-cont col-md-8 mb-4 mt-4">
                     <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">NEXT GAME
@@ -115,7 +115,7 @@
                                                 <span class="score-team text-uppercase"><b>50</b></span>
                                             </div>
                                         </div>
-                                        <div class="second-row red-bg d-flex align-items-end justify-content-center">
+                                        <div class="second-row @if($i < 2) gray-bg @else red-bg @endif d-flex align-items-end justify-content-center">
                                             <span class="finals text-uppercase"><b>NBA finals</b></span>
                                         </div>
                                     </div>
@@ -141,8 +141,8 @@
                     <h2 class="section-title"><img style="height: 25px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
                 </div>
 
-                @foreach($standings as $key=>$val)
-                    <div class="d-md-block col-md-4">
+                @foreach($standings as $key => $val)
+                    <div class="d-md-block @if($key != 0) d-none @endif col-md-4">
                         <table class="table table-striped">
                             <tr>
                                 <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
@@ -213,7 +213,7 @@
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery
                     </h2>
                 </div>
-                <div class="col-md-6 img-box px-0">
+                <div class="col-md-6 d-none d-xl-block img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin <= 2)
                             <div class="gallery-main-box">
@@ -241,7 +241,7 @@
                     @endforeach
                 </div>
 
-                <div class="col-md-6 img-box px-0">
+                <div class="col-md-6 d-none d-xl-block img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin > 2)
                             <div class="gallery-main-box">
@@ -268,6 +268,31 @@
                         @endif
                     @endforeach
                 </div>
+
+                @foreach($home_gallery as $bin=>$key)
+                    <div class="col-lg-4 col-md-6 col-12 d-xl-none pb-3 mob-version">
+                        <div class="gallery-main-box" style="background-image: url('{{ asset("uploads/home_gallery/$key->image") }}'); height: 255px; background-repeat:no-repeat; background-size: cover; background-position: center; ">
+                            <div class="rect-camera d-flex align-items-center">
+                                <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
+                            </div>
+                            <img class="example-image" src=""
+                                 alt=""/>
+                            <div class="overlay-hover">
+                                <div class="detail">
+                                    <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
+                                    <a href="javascript:void(0);" class="gallery-open-link"
+                                       data-id="{{ $key->album_id }}">
+                                        <button class="gallery-rounded-button rounded-button">Watch Album</button>
+                                    </a>
+                                </div>
+                                <div class="triangle">
+                                    <span>+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
                 <div class="col-md-12 text-center">
                     <button class="rounded-button"><a href="/gallery">OUR GALLERY</a></button>
                 </div>
@@ -303,14 +328,13 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             aria-hidden="true">
+            <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body row">
 
-    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-         aria-hidden="true">
-        <div class="modal-dialog  modal-lg" role="document">
-            <div class="modal-content" style="background-color: #e2e2e2">
-                <div class="modal-body row">
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -328,7 +352,9 @@
                 width: 100%;
                 margin: 0 auto;
             }
-
+            .gray-bg{
+                background-color: #6c6c6e;
+            }
             .gallery-top {
                 background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
                 background-repeat: no-repeat;
@@ -412,7 +438,7 @@
                 border-right: 23px solid transparent;
                 border-top: 12px solid #fff;
                 position: absolute;
-                bottom: 0;
+                bottom: 1px;
                 transform: translateY(100%);
             }
 
@@ -433,11 +459,16 @@
 
             .gallery-thumbs .first-row, .gallery-thumbs .second-row {
                 padding: 5px;
+                height: 52px;
+            }
+
+            .gallery-top-buttons.swiper-buttons img{
+                height: 50px;
             }
 
             .gallery-thumbs .swiper-buttons {
                 position: absolute;
-                width: 60px;
+                width: 30px;
                 top: 20px;
                 right: 0;
                 color: white;
@@ -452,7 +483,6 @@
 
             .gallery-top-buttons {
                 position: absolute;
-                width: 1200px;
                 left: 0;
                 right: 0;
                 margin: 0 auto;
@@ -465,6 +495,25 @@
 
             .gallery-top-buttons .prev-top:hover, .gallery-top-buttons .next-top:hover {
                 cursor: pointer;
+            }
+            @media (max-width: 1199px) {
+                .gallery-top{
+                    width: auto;
+                }
+                .gallery-top-buttons.swiper-buttons img{
+                    height: 40px;
+                }
+                .gallery-top-buttons .prev-top img{
+                    transform: translateX(-30px);
+                }
+                .gallery-top-buttons .next-top img{
+                    transform: translateX(30px);
+                }
+            }
+            @media (max-width: 1024px) {
+                .gallery-top-buttons{
+                    display: none;
+                }
             }
         </style>
 
@@ -804,9 +853,6 @@
                 margin-bottom: 10px;
                 background-size: cover !important;
             }
-            .main-box:hover{
-                transform: scale(1.2);
-            }
 
             .header-btn:hover, .rounded-button:hover {
                 border: 1px solid white;
@@ -859,9 +905,6 @@
                     height: 329px;
                 }
 
-                .gallery-top-buttons {
-                    width: 900px;
-                }
             }
 
             @media (max-width: 768px) {
@@ -930,6 +973,11 @@
 
             #lightSlider-modal .description {
                 color: #5b5b5b;
+            }
+            @media (max-width: 768px) {
+                .img-box{
+                    display: block;
+                }
             }
         </style>
     @endpush
@@ -1038,13 +1086,16 @@
                         slideMargin: 0,
                         thumbItem: 4,
                         thumbMargin: 10,
+                        controls: false
                     });
                 });
 
             });
             let removeMatchAnimation = (match_offset, current_offset_top) => {
-                if(current_offset_top >= match_offset - 350){
+                if(current_offset_top >= match_offset - 350 && current_offset_top <= match_offset + 250){
                     $(".gallery-top").removeClass("animate");
+                } else {
+                    if(!$(".gallery-top").hasClass("animate")) $(".gallery-top").addClass("animate");
                 }
             }
         </script>
