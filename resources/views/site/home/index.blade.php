@@ -165,7 +165,7 @@
                                                 <div class="score-cont d-flex justify-content-around">
                                                         <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
                                                         <span class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
-                                                        <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                        <span class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                                                 </div>
                                             </div>
                                             <div
