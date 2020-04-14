@@ -245,6 +245,33 @@ span.red {
     font-size: 14px;
     font-family: Roboto-Condensed-Regular, sans-serif;
 }
+
+.facebook{
+    background-image: url("../images/home/fb.png");
+    width: 14px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 26px;
+    display: inline-block;'
+}
+
+.instagram{
+    background-image: url("../images/home/insta.png");
+    width: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 24px;
+    display: inline-block;
+}
+
+.facebook:hover{
+    background-image: url("../images/home/fb_hover.png");
+
+}
+.instagram:hover{
+    background-image: url("../images/home/insta_hover.png");
+}
+
 .left-list{
     padding-left: 20px;
 }
@@ -325,7 +352,7 @@ span.red {
 }
 .main-box .name-box{
     transform: rotate(-90deg) translate(-130px,-255px);
-    transition: .3s;
+    transition: .6s;
 }
 .main-box {
     height: 310px;

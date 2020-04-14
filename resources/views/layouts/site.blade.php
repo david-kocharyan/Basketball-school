@@ -203,11 +203,11 @@
                 </div>
                 <div class="col-md-12 mt-3 text-center">
                     <h3>
-                        <a href="http://aimtech.am" style="padding: 5px">
-                            <img src="{{asset("assets/site/images/home/fb.png")}}" alt="Facebook">
+                        <a href="http://aimtech.am" style="padding: 5px; text-decoration: none;">
+                            <div class="facebook"></div>
                         </a>
-                        <a href="http://aimtech.am" style="padding: 5px">
-                            <img src="{{asset("assets/site/images/home/insta.png")}}" alt="Instagram">
+                        <a href="http://aimtech.am" style='padding: 5px; text-decoration: none;'>
+                            <div class="instagram"></div>
                         </a>
                     </h3>
                     <p style="color: white; font-size: 14px;">Copyright Cilicia team</p>

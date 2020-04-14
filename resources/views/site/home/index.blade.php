@@ -65,62 +65,114 @@
                     </div>
                     <div class="swiper-container gallery-top m-b-20 animate">
                         <div class="swiper-wrapper">
-
-                            @for($i = 0; $i < 4; $i++)
+                            @foreach($game as $key=>$val)
                                 <div class="swiper-slide d-flex flex-column justify-content-center">
-
                                     <div class="first-row  d-flex justify-content-around align-items-center">
                                         <div class="logo-cont">
-                                            <img src="{{ asset("assets/site/images/clubs/club-logo.png") }}"
+                                            <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
                                                  class="img-fluid" alt="">
+                                            <div class="team-cont left text-center">
+                                                <span class="team">{{$val->club[0]->name}}</span>
+                                            </div>
                                         </div>
                                         <div class="team-cont left">
-                                            <span class="team">Team1</span>
+                                            <span class="team" style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                         </div>
-                                        <div class="time-cont">
-                                            <span class="time">6:35 PM</span>
+                                        <div class="time-cont text-center">
+                                            <span class="time">{{$val->type}}</span>
+                                            <br>
+                                            <span class="finish_date">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</span>
                                         </div>
                                         <div class="team-cont right">
-                                            <span>Team2</span>
+                                            <span class="team" style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
                                         </div>
                                         <div class="logo-cont">
-                                            <img src="{{ asset("assets/site/images/clubs/club-logo.png") }}"
+                                            <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
                                                  class="img-fluid" alt="">
+                                            <div class="team-cont right text-center">
+                                                <span>{{$val->club[1]->name}}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="second-row d-flex flex-column align-items-center">
-                                        <span
-                                            class="finals mb-3 text-white text-uppercase">NBA finals april 28, 2021</span>
-                                        <span class="stadium text-white text-uppercase">bentleigh</span>
+                                        <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
+                                        <span class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
                                     </div>
-
                                 </div>
-                            @endfor
-
+                            @endforeach
+                                @foreach($upcoming as $key=>$val)
+                                    <div class="swiper-slide d-flex flex-column justify-content-center">
+                                        <div class="first-row  d-flex justify-content-around align-items-center">
+                                            <div class="logo-cont">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
+                                                     class="img-fluid" alt="">
+                                            </div>
+                                            <div class="team-cont left">
+                                                <span class="team">{{$val->club[0]->name}}</span>
+                                            </div>
+                                            <div class="time-cont">
+                                            <span
+                                                class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                            </div>
+                                            <div class="team-cont right">
+                                                <span>{{$val->club[1]->name}}</span>
+                                            </div>
+                                            <div class="logo-cont">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
+                                                     class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="second-row d-flex flex-column align-items-center">
+                                        <span
+                                            class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                            <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>
+                                        </div>
+                                    </div>
+                                @endforeach
                         </div>
-
                     </div>
                     <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
-                            @for($i = 0; $i < 4; $i++)
+                            @foreach($game as $key=>$val)
                                 <div class="swiper-slide">
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span class="date text-uppercase">March 10, 2019</span>
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around">
-                                                <span class="score-team text-uppercase"><b>98</b></span>
-                                                <span class="red text-uppercase time-final"><b>Final</b></span>
-                                                <span class="score-team text-uppercase"><b>50</b></span>
+                                                    <span class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
+                                                    <span class="red text-uppercase time-final"><b>{{$val->type}}</b></span>
+                                                    <span class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
                                             </div>
                                         </div>
-                                        <div class="second-row @if($i < 2) gray-bg @else red-bg @endif d-flex align-items-end justify-content-center">
-                                            <span class="finals text-uppercase"><b>NBA finals</b></span>
+                                        <div
+                                            class="second-row @ gray-bg d-flex align-items-end justify-content-center">
+                                            <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
                                         </div>
                                     </div>
                                 </div>
-                            @endfor
+                            @endforeach
+                                @foreach($upcoming as $key=>$val)
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-container">
+                                            <div class="first-row d-flex flex-column align-items-center">
+                                                <div class="date-cont">
+                                                    <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                </div>
+                                                <div class="score-cont d-flex justify-content-around">
+                                                        <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                        <span class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
+                                                        <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="second-row red-bg d-flex align-items-end justify-content-center">
+                                                <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                         </div>
                         <div class="swiper-buttons">
                             <div class="prev"><img src="{{asset('assets/site/images/home/slider-left.png')}}" alt="">
@@ -138,7 +190,9 @@
         <div class="container">
             <div class="row">
                 <div class="title-cont col-md-12 mb-4">
-                    <h2 class="section-title"><img style="height: 25px" src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings Table</h2>
+                    <h2 class="section-title"><img style="height: 25px"
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
+                        Table</h2>
                 </div>
 
                 @foreach($standings as $key => $val)
@@ -157,8 +211,10 @@
                                 @if($b > 10) @break @endif
                                 <tr>
                                     <td>{{$b + 1}}</td>
-                                    <td class="text-left"><img class="img-fluid" style="height: 20px; margin-right: 10px"
-                                             src="{{ asset("uploads/clubs")."/".$val->clubs[$b]->image }}" alt="">{{$val->clubs[$b]->name}}
+                                    <td class="text-left"><img class="img-fluid"
+                                                               style="height: 20px; margin-right: 10px"
+                                                               src="{{ asset("uploads/clubs")."/".$val->clubs[$b]->image }}"
+                                                               alt="">{{$val->clubs[$b]->name}}
                                     </td>
                                     <td>{{$v->win." / ".$v->lose}}</td>
                                     <td>{{$v->points}}</td>
@@ -168,16 +224,16 @@
                     </div>
                 @endforeach
             </div>
-{{--            <div class="row">--}}
-{{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
-{{--                    <h2 class="section-title"><img style="height: 25px"--}}
-{{--                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs--}}
-{{--                    </h2>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-12">--}}
-{{--                    <img class="img-fluid" src="{{ asset("assets/site/images/home/playoffs.png") }}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="row">--}}
+            {{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
+            {{--                    <h2 class="section-title"><img style="height: 25px"--}}
+            {{--                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs--}}
+            {{--                    </h2>--}}
+            {{--                </div>--}}
+            {{--                <div class="col-md-12">--}}
+            {{--                    <img class="img-fluid" src="{{ asset("assets/site/images/home/playoffs.png") }}" alt="">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </div>
     </div>
 
@@ -191,9 +247,11 @@
                 </div>
                 @foreach($best_players as $key)
                     <div class="col-md-3">
-                        <div class="main-box" style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}'); transition: all 1s;">
+                        <div class="main-box"
+                             style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}'); transition: all 1s;">
                             <div class="name-box d-flex align-items-center">
-                                <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span class="mr-3">{{" ". $key->players->full_name}}</span></p>
+                                <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span
+                                        class="mr-3">{{" ". $key->players->full_name}}</span></p>
                             </div>
                             <div class="age-box d-flex align-items-center">
                                 <p class="text-center m-0">{{$key->team}}</p>
@@ -271,7 +329,8 @@
 
                 @foreach($home_gallery as $bin=>$key)
                     <div class="col-lg-4 col-md-6 col-12 d-xl-none pb-3 mob-version">
-                        <div class="gallery-main-box" style="background-image: url('{{ asset("uploads/home_gallery/$key->image") }}'); height: 255px; background-repeat:no-repeat; background-size: cover; background-position: center; ">
+                        <div class="gallery-main-box"
+                             style="background-image: url('{{ asset("uploads/home_gallery/$key->image") }}'); height: 255px; background-repeat:no-repeat; background-size: cover; background-position: center; ">
                             <div class="rect-camera d-flex align-items-center">
                                 <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
                             </div>
@@ -315,7 +374,9 @@
                                 <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                 <h4 class="color-red text-center">{{ $product->name }}</h4>
                                 <p class="text-center price mb-1">{{ $product->price }}</p>
-                                <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">View</p>
+                                <p data-info="{{ json_encode($product) }}"
+                                   class="quick-view d-flex justify-content-center align-items-center text-uppercase">
+                                    View</p>
                             </div>
                         </div>
                     </div>
@@ -352,9 +413,16 @@
                 width: 100%;
                 margin: 0 auto;
             }
-            .gray-bg{
+
+            .finish_date{
+                color: white;
+                font-size: 14px;
+            }
+
+            .gray-bg {
                 background-color: #6c6c6e;
             }
+
             .gallery-top {
                 background-image: url("{{ asset("assets/site/images/home/match_img.jpg") }}");
                 background-repeat: no-repeat;
@@ -462,7 +530,7 @@
                 height: 52px;
             }
 
-            .gallery-top-buttons.swiper-buttons img{
+            .gallery-top-buttons.swiper-buttons img {
                 height: 50px;
             }
 
@@ -496,22 +564,27 @@
             .gallery-top-buttons .prev-top:hover, .gallery-top-buttons .next-top:hover {
                 cursor: pointer;
             }
+
             @media (max-width: 1199px) {
-                .gallery-top{
+                .gallery-top {
                     width: auto;
                 }
-                .gallery-top-buttons.swiper-buttons img{
+
+                .gallery-top-buttons.swiper-buttons img {
                     height: 40px;
                 }
-                .gallery-top-buttons .prev-top img{
+
+                .gallery-top-buttons .prev-top img {
                     transform: translateX(-30px);
                 }
-                .gallery-top-buttons .next-top img{
+
+                .gallery-top-buttons .next-top img {
                     transform: translateX(30px);
                 }
             }
+
             @media (max-width: 1024px) {
-                .gallery-top-buttons{
+                .gallery-top-buttons {
                     display: none;
                 }
             }
@@ -920,7 +993,7 @@
                     height: 500px;
                 }
 
-                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left, .animate .logo-cont:first-child, .animate .left{
+                .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left, .animate .logo-cont:first-child, .animate .left {
                     position: relative;
                     left: 0;
                     top: -250%;
@@ -949,17 +1022,20 @@
             .modal-content .lSSlideWrapper.usingCss {
                 border: 1px solid #d0d2d4;
             }
-            #lightSlider-modal{
+
+            #lightSlider-modal {
                 height: 300px;
             }
-            .modal-content .lSPager li{
+
+            .modal-content .lSPager li {
                 border: 1px solid #d0d2d4;
                 height: 100px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
-            .modal-content .lSPager li img{
+
+            .modal-content .lSPager li img {
                 max-height: 80px;
             }
 
@@ -967,6 +1043,7 @@
                 color: #6c6c6e;
                 font-size: 16px;
             }
+
             #lightSlider-modal .img-cont {
                 text-align: center;
             }
@@ -974,8 +1051,9 @@
             #lightSlider-modal .description {
                 color: #5b5b5b;
             }
+
             @media (max-width: 768px) {
-                .img-box{
+                .img-box {
                     display: block;
                 }
             }
@@ -992,7 +1070,7 @@
                     $.ajax({
                         url: '/home-gallery-ajax',
                         type: 'post',
-                        data: { "_token": "{{ csrf_token() }}", "id": id},
+                        data: {"_token": "{{ csrf_token() }}", "id": id},
                         dataType: 'json',
                         success: function (result) {
                             SimpleLightbox.open({
@@ -1096,49 +1174,49 @@
                 removeMatchAnimation(match_offset, current_offset_top);
                 animateTexts($(window).scrollTop(), ...texts);
 
-                $(document).on("scroll", function(){
+                $(document).on("scroll", function () {
                     removeMatchAnimation(match_offset, $(window).scrollTop());
                     animateTexts($(window).scrollTop(), ...texts);
                 });
 
             });
             let removeMatchAnimation = (match_offset, current_offset_top) => {
-                if(current_offset_top >= match_offset - 550 && current_offset_top <= match_offset + 550){
+                if (current_offset_top >= match_offset - 550 && current_offset_top <= match_offset + 550) {
                     $(".gallery-top").removeClass("animate");
                 } else {
-                    if(!$(".gallery-top").hasClass("animate")) $(".gallery-top").addClass("animate");
+                    if (!$(".gallery-top").hasClass("animate")) $(".gallery-top").addClass("animate");
                 }
             }
             let animateTexts = (current_offset, a, b, c, d, e) => {
 
-               if(current_offset >= a - 550 && current_offset <= a) {
-                   $(".match-slider .title-cont").addClass("animation-finished");
-               } else{
-                   if($(".match-slider .title-cont").hasClass("animation-finished")) $(".match-slider .title-cont").removeClass("animation-finished");
-               }
+                if (current_offset >= a - 550 && current_offset <= a) {
+                    $(".match-slider .title-cont").addClass("animation-finished");
+                } else {
+                    if ($(".match-slider .title-cont").hasClass("animation-finished")) $(".match-slider .title-cont").removeClass("animation-finished");
+                }
 
-                if(current_offset >= b - 550 && current_offset <= b) {
+                if (current_offset >= b - 550 && current_offset <= b) {
                     $(".table-section .title-cont").addClass("animation-finished");
-                } else{
-                    if($(".table-section .title-cont").hasClass("animation-finished")) $(".table-section .title-cont").removeClass("animation-finished");
+                } else {
+                    if ($(".table-section .title-cont").hasClass("animation-finished")) $(".table-section .title-cont").removeClass("animation-finished");
                 }
 
-                if(current_offset >= c - 550 && current_offset <= c) {
+                if (current_offset >= c - 550 && current_offset <= c) {
                     $(".group-section .title-cont").addClass("animation-finished");
-                } else{
-                    if($(".group-section .title-cont").hasClass("animation-finished")) $(".group-section .title-cont").removeClass("animation-finished");
+                } else {
+                    if ($(".group-section .title-cont").hasClass("animation-finished")) $(".group-section .title-cont").removeClass("animation-finished");
                 }
 
-                if(current_offset >= d - 550 && current_offset <= d) {
+                if (current_offset >= d - 550 && current_offset <= d) {
                     $(".gal-row .title-cont").addClass("animation-finished");
-                } else{
-                    if($(".gal-row .title-cont").hasClass("animation-finished")) $(".gal-row .title-cont").removeClass("animation-finished");
+                } else {
+                    if ($(".gal-row .title-cont").hasClass("animation-finished")) $(".gal-row .title-cont").removeClass("animation-finished");
                 }
 
-                if(current_offset >= e - 550 && current_offset <= e) {
+                if (current_offset >= e - 550 && current_offset <= e) {
                     $(".club .title-cont").addClass("animation-finished");
-                } else{
-                    if($(".club .title-cont").hasClass("animation-finished")) $(".club .title-cont").removeClass("animation-finished");
+                } else {
+                    if ($(".club .title-cont").hasClass("animation-finished")) $(".club .title-cont").removeClass("animation-finished");
                 }
 
             }
