@@ -207,7 +207,7 @@
 
     <div class="gallery">
         <div class="container">
-            <div class="row">
+            <div class="row gal-row">
                 <div class="title-cont col-md-12 mb-4 mt-4">
                     <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery
@@ -297,7 +297,7 @@
                     <button class="rounded-button"><a href="/gallery">OUR GALLERY</a></button>
                 </div>
             </div>
-            <div class="row">
+            <div class="row club">
                 <div class="title-cont col-md-12 mb-4 mt-4">
                     <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop
@@ -1051,14 +1051,7 @@
                     }
                 });
                 galleryTop.controller.control = galleryTop;
-                galleryThumbs.controller.control = galleryTop;
-
-                let match_offset = $(".gallery-top").offset().top;
-                let current_offset_top = $(window).scrollTop();
-                removeMatchAnimation(match_offset, current_offset_top)
-                $(document).on("scroll", function(){
-                    removeMatchAnimation(match_offset, $(window).scrollTop())
-                });
+                galleryThumbs.controller.control = galleryTop
 
                 let asset_url = '{{ asset("uploads/product") . "/" }}';
                 $(document).on("click", ".quick-view", function () {
@@ -1090,13 +1083,64 @@
                     });
                 });
 
+                let match_offset = $(".gallery-top").offset().top;
+                let match_text = $(".match-slider .title-cont").offset().top;
+                let table_text = $(".table-section .title-cont").offset().top;
+                let group_text = $(".group-section .title-cont").offset().top;
+                let gallery_text = $(".gal-row .title-cont").offset().top;
+                let club_text = $(".club .title-cont").offset().top;
+
+                let texts = [match_text, table_text, group_text, gallery_text, club_text];
+
+                let current_offset_top = $(window).scrollTop();   // in case the window is not scrolled top on page load
+                removeMatchAnimation(match_offset, current_offset_top);
+                animateTexts($(window).scrollTop(), ...texts);
+
+                $(document).on("scroll", function(){
+                    removeMatchAnimation(match_offset, $(window).scrollTop());
+                    animateTexts($(window).scrollTop(), ...texts);
+                });
+
             });
             let removeMatchAnimation = (match_offset, current_offset_top) => {
-                if(current_offset_top >= match_offset - 350 && current_offset_top <= match_offset + 250){
+                if(current_offset_top >= match_offset - 550 && current_offset_top <= match_offset + 550){
                     $(".gallery-top").removeClass("animate");
                 } else {
                     if(!$(".gallery-top").hasClass("animate")) $(".gallery-top").addClass("animate");
                 }
+            }
+            let animateTexts = (current_offset, a, b, c, d, e) => {
+
+               if(current_offset >= a - 550 && current_offset <= a) {
+                   $(".match-slider .title-cont").addClass("animation-finished");
+               } else{
+                   if($(".match-slider .title-cont").hasClass("animation-finished")) $(".match-slider .title-cont").removeClass("animation-finished");
+               }
+
+                if(current_offset >= b - 550 && current_offset <= b) {
+                    $(".table-section .title-cont").addClass("animation-finished");
+                } else{
+                    if($(".table-section .title-cont").hasClass("animation-finished")) $(".table-section .title-cont").removeClass("animation-finished");
+                }
+
+                if(current_offset >= c - 550 && current_offset <= c) {
+                    $(".group-section .title-cont").addClass("animation-finished");
+                } else{
+                    if($(".group-section .title-cont").hasClass("animation-finished")) $(".group-section .title-cont").removeClass("animation-finished");
+                }
+
+                if(current_offset >= d - 550 && current_offset <= d) {
+                    $(".gal-row .title-cont").addClass("animation-finished");
+                } else{
+                    if($(".gal-row .title-cont").hasClass("animation-finished")) $(".gal-row .title-cont").removeClass("animation-finished");
+                }
+
+                if(current_offset >= e - 550 && current_offset <= e) {
+                    $(".club .title-cont").addClass("animation-finished");
+                } else{
+                    if($(".club .title-cont").hasClass("animation-finished")) $(".club .title-cont").removeClass("animation-finished");
+                }
+
             }
         </script>
     @endpush

@@ -474,3 +474,11 @@ span.red {
 #exampleModalCenter .modal-content .price{
     color: #6a6a6a;
 }
+.title-cont{
+    position: relative;
+    left: -50%;
+    transition: .3s;
+}
+.animation-finished{
+    left: 0;
+}
