@@ -1118,7 +1118,7 @@
                 });
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 100,
-                    centeredSlides: true,
+                    centeredSlides: false,
                     slidesPerView: 5,
                     touchRatio: 0.2,
                     slideToClickedSlide: true,
