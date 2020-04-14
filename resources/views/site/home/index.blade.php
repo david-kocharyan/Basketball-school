@@ -66,29 +66,34 @@
                     <div class="swiper-container gallery-top m-b-20 animate">
                         <div class="swiper-wrapper">
                             @foreach($game as $key=>$val)
-                                <div class="swiper-slide d-flex flex-column justify-content-center">
+                                <div class="swiper-slide finished-games d-flex flex-column justify-content-center">
                                     <div class="first-row  d-flex justify-content-around align-items-center">
-                                        <div class="logo-cont">
-                                            <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
-                                                 class="img-fluid" alt="">
+
+                                        <div class="left-cont text-center">
+                                            <div class="logo-cont">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}' class="img-fluid" alt="">
+                                            </div>
                                             <div class="team-cont left text-center">
                                                 <span class="team">{{$val->club[0]->name}}</span>
                                             </div>
                                         </div>
-                                        <div class="team-cont left">
+
+                                        <div class="date-cont left">
                                             <span class="team" style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                         </div>
                                         <div class="time-cont text-center">
                                             <span class="time">{{$val->type}}</span>
-                                            <br>
-                                            <span class="finish_date">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</span>
+                                            <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                         </div>
-                                        <div class="team-cont right">
+                                        <div class="date-cont right">
                                             <span class="team" style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
                                         </div>
-                                        <div class="logo-cont">
-                                            <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
-                                                 class="img-fluid" alt="">
+
+                                        <div class="right-cont text-center">
+                                            <div class="logo-cont">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
+                                                     class="img-fluid" alt="">
+                                            </div>
                                             <div class="team-cont right text-center">
                                                 <span>{{$val->club[1]->name}}</span>
                                             </div>
@@ -104,22 +109,19 @@
                                     <div class="swiper-slide d-flex flex-column justify-content-center">
                                         <div class="first-row  d-flex justify-content-around align-items-center">
                                             <div class="logo-cont">
-                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
-                                                     class="img-fluid" alt="">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}' class="img-fluid" alt="">
                                             </div>
                                             <div class="team-cont left">
                                                 <span class="team">{{$val->club[0]->name}}</span>
                                             </div>
                                             <div class="time-cont">
-                                            <span
-                                                class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                                <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
                                             </div>
                                             <div class="team-cont right">
                                                 <span>{{$val->club[1]->name}}</span>
                                             </div>
                                             <div class="logo-cont">
-                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
-                                                     class="img-fluid" alt="">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}' class="img-fluid" alt="">
                                             </div>
                                         </div>
                                         <div class="second-row d-flex flex-column align-items-center">
@@ -147,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div
-                                            class="second-row @ gray-bg d-flex align-items-end justify-content-center">
+                                            class="second-row gray-bg d-flex align-items-end justify-content-center">
                                             <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
                                         </div>
                                     </div>
@@ -454,10 +456,13 @@
             .gallery-top .team-cont span {
                 font-family: Agency, sans-serif;
                 color: white;
-                font-size: 35px;
-                letter-spacing: 2px;
+                font-size: 30px;
+                letter-spacing: 1px;
             }
-
+            .gallery-top .team-cont.date-cont span{
+                font-family: Arial, sans-serif;
+                font-size: 35px;
+            }
             .gallery-top .time {
                 padding: 10px 15px;
                 background-color: #9c1d24;
@@ -963,7 +968,12 @@
                     height: 100%;
                     flex-direction: column;
                 }
-
+                .gallery-top, .swiper-slide{
+                    height: 520px!important;
+                }
+                .gallery-top .team-cont{
+                    width: 50%;
+                }
                 .gallery-top-buttons {
                     display: none;
                 }
@@ -973,9 +983,8 @@
                 .gallery-top, .gallery-thumbs, .red-header {
                     width: 697px;
                 }
-
-                .gallery-top {
-                    height: 329px;
+                .gallery-top .team-cont span{
+                    font-size: 20px;
                 }
 
             }
@@ -987,6 +996,15 @@
 
                 .gallery-top, .gallery-thumbs, .red-header {
                     width: 100%;
+                }
+
+                .finished-games .time{
+                    padding: 10px 8px;
+                    font-size: 15px;
+                }
+
+                .finished-games .date-cont span{
+                    font-size: 20px;
                 }
 
                 .gallery-top {
@@ -1189,31 +1207,31 @@
             }
             let animateTexts = (current_offset, a, b, c, d, e) => {
 
-                if (current_offset >= a - 550 && current_offset <= a) {
+                if (current_offset >= a - 550 && current_offset <= a + 100) {
                     $(".match-slider .title-cont").addClass("animation-finished");
                 } else {
                     if ($(".match-slider .title-cont").hasClass("animation-finished")) $(".match-slider .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= b - 550 && current_offset <= b) {
+                if (current_offset >= b - 550 && current_offset <= b + 100) {
                     $(".table-section .title-cont").addClass("animation-finished");
                 } else {
                     if ($(".table-section .title-cont").hasClass("animation-finished")) $(".table-section .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= c - 550 && current_offset <= c) {
+                if (current_offset >= c - 550 && current_offset <= c + 100) {
                     $(".group-section .title-cont").addClass("animation-finished");
                 } else {
                     if ($(".group-section .title-cont").hasClass("animation-finished")) $(".group-section .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= d - 550 && current_offset <= d) {
+                if (current_offset >= d - 550 && current_offset <= d + 100) {
                     $(".gal-row .title-cont").addClass("animation-finished");
                 } else {
                     if ($(".gal-row .title-cont").hasClass("animation-finished")) $(".gal-row .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= e - 550 && current_offset <= e) {
+                if (current_offset >= e - 550 && current_offset <= e + 100) {
                     $(".club .title-cont").addClass("animation-finished");
                 } else {
                     if ($(".club .title-cont").hasClass("animation-finished")) $(".club .title-cont").removeClass("animation-finished");

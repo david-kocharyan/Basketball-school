@@ -503,9 +503,32 @@ span.red {
 }
 .title-cont{
     position: relative;
-    left: -50%;
+    left: -100%;
     transition: .3s;
 }
 .animation-finished{
     left: 0;
+}
+.finished-games .time-cont{
+    width: 50%;
+}
+.finished-games .left-cont, .finished-games.left-cont{
+    padding: 0 10px;
+}
+.gallery-top .team-cont{
+    width: 25%;
+    text-align: center;
+}
+.gallery-top .finished-games .team-cont{
+    width: auto;
+}
+.gallery-top .date-cont{
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    color: white;
+}
+.time-final{
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
