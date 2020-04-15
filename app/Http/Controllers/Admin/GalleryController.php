@@ -15,7 +15,7 @@ class GalleryController extends Controller
 //Path To the View Folder
     const FOLDER = "admin.gallery";
 //    Resource Title
-    const TITLE = "Gallery";
+    const TITLE = "Album";
 //    Resource Route
     const ROUTE = "/admin/gallery";
 

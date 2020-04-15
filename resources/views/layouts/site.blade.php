@@ -119,7 +119,7 @@
         <div class="partners d-flex align-items-center position-relative">
             <div class="container">
                 <div class="row">
-                    <ul id="partnerGallery">
+                    <ul id="partnerGallery" style="height: auto;">
                         @foreach(\App\Partner::all() as $key)
                             <li>
                                 <a href="{{ $key->url }}" target="_blank">

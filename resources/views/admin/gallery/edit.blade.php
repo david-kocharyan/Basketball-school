@@ -63,6 +63,8 @@
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
+                                <b class="text-danger"> Recommended size 1772x1183‬ </b>
+                                <br>
                                 <input type="file" name="image[]" id="file-1" class="inputfile inputfile-1"
                                        data-multiple-caption="<i class='mdi mdi-cloud-upload fa-fw'></i>  {count} files selected" multiple>
                                 <label for="file-1"><span> <i class="mdi mdi-cloud-upload fa-fw"></i> Choose an image…</span></label>
@@ -81,7 +83,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-info">
-                <div class="panel-heading">Edit Products Images</div>
+                <div class="panel-heading">Edit Album Images</div>
                 <div class="panel-wrapper collapse in" aria-expanded="true">
                     <div class="panel-body">
                         <div class="table-responsive">
