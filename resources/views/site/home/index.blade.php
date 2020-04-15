@@ -33,11 +33,11 @@
         </div>
     </div>
 
-    <div class="shop-line d-flex align-items-center">
+    <div class="shop-line d-flex align-items-center p-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-lg-center shop-text-cont">
-                    <p class="text-white m-0 shop-text">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
+                    <p class="text-white m-0 shop-text text-center">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-lg-center justify-content-lg-end shop-btn-cont">
                     <a href="/shop" class="visit-btn text-center shop-btn">VISIT SHOP</a>
@@ -78,14 +78,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="date-cont left">
+                                        <div class="date-cont game-score left text-md-right" style="width: 100px;">
                                             <span class="team" style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                         </div>
                                         <div class="time-cont text-center mt-md-5">
                                             <span class="time">{{$val->type}}</span>
                                             <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                         </div>
-                                        <div class="date-cont right">
+                                        <div class="date-cont game-score right text-md-left" style="width: 100px;">
                                             <span class="team" style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
                                         </div>
 
@@ -790,7 +790,6 @@
             }
 
             .shop-line {
-                height: 60px;
                 background: #151515;
             }
 
@@ -968,9 +967,9 @@
                     height: 100%;
                     flex-direction: column;
                 }
-                .gallery-top, .swiper-slide{
-                    height: 520px!important;
-                }
+                /*.gallery-top, .swiper-slide{*/
+                /*    height: 520px!important;*/
+                /*}*/
                 .gallery-top .team-cont{
                     width: 50%;
                 }
@@ -1073,6 +1072,9 @@
             @media (max-width: 768px) {
                 .img-box {
                     display: block;
+                }
+                .game-score{
+                    text-align: center;
                 }
             }
         </style>
