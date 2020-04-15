@@ -210,7 +210,9 @@
                             <div class="instagram"></div>
                         </a>
                     </h3>
-                    <p style="color: white; font-size: 14px;">Copyright Cilicia team</p>
+                    <p style="color: white; font-size: 14px; margin-bottom: 2px;"> &copy; Copyright Cilicia team</p>
+                    <p style="color: white; font-size: 14px;">All rights reserved. Designed and developed by
+                        <img src="{{asset('assets/site/images/home/aimtech_logo.png')}}" alt="Aimtech Logo"></p>
                 </div>
             </div>
         </div>
