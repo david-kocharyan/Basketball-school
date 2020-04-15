@@ -81,7 +81,7 @@
                                         <div class="date-cont left">
                                             <span class="team" style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                         </div>
-                                        <div class="time-cont text-center">
+                                        <div class="time-cont text-center mt-md-5">
                                             <span class="time">{{$val->type}}</span>
                                             <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                         </div>
@@ -99,7 +99,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="second-row d-flex flex-column align-items-center">
+                                    <div class="second-row d-flex flex-column align-items-center ml-md-4">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
                                     </div>
@@ -124,7 +124,7 @@
                                                 <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}' class="img-fluid" alt="">
                                             </div>
                                         </div>
-                                        <div class="second-row d-flex flex-column align-items-center">
+                                        <div class="second-row d-flex flex-column align-items-center ml-md-4">
                                         <span
                                             class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>

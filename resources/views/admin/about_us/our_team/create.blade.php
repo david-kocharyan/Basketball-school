@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Image</label>
+                                <label for="image">Image <b class="text-danger"> ( recommended size 255x255 ) </b></label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
