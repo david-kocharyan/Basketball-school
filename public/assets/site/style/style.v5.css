@@ -504,10 +504,12 @@ span.red {
 .title-cont{
     position: relative;
     left: -100%;
-    transition: .3s;
+    opacity: 0;
+    transition: 1.3s;
 }
 .animation-finished{
     left: 0;
+    opacity: 1;
 }
 .finished-games .time-cont{
     width: 50%;
