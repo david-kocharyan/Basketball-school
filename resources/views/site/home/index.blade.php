@@ -150,7 +150,7 @@
                                         </div>
                                         <div
                                             class="second-row gray-bg d-flex align-items-end justify-content-center">
-                                            <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
+                                            <span class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
                                         </div>
                                     </div>
                                 </div>
