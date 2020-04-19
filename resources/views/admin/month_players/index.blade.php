@@ -81,7 +81,7 @@
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                    $("#work-for-form").submit();
+                    $(this).parent().submit();
                 } else {
                     swal.close();
                 }
