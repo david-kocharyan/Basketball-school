@@ -1209,34 +1209,24 @@
             }
             let animateTexts = (current_offset, a, b, c, d, e) => {
 
-                if (current_offset >= a - 550 && current_offset <= a + 100) {
+                if (current_offset >= a - 550) {
                     $(".match-slider .title-cont").addClass("animation-finished");
-                } else {
-                    if ($(".match-slider .title-cont").hasClass("animation-finished")) $(".match-slider .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= b - 550 && current_offset <= b + 100) {
+                if (current_offset >= b - 550) {
                     $(".table-section .title-cont").addClass("animation-finished");
-                } else {
-                    if ($(".table-section .title-cont").hasClass("animation-finished")) $(".table-section .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= c - 550 && current_offset <= c + 100) {
+                if (current_offset >= c - 550) {
                     $(".group-section .title-cont").addClass("animation-finished");
-                } else {
-                    if ($(".group-section .title-cont").hasClass("animation-finished")) $(".group-section .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= d - 550 && current_offset <= d + 100) {
+                if (current_offset >= d - 550) {
                     $(".gal-row .title-cont").addClass("animation-finished");
-                } else {
-                    if ($(".gal-row .title-cont").hasClass("animation-finished")) $(".gal-row .title-cont").removeClass("animation-finished");
                 }
 
-                if (current_offset >= e - 550 && current_offset <= e + 100) {
+                if (current_offset >= e - 550) {
                     $(".club .title-cont").addClass("animation-finished");
-                } else {
-                    if ($(".club .title-cont").hasClass("animation-finished")) $(".club .title-cont").removeClass("animation-finished");
                 }
 
             }

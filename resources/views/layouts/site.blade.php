@@ -7,7 +7,7 @@
     <title>Cilicia</title>
     <link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/site/style/style.v5.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/site/style/style.v6.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
     @stack('head')
 </head>

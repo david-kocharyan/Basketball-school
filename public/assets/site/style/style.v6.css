@@ -503,7 +503,7 @@ span.red {
 }
 .title-cont{
     position: relative;
-    left: -100%;
+    left: -30%;
     opacity: 0;
     transition: 1.3s;
 }
