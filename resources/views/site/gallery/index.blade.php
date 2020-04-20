@@ -33,7 +33,7 @@
                     @foreach($all as $bin => $key)
                         <div class="col-xl-4 col-md-6" style="padding: 5px">
                             <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
-                                <img class="example-image"
+                                <img class="example-image img-responsive"
                                      src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
                                 <div class="overlay-hover">
                                     <div class="detail">
@@ -229,6 +229,13 @@
             .tab-content .row {
                 padding-left: 10px;
                 padding-right: 10px;
+            }
+
+            .gallery-open-link{
+                height: 250px;
+            }
+            .gallery-open-link img{
+                object-fit: cover;
             }
         </style>
     @endpush
