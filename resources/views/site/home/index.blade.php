@@ -71,7 +71,8 @@
 
                                         <div class="left-cont text-center">
                                             <div class="logo-cont">
-                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}' class="img-fluid" alt="">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
+                                                     class="img-fluid" alt="">
                                             </div>
                                             <div class="team-cont left text-center">
                                                 <span class="team">{{$val->club[0]->name}}</span>
@@ -79,14 +80,16 @@
                                         </div>
 
                                         <div class="date-cont game-score left text-md-right" style="width: 100px;">
-                                            <span class="team" style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
+                                            <span class="team"
+                                                  style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                         </div>
                                         <div class="time-cont text-center mt-md-5">
                                             <span class="time">{{$val->type}}</span>
                                             <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                         </div>
                                         <div class="date-cont game-score right text-md-left" style="width: 100px;">
-                                            <span class="team" style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
+                                            <span class="team"
+                                                  style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
                                         </div>
 
                                         <div class="right-cont text-center">
@@ -101,36 +104,44 @@
                                     </div>
                                     <div class="second-row d-flex flex-column align-items-center ml-md-4">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
-                                        <span class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
+                                        <span
+                                            class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
                                     </div>
                                 </div>
                             @endforeach
-                                @foreach($upcoming as $key=>$val)
-                                    <div class="swiper-slide d-flex flex-column justify-content-center">
-                                        <div class="first-row  d-flex justify-content-around align-items-center">
+                            @foreach($upcoming as $key=>$val)
+                                <div class="swiper-slide d-flex flex-column justify-content-center">
+                                    <div class="first-row  d-flex justify-content-around align-items-center">
+                                        <div class="left-cont text-center">
                                             <div class="logo-cont">
-                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}' class="img-fluid" alt="">
-                                            </div>
-                                            <div class="team-cont left">
-                                                <span class="team">{{$val->club[0]->name}}</span>
-                                            </div>
-                                            <div class="time-cont">
-                                                <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
-                                            </div>
-                                            <div class="team-cont right">
-                                                <span>{{$val->club[1]->name}}</span>
-                                            </div>
-                                            <div class="logo-cont">
-                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}' class="img-fluid" alt="">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
+                                                     class="img-fluid" alt="">
                                             </div>
                                         </div>
-                                        <div class="second-row d-flex flex-column align-items-center ml-md-4">
-                                        <span
-                                            class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
-                                            <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>
+                                        <div class="team-cont left">
+                                            <span class="team">{{$val->club[0]->name}}</span>
+                                        </div>
+                                        <div class="time-cont">
+                                            <span
+                                                class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                        </div>
+                                        <div class="team-cont right">
+                                            <span>{{$val->club[1]->name}}</span>
+                                        </div>
+                                        <div class="right-cont text-center">
+                                            <div class="logo-cont">
+                                                <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
+                                                     class="img-fluid" alt="">
+                                            </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                    <div class="second-row d-flex flex-column align-items-center ml-md-4">
+                                        <span
+                                            class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                        <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-container gallery-thumbs">
@@ -140,41 +151,49 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                <span
+                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around">
-                                                    <span class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
-                                                    <span class="red text-uppercase time-final"><b>{{$val->type}}</b></span>
-                                                    <span class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
+                                                <span class="red text-uppercase time-final"><b>{{$val->type}}</b></span>
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
                                             </div>
                                         </div>
                                         <div
                                             class="second-row gray-bg d-flex align-items-end justify-content-center">
-                                            <span class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
+                                            <span
+                                                class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
-                                @foreach($upcoming as $key=>$val)
-                                    <div class="swiper-slide">
-                                        <div class="swiper-slide-container">
-                                            <div class="first-row d-flex flex-column align-items-center">
-                                                <div class="date-cont">
-                                                    <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
-                                                </div>
-                                                <div class="score-cont d-flex justify-content-around">
-                                                        <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
-                                                        <span class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
-                                                        <span class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
-                                                </div>
+                            @foreach($upcoming as $key=>$val)
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide-container">
+                                        <div class="first-row d-flex flex-column align-items-center">
+                                            <div class="date-cont">
+                                                <span
+                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
-                                            <div
-                                                class="second-row red-bg d-flex align-items-end justify-content-center">
-                                                <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
+                                            <div class="score-cont d-flex justify-content-around">
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                <span
+                                                    class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                                             </div>
                                         </div>
+                                        <div
+                                            class="second-row red-bg d-flex align-items-end justify-content-center">
+                                            <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
+                                        </div>
                                     </div>
-                                @endforeach
+                                </div>
+                            @endforeach
                         </div>
                         <div class="swiper-buttons">
                             <div class="prev"><img src="{{asset('assets/site/images/home/slider-left.png')}}" alt="">
@@ -416,7 +435,7 @@
                 margin: 0 auto;
             }
 
-            .finish_date{
+            .finish_date {
                 color: white;
                 font-size: 14px;
             }
@@ -449,8 +468,13 @@
                 opacity: 1;
             }
 
-            .gallery-top .logo-cont img {
-                height: 150px;
+            .logo-cont img {
+                height: 180px;
+                object-fit: contain;
+            }
+
+            .logo-cont {
+                padding: 0 30px;
             }
 
             .gallery-top .team-cont span {
@@ -459,10 +483,12 @@
                 font-size: 30px;
                 letter-spacing: 1px;
             }
-            .gallery-top .team-cont.date-cont span{
+
+            .gallery-top .team-cont.date-cont span {
                 font-family: Arial, sans-serif;
                 font-size: 35px;
             }
+
             .gallery-top .time {
                 padding: 10px 15px;
                 background-color: #9c1d24;
@@ -497,10 +523,12 @@
 
             .gallery-thumbs .score-cont {
                 width: 100%;
+                font-size: 12px;
             }
 
             .gallery-thumbs .score-cont .date, .gallery-thumbs .score-cont .score-team {
                 color: black;
+                font-size: 12px;
             }
 
             .gallery-thumbs .first-row:after {
@@ -967,12 +995,14 @@
                     height: 100%;
                     flex-direction: column;
                 }
+
                 /*.gallery-top, .swiper-slide{*/
                 /*    height: 520px!important;*/
                 /*}*/
-                .gallery-top .team-cont{
+                .gallery-top .team-cont {
                     width: 50%;
                 }
+
                 .gallery-top-buttons {
                     display: none;
                 }
@@ -982,7 +1012,8 @@
                 .gallery-top, .gallery-thumbs, .red-header {
                     width: 697px;
                 }
-                .gallery-top .team-cont span{
+
+                .gallery-top .team-cont span {
                     font-size: 20px;
                 }
 
@@ -997,12 +1028,12 @@
                     width: 100%;
                 }
 
-                .finished-games .time{
+                .finished-games .time {
                     padding: 10px 8px;
                     font-size: 15px;
                 }
 
-                .finished-games .date-cont span{
+                .finished-games .date-cont span {
                     font-size: 20px;
                 }
 
@@ -1073,7 +1104,8 @@
                 .img-box {
                     display: block;
                 }
-                .game-score{
+
+                .game-score {
                     text-align: center;
                 }
             }

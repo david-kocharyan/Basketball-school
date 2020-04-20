@@ -514,9 +514,7 @@ span.red {
 .finished-games .time-cont{
     width: 50%;
 }
-.finished-games .left-cont, .finished-games.left-cont{
-    padding: 0 10px;
-}
+
 .gallery-top .team-cont{
     width: 25%;
     text-align: center;
