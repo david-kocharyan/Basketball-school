@@ -79,7 +79,7 @@
                     <div class="col-md-5">
                         <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                                <div class="navbar-nav">
+                                <div class="nav navbar-nav">
                                     <a class="nav-item nav-link" href="/academy-members">Academy</a>
                                     <a class="nav-item nav-link" href="#">Our teams</a>
                                     <a class="nav-item nav-link" href="/standings">Standings</a>
@@ -139,25 +139,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p class="section-title little"><img style="height: 15px" class="img-fluid"
+                    <p class="section-title little mb-4"><img style="height: 15px" class="img-fluid"
                                                          src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">About
                         Us</p>
                     <p class="text-white text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
                         ducimus inventore laboriosam laudantium quae ratione repellat sunt! Ab architecto aut blanditiis
                         eligendi incidunt laboriosam maiores, molestias obcaecati quaerat repudiandae, totam?</p>
                 </div>
-                <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block">
+                <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block mb-4">
                     <p class="section-title little"><img style="height: 15px" class="img-fluid"
                                                          src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Useful
                         Links</p>
-                    <ul class="d-inline-block left-list">
+                    <ul class="d-inline-block left-list list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/contact-us">Contact Us</a></li>
                         <li><a href="#">My Account</a></li>
                     </ul>
-                    <ul class="d-inline-block float-right">
+                    <ul class="d-inline-block float-right list-unstyled">
                         <li><a href="#">Training schedule</a></li>
                         <li><a href="#">Our Teams</a></li>
                         <li><a href="#">Standings</a></li>
@@ -165,7 +165,7 @@
                         <li><a href="/shop">Shop</a></li>
                     </ul>
                 </div>
-                <div class="col-md-5 pl-lg-5">
+                <div class="col-md-5 pl-lg-5 mb-4">
                     <p class="section-title little"><img style="height: 15px" class="img-fluid"
                                                          src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Contact
                         Us</p>
@@ -212,7 +212,10 @@
                     </h3>
                     <p style="color: white; font-size: 14px; margin-bottom: 2px;"> &copy; Copyright Cilicia team</p>
                     <p style="color: white; font-size: 14px;">All rights reserved. Designed and developed by
-                        <img src="{{asset('assets/site/images/home/aimtech_logo.png')}}" alt="Aimtech Logo"></p>
+                        <a href="http://aimtech.am" target="_blank">
+                            <img src="{{asset('assets/site/images/home/aimtech_logo.png')}}" alt="Aimtech Logo">
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -238,6 +241,24 @@
     }
 
     $(document).ready(function () {
+
+        var url = window.location + "";
+        var path = url.replace(window.location.protocol + "//" + window.location.host + "/", "");
+        var element = $('.nav a').filter(function() {
+            return this.href === url || this.href === path;// || url.href.indexOf(this.href) === 0;
+        });
+        element.parentsUntil(".nav").each(function (index)
+        {
+            if($(this).is(".nav") && $(this).children("a").length !== 0)
+            {
+                $(this).children("a").addClass("active");
+                $(this).parent(".nav").length === 0
+                     $(this).addClass("active")
+            }
+        });
+
+        element.addClass("active");
+
         $('#partnerGallery').lightSlider({
             item: 4,
             loop: false,

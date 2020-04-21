@@ -184,7 +184,7 @@ body{
     height: auto;
     z-index: 2100;
     left: -14px;
-    top: -95px;
+    top: -85px;
     max-width: none;
     transition: all .3s ease;
 }
@@ -230,14 +230,15 @@ span.red {
 }
 .footer{
     background-repeat: no-repeat;
-    padding: 50px 0 0 25px;
+    padding: 75px 0 0 25px;
 }
 .footer .section-title {
-    font-size: 16px;
+    font-size: 18px;
 }
 .text-about{
     font-size: 14px;
     font-family: Roboto-Condensed-Regular, sans-serif;
+    line-height: 24px;
 }
 .footer li a{
     color: white;
@@ -276,11 +277,11 @@ span.red {
     padding-left: 20px;
 }
 .left-block{
-    height: 30px;
+    /*height: 30px;*/
     margin-bottom: 0;
     background: white;
     color: #9c1d24;
-    padding: 10px;
+    padding: 5px;
 }
 .right-borders{
     border-radius: 8px 0 0 8px;
@@ -329,7 +330,7 @@ span.red {
     font-family: Roboto-Condensed-Bold, sans-serif;
     color: white;
     font-size: 16px;
-    padding: 2px 9px 0 9px;
+    padding: 0 30px;
     letter-spacing: 1px;
 }
 .rounded-button a{

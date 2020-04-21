@@ -62,6 +62,10 @@
 
 @push('head')
     <style>
+        .header {
+            padding-top: 0;
+        }
+
         .table-section {
             padding: 50px 0;
             background: #ebebeb;

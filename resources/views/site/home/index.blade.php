@@ -33,14 +33,14 @@
         </div>
     </div>
 
-    <div class="shop-line d-flex align-items-center p-3">
+    <div class="shop-line d-flex align-items-center" >
         <div class="container">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-lg-center shop-text-cont">
                     <p class="text-white m-0 shop-text text-center">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-lg-center justify-content-lg-end shop-btn-cont">
-                    <a href="/shop" class="visit-btn text-center shop-btn">VISIT SHOP</a>
+                    <a href="/shop" class="text-center shop-btn">VISIT SHOP</a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
     <div class="match-slider" style="background: url('{{ asset("assets/site/images/home/match_bg.jpeg") }}')">
         <div class="container">
             <div class="row ">
-                <div class="title-cont col-md-8 mb-4 mt-4">
+                <div class="title-cont col-md-8 mt-4">
                     <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">NEXT GAME
@@ -210,7 +210,7 @@
     <div class="table-section">
         <div class="container">
             <div class="row">
-                <div class="title-cont col-md-12 mb-4">
+                <div class="title-cont col-md-12">
                     <h2 class="section-title"><img style="height: 25px"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
                         Table</h2>
@@ -246,7 +246,7 @@
                 @endforeach
             </div>
             {{--            <div class="row">--}}
-            {{--                <div class="title-cont col-md-12 mb-4 mt-4">--}}
+            {{--                <div class="title-cont col-md-12 mt-4">--}}
             {{--                    <h2 class="section-title"><img style="height: 25px"--}}
             {{--                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Playoffs--}}
             {{--                    </h2>--}}
@@ -261,7 +261,7 @@
     <div class="group-section">
         <div class="container">
             <div class="row">
-                <div class="title-cont col-md-12 mb-4 mt-4">
+                <div class="title-cont col-md-12 mt-4">
                     <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">Players Of The Month</h2>
@@ -287,7 +287,7 @@
     <div class="gallery">
         <div class="container">
             <div class="row gal-row">
-                <div class="title-cont col-md-12 mb-4 mt-4">
+                <div class="title-cont col-md-12 mt-4">
                     <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Gallery
                     </h2>
@@ -378,7 +378,7 @@
                 </div>
             </div>
             <div class="row club">
-                <div class="title-cont col-md-12 mb-4 mt-4">
+                <div class="title-cont col-md-12 mt-4">
                     <h2 class="section-title"><img style="height: 25px" class="img-fluid"
                                                    src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Club Shop
                     </h2>
@@ -772,6 +772,9 @@
 
         {{--other--}}
         <style>
+            .title-cont{
+                margin-bottom: 40px !important;
+            }
             .owl-carousel {
                 height: 90vh;
             }
@@ -818,6 +821,7 @@
             }
 
             .shop-line {
+                padding: 30px 0;
                 background: #151515;
             }
 
@@ -940,14 +944,20 @@
             }
 
             .shop-btn {
-                padding-top: 2px;
-                height: 30px;
-                width: 120px;
+                padding: 15px 30px;
                 font-size: 16px;
+                border-radius: 8px;
+                text-decoration: none;
+                border: 2px solid #9c1d24;
+                font-family: Roboto-Condensed-Bold, sans-serif;
+                color: white;
+                letter-spacing: 1px;
             }
 
             .shop-btn:hover {
                 background: #9c1d24;
+                text-decoration: none;
+                color: white;
             }
 
             .section-title {
