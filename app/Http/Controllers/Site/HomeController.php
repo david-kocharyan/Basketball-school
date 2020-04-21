@@ -34,7 +34,7 @@ class HomeController extends Controller
         }
 
         $best_players = MonthPlayer::with('players')->get();
-        $home_gallery = HomeGallery::with('album')->get();
+        $home_gallery = HomeGallery::with('album')->orderBy('order','ASC')->get();
         $game = Game::with(['game_club', 'club', 'tournament', 'center'])->where('status', 1)->orderBy('id', "ASC")->limit(2)->get();
         $upcoming = Game::with(['game_club', 'club', 'tournament', 'center'])->where('status', 0)->orderBy('id', "ASC")->get();
 

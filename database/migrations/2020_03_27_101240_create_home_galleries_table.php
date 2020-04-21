@@ -17,6 +17,7 @@ class CreateHomeGalleriesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('album_id');
             $table->string('image');
+            $table->integer('order')->default(0);
             $table->timestamps();
 
             $table->foreign('album_id')->references('id')->on('galleries')->onDelete('cascade')->onUpdate('cascade');

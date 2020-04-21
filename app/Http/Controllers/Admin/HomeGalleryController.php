@@ -25,7 +25,7 @@ class HomeGalleryController extends Controller
      */
     public function index()
     {
-        $home_gallery = HomeGallery::with('album')->get();
+        $home_gallery = HomeGallery::with('album')->orderBy('order','ASC')->get();
         $route = self::ROUTE;
         $title = self::TITLE;
         return view(self::FOLDER . ".index", compact('route', 'title', 'home_gallery'));
@@ -138,5 +138,24 @@ class HomeGalleryController extends Controller
         HomeGallery::destroy($homeGallery->id);
 
         return redirect(self::ROUTE);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function sortable(Request $request)
+    {
+        $gallery = HomeGallery::all();
+
+        foreach ($gallery as $post) {
+            foreach ($request->order as $order) {
+                if ($order['id'] == $post->id) {
+                    $post->update(['order' => $order['position']]);
+                }
+            }
+        }
+
+        return response('Update Successfully.', 200);
     }
 }

@@ -14,17 +14,17 @@
                            width="100%">
                         <thead>
                         <tr>
-                            <th>Id</th>
+                            <th># Ordering</th>
                             <th>Album Name</th>
                             <th>Type</th>
                             <th>Options</th>
                         </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody id="tablecontents">
                         @foreach($gallery as $key=>$val)
-                            <tr>
-                                <td>{{$key + 1}}</td>
+                            <tr class="row1" data-id="{{ $val->id }}">
+                                <td class="pl-3"><i class="fa fa-sort"></i></td>
                                 <td class="text_{{ $val->id }}">{{$val->name}}</td>
                                 <td>@if($val->type == 0)
                                         Academy
@@ -45,7 +45,7 @@
                                     </a>
 
                                     <form style="display: inline-block" action="{{ $route."/".$val->id }}"
-                                          method="post" id="work-for-form">
+                                          method="post">
                                         @csrf
                                         @method("DELETE")
                                         <a href="javascript:void(0);" class="delForm" data-id ="{{$val->id}}">
@@ -100,6 +100,7 @@
 @endpush
 
 @push('custom-datatable')
+    <script src="{{asset('assets/js/jquery/dist/jquery-ui.min.js')}}"></script>
     <script>
         $('#datatable').DataTable({
             columnDefs: [
@@ -128,6 +129,45 @@
                 });
             },
         });
+
+        $( "#tablecontents" ).sortable({
+            items: "tr",
+            cursor: 'move',
+            opacity: 0.6,
+            update: function() {
+                sendOrderToServer();
+            }
+        });
+
+        function sendOrderToServer() {
+            var order = [];
+
+            $('tr.row1').each(function(index,element) {
+                order.push({
+                    id: $(this).attr('data-id'),
+                    position: index+1
+                });
+            });
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                url: "{{ url('/admin/gallery/sortable') }}",
+                data: {
+                    order: order
+                },
+                success: function(response) {
+                    if (response.status == "success") {
+                        console.log(response);
+                    } else {
+                        console.log(response);
+                    }
+                }
+            });
+        }
     </script>
 @endpush
 

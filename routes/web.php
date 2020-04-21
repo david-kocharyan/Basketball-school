@@ -71,10 +71,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('products', 'ProductController');
 
     Route::delete('/gallery/{gallery_id}/destroy-image/{id}', 'GalleryController@destroy_image');
+    Route::post('/gallery/sortable', 'GalleryController@sortable');
     Route::resource('gallery', 'GalleryController');
 
-    Route::resource('month-players', 'MonthPlayerController');
+    Route::post('/gallery-home/sortable', 'HomeGalleryController@sortable');
     Route::resource('gallery-home', 'HomeGalleryController');
+
+    Route::resource('month-players', 'MonthPlayerController');
     Route::resource('partners', 'PartnerController');
     Route::resource('about-us-team', 'OurTeamController');
     Route::resource('about-us-story', 'AboutController');

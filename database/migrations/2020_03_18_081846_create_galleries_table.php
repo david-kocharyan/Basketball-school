@@ -17,6 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->enum('type', array(0,1));
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

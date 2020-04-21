@@ -19,9 +19,9 @@ class GalleryController extends Controller
 
     public function index()
     {
-        $academy = Gallery::where('type', '0')->with('images')->get();
-        $games = Gallery::where('type', '1')->with('images')->get();
-        $all = Gallery::with('images')->get();
+        $academy = Gallery::where('type', '0')->with('images')->orderBy('order','ASC')->get();
+        $games = Gallery::where('type', '1')->with('images')->orderBy('order','ASC')->get();
+        $all = Gallery::with('images')->orderBy('order','ASC')->get();
         $title = self::TITLE;
         return view(self::VIEW . ".index", compact("title", 'academy', 'games', "all"));
     }

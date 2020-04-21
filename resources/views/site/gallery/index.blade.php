@@ -147,7 +147,7 @@
             .overlay-hover {
                 position: absolute;
                 height: 25%;
-                padding: 20px 0;
+                padding: 10px 0;
                 width: 100%;
                 background-color: #0000009e;
                 bottom: 0;
@@ -163,7 +163,6 @@
             .overlay-hover p {
                 position: absolute;
                 left: 20px;
-                top: 20px;
                 transition: .5s;
             }
 

@@ -26,7 +26,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallery = Gallery::all();
+        $gallery = Gallery::orderBy('order','ASC')->get();
         $route = self::ROUTE;
         $title = self::TITLE;
         return view(self::FOLDER . ".index", compact('route', 'title', 'gallery'));
@@ -163,5 +163,25 @@ class GalleryController extends Controller
         Storage::disk('public')->delete("gallery/$image->name");
         GalleryImage::destroy($image->id);
         return redirect(self::ROUTE . '/' . $gallery . '/edit');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     */
+    public function sortable(Request $request)
+    {
+        $gallery = Gallery::all();
+
+        foreach ($gallery as $post) {
+            foreach ($request->order as $order) {
+                if ($order['id'] == $post->id) {
+                    $post->update(['order' => $order['position']]);
+                }
+            }
+        }
+
+        return response('Update Successfully.', 200);
     }
 }
