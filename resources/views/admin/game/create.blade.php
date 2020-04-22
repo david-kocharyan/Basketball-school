@@ -49,6 +49,7 @@
                                     <option value="Quarter-finals">Quarter-finals</option>
                                     <option value="Semi-finals">Semi-finals</option>
                                     <option value="Finals">Finals</option>
+                                    <option value="Qualifications">Qualifications</option>
                                 </select>
                             </div>
 

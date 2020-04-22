@@ -50,6 +50,7 @@
                                     <option @if($game->type == "Quarter-finals") @endif value="Quarter-finals">Quarter-finals</option>
                                     <option @if($game->type == "Semi-finals") @endif value="Semi-finals">Semi-finals</option>
                                     <option @if($game->type == "Finals") @endif value="Finals">Finals</option>
+                                    <option @if($game->type == "Qualifications") @endif value="Qualifications">Qualifications</option>
                                 </select>
                             </div>
 
