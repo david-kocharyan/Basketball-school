@@ -23,13 +23,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="title pb-3"><img style="height: 30px" class="img-fluid"
+                    <p class="title pb-3"><img style="height: 25px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Story
                     </p>
                     <p class="subtitle"> {{$about->story ?? ""}} </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="title pb-3"><img style="height: 30px" class="img-fluid"
+                    <p class="title pb-3"><img style="height: 25px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Why
                         Cilicia</p>
                     <p class="subtitle"> {{$about->why ?? ""}} </p>
@@ -40,16 +40,16 @@
             <div class="row">
                 <div class="main-section">
                     <div class="col-md-12 col-xl-6 overlay-part">
-                        <div class="col-xl-8 col-sm-12">
-                            <p class="title pb-3"><img style="height: 30px" class="img-fluid"
+                        <div class="col-xl-10 col-sm-12">
+                            <p class="title pb-3"><img style="height: 25px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our
                                 Mission</p>
                             <p class="subtitle"> {{$about->mission ?? ""}} </p>
                         </div>
                         @if(isset($about->mission_list) )
-                            @foreach(json_decode($about->mission_list) as $bin)
-                                <div class="col-xl-8 col-sm-12 d-flex justify-content-center pt-3 list-section">
-                                    <div class="icon-cont d-flex align-items-center justify-content-center">
+                            @foreach(json_decode($about->mission_list) as $k=>$bin)
+                                <div class="col-xl-10 col-sm-12 d-flex justify-content-center pt-3 list-section">
+                                    <div class="icon-cont @if($k < 3) icon-cont-line @endif  d-flex align-items-center justify-content-center">
                                         <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}"
                                              alt="">
                                     </div>
@@ -72,8 +72,8 @@
                     <div class="col-md-6">
                         <div class="main-box"
                              style="background-image: url('{{ asset("uploads/our_team/$key->image") }}')">
-                            <div class="red-overlay d-flex align-items-center">
-                                <div class="col-md-12">
+                            <div class="red-overlay">
+                                <div class="col-md-12 pt-5">
                                     <span class="badge badge-light">{{$key->status}}</span>
                                     <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->name}}</h6>
                                     <p class="member-text">{{$key->info}}</p>
@@ -132,6 +132,14 @@
                 height: 60px;
                 width: 60px;
                 flex: none;
+            }
+            .icon-cont-line:before {
+                content: "";
+                height: 26px;
+                position: absolute;
+                bottom: 0;
+                transform: translateY(83%);
+                border-right: 3px solid #9c1d24;
             }
 
             .icon-cont img {
@@ -197,13 +205,13 @@
 
             .member-name {
                 font-family: Agency, sans-serif;
-                font-size: 21px;
+                font-size: 18px;
                 letter-spacing: 2px;
                 font-weight: 600;
             }
 
             .member-text {
-                color: #eeadb1;
+                color: #bdc2c6;
                 letter-spacing: 1px;
             }
 
