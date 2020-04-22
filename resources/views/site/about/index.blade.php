@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="main-section">
                     <div class="col-md-12 col-xl-6 overlay-part">
-                        <div class="col-xl-10 col-sm-12">
+                        <div class="col-xl-12 col-sm-12">
                             <p class="title pb-3"><img style="height: 25px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our
                                 Mission</p>
@@ -48,7 +48,7 @@
                         </div>
                         @if(isset($about->mission_list) )
                             @foreach(json_decode($about->mission_list) as $k=>$bin)
-                                <div class="col-xl-10 col-sm-12 d-flex pt-3 list-section">
+                                <div class="col-xl-12 col-sm-12 d-flex pt-3 list-section">
                                     <div class="icon-cont @if($k < 3) icon-cont-line @endif  d-flex align-items-center justify-content-center">
                                         <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}"
                                              alt="">
