@@ -424,7 +424,7 @@
              aria-hidden="true">
             <div class="modal-dialog  modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-body row">
+                    <div class="modal-body row pl-4 pt-4">
 
                     </div>
                 </div>

@@ -29,20 +29,22 @@
             <div class="col-xl-3">
                 <div class="box-part">
                     <div class="head-part p-1">
-                        <p class="text-white pl-3 cat m-0 text-uppercase">product categories</p>
+                        <h5 class="text-white pl-3 cat m-0 text-uppercase">product categories</h5>
                     </div>
                     <div class="category-part pt-3 pb-2 pl-3 mb-3">
                         @if(count($categories) >= 2 )
                             <a href="/shop" class="text-uppercase d-block mb-3 link text-black">
                                 <img style="width:30px; margin-right: 5px;"
-                                     src="{{ asset("assets/site/images/red-icon.png") }}" alt="All" class="img-responsive">
+                                     src="{{ asset("assets/site/images/red-icon.png") }}" alt="All"
+                                     class="img-responsive">
                                 <b>All</b>
                             </a>
                         @endif
                         @foreach($categories as $category)
                             <a href="/shop/{{ $category->title }}" class="text-uppercase d-block mb-3 link text-black">
                                 <img style="width:30px; margin-right: 5px;"
-                                     src="{{ asset("uploads/category/$category->icon") }}" alt="{{ $category->name }}" class="img-responsive">
+                                     src="{{ asset("uploads/category/$category->icon") }}" alt="{{ $category->name }}"
+                                     class="img-responsive">
                                 <b>{{ $category->name }}</b>
                             </a>
                         @endforeach
@@ -50,6 +52,13 @@
                 </div>
             </div>
             <div class="col-xl-9 gallery">
+                @if(count($products) == 0)
+                    <div class="row h-100">
+                        <div class="d-flex align-items-center m-auto">
+                            Empty...
+                        </div>
+                    </div>
+                @endif
                 <div class="row">
                     @foreach($products as $product)
                         <div class="col-xl-4 mb-3">
@@ -63,12 +72,13 @@
                                     <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
                                     <h4 class="color-red text-center">{{ $product->name }}</h4>
                                     <p class="text-center price mb-1">${{ $product->price }}</p>
-                                    <p data-info="{{ json_encode($product) }}" class="quick-view d-flex justify-content-center align-items-center text-uppercase">View</p>
+                                    <p data-info="{{ json_encode($product) }}"
+                                       class="quick-view d-flex justify-content-center align-items-center text-uppercase">
+                                        View</p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
                 </div>
                 {{$products->links()}}
             </div>
@@ -79,7 +89,7 @@
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-body row">
+                <div class="modal-body row pl-4 pt-4">
 
                 </div>
             </div>
@@ -96,12 +106,21 @@
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
 
+            .category_active {
+                color: #9c1d24 !important;
+            }
+
             .sticky + .content {
                 padding-top: 70px;
             }
 
             .head-part {
                 background-color: #9c1d24;
+            }
+
+            .head-part h5 {
+                font-size: 18px;
+                padding: 10px;
             }
 
             .box-part {
@@ -171,6 +190,7 @@
                 color: #6c6c6e;
                 font-size: 16px;
             }
+
             #lightSlider-modal .img-cont {
                 text-align: center;
             }
@@ -183,21 +203,26 @@
             .modal-content .lSSlideWrapper.usingCss {
                 border: 1px solid #d0d2d4;
             }
-            #lightSlider-modal{
+
+            #lightSlider-modal {
                 height: 300px;
             }
-            .modal-content .lSPager li{
+
+            .modal-content .lSPager li {
                 border: 1px solid #d0d2d4;
                 height: 100px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-top: 10px;
+                padding: 30px 15px;
             }
-            .modal-content .lSPager li img{
+
+            .modal-content .lSPager li img {
                 max-height: 80px;
             }
 
-            .page-link{
+            .page-link {
                 position: relative;
                 display: block;
                 padding: .5rem .75rem;
@@ -208,7 +233,7 @@
                 border: 1px solid #dddddd;
             }
 
-            .page-item.disabled .page-link{
+            .page-item.disabled .page-link {
                 position: relative;
                 display: block;
                 padding: .5rem .75rem;
@@ -219,7 +244,7 @@
                 border: 1px solid #dddddd;
             }
 
-            .page-item.active .page-link{
+            .page-item.active .page-link {
                 z-index: 1;
                 color: #fff;
                 background-color: #9c1d24;
@@ -233,11 +258,32 @@
                 background-color: #9c1d24;
                 border-color: #9c1d24;
             }
+            .slug:hover{
+                text-decoration: none;
+                color: black;
+            }
         </style>
         <link type="text/css" rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.css") }}"/>
     @endpush
     @push("footer")
         <script>
+            $(document).ready(function () {
+                var url = window.location + "";
+                var path = url.replace(window.location.protocol + "//" + window.location.host + "/", "");
+                var element = $('.category-part a').filter(function () {
+                    return this.href === url || this.href === path;// || url.href.indexOf(this.href) === 0;
+                });
+                element.parentsUntil(".category-part").each(function (index) {
+                    if ($(this).is(".category-part") && $(this).children("a").length !== 0) {
+                        $(this).children("a").addClass("category_active");
+                        $(this).parent(".category-part").length === 0
+                        $(this).addClass("category_active")
+                    }
+                });
+
+                element.addClass("category_active");
+            });
+
             let asset_url = '{{ asset("uploads/product") . "/" }}';
             $(document).on("click", ".quick-view", function () {
                 let data = JSON.parse($(this).attr("data-info"));
@@ -246,14 +292,14 @@
                 html += "<ul id='lightSlider-modal'>";
                 images.forEach(e => {
                     html += `<li class='img-cont' style='display: flex; align-items: center; justify-content: center; height: 100%' data-thumb="${asset_url + e.name}">
-                                <img class="img-fluid" style="max-height: 300px;" src="${asset_url + e.name}" />`
+                                <img class="img-fluid" style="max-height: 300px; padding: 30px;" src="${asset_url + e.name}" />`
                 });
                 html += "</ul></div>";
                 html += "<div class='col-lg-4'>";
                 html += `<p class='name color-red'><b>${data.name}</b></p>`;
-                html += `<p class="price"><b>$${data.price}</b></p>`;
+                html += `<p class="price"><b>AMD ${data.price}</b></p>`;
                 html += `<p class="description">${data.description}</p>`;
-                html += `<p><b>Category: </b> <span class="color-red">${data.get_category.name}</span></p>`;
+                html += `<p><b>Category: </b> <a  class="color-red slug" href="/shop/${data.get_category.title}">${data.get_category.name}</a></p>`;
                 html += "</div>";
                 $(".modal-body").html(html);
                 $(".modal").modal();
