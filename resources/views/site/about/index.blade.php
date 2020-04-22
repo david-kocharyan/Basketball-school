@@ -135,10 +135,10 @@
             }
             .icon-cont-line:before {
                 content: "";
-                height: 26px;
+                height: 25px;
                 position: absolute;
                 bottom: 0;
-                transform: translateY(83%);
+                transform: translateY(92%);
                 border-right: 3px solid #9c1d24;
             }
 
