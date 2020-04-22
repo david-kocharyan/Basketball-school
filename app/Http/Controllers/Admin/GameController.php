@@ -23,7 +23,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::with(['game_club', 'club', 'tournament', 'center'])->get();
+        $games = Game::with(['game_club', 'club', 'center'])->get();
         $route = self::ROUTE;
         $title = self::TITLE;
         return view(self::FOLDER . ".index", compact('route', 'title', 'games'));
@@ -54,7 +54,7 @@ class GameController extends Controller
         $request->validate([
             "club_1" => "required|numeric",
             "club_2" => "required|numeric",
-            "competition" => "",
+            "competition" => "required",
             "venue" => "required",
             "round" => "required",
             "date" => "required",
@@ -62,7 +62,7 @@ class GameController extends Controller
         ]);
 
         $game = new Game;
-        $game->tournament_id = $request->competition;
+        $game->tournament = $request->competition;
         $game->center_id = $request->venue;
         $game->type = $request->round;
         $game->date = $request->date;
@@ -101,13 +101,12 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        $tournament = Tournament::all();
         $club = Club::all();
         $center = Center::all();
 
         $route = self::ROUTE;
         $title = "Edit " . self::TITLE;
-        return view(self::FOLDER . ".edit", compact('route', 'title', 'tournament', 'club', 'center', 'game'));
+        return view(self::FOLDER . ".edit", compact('route', 'title', 'club', 'center', 'game'));
     }
 
     /**
@@ -121,14 +120,14 @@ class GameController extends Controller
         $request->validate([
             "club_1" => "required|numeric",
             "club_2" => "required|numeric",
-            "competition" => "",
+            "competition" => "required",
             "venue" => "required",
             "round" => "required",
             "date" => "required",
             "time" => "required",
         ]);
 
-        $game->tournament_id = $request->competition;
+        $game->tournament = $request->competition;
         $game->center_id = $request->venue;
         $game->type = $request->round;
         $game->date = $request->date;
@@ -168,7 +167,7 @@ class GameController extends Controller
      */
     public function finish($id)
     {
-        $game = Game::with(['game_club', 'club', 'tournament', 'center'])->where('id', $id)->first();
+        $game = Game::with(['game_club', 'club', 'center'])->where('id', $id)->first();
         $route = self::ROUTE;
         $title = "Finish " . self::TITLE;
         return view(self::FOLDER . ".finish", compact('route', 'title', 'game'));
@@ -185,10 +184,16 @@ class GameController extends Controller
             'score_1' => "required",
             'score_2' => "required",
             'player' => "required",
+            'pts' => "required",
+            'rb' => "required",
+            'ast' => "required",
         ]);
 
         $game = Game::where('id', $id)->first();
         $game->best_player = $request->player;
+        $game->pts = $request->pts;
+        $game->rb = $request->rb;
+        $game->ast = $request->ast;
         $game->status = 1;
         $game->save();
 

@@ -66,6 +66,12 @@ body{
     padding-top: 0;
     padding-bottom: 0;
 }
+.active{
+    color: #fff;
+}
+.active img{
+    display: inline-block !important;
+}
 .dark-bg {
     background: #141515;
 }

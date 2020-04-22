@@ -57,14 +57,7 @@
                                 @error('competition')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <select name="competition" id="competition" class="form-control select2">
-                                    @foreach($tournament as $key)
-                                        <option value="{{$key->id}}"
-                                                @if($key->id == old('competition')) selected @endif>{{$key->name}}</option>
-                                    @endforeach
-                                    <option value="0" @if(old('competition') == 0) selected @endif>No Competition
-                                    </option>
-                                </select>
+                                <input type="text" name="competition" id="competition" value="{{old("competition")}}" class="form-control" placeholder="Competition">
                             </div>
 
                             <div class="form-group">
@@ -125,13 +118,11 @@
         $('#club_1').select2();
         $('#club_2').select2();
         $('#type').select2();
-        $('#competition').select2();
         $('#venue').select2();
 
         $('#type').on('change', function () {
             if (this.value == "Friendly") {
-                $('#competition').prop('disabled', true);
-                $('#competition').val(0).change();
+                $('#competition').val('Friendly');
             } else {
                 $('#competition').prop('disabled', false);
             }

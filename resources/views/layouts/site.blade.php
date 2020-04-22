@@ -60,9 +60,16 @@
                         <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
-                                    <a class="nav-item nav-link" href="/">Home</a>
-                                    <a class="nav-item nav-link" href="/gallery">Gallery</a>
-                                    <a class="nav-item nav-link" href="/about-us">About Us</a>
+                                    <a class="nav-item nav-link" href="/">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Home
+                                    </a>
+                                    <a class="nav-item nav-link" href="/gallery">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Gallery
+                                    </a>
+                                    <a class="nav-item nav-link" href="/about-us">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">About
+                                        Us
+                                    </a>
                                 </div>
                             </div>
                         </nav>
@@ -80,13 +87,23 @@
                         <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
-                                    <a class="nav-item nav-link" href="/academy-members">Academy</a>
-                                    <a class="nav-item nav-link" href="#">Our teams</a>
-                                    <a class="nav-item nav-link" href="/standings">Standings</a>
+                                    <a class="nav-item nav-link" href="/academy-members">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
+                                    </a>
+                                    <a class="nav-item nav-link" href="#">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
+                                    </a>
+                                    <a class="nav-item nav-link" href="/standings">
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
+                                    </a>
                                     @if(Auth::guard('player')->check())
-                                        <a class="nav-item nav-link" href="/player">Account</a>
+                                        <a class="nav-item nav-link" href="/player">
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
+                                        </a>
                                     @else
-                                        <a class="nav-item nav-link" href="/sign-in">Login</a>
+                                        <a class="nav-item nav-link" href="/sign-in">
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Login
+                                        </a>
                                     @endif
                                 </div>
                             </div>

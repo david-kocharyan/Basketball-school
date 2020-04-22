@@ -104,8 +104,18 @@
                                     </div>
                                     <div class="second-row d-flex flex-column align-items-center ml-md-4">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
-                                        <span
-                                            class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
+                                        <span class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
+                                    </div>
+                                    <div class="second-row d-flex flex-row align-items-center justify-content-between ml-md-4">
+                                        <span class="finals mr-3 text-white text-uppercase">
+                                            <b>{{$val->pts}}PTS</b>
+                                        </span>
+                                        <span class="finals mr-3 text-white text-uppercase">
+                                            <b>{{$val->rb}}Rb</b>
+                                        </span>
+                                        <span class="finals mr-3 text-white text-uppercase">
+                                            <b>{{$val->ast}}AST</b>
+                                        </span>
                                     </div>
                                 </div>
                             @endforeach

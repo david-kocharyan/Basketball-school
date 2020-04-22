@@ -17,11 +17,6 @@ class Game extends Model
         return $this->hasManyThrough('App\Club','App\GameClub', "game_id", "id","id", "club_id");
     }
 
-    public function tournament()
-    {
-        return $this->belongsTo('App\Tournament' , "tournament_id", "id");
-    }
-
     public function center()
     {
         return $this->belongsTo('App\Center' , "center_id", "id");

@@ -32,13 +32,7 @@
                                 <td>{{$key + 1}}</td>
                                 <td>{{$val->club[0]->name}}</td>
                                 <td>{{$val->club[1]->name}}</td>
-                                <td>
-                                    @if($val->tournament == null)
-                                        Friendly
-                                    @else
-                                        {{$val->tournament->name}}
-                                    @endif
-                                </td>
+                                <td>{{$val->tournament}}</td>
                                 <td>{{$val->type}}</td>
                                 <td>{{$val->center->name}}</td>
                                 <td>{{$val->date}}</td>
