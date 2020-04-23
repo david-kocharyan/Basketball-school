@@ -402,9 +402,9 @@
                                      alt="{{ $product->name }}" width="200">
                             </div>
                             <div class="desc">
-                                <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
+                                <p class="text-center category mb-2 text-uppercase">{{ $product->getCategory->name }}</p>
                                 <h4 class="color-red text-center">{{ $product->name }}</h4>
-                                <p class="text-center price mb-1">{{ $product->price }}</p>
+                                <p class="text-center price mb-1">AMD {{ $product->price }}</p>
                                 <p data-info="{{ json_encode($product) }}"
                                    class="quick-view d-flex justify-content-center align-items-center text-uppercase">
                                     View</p>
@@ -915,17 +915,23 @@
                 background: #9c1d24;
                 text-align: center;
                 position: absolute;
-                bottom: -39px;
+                bottom: -65px;
                 width: 100%;
                 left: 0;
-                height: 39px;
                 margin-bottom: 0;
                 color: white;
                 transition: .3s;
                 cursor: pointer;
+                padding: 20px 0;
+            }
+
+            .slug:hover {
+                text-decoration: none;
+                color: black;
             }
 
             .prod {
+                padding: 15px 30px;
                 height: 200px;
                 line-height: 200px;
             }
@@ -1095,12 +1101,23 @@
                 height: 300px;
             }
 
+            .modal-content .lSPager{
+                width: 100% !important;
+            }
             .modal-content .lSPager li {
                 border: 1px solid #d0d2d4;
                 height: 100px;
                 display: flex;
                 align-items: center;
+                margin-top: 10px;
+                margin-right: 20px !important;
                 justify-content: center;
+                padding: 30px 15px;
+            }
+
+            .modal-content .lSPager li.active{
+                border: 1px solid #9c1d24;
+                border-radius: 0 !important;
             }
 
             .modal-content .lSPager li img {
@@ -1211,14 +1228,14 @@
                     html += "<ul id='lightSlider-modal'>";
                     images.forEach(e => {
                         html += `<li class='img-cont' style='display: flex; align-items: center; justify-content: center; height: 100%' data-thumb="${asset_url + e.name}">
-                                <img class="img-fluid" style="max-height: 300px;" src="${asset_url + e.name}" />`
+                                <img class="img-fluid" style="max-height: 300px; padding: 30px;" src="${asset_url + e.name}" />`
                     });
                     html += "</ul></div>";
                     html += "<div class='col-lg-4'>";
-                    html += `<p class='name color-red'><b>${data.name}</b></p>`;
-                    html += `<p class="price"><b>$${data.price}</b></p>`;
-                    html += `<p class="description">${data.description}</p>`;
-                    html += `<p><b>Category: </b> <span class="color-red">${data.get_category.name}</span></p>`;
+                    html += `<p class='name color-red mb-3'><b>${data.name}</b></p>`;
+                    html += `<p class="price mb-3"><b>AMD ${data.price}</b></p>`;
+                    html += `<p class="description mb-3">${data.description}</p>`;
+                    html += `<p style="font-size: 14px"><b>Category: </b> <a  class="color-red slug" href="/shop/${data.get_category.title}">${data.get_category.name}</a></p>`;
                     html += "</div>";
                     $(".modal-body").html(html);
                     $(".modal").modal();

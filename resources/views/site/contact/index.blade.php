@@ -79,7 +79,8 @@
                             </div>
                             <div class="row m-0 mt-3">
                                 <div class="col-xl-8 col-lg-10 col-md-12">
-                                    <textarea name="message" id="message" rows="5" class="input-text-msg js-input"></textarea>
+                                    <textarea name="message" id="message" rows="5"
+                                              class="input-text-msg js-input"></textarea>
                                     <label class="label" for="message">Message</label>
                                 </div>
                             </div>
@@ -101,32 +102,12 @@
                  style="background-image: url('{{ asset("assets/site/images/contact/contact_training_scedule-min.jpg") }}')">
                 <div class="red-overlay"></div>
                 <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white pb-3"><img style="height: 20px; position:relative;" class="img-fluid"
-                                                          src="{{ asset("assets/site/images/ball-white.svg") }}"
-                                                          alt="Ball">Shop</p>
+                    <p class="title text-white mb-5">
+                        <img style="height: 20px; position:relative;" class="img-fluid"
+                             src="{{ asset("assets/site/images/ball-white.svg") }}"
+                             alt="Ball">Training Schedule</p>
                     <div class="text-cont">
-                        <div class="col-md-7">
-                            <p style="padding-left: 25px" class="text-white">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Alias aperiam blanditiis culpa cupiditate.</p>
-                        </div>
-                    </div>
-                    <div class="button-sec" style="padding-left: 40px;">
-                        <a href="#">
-                            <button class="rounded-button">View More</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 d-flex align-items-center img-cont"
-                 style="background-image: url('{{ asset("assets/site/images/contact/contact_shop-min.jpg") }}')">
-                <div class="red-overlay"></div>
-                <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white pb-3"><img style="height: 20px; position:relative;" class="img-fluid"
-                                                          src="{{ asset("assets/site/images/ball-white.svg") }}"
-                                                          alt="Ball">Training Schedule</p>
-                    <div class="text-cont">
-                        <ul>
+                        <ul style="padding-left: 30px">
                             <li><b>Under 14y</b></li>
                             <li><b>Under 16y</b></li>
                             <li><b>Seniors</b></li>
@@ -137,7 +118,29 @@
                             <li>Wednesday, Friday</li>
                         </ul>
                     </div>
-                    <div class="button-sec" style="padding-left: 40px;">
+                    <div class="button-sec" style="padding-left: 30px;">
+                        <a href="#">
+                            <button class="rounded-button">View More</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 d-flex align-items-center img-cont middle"
+                 style="background-image: url('{{ asset("assets/site/images/contact/contact_shop-min.jpg") }}')">
+                <div class="red-overlay"></div>
+                <div class="col-md-12 pl-lg-5">
+                    <p class="title text-white mb-5">
+                        <img style="height: 20px; position:relative;" class="img-fluid"
+                             src="{{ asset("assets/site/images/ball-white.svg") }}"
+                             alt="Ball">Shop</p>
+                    <div class="text-cont">
+                        <div class="col-md-7">
+                            <p style="padding-left: 15px" class="text-white">Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Alias aperiam blanditiis culpa cupiditate.</p>
+                        </div>
+                    </div>
+                    <div class="button-sec" style="padding-left: 30px;">
                         <a href="#">
                             <button class="rounded-button">View More</button>
                         </a>
@@ -149,11 +152,12 @@
                  style="background-image: url('{{ asset("assets/site/images/contact/contact_working_hours-min.jpg") }}')">
                 <div class="red-overlay"></div>
                 <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white pb-3"><img style="height: 20px; position:relative;" class="img-fluid"
-                                                          src="{{ asset("assets/site/images/ball-white.svg") }}"
-                                                          alt="Ball">Working Hours</p>
-                    <div class="text-cont">
-                        <ul>
+                    <p class="title text-white mb-5">
+                        <img style="height: 20px; position:relative;" class="img-fluid"
+                             src="{{ asset("assets/site/images/ball-white.svg") }}"
+                             alt="Ball">Working Hours</p>
+                    <div class="text-cont ml-0">
+                        <ul style="padding-left: 30px">
                             <li><b>Under 14y</b></li>
                             <li><b>Under 16y</b></li>
                             <li><b>Seniors</b></li>
@@ -164,7 +168,7 @@
                             <li>Wednesday, Friday</li>
                         </ul>
                     </div>
-                    <div class="button-sec" style="padding-left: 40px;">
+                    <div class="button-sec" style="padding-left: 30px;">
                         <a href="#">
                             <button class="rounded-button">View More</button>
                         </a>
@@ -190,14 +194,18 @@
             padding-top: 70px;
         }
 
+
         .red-overlay {
             position: absolute;
             height: 100%;
             width: 100%;
             background-color: #901a22;
             opacity: .65;
-            border-left: 1px solid red;
-            border-right: 1px solid red;
+        }
+
+        .middle {
+            border-left: 1px solid #FF0000;
+            border-right: 1px solid #FF0000;
         }
 
         .text-cont {
@@ -283,7 +291,7 @@
             background: none;
         }
 
-        .contact-form .input-text-msg{
+        .contact-form .input-text-msg {
             resize: none;
             display: block;
             width: 100%;
@@ -360,8 +368,8 @@
 
 @push('footer')
     <script !src="">
-        $('.js-input').keyup(function() {
-            if( $(this).val() ) {
+        $('.js-input').keyup(function () {
+            if ($(this).val()) {
                 $(this).addClass('not-empty');
             } else {
                 $(this).removeClass('not-empty');

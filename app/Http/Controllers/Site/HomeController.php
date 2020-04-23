@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::with(["getImages", "getCategory"])->where("show_in_home", 1)->get();
+        $products = Product::with(["getImages", "getCategory"])->where("show_in_home", 1)->limit(4)->get();
         if(count($products) < 4) {
             $adding_random_products = Product::with(["getImages", "getCategory"])->where("show_in_home", 0)->limit(4 - count($products))->get();
             $products = $products->merge($adding_random_products);

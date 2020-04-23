@@ -53,8 +53,8 @@
             </div>
             <div class="col-xl-9 gallery">
                 @if(count($products) == 0)
-                    <div class="row h-100">
-                        <div class="d-flex align-items-center m-auto">
+                    <div class="row">
+                        <div class="d-flex align-items-center m-auto pt-3">
                             Empty...
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                          alt="{{ $product->name }}">
                                 </div>
                                 <div class="desc">
-                                    <p class="text-center category mb-2">{{ $product->getCategory->name }}</p>
+                                    <p class="text-center category mb-2 text-uppercase">{{ $product->getCategory->name }}</p>
                                     <h4 class="color-red text-center">{{ $product->name }}</h4>
                                     <p class="text-center price mb-1">${{ $product->price }}</p>
                                     <p data-info="{{ json_encode($product) }}"
@@ -166,14 +166,14 @@
                 background: #9c1d24;
                 text-align: center;
                 position: absolute;
-                bottom: -39px;
+                bottom: -65px;
                 width: 100%;
                 left: 0;
-                height: 39px;
                 margin-bottom: 0;
                 color: white;
                 transition: .3s;
                 cursor: pointer;
+                padding: 20px 0;
             }
 
             .prod {
@@ -208,6 +208,10 @@
                 height: 300px;
             }
 
+            .modal-content .lSPager{
+                width: 100% !important;
+            }
+
             .modal-content .lSPager li {
                 border: 1px solid #d0d2d4;
                 height: 100px;
@@ -215,7 +219,13 @@
                 align-items: center;
                 justify-content: center;
                 margin-top: 10px;
+                margin-right: 20px !important;
                 padding: 30px 15px;
+            }
+
+            .modal-content .lSPager li.active {
+                border: 1px solid #9c1d24;
+                border-radius: 0 !important;
             }
 
             .modal-content .lSPager li img {
@@ -258,7 +268,8 @@
                 background-color: #9c1d24;
                 border-color: #9c1d24;
             }
-            .slug:hover{
+
+            .slug:hover {
                 text-decoration: none;
                 color: black;
             }
@@ -296,10 +307,10 @@
                 });
                 html += "</ul></div>";
                 html += "<div class='col-lg-4'>";
-                html += `<p class='name color-red'><b>${data.name}</b></p>`;
-                html += `<p class="price"><b>AMD ${data.price}</b></p>`;
-                html += `<p class="description">${data.description}</p>`;
-                html += `<p><b>Category: </b> <a  class="color-red slug" href="/shop/${data.get_category.title}">${data.get_category.name}</a></p>`;
+                html += `<p class='name color-red mb-3'><b>${data.name}</b></p>`;
+                html += `<p class="price mb-3"><b>AMD ${data.price}</b></p>`;
+                html += `<p class="description mb-3">${data.description}</p>`;
+                html += `<p style="font-size: 14px"><b>Category: </b> <a  class="color-red slug" href="/shop/${data.get_category.title}">${data.get_category.name}</a></p>`;
                 html += "</div>";
                 $(".modal-body").html(html);
                 $(".modal").modal();

@@ -60,13 +60,13 @@
                         <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
-                                    <a class="nav-item nav-link" href="/">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="/">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Home
                                     </a>
-                                    <a class="nav-item nav-link" href="/gallery">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="/gallery">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Gallery
                                     </a>
-                                    <a class="nav-item nav-link" href="/about-us">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="/about-us">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">About
                                         Us
                                     </a>
@@ -87,21 +87,21 @@
                         <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
-                                    <a class="nav-item nav-link" href="/academy-members">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="/academy-members">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
                                     </a>
-                                    <a class="nav-item nav-link" href="#">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="#">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
                                     </a>
-                                    <a class="nav-item nav-link" href="/standings">
+                                    <a class="nav-item nav-link d-flex align-items-center" href="/standings">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
                                     </a>
                                     @if(Auth::guard('player')->check())
-                                        <a class="nav-item nav-link" href="/player">
+                                        <a class="nav-item nav-link d-flex align-items-center" href="/player">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
                                         </a>
                                     @else
-                                        <a class="nav-item nav-link" href="/sign-in">
+                                        <a class="nav-item nav-link d-flex align-items-center" href="/sign-in">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Login
                                         </a>
                                     @endif
@@ -116,14 +116,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-sm-6 submenu submenu-left">
-                        <div class="left-menu justify-content-end pr-5">
-                            <a href="/contact-us" class="mb-0 text-decoration-none text-white ">Contact Us</a>
+                        <div class="left-menu justify-content-end pr-5 nav">
+                            <a href="/contact-us" class="mb-0 text-decoration-none text-white d-flex align-items-center">
+                                <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Contact Us
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-0 main-submenu-wrapmiddle"></div>
                     <div class="col-md-5 col-sm-6 submenu submenu-right">
-                        <div class="right-menu pl-5">
-                            <a href="/shop" class="mb-0 text-decoration-none text-white ">Shop</a>
+                        <div class="right-menu pl-5 nav">
+                            <a href="/shop" class="mb-0 text-decoration-none text-white d-flex align-items-center">
+                                <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Shop</a>
                         </div>
                     </div>
                 </div>
@@ -167,14 +170,14 @@
                     <p class="section-title little"><img style="height: 15px" class="img-fluid"
                                                          src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Useful
                         Links</p>
-                    <ul class="d-inline-block left-list list-unstyled">
+                    <ul class="d-inline-block left-list footer-list list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/gallery">Gallery</a></li>
                         <li><a href="/contact-us">Contact Us</a></li>
                         <li><a href="#">My Account</a></li>
                     </ul>
-                    <ul class="d-inline-block float-right list-unstyled">
+                    <ul class="d-inline-block float-right footer-list list-unstyled">
                         <li><a href="#">Training schedule</a></li>
                         <li><a href="#">Our Teams</a></li>
                         <li><a href="#">Standings</a></li>

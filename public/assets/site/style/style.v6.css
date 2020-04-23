@@ -252,6 +252,18 @@ span.red {
     font-size: 14px;
     font-family: Roboto-Condensed-Regular, sans-serif;
 }
+.footer-list li:before{
+    content: "";
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    width: 6px;
+    height: 6px;
+    transform: rotate(-45deg);
+    display: inline-block;
+    left: -10px;
+    top: -2px;
+    position: relative;
+}
 
 .facebook{
     background-image: url("../images/home/fb.png");
@@ -259,7 +271,7 @@ span.red {
     background-size: cover;
     background-repeat: no-repeat;
     height: 26px;
-    display: inline-block;'
+    display: inline-block;
 }
 
 .instagram{
