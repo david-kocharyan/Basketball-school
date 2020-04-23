@@ -342,7 +342,7 @@ span.red {
 }
 .rounded-button {
     background: #9c1d24;
-    border-radius: 5px;
+    border-radius: 10px !important;
     border: none;
     height: 35px;
     font-family: Roboto-Condensed-Bold, sans-serif;

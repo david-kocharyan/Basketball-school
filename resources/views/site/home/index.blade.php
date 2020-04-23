@@ -962,7 +962,7 @@
             .shop-btn {
                 padding: 15px 30px;
                 font-size: 16px;
-                border-radius: 8px;
+                border-radius: 10px;
                 text-decoration: none;
                 border: 2px solid #9c1d24;
                 font-family: Roboto-Condensed-Bold, sans-serif;
@@ -985,6 +985,11 @@
                 background-size: cover !important;
             }
 
+            .header-btn{
+                border: 1px solid #9c1d24;
+                padding: 15px 30px;
+                height: unset;
+            }
             .header-btn:hover, .rounded-button:hover {
                 border: 1px solid white;
                 background: #151515;
