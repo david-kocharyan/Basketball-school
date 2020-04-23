@@ -54,7 +54,7 @@
             <div class="col-xl-9 gallery">
                 @if(count($products) == 0)
                     <div class="row">
-                        <div class="d-flex align-items-center m-auto pt-3">
+                        <div class="d-flex align-items-center pt-3">
                             Empty...
                         </div>
                     </div>

@@ -23,13 +23,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="title pb-3"><img style="height: 25px" class="img-fluid"
+                    <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Story
                     </p>
                     <p class="subtitle"> {{$about->story ?? ""}} </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="title pb-3"><img style="height: 25px" class="img-fluid"
+                    <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Why
                         Cilicia</p>
                     <p class="subtitle"> {{$about->why ?? ""}} </p>
@@ -41,7 +41,7 @@
                 <div class="main-section">
                     <div class="col-md-12 col-xl-6 overlay-part">
                         <div class="col-xl-12 col-sm-12">
-                            <p class="title pb-3"><img style="height: 25px" class="img-fluid"
+                            <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our
                                 Mission</p>
                             <p class="subtitle"> {{$about->mission ?? ""}} </p>

@@ -18,12 +18,12 @@
     </div>
 
     <div class="container pt-5 pb-5">
-        <div class="row pb-4">
+        <div class="row pb-5">
             <div class="col-md-12">
                 <ul class="nav nav-tabs" style="border-bottom: 0">
-                    <li><a class="active" data-toggle="tab" href="#all">Filter All</a></li>
-                    <li><a data-toggle="tab" href="#academy">Academy</a></li>
-                    <li><a data-toggle="tab" href="#games">Games</a></li>
+                    <li><a class="text-uppercase active" data-toggle="tab" href="#all">Filter All</a></li>
+                    <li style="border-right: 2px solid #9c1d24; border-left: 2px solid #9c1d24;"><a class="text-uppercase" data-toggle="tab" href="#academy">Academy</a></li>
+                    <li><a class="text-uppercase" data-toggle="tab" href="#games">Games</a></li>
                 </ul>
             </div>
         </div>
@@ -163,7 +163,7 @@
             .overlay-hover p {
                 position: absolute;
                 left: 20px;
-                transition: .5s;
+                transition: auto;
             }
 
             .overlay-hover button {
@@ -175,9 +175,8 @@
             }
 
             .rounded-button {
-                width: auto;
-                height: auto;
                 border-radius: 8px;
+                padding: 0 20px;
             }
 
             .main-box:hover .overlay-hover p {
@@ -185,6 +184,8 @@
                 transform: translateX(-50%) translateY(-50%);
                 top: 50%;
                 text-align: center;
+                padding-bottom: 50px;
+                width: 100%;
             }
 
             .main-box:hover .overlay-hover button {
@@ -216,7 +217,7 @@
             }
 
             .nav-tabs a {
-                padding: 8px 25px;
+                padding: 15px;
                 text-decoration: none;
                 color: white;
             }
