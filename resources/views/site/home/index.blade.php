@@ -436,8 +436,6 @@
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.carousel.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/site/carousel/dist/assets/owl.theme.default.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.css") }}">
-        {{--swiper--}}
-        <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
         {{--slider style--}}
         <style>
             .swiper-container {
@@ -1155,7 +1153,6 @@
     @endpush
     @push("footer")
         <script src="{{ asset("assets/site/carousel/dist/owl.carousel.min.js") }}"></script>
-        <script src="{{ asset("assets/site/swiper/package/js/swiper.min.js") }}"></script>
         <script src="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.js") }}"></script>
         <script>
             $(document).ready(function () {

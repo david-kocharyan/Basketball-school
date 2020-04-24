@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/style/style.v6.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
+
     @stack('head')
 </head>
 
@@ -139,15 +141,17 @@
         <div class="partners d-flex align-items-center position-relative">
             <div class="container">
                 <div class="row">
-                    <ul id="partnerGallery" style="height: auto;">
-                        @foreach(\App\Partner::all() as $key)
-                            <li>
-                                <a href="{{ $key->url }}" target="_blank">
-                                    <img src="{{ asset("uploads/partner/$key->image") }}"/>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    <div class="swiper-container" id="partnerGallery">
+                        <div class="swiper-wrapper">
+                            @foreach(\App\Partner::all() as $key)
+                                <div class="swiper-slide">
+                                    <a href="{{ $key->url }}" target="_blank">
+                                        <img src="{{ asset("uploads/partner/$key->image") }}"/>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="up position-absolute text-center d-flex align-items-center justify-content-center">
@@ -245,6 +249,7 @@
 <script src="{{ asset("assets/site/jquery/jquery.min.js") }}"></script>
 <script src="{{ asset("assets/site/bootstrap/js/bootstrap.min.js") }}"></script>
 <script src="{{ asset("assets/site/lightslider/dist/js/lightslider.min.js") }}"></script>
+<script src="{{ asset("assets/site/swiper/package/js/swiper.min.js") }}"></script>
 <script>
     window.onscroll = function () {
         myFunction()
@@ -279,27 +284,47 @@
 
         element.addClass("active");
 
-        $('#partnerGallery').lightSlider({
+
+        var partners = new Swiper('#partnerGallery', {
             loop: true,
-            speed: 600,
-            pager: false,
-            controls: false,
-            responsive: [
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slideMove: 1,
-                    }
+            // slidesPerView: 1,
+            spaceBetween: 10,
+            // init: false,
+            pagination: false,
+            breakpoints: {
+                800: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
                 },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        item: 2,
-                        slideMove: 1
-                    }
-                }
-            ]
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 50,
+                },
+            }
         });
+
+        // $('#partnerGallery').lightSlider({
+        //     loop: true,
+        //     speed: 600,
+        //     pager: false,
+        //     controls: false,
+        //     responsive: [
+        //         {
+        //             breakpoint: 800,
+        //             settings: {
+        //                 slideMove: 1,
+        //             }
+        //         },
+        //         {
+        //             breakpoint: 480,
+        //             settings: {
+        //                 item: 2,
+        //                 slideMove: 1
+        //             }
+        //         }
+        //     ]
+        // });
+
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");
         });
