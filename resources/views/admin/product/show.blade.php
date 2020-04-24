@@ -23,7 +23,7 @@
                             <ul class="list-icons">
                                 <li><i class="fa fa-check text-success"></i> Category - {{$product->getCategory->name}}
                                 </li>
-                                <li><i class="fa fa-check text-success"></i> Price - {{$product->price}}
+                                <li><i class="fa fa-check text-success"></i> Price - {{$product->price}} <b>AMD</b>
                                 </li>
                             </ul>
                         </div>
@@ -31,9 +31,10 @@
                             <h3 class="box-title m-t-40">Image</h3>
                             <div id="gallery">
                                 @foreach($product->getImages as $key)
-                                    <img src="{{asset("uploads/product/$key->name")}}"
-                                         class="card img-responsive m-l-15"
-                                         style="display: inline-block; width: 200px; height: 200px;">
+                                    <div style="display: inline-block; width: 300px;">
+                                        <img src="{{asset("uploads/product/$key->name")}}"
+                                             class="card img-responsive img-thumbnail" style="padding: 20px;">
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -46,7 +47,7 @@
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body text-center">
                     <p>Some text in the modal.</p>
                 </div>
             </div>
@@ -60,7 +61,7 @@
         $(document).ready(function () {
             $("img").click(function () {
                 var t = $(this).attr("src");
-                $(".modal-body").html("<img src='" + t + "' class='modal-img img-responsive'>");
+                $(".modal-body").html("<img src='" + t + "' class='modal-img m-auto'>");
                 $("#myModal").modal();
             });
         });

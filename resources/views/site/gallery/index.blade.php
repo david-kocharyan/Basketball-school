@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <ul class="nav nav-tabs" style="border-bottom: 0">
                     <li><a class="text-uppercase active" data-toggle="tab" href="#all">Filter All</a></li>
-                    <li style="border-right: 2px solid #9c1d24; border-left: 2px solid #9c1d24;"><a class="text-uppercase" data-toggle="tab" href="#academy">Academy</a></li>
+                    <li style="border-right: 1px solid #9c1d24; border-left: 1px solid #9c1d24;"><a class="text-uppercase" data-toggle="tab" href="#academy">Academy</a></li>
                     <li><a class="text-uppercase" data-toggle="tab" href="#games">Games</a></li>
                 </ul>
             </div>

@@ -231,8 +231,12 @@ span.red {
     color: #9c1d24;
 }
 .section-title img {
+    height: 20px !important;
     margin-right: 10px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+}
+.breadcrumb-cont img{
+    height: 20px !important;
 }
 .footer{
     background-repeat: no-repeat;
@@ -358,8 +362,9 @@ span.red {
     text-decoration: none;
 }
 .title img{
+    height: 20px !important;
     margin-right: 10px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 .background-section .greater{
     font-family: sans-serif;

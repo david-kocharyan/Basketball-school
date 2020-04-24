@@ -21,7 +21,7 @@ class ShopController extends Controller
     {
         $title = self::TITLE;
         $categories = Category::all();
-        $products = Product::with("getImages")->paginate(25);
+        $products = Product::with("getImages")->orderBy('id', 'DESC')->paginate(25);
         return view(self::VIEW . ".index", compact("title", "categories", "products"));
     }
 
@@ -31,7 +31,7 @@ class ShopController extends Controller
         $categories = Category::all();
         $products = Product::whereHas('getCategory', function ($query) use ($slug) {
             $query->where('title', $slug);
-        })->with('getImages')->paginate(25);
+        })->with('getImages')->orderBy('id', 'DESC')->paginate(25);
         return view(self::VIEW . ".index", compact("title", "categories", "products", 'slug'));
     }
 }

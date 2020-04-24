@@ -23,8 +23,11 @@
             <div class="col-md-12">
                 <ul class="nav nav-tabs" style="border-bottom: 0">
                     @foreach($teams as $bin=>$key)
-                        <li><a @if($bin == 0)class="active" @endif data-toggle="tab"
-                               href="{{"#menu_".$key->id}}">{{$key->name}}</a></li>
+                        <li style="border-right: 1px solid #9c1d24;">
+                            <a class="text-uppercase @if($bin == 0) active @endif"  data-toggle="tab"
+                               href="{{"#menu_".$key->id}}">{{$key->name}}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -70,7 +73,7 @@
             }
 
             .nav-tabs a {
-                padding: 8px 25px;
+                padding: 15px;
                 text-decoration: none;
                 color: white;
             }

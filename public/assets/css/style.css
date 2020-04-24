@@ -7221,24 +7221,13 @@ ul.select-row-icon li a:hover i.whn-hov {
     text-align: center!important;
     display: inline-block;
     font-style: normal;
-    font-weight: 500;
-    margin-right: 7px;
-    font-size: 16px;
-    vertical-align: middle
-}
-
-.sidebar .fas{
-    width: 20px;
-    text-align: center!important;
-    display: inline-block;
-    font-style: normal;
     margin-right: 7px;
     font-size: 18px;
     vertical-align: middle
 }
 
 .sidebar .mdi {
-    font-size: 21px
+    font-size: 18px
 }
 
 .sidebar .sidebar-head {

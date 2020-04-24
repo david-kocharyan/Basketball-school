@@ -86,12 +86,14 @@
             <ul class="nav" id="side-menu">
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-home fa-fw"></i> <span
-                            class="hide-menu">Home<span class="fa arrow"></span></span>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="mdi mdi-home fa-fw"></i>
+                        <span  class="hide-menu">Home<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
 
-                        <li><a href="/admin/month-players" class="waves-effect"><i class="far fa-address-book "></i></i>
+                        <li><a href="/admin/month-players" class="waves-effect">
+                                <i class="far fa-address-book fa-fw"></i>
                                 <span class="hide-menu">Players of the month</span></a>
                         </li>
 
@@ -108,28 +110,28 @@
                         <span class="hide-menu">Players</span></a>
                 </li>
 
-                <li><a href="/admin/games" class="waves-effect"><i class="fas fa-basketball-ball "></i>
+                <li><a href="/admin/games" class="waves-effect"><i class="fas fa-basketball-ball fa-fw"></i>
                         <span class="hide-menu">Games</span></a>
                 </li>
 
-                <li><a href="/admin/coaches" class="waves-effect"><i class="fas fa-user-tie "></i>
+                <li><a href="/admin/coaches" class="waves-effect"><i class="fas fa-user-tie fa-fw"></i>
                         <span class="hide-menu">Coaches</span></a>
                 </li>
 
-                <li><a href="/admin/center" class="waves-effect"><i class="fas fa-inbox "></i>
+                <li><a href="/admin/center" class="waves-effect"><i class="fas fa-inbox fa-fw"></i>
                         <span class="hide-menu">Venues</span></a>
                 </li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-users "></i> <span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-users fa-fw"></i> <span
                             class="hide-menu">Teams<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/teams" class="waves-effect"><i class="fas fa-user-tag "></i>
+                        <li><a href="/admin/teams" class="waves-effect"><i class="fas fa-user-tag fa-fw"></i>
                                 <span class="hide-menu">Teams (Academic)</span></a>
                         </li>
 
-                        <li><a href="/admin/league" class="waves-effect"><i class="fas fa-user-shield "></i>
+                        <li><a href="/admin/league" class="waves-effect"><i class="fas fa-user-shield fa-fw"></i>
                                 <span class="hide-menu">Teams (League)</span></a>
                         </li>
                     </ul>
@@ -149,15 +151,15 @@
                 {{--about_us--}}
                 <li class="devider"></li>
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-file-signature "></i> <span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-file-signature fa-fw"></i> <span
                             class="hide-menu">About Us<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/about-us-team" class="waves-effect"><i class="fas fa-users-cog "></i>
+                        <li><a href="/admin/about-us-team" class="waves-effect"><i class="fas fa-users-cog fa-fw"></i>
                                 <span class="hide-menu">Our Team</span></a>
                         </li>
 
-                        <li><a href="/admin/about-us-story" class="waves-effect"><i class="fas fa-sitemap "></i>
+                        <li><a href="/admin/about-us-story" class="waves-effect"><i class="fas fa-sitemap fa-fw"></i>
                                 <span class="hide-menu">Our Story</span></a>
                         </li>
                     </ul>
@@ -168,11 +170,11 @@
                             class="hide-menu">Shop<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/categories" class="waves-effect"><i class="fas fa-tag "></i>
+                        <li><a href="/admin/categories" class="waves-effect"><i class="fas fa-tag fa-fw"></i>
                                 <span class="hide-menu">Categories</span></a>
                         </li>
 
-                        <li><a href="/admin/products" class="waves-effect"><i class="fas fa-layer-group "></i>
+                        <li><a href="/admin/products" class="waves-effect"><i class="fas fa-layer-group fa-fw"></i>
                                 <span class="hide-menu">Products</span></a>
                         </li>
                     </ul>
@@ -187,11 +189,11 @@
                                 <span class="hide-menu">Clubs</span></a>
                         </li>
 
-                        <li><a href="/admin/tournaments" class="waves-effect"><i class="fas fa-trophy "></i>
+                        <li><a href="/admin/tournaments" class="waves-effect"><i class="fas fa-trophy fa-fw"></i>
                                 <span class="hide-menu">Tournaments</span></a>
                         </li>
 
-                        <li><a href="/admin/tournament-clubs" class="waves-effect"><i class="fas fa-medal "></i>
+                        <li><a href="/admin/tournament-clubs" class="waves-effect"><i class="fas fa-medal fa-fw"></i>
                                 <span class="hide-menu">Tournament`s Clubs</span></a>
                         </li>
                     </ul>

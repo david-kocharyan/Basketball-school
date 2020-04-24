@@ -62,7 +62,7 @@
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <b class="text-danger"> Recommended size 1772x1183‬ </b>
+                                <b class="text-danger"> Recommended size 1920x1280px </b>
                                 <br>
                                 <input type="file" name="image[]" id="file-1" class="inputfile inputfile-1"
                                        data-multiple-caption="<i class='mdi mdi-cloud-upload fa-fw'></i>  {count} files selected" multiple>

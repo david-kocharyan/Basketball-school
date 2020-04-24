@@ -90,7 +90,7 @@
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <b class="text-danger"> Recommended size 237x356 </b>
+                                <b class="text-danger"> Recommended size 480x320px </b>
                                 <br>
                                 <input type="file" name="image[]" id="file-1" class="inputfile inputfile-1"
                                        data-multiple-caption="<i class='mdi mdi-cloud-upload fa-fw'></i>  {count} files selected"
@@ -129,8 +129,7 @@
                                 @foreach($product->getImages as $key=>$val)
                                     <tr>
                                         <td>{{$key + 1}}</td>
-                                        <td><img src="{{ asset("/uploads/product/".$val->name)}}" alt="{{$val->name}}"
-                                                 style="width: 100px; height: 100px;"></td>
+                                        <td><img src="{{ asset("/uploads/product/".$val->name)}}" alt="{{$val->name}}" class="img-responsive" width="200"></td>
                                         <td>
                                             <form
                                                 onsubmit="if(confirm('Do You Really Want To Delete The Product Image?') == false) return false;"

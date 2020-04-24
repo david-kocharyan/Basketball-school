@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-md-12 col-xl-6 overlay-part">
                         <div class="col-xl-8 col-sm-12">
-                            <p class="title pb-3"><img style="height: 30px" class="img-fluid"
+                            <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Contact
                                 Us</p>
                             <p class="subtitle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
@@ -204,8 +204,8 @@
         }
 
         .middle {
-            border-left: 1px solid #FF0000;
-            border-right: 1px solid #FF0000;
+            border-left: 1px solid #9c1d24;
+            border-right: 1px solid #9c1d24;
         }
 
         .text-cont {
