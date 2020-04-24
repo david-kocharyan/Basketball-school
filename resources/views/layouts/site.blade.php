@@ -280,10 +280,7 @@
         element.addClass("active");
 
         $('#partnerGallery').lightSlider({
-            // item: 2,
             loop: true,
-            // slideMove: 1,
-            // easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
             speed: 600,
             pager: false,
             controls: false,
@@ -291,9 +288,7 @@
                 {
                     breakpoint: 800,
                     settings: {
-                        item: 3,
                         slideMove: 1,
-                        slideMargin: 6,
                     }
                 },
                 {
