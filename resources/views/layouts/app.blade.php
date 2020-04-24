@@ -87,7 +87,7 @@
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="mdi mdi-home fa-fw"></i>
+                        <i class="fas fa-home fa-fw"></i>
                         <span  class="hide-menu">Home<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
@@ -97,7 +97,7 @@
                                 <span class="hide-menu">Players of the month</span></a>
                         </li>
 
-                        <li><a href="/admin/gallery-home" class="waves-effect"><i class="mdi mdi-image-area fa-fw"></i>
+                        <li><a href="/admin/gallery-home" class="waves-effect"><i class="fas fa-image fa-fw"></i>
                                 <span class="hide-menu">Gallery ( Home )</span></a>
                         </li>
 
@@ -106,7 +106,7 @@
 
                 <li class="devider"></li>
 
-                <li><a href="/admin/players" class="waves-effect"><i class="mdi mdi-account fa-fw"></i>
+                <li><a href="/admin/players" class="waves-effect"><i class="fas fa-user-alt fa-fw"></i>
                         <span class="hide-menu">Players</span></a>
                 </li>
 
@@ -144,7 +144,7 @@
                 </li>
 
                 {{--gallery--}}
-                <li><a href="/admin/gallery" class="waves-effect"><i class="mdi mdi-image-album fa-fw"></i>
+                <li><a href="/admin/gallery" class="waves-effect"><i class="fas fa-image fa-fw"></i>
                         <span class="hide-menu">Gallery</span></a>
                 </li>
 
@@ -166,7 +166,7 @@
                 </li>
                 {{--market--}}
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-shopping fa-fw"></i> <span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fab fa-shopify fa-fw"></i> <span
                             class="hide-menu">Shop<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
@@ -181,7 +181,8 @@
                 </li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type fa-fw"></i>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-list fa-fwq
+Q"></i>
                         <span class="hide-menu">Standings<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
 
