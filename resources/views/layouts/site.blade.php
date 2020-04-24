@@ -63,13 +63,16 @@
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
                                     <a class="nav-item nav-link d-flex align-items-center" href="/">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Home
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Home
                                     </a>
                                     <a class="nav-item nav-link d-flex align-items-center" href="/gallery">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Gallery
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Gallery
                                     </a>
                                     <a class="nav-item nav-link d-flex align-items-center" href="/about-us">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">About
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">About
                                         Us
                                     </a>
                                 </div>
@@ -90,21 +93,26 @@
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
                                     <a class="nav-item nav-link d-flex align-items-center" href="/academy-members">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
                                     </a>
                                     <a class="nav-item nav-link d-flex align-items-center" href="#">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
                                     </a>
                                     <a class="nav-item nav-link d-flex align-items-center" href="/standings">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
+                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
                                     </a>
                                     @if(Auth::guard('player')->check())
                                         <a class="nav-item nav-link d-flex align-items-center" href="/player">
-                                            <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                 src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
                                         </a>
                                     @else
                                         <a class="nav-item nav-link d-flex align-items-center" href="/sign-in">
-                                            <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Login
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                 src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Login
                                         </a>
                                     @endif
                                 </div>
@@ -119,8 +127,10 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-6 submenu submenu-left">
                         <div class="left-menu justify-content-end pr-5 nav">
-                            <a href="/contact-us" class="mb-0 text-decoration-none text-white d-flex align-items-center">
-                                <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Contact Us
+                            <a href="/contact-us"
+                               class="mb-0 text-decoration-none text-white d-flex align-items-center">
+                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Contact Us
                             </a>
                         </div>
                     </div>
@@ -128,7 +138,8 @@
                     <div class="col-md-5 col-sm-6 submenu submenu-right">
                         <div class="right-menu pl-5 nav">
                             <a href="/shop" class="mb-0 text-decoration-none text-white d-flex align-items-center">
-                                <img style="height: 10px; display: none" class="img-fluid mr-1" src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Shop</a>
+                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Shop</a>
                         </div>
                     </div>
                 </div>
@@ -159,12 +170,14 @@
             </div>
         </div>
     </div>
-    <div class="footer" style="background: url('{{ asset("assets/site/images/home/footer_bg.jpg") }}'); background-repeat: no-repeat; background-size: cover;">
+    <div class="footer"
+         style="background: url('{{ asset("assets/site/images/home/footer_bg.jpg") }}'); background-repeat: no-repeat; background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <p class="section-title little mb-4"><img style="height: 15px" class="img-fluid"
-                                                         src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">About
+                                                              src="{{ asset("assets/site/images/ball-red.svg") }}"
+                                                              alt="">About
                         Us</p>
                     <p class="text-white text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
                         ducimus inventore laboriosam laudantium quae ratione repellat sunt! Ab architecto aut blanditiis
@@ -261,6 +274,7 @@
     let number = url == "/" ? 50 : 0;
 
     let sum = sticky + number;
+
     function myFunction() {
         window.pageYOffset > sum ? header.classList.add("sticky") : header.classList.remove("sticky");
     }
@@ -269,27 +283,28 @@
 
         var url = window.location + "";
         var path = url.replace(window.location.protocol + "//" + window.location.host + "/", "");
-        var element = $('.nav a').filter(function() {
+        var element = $('.nav a').filter(function () {
             return this.href === url || this.href === path;// || url.href.indexOf(this.href) === 0;
         });
-        element.parentsUntil(".nav").each(function (index)
-        {
-            if($(this).is(".nav") && $(this).children("a").length !== 0)
-            {
+        element.parentsUntil(".nav").each(function (index) {
+            if ($(this).is(".nav") && $(this).children("a").length !== 0) {
                 $(this).children("a").addClass("active");
                 $(this).parent(".nav").length === 0
-                     $(this).addClass("active")
+                $(this).addClass("active")
             }
         });
 
         element.addClass("active");
 
 
+        var isLoop = true;
+        if ($('#partnerGallery').length < 4) {
+            isLoop = false;
+        }
         var partners = new Swiper('#partnerGallery', {
-            loop: true,
-            // slidesPerView: 1,
+            loop: isLoop,
+            slidesPerView: 4,
             spaceBetween: 10,
-            // init: false,
             pagination: false,
             breakpoints: {
                 800: {
@@ -328,7 +343,7 @@
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");
         });
-        $(document).on("click", ".gallery .main", function(){
+        $(document).on("click", ".gallery .main", function () {
             console.log("clicked")
             $(this).find(".quick-view").trigger("click")
         });
