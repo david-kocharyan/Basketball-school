@@ -152,10 +152,10 @@
         <div class="partners d-flex align-items-center position-relative">
             <div class="container">
                 <div class="row">
-                    <div class="swiper-container" id="partnerGallery">
+                    <div class="swiper-container col-md-12" id="partnerGallery">
                         <div class="swiper-wrapper">
                             @foreach(\App\Partner::all() as $key)
-                                <div class="swiper-slide" style="width: 255px !important; margin-right: 100px !important;">
+                                <div class="swiper-slide">
                                     <a href="{{ $key->url }}" target="_blank">
                                         <img src="{{ asset("uploads/partner/$key->image") }}"/>
                                     </a>
@@ -304,7 +304,7 @@
         var partners = new Swiper('#partnerGallery', {
             loop: isLoop,
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 40,
             pagination: false,
             breakpoints: {
                 800: {
@@ -317,6 +317,28 @@
                 },
             }
         });
+
+        // $('#partnerGallery').lightSlider({
+        //     loop: true,
+        //     speed: 600,
+        //     pager: false,
+        //     controls: false,
+        //     responsive: [
+        //         {
+        //             breakpoint: 800,
+        //             settings: {
+        //                 slideMove: 1,
+        //             }
+        //         },
+        //         {
+        //             breakpoint: 480,
+        //             settings: {
+        //                 item: 2,
+        //                 slideMove: 1
+        //             }
+        //         }
+        //     ]
+        // });
 
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");
