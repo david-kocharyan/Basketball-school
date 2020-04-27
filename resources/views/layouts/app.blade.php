@@ -198,6 +198,11 @@
                         </li>
                     </ul>
                 </li>
+
+                <li><a href="/admin/schedules" class="waves-effect"><i class="fas fa-layer-group fa-fw"></i>
+                        <span class="hide-menu">Schedule</span></a>
+                </li>
+
             </ul>
         </div>
     </div>

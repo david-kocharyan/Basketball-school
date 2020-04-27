@@ -20,6 +20,24 @@ body{
 .modal-open .header{
     padding-right: 17px;
 }
+
+/*dorpdown*/
+.dropdown-menu{
+    background: #6c6c6e;
+    border-radius: 0px;
+}
+.dropdown-menu a{
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.dropdown-menu a:hover{
+    background: unset;
+}
+
 /*menu*/
 .sticky {
     position: fixed;
@@ -72,6 +90,14 @@ body{
 .active img{
     display: inline-block !important;
 }
+.dropdown-item.active img{
+    display: inline-block !important;
+}
+.dropdown-item.active{
+    color: #fff;
+    background: none;
+}
+
 .dark-bg {
     background: #141515;
 }

@@ -102,11 +102,11 @@
                  style="background-image: url('{{ asset("assets/site/images/contact/contact_training_scedule-min.jpg") }}')">
                 <div class="red-overlay"></div>
                 <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white mb-5">
+                    <p class="title text-white mb-0 pt-4">
                         <img style="height: 20px; position:relative;" class="img-fluid"
                              src="{{ asset("assets/site/images/ball-white.svg") }}"
                              alt="Ball">Training Schedule</p>
-                    <div class="text-cont">
+                    <div class="text-cont pt-4">
                         <ul style="padding-left: 30px">
                             <li><b>Under 14y</b></li>
                             <li><b>Under 16y</b></li>
@@ -118,7 +118,7 @@
                             <li>Wednesday, Friday</li>
                         </ul>
                     </div>
-                    <div class="button-sec" style="padding-left: 30px;">
+                    <div class="button-sec pt-4" style="padding-left: 30px;">
                         <a href="#">
                             <button class="rounded-button">View More</button>
                         </a>
@@ -130,17 +130,17 @@
                  style="background-image: url('{{ asset("assets/site/images/contact/contact_shop-min.jpg") }}')">
                 <div class="red-overlay"></div>
                 <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white mb-5">
+                    <p class="title text-white mb-0 pt-4">
                         <img style="height: 20px; position:relative;" class="img-fluid"
                              src="{{ asset("assets/site/images/ball-white.svg") }}"
                              alt="Ball">Shop</p>
-                    <div class="text-cont">
+                    <div class="text-cont pt-4">
                         <div class="col-md-7">
                             <p style="padding-left: 15px" class="text-white">Lorem ipsum dolor sit amet, consectetur
                                 adipisicing elit. Alias aperiam blanditiis culpa cupiditate.</p>
                         </div>
                     </div>
-                    <div class="button-sec" style="padding-left: 30px;">
+                    <div class="button-sec pt-4" style="padding-left: 30px;">
                         <a href="#">
                             <button class="rounded-button">View More</button>
                         </a>
@@ -152,11 +152,11 @@
                  style="background-image: url('{{ asset("assets/site/images/contact/contact_working_hours-min.jpg") }}')">
                 <div class="red-overlay"></div>
                 <div class="col-md-12 pl-lg-5">
-                    <p class="title text-white mb-5">
+                    <p class="title text-white mb-0 pt-4">
                         <img style="height: 20px; position:relative;" class="img-fluid"
                              src="{{ asset("assets/site/images/ball-white.svg") }}"
                              alt="Ball">Working Hours</p>
-                    <div class="text-cont ml-0">
+                    <div class="text-cont ml-0 pt-4">
                         <ul style="padding-left: 30px">
                             <li><b>Under 14y</b></li>
                             <li><b>Under 16y</b></li>
@@ -168,7 +168,7 @@
                             <li>Wednesday, Friday</li>
                         </ul>
                     </div>
-                    <div class="button-sec" style="padding-left: 30px;">
+                    <div class="button-sec pt-4" style="padding-left: 30px;">
                         <a href="#">
                             <button class="rounded-button">View More</button>
                         </a>

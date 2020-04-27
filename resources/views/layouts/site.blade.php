@@ -96,10 +96,22 @@
                                         <img style="height: 10px; display: none" class="img-fluid mr-1"
                                              src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
                                     </a>
-                                    <a class="nav-item nav-link d-flex align-items-center" href="#">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
-                                    </a>
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#">
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                 src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item d-flex align-items-center" href="/rosters">
+                                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Roster</a>
+                                            <hr>
+                                            <a class="dropdown-item d-flex align-items-center" href="/all-games">
+                                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Games</a>
+                                        </div>
+                                    </div>
+
                                     <a class="nav-item nav-link d-flex align-items-center" href="/standings">
                                         <img style="height: 10px; display: none" class="img-fluid mr-1"
                                              src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
@@ -195,9 +207,9 @@
                         <li><a href="#">My Account</a></li>
                     </ul>
                     <ul class="d-inline-block float-right footer-list list-unstyled">
-                        <li><a href="#">Training schedule</a></li>
-                        <li><a href="#">Our Teams</a></li>
-                        <li><a href="#">Standings</a></li>
+                        <li><a href="/schedule">Training schedule</a></li>
+                        <li><a href="/rosters">Rosters</a></li>
+                        <li><a href="/standings">Standings</a></li>
                         <li><a href="/academy-members">Academy members</a></li>
                         <li><a href="/shop">Shop</a></li>
                     </ul>

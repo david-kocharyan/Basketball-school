@@ -29,6 +29,9 @@ Route::post('/home-gallery-ajax', 'Site\GalleryController@home_ajax');
 Route::post('/gallery-ajax', 'Site\GalleryController@home_ajax');
 
 Route::get('/standings', 'Site\StandingController@index');
+Route::get('/rosters', 'Site\OurTeamsController@index');
+Route::get('/games', 'Site\OurTeamsController@index');
+Route::get('/schedule', 'Site\OurTeamsController@index');
 
 
 /**
@@ -90,6 +93,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('game-finish/{id}', 'GameController@finish');
     Route::put('game-finish/{id}', 'GameController@finish_game');
 
+    Route::resource('schedules', 'ScheduleController');
 });
 
 /**
