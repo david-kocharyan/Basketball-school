@@ -23,9 +23,9 @@
                                     <option value="U12">U 12</option>
                                     <option value="U14">U 14</option>
                                     <option value="U16">U 16</option>
-                                    <option value="A">A-League</option>
-                                    <option value="B">B-League</option>
-                                    <option value="C">Armenian cup</option>
+                                    <option value="A-League">A-League</option>
+                                    <option value="B-League">B-League</option>
+                                    <option value="Armenian cup">Armenian cup</option>
                                 </select>
                             </div>
 
@@ -47,6 +47,7 @@
                                 @enderror
                                 <p class="invalid-feedback text-danger select_to_err" style="display: none;"
                                    role="alert"></p>
+
                                 <div class="row">
                                     <div class="col-xs-5">
                                         <select id="search" class="form-control" size="8"
@@ -96,7 +97,6 @@
 
 @push('custom-script')
     <script>
-        $(document).ready(function ($) {
             $('#search').multiselect({
                 search: {
                     left: '<input type="text" name="q" class="form-control" placeholder="Search..." />',
@@ -125,6 +125,5 @@
                     this.submit();
                 }
             })
-        });
     </script>
 @endpush

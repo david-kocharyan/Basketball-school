@@ -155,7 +155,7 @@
                     <div class="swiper-container" id="partnerGallery">
                         <div class="swiper-wrapper">
                             @foreach(\App\Partner::all() as $key)
-                                <div class="swiper-slide">
+                                <div class="swiper-slider">
                                     <a href="{{ $key->url }}" target="_blank">
                                         <img src="{{ asset("uploads/partner/$key->image") }}"/>
                                     </a>
@@ -317,28 +317,6 @@
                 },
             }
         });
-
-        // $('#partnerGallery').lightSlider({
-        //     loop: true,
-        //     speed: 600,
-        //     pager: false,
-        //     controls: false,
-        //     responsive: [
-        //         {
-        //             breakpoint: 800,
-        //             settings: {
-        //                 slideMove: 1,
-        //             }
-        //         },
-        //         {
-        //             breakpoint: 480,
-        //             settings: {
-        //                 item: 2,
-        //                 slideMove: 1
-        //             }
-        //         }
-        //     ]
-        // });
 
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");

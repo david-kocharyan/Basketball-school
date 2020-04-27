@@ -208,9 +208,7 @@
                 height: 300px;
             }
 
-            .modal-content .lSPager{
-                width: 100% !important;
-            }
+
 
             .modal-content .lSPager li {
                 border: 1px solid #d0d2d4;
@@ -219,7 +217,6 @@
                 align-items: center;
                 justify-content: center;
                 margin-top: 10px;
-                margin-right: 20px !important;
                 padding: 30px 15px;
             }
 

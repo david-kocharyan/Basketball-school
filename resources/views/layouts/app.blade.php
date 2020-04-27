@@ -166,7 +166,7 @@
                 </li>
                 {{--market--}}
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fab fa-shopify fa-fw"></i> <span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fab fa-shopify fa-fw" style="font-size: 23px !important;"></i> <span
                             class="hide-menu">Shop<span class="fa arrow"></span></span>
                     </a>
                     <ul class="nav nav-second-level">
@@ -181,8 +181,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-list fa-fwq
-Q"></i>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-list fa-fw"></i>
                         <span class="hide-menu">Standings<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
 
