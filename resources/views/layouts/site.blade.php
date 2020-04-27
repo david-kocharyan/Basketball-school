@@ -155,7 +155,7 @@
                     <div class="swiper-container" id="partnerGallery">
                         <div class="swiper-wrapper">
                             @foreach(\App\Partner::all() as $key)
-                                <div class="swiper-slider">
+                                <div class="swiper-slide" style="width: 255px !important; margin-right: 100px !important;">
                                     <a href="{{ $key->url }}" target="_blank">
                                         <img src="{{ asset("uploads/partner/$key->image") }}"/>
                                     </a>
