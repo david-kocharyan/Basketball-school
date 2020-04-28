@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Game;
 use App\Http\Controllers\Controller;
 use App\League;
 use Illuminate\Http\Request;
@@ -17,5 +18,13 @@ class OurTeamsController extends Controller
 
         $title = "Rosters";
         return view(self::VIEW . ".index", compact('title', 'league'));
+    }
+
+    public function games()
+    {
+        $games = Game::with(['game_club', 'club', 'center'])->paginate(20);
+
+        $title = "All Games";
+        return view(self::VIEW . ".games", compact('title', 'games'));
     }
 }

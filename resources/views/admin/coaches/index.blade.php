@@ -27,7 +27,7 @@
                                 <td>{{$val->full_name}}</td>
                                 <td>
                                     <img src="{{asset("uploads/coaches/$val->image")}}" alt=""
-                                         style="width: 150px; height: 150px;" class="container-fluid">
+                                         style="height: 150px;" class="img-responsive">
                                 </td>
                                 <td>
                                     <a href="{{$route."/".$val->id}}" data-toggle="tooltip"

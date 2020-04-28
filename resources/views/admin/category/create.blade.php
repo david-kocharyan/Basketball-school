@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Upload Icon <b class="text-danger">( recommended size 100x87 )</b></label>
+                                <label for="image">Upload Icon <b class="text-danger">( recommended size 100x87px )</b></label>
                                 @error('icon')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror

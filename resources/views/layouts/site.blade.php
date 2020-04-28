@@ -92,10 +92,23 @@
                         <nav class="navbar navbar-expand-lg  navbar-dark dark-bg">
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                 <div class="nav navbar-nav">
-                                    <a class="nav-item nav-link d-flex align-items-center" href="/academy-members">
-                                        <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                             src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
-                                    </a>
+
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#">
+                                            <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                 src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item d-flex align-items-center" href="/academy-members">
+                                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy Members</a>
+                                            <hr>
+                                            <a class="dropdown-item d-flex align-items-center" href="/schedules">
+                                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Training & Coaches</a>
+                                        </div>
+                                    </div>
+
                                     <div class="nav-item dropdown">
                                         <a class="nav-item nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1"
@@ -207,7 +220,7 @@
                         <li><a href="#">My Account</a></li>
                     </ul>
                     <ul class="d-inline-block float-right footer-list list-unstyled">
-                        <li><a href="/schedule">Training schedule</a></li>
+                        <li><a href="/schedules">Training schedule</a></li>
                         <li><a href="/rosters">Rosters</a></li>
                         <li><a href="/standings">Standings</a></li>
                         <li><a href="/academy-members">Academy members</a></li>

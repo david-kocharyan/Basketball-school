@@ -32,7 +32,22 @@
                                        placeholder="Price" name="price" value="{{old('price')}}">
                             </div>
 
-                            <div id="education_fields"></div>
+                            <div class="form-group">
+                                <label for="price">Days and Time</label>
+                                @error('day_from.*')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                                @error('day_to.*')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                                @error('time_from.*')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                                @error('time_to.*')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                            </div>
+
                             <div class="col-sm-3 nopadding">
                                 <div class="form-group">
                                     <select class="form-control" id="day_from" name="day_from[]">
@@ -82,6 +97,7 @@
                                 </div>
                             </div>
                             <div class="clear"></div>
+                            <div id="education_fields"></div>
 
 
                             <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Schedule

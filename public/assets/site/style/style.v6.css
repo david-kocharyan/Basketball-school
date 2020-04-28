@@ -515,14 +515,14 @@ span.red {
 }
 
 #partnerGallery img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    -webkit-filter: brightness(0.02) invert(1); /* Safari 6.0 - 9.0 */
+    filter: brightness(0.02) invert(1);
     transition: .3s;
     height: 60px;
 }
 #partnerGallery img:hover{
-    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
-    filter: grayscale(0);
+    -webkit-filter: brightness(1) invert(0); /* Safari 6.0 - 9.0 */
+    filter: brightness(1) invert(0);
     transition: .3s;
 }
 

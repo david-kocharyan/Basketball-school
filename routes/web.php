@@ -19,6 +19,7 @@
 Route::get('/', 'Site\HomeController@index');
 Route::get('/about-us', 'Site\AboutController@index');
 Route::get('/academy-members', 'Site\AcademyMembersController@index');
+Route::get('/schedules', 'Site\AcademyMembersController@schedule');
 Route::get('/contact-us', 'Site\ContactController@index');
 Route::get('/shop', 'Site\ShopController@index');
 Route::get('/shop/{slug}', 'Site\ShopController@category');
@@ -30,8 +31,7 @@ Route::post('/gallery-ajax', 'Site\GalleryController@home_ajax');
 
 Route::get('/standings', 'Site\StandingController@index');
 Route::get('/rosters', 'Site\OurTeamsController@index');
-Route::get('/games', 'Site\OurTeamsController@index');
-Route::get('/schedule', 'Site\OurTeamsController@index');
+Route::get('/all-games', 'Site\OurTeamsController@games');
 
 
 /**
@@ -93,6 +93,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('game-finish/{id}', 'GameController@finish');
     Route::put('game-finish/{id}', 'GameController@finish_game');
 
+    Route::delete('/schedules/{schedule_id}/destroy-date/{id}', 'ScheduleController@destroy_date');
     Route::resource('schedules', 'ScheduleController');
 });
 

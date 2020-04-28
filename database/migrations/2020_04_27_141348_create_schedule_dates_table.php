@@ -16,9 +16,9 @@ class CreateScheduleDatesTable extends Migration
         Schema::create('schedule_dates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('schedule_id');
-            $table->string('day_form');
+            $table->string('day_from');
             $table->string('day_to');
-            $table->string('time_form');
+            $table->string('time_from');
             $table->string('time_to');
             $table->timestamps();
 

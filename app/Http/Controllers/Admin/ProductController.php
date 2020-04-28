@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::with(['getCategory', 'getImages'])->get();
+        $product = Product::with(['getCategory', 'getImages'])->orderBy('id', 'DESC')->get();
         $route = self::ROUTE;
         $title = self::TITLE;
         return view(self::FOLDER . ".index", compact('route', 'title', 'product'));
