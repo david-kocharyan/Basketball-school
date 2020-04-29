@@ -47,34 +47,25 @@ class ScheduleController extends Controller
     {
         $request->validate([
             "team" => "required",
-            "price" => "required",
-
-            "day_from" => "required|array|min:1",
-//            "day_from.*" => "required",
-            "day_to" => "required|array|min:1",
-//            "day_to.*" => "required",
-            "time_from" => "required|array|min:1",
-//            "time_from.*" => "required",
-            "time_to" => "required|array|min:1",
-//            "time_to.*" => "required",
+            "price" => "",
+            "day" => "required|array|min:1",
+            "time" => "required|array|min:1",
         ]);
 
         $schedule = new Schedule;
         $schedule->team_id = $request->team;
-        $schedule->price = $request->price;
+        if ($request->price != null) $schedule->price = $request->price;
         $schedule->save();
 
         if ($schedule->id) {
             $data = [];
-            foreach ($request->day_from as $bin => $key) {
-                if ($request->day_from[$bin] != null AND $request->day_to[$bin] != null AND $request->time_from[$bin] != null AND $request->time_to[$bin] != null) {
+            foreach ($request->day as $bin => $key) {
+                if ($request->day[$bin] != null  AND $request->time[$bin] != null) {
 
                     $data[] = [
                         'schedule_id' => $schedule->id,
-                        'day_from' => $request->day_from[$bin],
-                        'day_to' => $request->day_to[$bin],
-                        'time_from' => $request->time_from[$bin],
-                        'time_to' => $request->time_to[$bin],
+                        'day' => $request->day[$bin],
+                        'time' => $request->time[$bin],
                     ];
                 }
             }
@@ -117,33 +108,24 @@ class ScheduleController extends Controller
     {
         $request->validate([
             "team" => "required",
-            "price" => "required",
-
-            "day_from" => "required|array|min:1",
-//            "day_from.*" => "required",
-            "day_to" => "required|array|min:1",
-//            "day_to.*" => "required",
-            "time_from" => "required|array|min:1",
-//            "time_from.*" => "required",
-            "time_to" => "required|array|min:1",
-//            "time_to.*" => "required",
+            "price" => "",
+            "day" => "required|array|min:1",
+            "time" => "required|array|min:1",
         ]);
 
         $schedule->team_id = $request->team;
-        $schedule->price = $request->price;
+        if ($request->price != null) $schedule->price = $request->price;
         $schedule->save();
 
         if ($schedule->id) {
             $data = [];
-            foreach ($request->day_from as $bin => $key) {
-                if ($request->day_from[$bin] != null AND $request->day_to[$bin] != null AND $request->time_from[$bin] != null AND $request->time_to[$bin] != null) {
+            foreach ($request->day as $bin => $key) {
+                if ($request->day[$bin] != null  AND $request->time[$bin] != null) {
 
                     $data[] = [
                         'schedule_id' => $schedule->id,
-                        'day_from' => $request->day_from[$bin],
-                        'day_to' => $request->day_to[$bin],
-                        'time_from' => $request->time_from[$bin],
-                        'time_to' => $request->time_to[$bin],
+                        'day' => $request->day[$bin],
+                        'time' => $request->time[$bin],
                     ];
                 }
             }

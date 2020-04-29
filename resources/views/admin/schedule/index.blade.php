@@ -1,23 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-   <div class="row">
+    <div class="row">
         <div class="col-md-12">
             <div class="white-box">
                 <h3 class="box-title">{{$title}}</h3>
-                <a href="{{$route."/create"}}" class="btn btn-success m-b-30"><i class="fas fa-plus"></i> Add Schedule</a>
+                <a href="{{$route."/create"}}" class="btn btn-success m-b-30"><i class="fas fa-plus"></i> Add
+                    Schedule</a>
 
                 {{--table--}}
                 <div class="table-responsive">
                     <table id="datatable" class="display table table-hover table-striped nowrap" cellspacing="0"
                            width="100%">
                         <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Team</th>
-                                <th>Price</th>
-                                <th>Options</th>
-                            </tr>
+                        <tr>
+                            <th>Id</th>
+                            <th>Team</th>
+                            <th>Price</th>
+                            <th>Options</th>
+                        </tr>
                         </thead>
 
                         <tbody>
@@ -25,7 +26,13 @@
                             <tr>
                                 <td>{{$key + 1}}</td>
                                 <td>{{$val->team->name}}</td>
-                                <td>{{$val->price}}</td>
+                                <td>
+                                    @if($val->price != null)
+                                        {{$val->price}}
+                                    @else
+                                        Empty
+                                    @endif
+                                </td>
                                 <td>
 
                                     <a href="{{$route."/".$val->id."/edit"}}" data-toggle="tooltip"
@@ -37,7 +44,7 @@
                                           method="post" id="work-for-form">
                                         @csrf
                                         @method("DELETE")
-                                        <a href="javascript:void(0);" class="delForm" data-id ="{{$val->id}}">
+                                        <a href="javascript:void(0);" class="delForm" data-id="{{$val->id}}">
                                             <button data-toggle="tooltip"
                                                     data-placement="top" title="Delete"
                                                     class="btn btn-danger btn-circle tooltip-danger"><i
@@ -70,7 +77,7 @@
         $('.delForm').on('click', function (event) {
             event.preventDefault();
             var id = $(this).data('id');
-            var text = $('.text_'+id).html();
+            var text = $('.text_' + id).html();
 
             swal({
                 title: "Are you sure you want to delete the schedule?",

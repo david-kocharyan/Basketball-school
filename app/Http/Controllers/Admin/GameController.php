@@ -184,9 +184,6 @@ class GameController extends Controller
             'score_1' => "required",
             'score_2' => "required",
             'player' => "required",
-            'pts' => "required",
-            'rb' => "required",
-            'ast' => "required",
         ]);
 
         $game = Game::where('id', $id)->first();
@@ -209,4 +206,51 @@ class GameController extends Controller
 
         return redirect(self::ROUTE);
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function finish_edit($id)
+    {
+        $game = Game::with(['game_club', 'club', 'center'])->where('id', $id)->first();
+        $route = self::ROUTE;
+        $title = "Edit Finished " . self::TITLE;
+        return view(self::FOLDER . ".finish_edit", compact('route', 'title', 'game'));
+    }
+
+    /**
+     * @param Request $request
+     * @param         $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function finish_game_edit(Request $request, $id)
+    {
+        $request->validate([
+            'score_1' => "required",
+            'score_2' => "required",
+            'player' => "required",
+        ]);
+
+        $game = Game::where('id', $id)->first();
+        $game->best_player = $request->player;
+        $game->pts = $request->pts;
+        $game->rb = $request->rb;
+        $game->ast = $request->ast;
+        $game->status = 1;
+        $game->save();
+
+        $game_club = GameClub::where('game_id', $id) ->get();
+
+        $club_1 = $game_club[0];
+        $club_1->score = $request->score_1;
+        $club_1->save();
+
+        $club_2 = $game_club[1];
+        $club_2->score = $request->score_2;
+        $club_2->save();
+
+        return redirect(self::ROUTE);
+    }
+
 }

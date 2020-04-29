@@ -314,12 +314,11 @@
         element.parentsUntil(".nav").each(function (index) {
             if ($(this).is(".nav") && $(this).children("a").length !== 0) {
                 $(this).children("a").addClass("active");
-                $(this).parent(".nav").length === 0
-                $(this).addClass("active")
             }
         });
-
         element.addClass("active");
+        var drop_elem = $(".dropdown-menu").children(".active")
+        var x = drop_elem.parents(".dropdown").children('.dropdown-toggle').addClass('active')
 
 
         var isLoop = true;
@@ -342,28 +341,6 @@
                 },
             }
         });
-
-        // $('#partnerGallery').lightSlider({
-        //     loop: true,
-        //     speed: 600,
-        //     pager: false,
-        //     controls: false,
-        //     responsive: [
-        //         {
-        //             breakpoint: 800,
-        //             settings: {
-        //                 slideMove: 1,
-        //             }
-        //         },
-        //         {
-        //             breakpoint: 480,
-        //             settings: {
-        //                 item: 2,
-        //                 slideMove: 1
-        //             }
-        //         }
-        //     ]
-        // });
 
         $(".up").click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");

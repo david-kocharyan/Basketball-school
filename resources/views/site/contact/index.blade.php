@@ -119,7 +119,7 @@
                         </ul>
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
-                        <a href="#">
+                        <a href="/schedules">
                             <button class="rounded-button">View More</button>
                         </a>
                     </div>
@@ -135,13 +135,13 @@
                              src="{{ asset("assets/site/images/ball-white.svg") }}"
                              alt="Ball">Shop</p>
                     <div class="text-cont pt-4">
-                        <div class="col-md-7">
+                        <div class="col-md-12">
                             <p style="padding-left: 15px" class="text-white">Lorem ipsum dolor sit amet, consectetur
                                 adipisicing elit. Alias aperiam blanditiis culpa cupiditate.</p>
                         </div>
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
-                        <a href="#">
+                        <a href="/shop">
                             <button class="rounded-button">View More</button>
                         </a>
                     </div>
@@ -169,7 +169,7 @@
                         </ul>
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
-                        <a href="#">
+                        <a href="/schedules">
                             <button class="rounded-button">View More</button>
                         </a>
                     </div>
@@ -210,6 +210,7 @@
 
         .text-cont {
             display: flex;
+            height: 100px;
         }
 
         .text-cont li {

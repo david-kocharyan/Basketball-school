@@ -22,6 +22,7 @@
                             <th>Venues</th>
                             <th>Date</th>
                             <th>Time</th>
+                            <th>Status</th>
                             <th>Options</th>
                         </tr>
                         </thead>
@@ -37,16 +38,36 @@
                                 <td>{{$val->center->name}}</td>
                                 <td>{{$val->date}}</td>
                                 <td>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</td>
+                                <td style="font-weight: bold; @if($val->status == 1)
+                                    color: green;
+                                @else
+                                    color: red;
+                                @endif">
+                                    @if($val->status == 1)
+                                        Finished
+                                    @else
+                                        To Play
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{$route."/".$val->id."/edit"}}" data-toggle="tooltip"
                                        data-placement="top" title="Edit" class="btn btn-info btn-circle tooltip-info">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
-                                    <a href="{{"/admin/game-finish/".$val->id}}" data-toggle="tooltip"
-                                       data-placement="top" title="Add to finish game" class="btn btn-warning btn-circle tooltip-warning">
-                                        <i class="fas fa-hourglass-end"></i>
-                                    </a>
+                                    @if($val->status == 1)
+                                        <a href="{{"/admin/game-finish/edit/".$val->id}}" data-toggle="tooltip"
+                                           data-placement="top" title="Edit Finished Game"
+                                           class="btn btn-primary btn-circle tooltip-primary">
+                                            <i class="fas fa-hourglass-end"></i>
+                                        </a>
+                                    @else
+                                        <a href="{{"/admin/game-finish/".$val->id}}" data-toggle="tooltip"
+                                           data-placement="top" title="Finish Game"
+                                           class="btn btn-warning btn-circle tooltip-warning">
+                                            <i class="fas fa-hourglass-end"></i>
+                                        </a>
+                                    @endif
 
                                     <form style="display: inline-block" action="{{ $route."/".$val->id }}"
                                           method="post" id="work-for-form">
@@ -106,7 +127,27 @@
 
 @push('custom-datatable')
     <script>
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            bSort: false,
+            initComplete: function () {
+                this.api().columns([6,8]).every(function (i) {
+                    var column = this;
+                    var select = $('<select class="select form-control"><option value="">All</option></select>')
+                        .appendTo($(column.header()).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
+            }
+        });
     </script>
 @endpush
 

@@ -166,8 +166,8 @@
                                             </div>
                                             <div class="score-cont d-flex justify-content-around">
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
-                                                <span class="red text-uppercase time-final"><b>{{$val->type}}</b></span>
+                                                    class="score-team text-uppercase "><b>{{$val->game_club[0]->score}}</b></span>
+                                                <span class="red text-uppercase time-final text-center"><b>{{$val->type}}</b></span>
                                                 <span
                                                     class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
                                             </div>
@@ -537,6 +537,8 @@
             .gallery-thumbs .score-cont .date, .gallery-thumbs .score-cont .score-team {
                 color: black;
                 font-size: 12px;
+                width: 20%;
+                text-align: center;
             }
 
             .gallery-thumbs .first-row:after {
@@ -596,6 +598,7 @@
                 right: 0;
                 margin: 0 auto;
                 top: 175px;
+                width: 97%;
                 color: white;
                 display: flex;
                 align-items: unset;
@@ -1176,6 +1179,10 @@
                     responsiveClass: true,
                 });
 
+                var isLoop = true;
+                if ($('.gallery-thumbs').length < 5) {
+                    isLoop = false;
+                }
                 var galleryTop = new Swiper('.gallery-top', {
                     spaceBetween: 10,
                     loop: true,
@@ -1216,7 +1223,7 @@
                     }
                 });
                 galleryTop.controller.control = galleryTop;
-                galleryThumbs.controller.control = galleryTop
+                galleryThumbs.controller.control = galleryTop;
 
                 let asset_url = '{{ asset("uploads/product") . "/" }}';
                 $(document).on("click", ".quick-view", function () {

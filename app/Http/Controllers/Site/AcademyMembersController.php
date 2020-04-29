@@ -30,7 +30,7 @@ class AcademyMembersController extends Controller
     {
         $schedule = Schedule::with(['team', 'date'])->get();
         $coaches = Coach::limit(3)->get();
-        $title = "Schedule";
+        $title = "Training & Coaches";
         return view(self::VIEW . ".schedule", compact('title', 'schedule', 'coaches'));
     }
 }

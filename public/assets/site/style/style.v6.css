@@ -34,6 +34,10 @@ body{
     text-transform: uppercase;
 }
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .dropdown-menu a:hover{
     background: unset;
 }
@@ -578,6 +582,7 @@ span.red {
     color: white;
 }
 .time-final{
+    width: 60%;
     text-align: center;
     position: relative;
     z-index: 10;

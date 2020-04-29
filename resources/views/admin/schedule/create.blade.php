@@ -34,60 +34,26 @@
 
                             <div class="form-group">
                                 <label for="price">Days and Time</label>
-                                @error('day_from.*')
+                                @error('day')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                @error('day_to.*')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('time_from.*')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('time_to.*')
+                                @error('time')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
                             </div>
 
-                            <div class="col-sm-3 nopadding">
+                            <div class="col-sm-6 nopadding">
                                 <div class="form-group">
-                                    <select class="form-control" id="day_from" name="day_from[]">
-                                        <option value="">Date From</option>
-                                        <option value="Mon">Monday</option>
-                                        <option value="Tues">Tuesday</option>
-                                        <option value="Wed">Wednesday</option>
-                                        <option value="Thurs">Thursday</option>
-                                        <option value="Fri">Friday</option>
-                                        <option value="Sat">Saturday</option>
-                                        <option value="Sun">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                    <select class="form-control" id="day_to" name="day_to[]">
-                                        <option value="">Date To</option>
-                                        <option value="Mon">Monday</option>
-                                        <option value="Tues">Tuesday</option>
-                                        <option value="Wed">Wednesday</option>
-                                        <option value="Thurs">Thursday</option>
-                                        <option value="Fri">Friday</option>
-                                        <option value="Sat">Saturday</option>
-                                        <option value="Sun">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="time_from" name="time_from[]" value=""
-                                           placeholder="Time From">
+                                    <input type="text" class="form-control" id="day" name="day[]" value=""
+                                           placeholder="Day">
                                 </div>
                             </div>
 
-                            <div class="col-sm-3 nopadding">
+                            <div class="col-sm-6 nopadding">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="time_to" name="time_to[]" value=""
-                                               placeholder="Time To">
+                                        <input type="text" class="form-control" id="time" name="time[]" value=""
+                                               placeholder="Time">
                                         <div class="input-group-btn ml-1">
                                             <button class="btn btn-success" type="button" onclick="education_fields();">
                                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -121,46 +87,16 @@
             divtest.setAttribute("class", "form-group removeclass"+room);
             var rdiv = 'removeclass'+room;
             divtest.innerHTML = `
-                                <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                    <select class="form-control" id="day_from" name="day_from[]">
-                                        <option value="">Date From</option>
-                                        <option value="Mon">Monday</option>
-                                        <option value="Tues">Tuesday</option>
-                                        <option value="Wed">Wednesday</option>
-                                        <option value="Thurs">Thursday</option>
-                                        <option value="Fri">Friday</option>
-                                        <option value="Sat">Saturday</option>
-                                        <option value="Sun">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                    <select class="form-control" id="day_to" name="day_to[]">
-                                        <option value="">Date To</option>
-                                        <option value="Mon">Monday</option>
-                                        <option value="Tues">Tuesday</option>
-                                        <option value="Wed">Wednesday</option>
-                                        <option value="Thurs">Thursday</option>
-                                        <option value="Fri">Friday</option>
-                                        <option value="Sat">Saturday</option>
-                                        <option value="Sun">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 nopadding">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="time_from" name="time_from[]" value=""
-                                           placeholder="Time From">
-                                </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type="text" class="form-control" id="day" name="day[]" value=""
+                                           placeholder="Day">
                             </div>
 
-                            <div class="col-sm-3 nopadding">
+                            <div class="col-sm-6 nopadding">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="time_to" name="time_to[]" value=""
-                                               placeholder="Time To">
+                                        <input type="text" class="form-control" id="time" name="time[]" value=""
+                                               placeholder="Time">
 
                 <div class="input-group-btn">
                 <button class="btn btn-danger" type="button" onclick="remove_education_fields(${room});">

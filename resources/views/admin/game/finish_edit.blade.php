@@ -17,7 +17,7 @@
                                 @error('score_1')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="number" name="score_1" value="{{old('score_1')}}" class="form-control" id="score_1">
+                                <input type="number" name="score_1" value="{{$game->game_club[0]->score}}" class="form-control" id="score_1">
                             </div>
 
                             <div class="form-group">
@@ -25,7 +25,7 @@
                                 @error('score_2')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="number" name="score_2" value="{{old('score_2')}}" class="form-control" id="score_2">
+                                <input type="number" name="score_2" value="{{$game->game_club[1]->score}}" class="form-control" id="score_2">
                             </div>
 
                             <div class="form-group">
@@ -33,24 +33,15 @@
                                 @error('player')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
-                                <input type="text" name="player" value="{{old('player')}}" class="form-control" id="player">
+                                <input type="text" name="player" value="{{$game->best_player}}" class="form-control" id="player">
                             </div>
 
                             <div class="form-group">
                                 <label for="stats">Stats</label>
-                                @error('pts')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('rb')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('ast')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
                                 <div id="stats" class="form-group" style="display: flex; justify-content: space-evenly;">
-                                    <input type="text" name="pts" value="{{old('pts')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="PTS">
-                                    <input type="text" name="rb" value="{{old('rb')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="RB">
-                                    <input type="text" name="ast" value="{{old('ast')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="AST">
+                                    <input type="text" name="pts" value="{{$game->pts}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="PTS">
+                                    <input type="text" name="rb" value="{{$game->rb}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="RB">
+                                    <input type="text" name="ast" value="{{$game->ast}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="AST">
                                 </div>
                             </div>
 

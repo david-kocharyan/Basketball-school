@@ -24,7 +24,7 @@ class OurTeamsController extends Controller
     {
         $games = Game::with(['game_club', 'club', 'center'])->paginate(20);
 
-        $title = "All Games";
+        $title = "Games";
         return view(self::VIEW . ".games", compact('title', 'games'));
     }
 }

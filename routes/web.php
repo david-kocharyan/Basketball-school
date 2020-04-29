@@ -92,6 +92,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('games', 'GameController');
     Route::get('game-finish/{id}', 'GameController@finish');
     Route::put('game-finish/{id}', 'GameController@finish_game');
+    Route::get('game-finish/edit/{id}', 'GameController@finish_edit');
+    Route::put('game-finish/edit/{id}', 'GameController@finish_game_edit');
 
     Route::delete('/schedules/{schedule_id}/destroy-date/{id}', 'ScheduleController@destroy_date');
     Route::resource('schedules', 'ScheduleController');

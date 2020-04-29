@@ -38,19 +38,10 @@
 
                             <div class="form-group">
                                 <label for="stats">Stats</label>
-                                @error('pts')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('rb')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('ast')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
                                 <div id="stats" class="form-group" style="display: flex; justify-content: space-evenly;">
-                                    <input type="number" name="pts" value="{{old('pts')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="PTS">
-                                    <input type="number" name="rb" value="{{old('rb')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="RB">
-                                    <input type="number" name="ast" value="{{old('ast')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="AST">
+                                    <input type="text" name="pts" value="{{old('pts')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="PTS">
+                                    <input type="text" name="rb" value="{{old('rb')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="RB">
+                                    <input type="text" name="ast" value="{{old('ast')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="AST">
                                 </div>
                             </div>
 

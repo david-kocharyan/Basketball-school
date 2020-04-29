@@ -28,7 +28,7 @@
                 <p class="text-center"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nobis quibusdam soluta. Accusantium, adipisci aperiam at consequuntur distinctio dolorem eius enim id, in ipsa nobis, quas tenetur unde veniam voluptate!</span>
                 </p>
             </div>
-            <div class="col-md-12 d-flex justify-content-between flex-wrap">
+            <div class="col-md-12 d-flex justify-content-around flex-wrap">
                 @foreach($schedule as $key)
                     <div class="d-md-block col-md-3">
                         <table class="table">
@@ -39,12 +39,16 @@
                             </tr>
                             @foreach($key->date as $val)
                                 <tr class="pt-1">
-                                    <td class="font-weight-bold">{{$val->day_from."-".$val->day_to}}</td>
-                                    <td class="text-right">{{$val->time_from."-".$val->time_to}}</td>
+                                    <td class="font-weight-bold">{{$val->day}}</td>
+                                    <td class="text-right">{{$val->time}}</td>
                                 </tr>
                             @endforeach
                             <tr class="price">
-                                <td colspan="2" class="text-center font-weight-bold">{{$key->price}} AMD/Month</td>
+                                <td colspan="2" class="text-center font-weight-bold">
+                                    @if($key->price != null)
+                                        {{$key->price}} AMD/Month
+                                    @endif
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -62,19 +66,19 @@
             </div>
 
             @foreach($coaches as $key)
-            <div class="col-xl-4 d-flex align-items-center img-cont middle p-0">
+                <div class="col-xl-4 d-flex align-items-center img-cont middle p-0">
 
-                <div class="main-box"
-                     style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
-                    <div class="red-overlay">
-                        <div class="col-md-12 pt-4">
-                            <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
-                            <p class="member-text">{{$key->bio}}</p>
+                    <div class="main-box"
+                         style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
+                        <div class="red-overlay">
+                            <div class="col-md-12 pt-4">
+                                <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
+                                <p class="member-text">{{$key->bio}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
             @endforeach
         </div>
     </div>
@@ -110,12 +114,13 @@
                 border-right: 23px solid transparent;
                 border-top: 12px solid #9c1d24;
                 position: absolute;
-                top: 55px;
+                top: 53px;
                 left: calc(50% - 20px);
             }
-/*-----------------------------------------------------------*/
 
-            .title{
+            /*-----------------------------------------------------------*/
+
+            .title {
                 font-size: 40px;
             }
 

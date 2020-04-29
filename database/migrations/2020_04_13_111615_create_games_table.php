@@ -18,9 +18,9 @@ class CreateGamesTable extends Migration
             $table->string('tournament');
             $table->unsignedBigInteger('center_id');
             $table->string('best_player')->nullable();
-            $table->integer('pts')->nullable();
-            $table->integer('rb')->nullable();
-            $table->integer('ast')->nullable();
+            $table->string('pts')->nullable();
+            $table->string('rb')->nullable();
+            $table->string('ast')->nullable();
             $table->string('type');
             $table->date('date');
             $table->time('time');
