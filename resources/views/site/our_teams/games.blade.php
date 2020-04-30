@@ -30,7 +30,7 @@
 
             <div class="col-md-12 d-flex justify-content-around flex-wrap">
                 @foreach($games as $key=>$val)
-                    <div class="games col-md-2 d-inline-block p-0" data-id="{{$val->id}}" data-toggle="modal"
+                    <div class="games col-md-2 d-inline-block p-0" data-attr="{{json_encode($val)}}" data-toggle="modal"
                          data-target="#myModal">
                         <div class="first-row d-flex flex-column align-items-center">
                             <div class="date-cont">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div
-                            class="second-row @if($val->best_player == null) gray-bg @else red-bg @endif d-flex align-items-end justify-content-center">
+                            class="second-row @if($val->status == 1) gray-bg @else red-bg @endif d-flex align-items-end justify-content-center">
                             <span class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
                         </div>
                     </div>
@@ -60,80 +60,11 @@
     <div class="modal fade" id="myModal" aria-labelledby="myModal" aria-hidden="true" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body gallery-top">
-                    <div class="finished-games d-flex flex-column justify-content-center">
-                        <div class="first-row d-flex flex-wrap justify-content-around align-items-center pt-5">
 
-                            {{-- left content--}}
-                            <div class="left-cont text-center">
-                                <div class="logo-cont">
-                                    <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}' class="img-fluid"
-                                         alt="">
-                                </div>
-                                <div class="team-cont left text-center">
-                                    <span class="team">{{$val->club[0]->name}}</span>
-                                </div>
-                            </div>
-
-                            {{-- middle content--}}
-                            <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
-                                @if($val->status == 1)
-                                    <div class="date-cont game-score left text-right">
-                                        <span class="team">{{$val->game_club[0]->score}}</span>
-                                    </div>
-                                    <div class="time-cont text-center pt-3">
-                                        <span class="time">{{$val->type}}</span>
-                                        <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
-                                    </div>
-                                    <div class="date-cont game-score right text-left">
-                                        <span class="team">{{$val->game_club[1]->score}}</span>
-                                    </div>
-                                @else
-                                    <div class="time-cont text-center pt-3">
-                                        <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
-                                    </div>
-                                @endif
-                            </div>
-
-                            {{-- right content--}}
-                            <div class="right-cont text-center">
-                                <div class="logo-cont">
-                                    <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}' class="img-fluid">
-                                </div>
-                                <div class="team-cont right text-center">
-                                    <span>{{$val->club[1]->name}}</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="second-row d-flex flex-column align-items-center ">
-                            <hr style="border-bottom: 1px solid #9c1d24; width: 30%;">
-                            @if($val->status == 1)
-                                <span
-                                    class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
-                                <div>
-                                <span class="finals text-white text-uppercase">
-                                    <b>{{$val->pts}}PTS</b>
-                                </span>
-                                    <span class="finals ml-3 mr-3 text-white text-uppercase">
-                                    <b>{{$val->rb}}Rb</b>
-                                </span>
-                                    <span class="finals text-white text-uppercase">
-                                    <b>{{$val->ast}}AST</b>
-                                </span>
-                                </div>
-                            @else
-                                <span class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
-                                <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>
-                            @endif
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -237,12 +168,14 @@
             }
         </style>
         <style>
-            .modal-open .header{
+            .modal-open .header {
                 padding-right: 0 !important;
             }
-            .modal-open .sticky{
+
+            .modal-open .sticky {
                 padding-right: 17px !important;
             }
+
             .modal {
                 z-index: 9999;
             }
@@ -337,5 +270,125 @@
                 font-size: 14px;
             }
         </style>
+    @endpush
+    @push("footer")
+        <script !src="">
+            $(document).ready(function () {
+                $('.games').click(function () {
+                    let data = $(this).data('attr');
+
+                    let date = new Date(data.date);
+                    let curr_date = date.getDate();
+                    let curr_month = date.getMonth() + 1;
+                    let month_word = date.toLocaleString('default', {month: 'long'});
+                    let curr_year = date.getFullYear();
+
+                    let day_month = month_word + " " + curr_date + ", " + curr_year;
+                    let day = curr_date + "/" + curr_month + "/" + curr_year;
+
+                    let time = data.time.split(":")
+                        time = time[0]+":"+time[1]
+
+                    let elem = $(".modal-body");
+                    let url = "{{ asset("uploads/clubs/")}}";
+                    elem.empty();
+
+                    if (data.status == 1) {
+                        elem.append(`
+                                    <div class="finished-games d-flex flex-column justify-content-center">
+                                        <div class="first-row d-flex flex-wrap justify-content-around align-items-center pt-5">
+
+                                             <div class="left-cont text-center">
+                                                <div class="logo-cont">
+                                                    <img src='${url}/${data.club[0].image}' class="img-fluid"
+                                                         alt="">
+                                                </div>
+                                                <div class="team-cont left text-center">
+                                                    <span class="team">${data.club[0].name}</span>
+                                                </div>
+                                             </div>
+
+
+                                             <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
+                                                <div class="date-cont game-score left text-right">
+                                                    <span class="team">${data.game_club[0].score}</span>
+                                                </div>
+                                                <div class="time-cont text-center pt-3">
+                                                    <span class="time">${data.type}</span>
+                                                    <p class="finish_date mt-3">${day}
+                                                </div>
+                                                <div class="date-cont game-score right text-left">
+                                                    <span class="team">${data.game_club[1].score}</span>
+                                                </div>
+                                             </div>
+
+                                             <div class="right-cont text-center">
+                                                 <div class="logo-cont">
+                                                     <img src='${url}/${data.club[1].image}' class="img-fluid">
+                                                     </div>
+                                                     <div class="team-cont right text-center">
+                                                         <span>${data.club[1].name}</span>
+                                                 </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="second-row d-flex flex-column align-items-center ">
+                                            <hr style="border-bottom: 1px solid #9c1d24; width: 30%;">
+                                            <span  class="finals mb-3 text-white text-uppercase">Best Player: ${data.best_player}</span>
+                                            <div>
+                                                <span class="finals text-white text-uppercase">
+                                                    <b>${data.pts}</b>
+                                                </span>
+                                                    <span class="finals ml-3 mr-3 text-white text-uppercase">
+                                                    <b>${data.rb}</b>
+                                                </span>
+                                                    <span class="finals text-white text-uppercase">
+                                                    <b>${data.ast}</b>
+                                                </span>
+                                            </div>
+                                         </div>
+                                    </div> `)
+                    } else {
+                        elem.append(`
+                                    <div class="finished-games d-flex flex-column justify-content-center">
+                                        <div class="first-row d-flex flex-wrap justify-content-around align-items-center pt-5">
+
+                                             <div class="left-cont text-center">
+                                                <div class="logo-cont">
+                                                    <img src='${url}/${data.club[0].image}' class="img-fluid"
+                                                         alt="">
+                                                </div>
+                                                <div class="team-cont left text-center">
+                                                    <span class="team">${data.club[0].name}</span>
+                                                </div>
+                                             </div>
+
+
+                                             <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
+                                                <div class="time-cont text-center pt-3">
+                                                    <span class="time">${time}</span>
+                                                </div>
+                                             </div>
+
+                                             <div class="right-cont text-center">
+                                                 <div class="logo-cont">
+                                                     <img src='${url}/${data.club[1].image}' class="img-fluid">
+                                                     </div>
+                                                     <div class="team-cont right text-center">
+                                                         <span>${data.club[1].name}</span>
+                                                 </div>
+                                             </div>
+
+                                        </div>
+                                        <div class="second-row d-flex flex-column align-items-center ">
+                                            <hr style="border-bottom: 1px solid #9c1d24; width: 30%;">
+                                            <span class="finals mb-3 text-white text-uppercase">${data.type} ${day_month}</span>
+                                            <span class="stadium text-white text-uppercase">${data.center.name}</span>
+                                         </div>
+                                    </div> `)
+                    }
+                })
+            })
+        </script>
     @endpush
 @endsection

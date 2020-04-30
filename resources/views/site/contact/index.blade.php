@@ -352,6 +352,15 @@
             cursor: pointer;
         }
 
+        .rounded-button{
+            border: 1px solid #9c1d24;
+        }
+        .rounded-button:hover{
+            border: 1px solid white;
+            background: #151515;
+            /*background-position: 0 -100%;*/
+        }
+
         @media all and (max-width: 768px) {
             .main-section {
                 background: none;
@@ -362,6 +371,14 @@
             .overlay-part {
                 box-shadow: none;
                 padding: 0;
+            }
+        }
+        @media all and (max-width: 1024px) {
+            .middle {
+                border-top: 1px solid #9c1d24;
+                border-bottom: 1px solid #9c1d24;
+                border-left: none;
+                border-right: none;
             }
         }
     </style>

@@ -46,20 +46,13 @@
 
                             <div class="form-group">
                                 <label>Mission List</label>
-                                @error('mission_list_title')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('cc')
+                                @error('mission_list_text')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
                             </div>
 
                             @for($i = 1; $i < 5; $i++)
                                 <div class="form-group">
-                                    <label for="mission_list_title">Mission Title {{$i}}</label>
-                                    <input type="text" class="form-control m-b-20" id="mission_list_title"
-                                           name="mission_list_title[]" value="{{ old("mission_list_title.".$i) }}">
-
                                     <label for="mission_list_text">Mission Text {{$i}}</label>
                                     <input type="text" class="form-control" id="mission_list_text"
                                            name="mission_list_text[]" value="{{ old('mission_list_text.'.$i) }}">
@@ -67,8 +60,7 @@
                                 </div>
                             @endfor
 
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Team
-                                Member
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save About Us Info
                             </button>
                         </form>
                     </div>

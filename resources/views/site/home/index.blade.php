@@ -36,8 +36,8 @@
     <div class="shop-line d-flex align-items-center" >
         <div class="container">
             <div class="row">
-                <div class="col-md-6 d-flex align-items-lg-center shop-text-cont">
-                    <p class="text-white m-0 shop-text text-center">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
+                <div class="col-md-6 d-flex align-items-lg-center shop-text-cont p-3">
+                    <p class="text-white m-0 shop-text text-center col-12">OUR NEW ONLINE SHOP IS NOW OPEN! CHECK IT OUT!</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-lg-center justify-content-lg-end shop-btn-cont">
                     <a href="/shop" class="text-center shop-btn">VISIT SHOP</a>
@@ -146,6 +146,7 @@
                                         </div>
                                     </div>
                                     <div class="second-row d-flex flex-column align-items-center ml-md-4">
+                                        <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span
                                             class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                         <span class="stadium text-white text-uppercase">{{$val->center->name}}</span>
@@ -161,15 +162,12 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span
-                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                <span  class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
-                                            <div class="score-cont d-flex justify-content-around">
-                                                <span
-                                                    class="score-team text-uppercase "><b>{{$val->game_club[0]->score}}</b></span>
-                                                <span class="red text-uppercase time-final text-center"><b>{{$val->type}}</b></span>
-                                                <span
-                                                    class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
+                                            <div class="score-cont d-flex justify-content-around mt-2">
+                                                <span class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
+                                                <span class="red text-uppercase time-final text-center"><b>Final</b></span>
+                                                <span class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
                                             </div>
                                         </div>
                                         <div
@@ -185,16 +183,12 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span
-                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
-                                            <div class="score-cont d-flex justify-content-around">
-                                                <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
-                                                <span
-                                                    class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
-                                                <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
+                                            <div class="score-cont d-flex justify-content-around mt-2">
+                                                <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                <span class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
+                                                <span class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                                             </div>
                                         </div>
                                         <div
@@ -527,6 +521,7 @@
             .gallery-thumbs .first-row {
                 background-color: white;
                 position: relative;
+                font-size: 14px !important;
             }
 
             .gallery-thumbs .score-cont {
@@ -556,7 +551,7 @@
             .gallery-thumbs .finals {
                 font-family: Agency, sans-serif;
                 color: white;
-                font-size: 18px;
+                font-size: 16px;
                 letter-spacing: 2px;
             }
 
@@ -958,6 +953,7 @@
 
             .shop-btn-cont {
                 justify-content: center;
+                align-items: center;
             }
 
             .shop-btn {

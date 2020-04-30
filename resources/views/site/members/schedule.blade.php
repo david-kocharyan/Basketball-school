@@ -65,21 +65,24 @@
                 </p>
             </div>
 
-            @foreach($coaches as $key)
-                <div class="col-xl-4 d-flex align-items-center img-cont middle p-0">
-
-                    <div class="main-box"
-                         style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
-                        <div class="red-overlay">
-                            <div class="col-md-12 pt-4">
-                                <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
-                                <p class="member-text">{{$key->bio}}</p>
+            <div class="container pb-5">
+                <div class="row">
+                    @foreach($coaches as $key)
+                        <div class="col-md-6 p-2">
+                            <div class="main-box"
+                                 style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
+                                <div class="red-overlay">
+                                    <div class="col-md-12 pt-4">
+                                        <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
+                                        <p class="member-text">{{$key->bio}}</p>
+                                        <button class="read-btn">Read more &#8250;</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
 
@@ -96,6 +99,10 @@
                 border-collapse: collapse;
                 background: #ebebeb;
                 overflow: hidden;
+            }
+
+            .table td, .table th {
+                vertical-align: middle;
             }
 
             .price {
@@ -131,9 +138,10 @@
             .main-box {
                 background-repeat: no-repeat;
                 width: 100%;
-                height: 200px;
+                height: 300px;
                 background-size: contain;
                 position: relative;
+                cursor: context-menu;
             }
 
             .red-overlay {
@@ -148,8 +156,8 @@
                 content: "";
                 width: 0;
                 height: 0;
-                border-top: 100px solid transparent;
-                border-bottom: 100px solid transparent;
+                border-top: 155px solid transparent;
+                border-bottom: 155px solid transparent;
                 position: absolute;
                 bottom: 0;
                 transform: translateX(-98%);
@@ -167,7 +175,36 @@
                 color: #c3c2c6;
                 letter-spacing: 1px;
                 font-size: 15px;
+                height:180px;
+                overflow-y: hidden;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+            }
+
+            .read-btn{
+                border: none;
+                background: none;
+                color: #ffffff;
+                font-size: 14px;
+            }
+            .read-btn:focus{
+                outline: none;
             }
         </style>
+    @endpush
+    @push('footer')
+        <script>
+            $(document).ready(function () {
+                var maxHeight = 0;
+                $('.table', this).each(function () {
+                    var thisH = $(this).height();
+                    if (thisH > maxHeight) {
+                        maxHeight = thisH;
+                    }
+                });
+                $('.table').height(maxHeight);
+            })
+        </script>
     @endpush
 @endsection

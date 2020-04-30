@@ -102,7 +102,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="/academy-members">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy Members</a>
-                                            <hr>
+                                            <hr class="mt-0 mb-0 drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/schedules">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Training & Coaches</a>
@@ -118,7 +118,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="/rosters">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Roster</a>
-                                            <hr>
+                                            <hr class="mt-0 mb-0 drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/all-games">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Games</a>
@@ -336,8 +336,12 @@
                     spaceBetween: 40,
                 },
                 480: {
-                    slidesPerView: 2,
-                    spaceBetween: 50,
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
                 },
             }
         });
@@ -352,6 +356,17 @@
         $(document).on("click", ".quick-view", function (e) {
             e.stopPropagation();
         })
+
+
+        $('.dropdown').hover(function () {
+            $(this).addClass("show")
+            $(this).find('.dropdown-menu').addClass("show")
+        })
+        $('.dropdown').mouseleave(function () {
+            $(this).removeClass("show")
+            $(this).find('.dropdown-menu').removeClass("show")
+        })
+
     });
 </script>
 @stack('footer')

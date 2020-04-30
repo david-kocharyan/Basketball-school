@@ -15,7 +15,7 @@
     src: url("../fonts/roboto/RobotoCondensed-Light.ttf");
 }
 body{
-    font-family: Roboto-Condensed-Regular, sans-serif;
+    font-family: Roboto-Regular, sans-serif;
 }
 .modal-open .header{
     padding-right: 17px;
@@ -25,6 +25,7 @@ body{
 .dropdown-menu{
     background: #6c6c6e;
     border-radius: 0px;
+    margin: 0;
 }
 .dropdown-menu a{
     color: #ffffff;
@@ -40,6 +41,10 @@ body{
 
 .dropdown-menu a:hover{
     background: unset;
+}
+
+.drop-hr{
+    background: #ffffff;
 }
 
 /*menu*/
@@ -100,6 +105,10 @@ body{
 .dropdown-item.active{
     color: #fff;
     background: none;
+}
+
+.navbar-toggler:focus{
+    outline-color: #9c1d24;
 }
 
 .dark-bg {
@@ -249,6 +258,7 @@ body{
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .overlay{
     height: 100%;
@@ -465,6 +475,9 @@ span.red {
     .mobile-menu .nav-link{
         text-align: right;
         padding-right: 10px;
+    }
+    .background-section{
+        height: 220px;
     }
 }
 @media all and (min-width: 1024px) {

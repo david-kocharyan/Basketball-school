@@ -237,6 +237,10 @@
             .gallery-open-link img{
                 object-fit: cover;
             }
+
+            .slbArrow:focus, .slbCloseBtn:focus{
+                outline: none;
+            }
         </style>
     @endpush
     @push("footer")

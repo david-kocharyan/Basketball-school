@@ -22,13 +22,13 @@
     <div class="story-section pt-5 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12 text-center">
                     <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Story
                     </p>
-                    <p class="subtitle"> {{$about->story ?? ""}} </p>
+                    <p class="subtitle" style="white-space: pre-line"> {{$about->story ?? ""}} </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12 text-center pt-5">
                     <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Why
                         Cilicia</p>
@@ -53,8 +53,7 @@
                                         <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}"
                                              alt="">
                                     </div>
-                                    <div class="value-part ml-4">
-                                        <p class="value-title">{{$bin->mission_list_title}}</p>
+                                    <div class="value-part ml-4 d-flex align-items-center">
                                         <p class="value-text">{{$bin->mission_list_text}}</p>
                                     </div>
                                 </div>
@@ -129,8 +128,8 @@
 
             .icon-cont {
                 border: 2px solid #9c1d24;
-                height: 60px;
-                width: 60px;
+                height: 50px;
+                width: 50px;
                 flex: none;
             }
             .icon-cont-line:before {

@@ -34,7 +34,6 @@
                                     <ul>
                                         @foreach(json_decode($val->mission_list) as $bin)
                                             <li>
-                                                <strong> {{$bin->mission_list_title}}</strong>
                                                 <p>{{$bin->mission_list_text}}</p>
                                             </li>
                                         @endforeach

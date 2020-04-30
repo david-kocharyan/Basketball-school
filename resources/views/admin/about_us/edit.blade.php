@@ -47,20 +47,13 @@
 
                             <div class="form-group">
                                 <label>Mission List</label>
-                                @error('mission_list_title')
-                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
-                                @enderror
-                                @error('cc')
+                                @error('mission_list_text')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
                             </div>
 
                             @foreach(json_decode($about->mission_list) as $key=>$bin)
                                 <div class="form-group">
-                                    <label for="mission_list_title">Mission Title {{$key+1}}</label>
-                                    <input type="text" class="form-control m-b-20" id="mission_list_title"
-                                           name="mission_list_title[]" value="{{ $bin->mission_list_title }}">
-
                                     <label for="mission_list_text">Mission Text {{$key+1}}</label>
                                     <input type="text" class="form-control" id="mission_list_text"
                                            name="mission_list_text[]" value="{{ $bin->mission_list_text  }}">

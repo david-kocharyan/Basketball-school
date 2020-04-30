@@ -50,13 +50,11 @@ class AboutController extends Controller
             "story" => "required",
             "why" => "required",
             "mission" => "required",
-            "mission_list_title" => "required|array|min:4",
             "mission_list_text" => "required|array|min:4",
         ]);
 
         $mission_list = array();
         for($i = 0; $i < 4; $i++){
-            $mission_list[$i]['mission_list_title'] = $request->mission_list_title[$i];
             $mission_list[$i]['mission_list_text'] = $request->mission_list_text[$i];
         }
 
@@ -105,13 +103,11 @@ class AboutController extends Controller
             "story" => "required",
             "why" => "required",
             "mission" => "required",
-            "mission_list_title" => "required|array|min:4",
             "mission_list_text" => "required|array|min:4",
         ]);
 
         $mission_list = array();
         for($i = 0; $i < 4; $i++){
-            $mission_list[$i]['mission_list_title'] = $request->mission_list_title[$i];
             $mission_list[$i]['mission_list_text'] = $request->mission_list_text[$i];
         }
 
