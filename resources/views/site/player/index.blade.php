@@ -72,7 +72,13 @@
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <p><b>Email: </b> {{$player->email}}</p>
-                            <p><b>Gender: </b> {{$player->gender}}</p>
+                            <p><b>Gender: </b>
+                                @if($player->gender == 0)
+                                    Female
+                                @else
+                                    Male
+                                @endif
+                            </p>
                             <p><b>Emergency Phone: </b> {{$player->emergency_phone}}</p>
                         </div>
                         <div class="col-md-4 col-sm-6">
@@ -326,6 +332,11 @@
 
         #myTabContent p {
             margin-bottom: 5px;
+            color: black;
+        }
+
+        #myTabContent label {
+            color: black;
         }
 
         .info-list {

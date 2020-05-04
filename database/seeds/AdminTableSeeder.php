@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         return Admin::create([
-            'name' => "Admin Panosyan",
+            'name' => "Admin",
             'email' => "admin@gmail.com",
             'is_super' => true,
             'password' => Hash::make('123456'),

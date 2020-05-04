@@ -57,8 +57,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user animated flipInY">
                         <li>
-                            <a href="#"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fa fa-power-off"></i>Logout
                             </a>
                         </li>

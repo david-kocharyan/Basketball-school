@@ -20,18 +20,23 @@
     <div class="container pt-5 pb-5">
         <div class="row pb-5">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" style="border-bottom: 0">
+                <ul class="nav nav-tabs d-none d-md-flex form-tabs" style="border-bottom: 0">
                     <li><a class="text-uppercase active" data-toggle="tab" href="#all">Filter All</a></li>
                     <li style="border-right: 1px solid #9c1d24; border-left: 1px solid #9c1d24;"><a class="text-uppercase" data-toggle="tab" href="#academy">Academy</a></li>
                     <li><a class="text-uppercase" data-toggle="tab" href="#games">Games</a></li>
                 </ul>
+                <select class="d-block d-md-none" id="tab_selector">
+                    <option value="0" class="text-uppercase">Filter All</option>
+                    <option value="1" class="text-uppercase">Academy</option>
+                    <option value="2" class="text-uppercase">Games</option>
+                </select>
             </div>
         </div>
         <div class="tab-content">
             <div id="all" class="tab-pane fade in active show">
                 <div class="row">
                     @foreach($all as $bin => $key)
-                        <div class="col-xl-4 col-md-6" style="padding: 5px">
+                        <div class="col-xl-4 col-md-6 mt-4" style="padding: 5px">
                             <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
                                 <img class="example-image img-responsive"
                                      src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
@@ -53,7 +58,7 @@
             <div id="academy" class="tab-pane fade in">
                 <div class="row">
                     @foreach($academy as $bin => $key)
-                        <div class="col-xl-4 col-md-6" style="padding: 5px">
+                        <div class="col-xl-4 col-md-6 mt-4" style="padding: 5px">
                             <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
                                 <img class="example-image"
                                      src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
@@ -75,7 +80,7 @@
             <div id="games" class="tab-pane fade in ">
                 <div class="row">
                     @foreach($games as $bin => $key)
-                        <div class="col-xl-4 col-md-6" style="padding: 5px">
+                        <div class="col-xl-4 col-md-6 mt-4" style="padding: 5px">
                             <div class="main-box gallery-open-link" data-id="{{ $key->id }}">
                                 <img class="example-image"
                                      src="{{ asset("uploads/gallery")."/".$key->images[0]->name }}" alt=""/>
@@ -241,6 +246,23 @@
             .slbArrow:focus, .slbCloseBtn:focus{
                 outline: none;
             }
+
+            #tab_selector{
+                background: #151515;
+                color: #ffffff;
+                border: none;
+                width: 100%;
+                padding: 15px;
+                border-radius: 10px;
+                outline: none;
+            }
+            #tab_selector option {
+                background: #151515;
+                padding: 15px;
+            }
+            #tab_selector option:checked{
+                background: #9c1d24;
+            }
         </style>
     @endpush
     @push("footer")
@@ -265,6 +287,10 @@
                         }
                     })
                 })
+
+                $('#tab_selector').on('change', function (e) {
+                    $('.form-tabs li a').eq($(this).val()).tab('show');
+                });
             })
         </script>
 

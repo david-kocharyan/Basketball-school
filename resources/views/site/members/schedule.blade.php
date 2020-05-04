@@ -68,7 +68,8 @@
             <div class="container pb-5">
                 <div class="row">
                     @foreach($coaches as $key)
-                        <div class="col-md-6 p-2">
+                        <div class="col-md-6 p-2 coache" data-attr="{{$key}}" data-toggle="modal"
+                             data-target="#myModal">
                             <div class="main-box"
                                  style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
                                 <div class="red-overlay">
@@ -86,10 +87,54 @@
         </div>
     </div>
 
+    <div class="modal fade" id="myModal" aria-labelledby="myModal" aria-hidden="true" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body gallery-top pb-2"></div>
+            </div>
+        </div>
+    </div>
+
     @push("head")
         <style>
             .header {
                 padding-top: 0;
+            }
+
+            .modal-open .header {
+                padding-right: 0 !important;
+            }
+
+            .modal-open .sticky {
+                padding-right: 17px !important;
+            }
+
+            .modal {
+                z-index: 9999;
+                height: auto;
+                max-height: 500px;
+            }
+
+            .modal-content {
+                -webkit-border-radius: 0px !important;
+                -moz-border-radius: 0px !important;
+                border-radius: 0px !important;
+                border: none;
+            }
+
+            .modal .coach-img {
+                float: left;
+                display: inline-block;
+            }
+
+            .modal .name {
+                font-weight: 600;
+                font-size: 30px;
+                color: #9c1d24;
+            }
+
+            .modal .bio {
+                font-size: 15px;
             }
 
             .table {
@@ -103,6 +148,11 @@
 
             .table td, .table th {
                 vertical-align: middle;
+            }
+
+            .table th {
+                max-height: 55px;
+                height: 55px;
             }
 
             .price {
@@ -175,20 +225,21 @@
                 color: #c3c2c6;
                 letter-spacing: 1px;
                 font-size: 15px;
-                height:180px;
+                height: 180px;
                 overflow-y: hidden;
                 text-overflow: ellipsis;
                 -o-text-overflow: ellipsis;
                 -webkit-line-clamp: 3;
             }
 
-            .read-btn{
+            .read-btn {
                 border: none;
                 background: none;
                 color: #ffffff;
                 font-size: 14px;
             }
-            .read-btn:focus{
+
+            .read-btn:focus {
                 outline: none;
             }
         </style>
@@ -204,6 +255,20 @@
                     }
                 });
                 $('.table').height(maxHeight);
+
+                $('.coache').click(function () {
+                    let data = $(this).data('attr');
+
+                    let elem = $(".modal-body");
+                    let url = "{{ asset("uploads/coaches/")}}";
+                    elem.empty();
+
+                    elem.append(`
+                                <img src='${url}/${data.image}' alt="${data.full_name}" class="coach-img pl-3 pt-3 pr-3">
+                                <p class="name pt-2 pl-3 m-0">${data.full_name}</p>
+                                <p class="bio pl-3 pr-3 m-0">${data.bio}</p>
+                    `)
+                })
             })
         </script>
     @endpush

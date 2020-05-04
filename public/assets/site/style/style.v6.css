@@ -45,6 +45,8 @@ body{
 
 .drop-hr{
     background: #ffffff;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /*menu*/
@@ -459,6 +461,7 @@ span.red {
 }
 /*content*/
 
+/*media*/
 @media all and (max-width: 1023px) {
     .header {
         display: none;
@@ -496,6 +499,41 @@ span.red {
         font-size: 13px;
     }
 }
+
+@media all and (max-width: 375px) {
+    .owl-carousel .slider-title{
+        font-size: 55px !important;
+    }
+}
+
+@media all and (max-width: 425px) {
+    #partnerGallery img {
+        height: 45px !important;
+    }
+    .owl-carousel{
+        height: 50vh !important;
+    }
+    .owl-carousel .slider-item{
+        height: 50vh;
+    }
+    .owl-carousel .slider-title{
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .owl-carousel .slider-item{
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .sticky + .content {
+        padding-top: 0px !important;
+    }
+}
+
+/*slider home page*/
 .match-slider .gallery-top .swiper-slide .first-row{
     position: relative;
     overflow: hidden;

@@ -39,7 +39,15 @@
                             </div>
                             <div class="score-cont d-flex justify-content-around pt-1">
                                 <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
-                                <span class="red text-uppercase time-final"><b>VS</b></span>
+                                <span class="red text-uppercase time-final">
+                                    <b>
+                                        @if($val->status == 1)
+                                            Final
+                                        @else
+                                            {{Carbon\Carbon::parse($val->time)->format('H:i')}}
+                                        @endif
+                                    </b>
+                                </span>
                                 <span class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                             </div>
                         </div>

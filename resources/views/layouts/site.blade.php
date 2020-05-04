@@ -32,24 +32,67 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/about-us">About Us</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/academy-members">Members</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/contact-us">Contact Us</a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item active">
-                    @if(Auth::guard('player')->check())
-                        <a class="nav-link" href="/player">Account</a>
-                    @else
-                        <a class="nav-link" href="/sign-in">Login</a>
-                    @endif
+                    <a class="nav-link" href="/about-us">About Us</a>
                 </li>
+
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+                       aria-haspopup="true" aria-expanded="false">Academy</a>
+                    <div class="dropdown-menu dropdown-menu-right" style="background: none;">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item p-3 text-right" href="/academy-members">Academy Members</a>
+                        <a class="dropdown-item p-3 text-right" href="/schedules">Training & Coaches</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+                       aria-haspopup="true" aria-expanded="false">Our Teams</a>
+                    <div class="dropdown-menu dropdown-menu-right" style="background: none;">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item p-3 text-right" href="/rosters">Roster</a>
+                        <a class="dropdown-item p-3 text-right" href="/all-games">Games</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/standings">Standings</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop">Shop</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/contact-us">Contact Us</a>
+                </li>
+
+                @if(Auth::guard('player')->check())
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"
+                           role="button"
+                           aria-haspopup="true" aria-expanded="false">Account</a>
+                        <div class="dropdown-menu dropdown-menu-right" style="background: none;">
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item p-3 text-right" href="/player">Profile</a>
+                            <a class="dropdown-item p-3 text-right" href="javascript:void(0);"
+                               onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">Logout</a>
+                            <form id="logout-form-mobile" action="/player/logout" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                @else
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/sign-in">Login</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav>
@@ -94,23 +137,27 @@
                                 <div class="nav navbar-nav">
 
                                     <div class="nav-item dropdown">
-                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#">
+                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center"
+                                           data-toggle="dropdown" href="#">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                  src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
                                         </a>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item d-flex align-items-center" href="/academy-members">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy Members</a>
-                                            <hr class="mt-0 mb-0 drop-hr">
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Academy
+                                                Members</a>
+                                            <hr class="drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/schedules">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Training & Coaches</a>
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Training
+                                                & Coaches</a>
                                         </div>
                                     </div>
 
                                     <div class="nav-item dropdown">
-                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#">
+                                        <a class="nav-item nav-link dropdown-toggle d-flex align-items-center"
+                                           data-toggle="dropdown" href="#">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                  src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Our teams
                                         </a>
@@ -118,7 +165,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="/rosters">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Roster</a>
-                                            <hr class="mt-0 mb-0 drop-hr">
+                                            <hr class="drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/all-games">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
                                                      src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Games</a>
@@ -130,10 +177,28 @@
                                              src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Standings
                                     </a>
                                     @if(Auth::guard('player')->check())
-                                        <a class="nav-item nav-link d-flex align-items-center" href="/player">
-                                            <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                                 src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
-                                        </a>
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-item nav-link dropdown-toggle d-flex align-items-center"
+                                               data-toggle="dropdown" href="#">
+                                                <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Account
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item d-flex align-items-center" href="/player">
+                                                    <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                         src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Profile</a>
+                                                <hr class="drop-hr">
+                                                <a class="dropdown-item d-flex align-items-center"
+                                                   href="javascript:void(0);"
+                                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    <img style="height: 10px; display: none" class="img-fluid mr-1"
+                                                         src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Logout</a>
+                                                <form id="logout-form" action="/player/logout" method="POST"
+                                                      style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </div>
                                     @else
                                         <a class="nav-item nav-link d-flex align-items-center" href="/sign-in">
                                             <img style="height: 10px; display: none" class="img-fluid mr-1"
@@ -340,7 +405,7 @@
                     spaceBetween: 30,
                 },
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 10,
                 },
             }

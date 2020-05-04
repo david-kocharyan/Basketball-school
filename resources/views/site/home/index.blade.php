@@ -790,6 +790,7 @@
                 width: 100%;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
+                background-position: center !important;
             }
 
             .owl-dots button {

@@ -21,7 +21,7 @@
     <div class="container pt-5 pb-5">
         <div class="row pb-4">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" style="border-bottom: 0">
+                <ul class="nav nav-tabs d-none d-md-flex form-tabs" style="border-bottom: 0">
                     @foreach($teams as $bin=>$key)
                         <li style="border-right: 1px solid #9c1d24;">
                             <a class="text-uppercase @if($bin == 0) active @endif"  data-toggle="tab"
@@ -30,6 +30,11 @@
                         </li>
                     @endforeach
                 </ul>
+                <select class="d-block d-md-none" id="tab_selector">
+                    @foreach($teams as $bin=>$key)
+                        <option value="{{$bin}}" class="text-uppercase">{{$key->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="tab-content">
@@ -42,9 +47,11 @@
                                     <div class="name-box d-flex align-items-center">
                                         <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span class="mr-3">{{" ". $val->full_name}}</span></p>
                                     </div>
-                                    <div class="age-box d-flex align-items-center">
-                                        <p class="text-center m-0">{{$val->position}}</p>
-                                    </div>
+                                    @if($val->position != NULL)
+                                        <div class="age-box d-flex align-items-center">
+                                            <p class="text-center m-0">{{$val->position}}</p>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -86,6 +93,32 @@
                 padding-left: 10px;
                 padding-right: 10px;
             }
+
+            #tab_selector{
+                background: #151515;
+                color: #ffffff;
+                border: none;
+                width: 100%;
+                padding: 15px;
+                border-radius: 10px;
+                outline: none;
+            }
+            #tab_selector option {
+                background: #151515;
+                padding: 15px;
+            }
+            #tab_selector option:checked{
+                background: #9c1d24;
+            }
         </style>
+    @endpush
+    @push("footer")
+        <script !src="">
+            $(document).ready(function () {
+                $('#tab_selector').on('change', function (e) {
+                    $('.form-tabs li a').eq($(this).val()).tab('show');
+                });
+            })
+        </script>
     @endpush
 @endsection

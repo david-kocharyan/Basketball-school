@@ -101,7 +101,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="position">Position <strong style="color: red;"> &#42; </strong></label>
+                                <label for="position">Position</label>
                                 @error('position')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror

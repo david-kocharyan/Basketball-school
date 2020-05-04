@@ -50,7 +50,7 @@
                             @foreach(json_decode($about->mission_list) as $k=>$bin)
                                 <div class="col-xl-12 col-sm-12 d-flex pt-3 list-section">
                                     <div class="icon-cont @if($k < 3) icon-cont-line @endif  d-flex align-items-center justify-content-center">
-                                        <img class="img-fluid" src="{{ asset("assets/site/images/about/script.svg") }}"
+                                        <img class="img-fluid" src="{{ asset("assets/site/images/checkmark.png") }}"
                                              alt="">
                                     </div>
                                     <div class="value-part ml-4 d-flex align-items-center">
@@ -142,7 +142,7 @@
             }
 
             .icon-cont img {
-                height: 30px;
+                height: 20px;
             }
 
             .value-title {
@@ -156,14 +156,6 @@
                 margin-bottom: 0;
             }
 
-            /*.icon-cont:after{*/
-            /*    content: "";*/
-            /*    height: 30px;*/
-            /*    width: 1px;*/
-            /*    position: absolute;*/
-            /*    bottom: -27px;*/
-            /*    background: #9c1d24;*/
-            /*}*/
             .list-section {
                 margin-bottom: 5px;
             }
@@ -228,6 +220,40 @@
                 .overlay-part {
                     box-shadow: none;
                     padding: 0;
+                }
+
+                .main-box {
+                    height: 195px;
+                }
+
+                .red-overlay:before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-top: 102px solid transparent;
+                    border-bottom: 102px solid transparent;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateX(-98%);
+                    border-right: 25px solid #9c1d24
+                }
+            }
+
+            @media (min-width: 425px) and (max-width: 767px){
+                .main-box {
+                    height: 220px;
+                }
+
+                .red-overlay:before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-top: 110px solid transparent;
+                    border-bottom: 110px solid transparent;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateX(-98%);
+                    border-right: 25px solid #9c1d24
                 }
             }
         </style>

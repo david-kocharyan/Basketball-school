@@ -178,7 +178,7 @@ class PlayersController extends Controller
             "nationality" => "required",
             "jersey_number" => "required|numeric",
             "jersey_size" => "required|numeric",
-            "position" => "required",
+            "position" => "",
             "email" => "required|unique:players,email," . $id,
             "notes" => "required",
         ]);
