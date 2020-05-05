@@ -73,7 +73,7 @@
                             <div class="main-box"
                                  style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
                                 <div class="red-overlay">
-                                    <div class="col-md-12 pt-4">
+                                    <div class="col-md-12 pt-3 pb-3">
                                         <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
                                         <p class="member-text">{{$key->bio}}</p>
                                         <button class="read-btn">Read more &#8250;</button>
@@ -90,7 +90,10 @@
     <div class="modal fade" id="myModal" aria-labelledby="myModal" aria-hidden="true" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-body gallery-top pb-2"></div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="close_btn">&times;</span>
+                </button>
+                <div class="modal-body gallery-top pb-4 pt-1"></div>
             </div>
         </div>
     </div>
@@ -135,6 +138,19 @@
 
             .modal .bio {
                 font-size: 15px;
+            }
+
+            .modal .close_btn{
+                float: right;
+                width: 50px;
+                font-size: 30px;
+            }
+
+            .modal .close_btn:hover{
+                color: #9c1d24;
+            }
+            .modal .close_btn:focus, .close:focus{
+                outline: none;
             }
 
             .table {

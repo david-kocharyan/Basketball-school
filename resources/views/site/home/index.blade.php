@@ -67,9 +67,9 @@
                         <div class="swiper-wrapper">
                             @foreach($game as $key=>$val)
                                 <div class="swiper-slide finished-games d-flex flex-column justify-content-center">
-                                    <div class="first-row  d-flex justify-content-around align-items-center">
+                                    <div class="first-row d-flex justify-content-around align-items-center">
 
-                                        <div class="left-cont text-center">
+                                        <div class="left-cont text-center" style="width: 200px;">
                                             <div class="logo-cont">
                                                 <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
                                                      class="img-fluid" alt="">
@@ -79,20 +79,21 @@
                                             </div>
                                         </div>
 
-                                        <div class="date-cont game-score left text-md-right" style="width: 100px;">
-                                            <span class="team"
-                                                  style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
-                                        </div>
-                                        <div class="time-cont text-center mt-md-5">
-                                            <span class="time">{{$val->type}}</span>
-                                            <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
-                                        </div>
-                                        <div class="date-cont game-score right text-md-left" style="width: 100px;">
-                                            <span class="team"
-                                                  style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
+                                        <div class="time-cont mt-md-5 d-flex justify-content-around">
+                                            <div class="date-cont d-inline-block game-score left text-md-right" style="width: 100px;">
+                                                <span class="team"  style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="time d-flex">{{$val->type}}</span>
+                                                <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
+                                            </div>
+
+                                            <div class="date-cont d-inline-block game-score right text-md-left" style="width: 100px;">
+                                                <span class="team" style="font-weight: bolder;">{{$val->game_club[1]->score}}</span>
+                                            </div>
                                         </div>
 
-                                        <div class="right-cont text-center">
+                                        <div class="right-cont text-center" style="width: 200px;">
                                             <div class="logo-cont">
                                                 <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
                                                      class="img-fluid" alt="">
@@ -101,19 +102,21 @@
                                                 <span>{{$val->club[1]->name}}</span>
                                             </div>
                                         </div>
+
                                     </div>
-                                    <div class="second-row d-flex flex-column align-items-center ml-md-4">
+
+                                    <div class="second-row d-flex flex-column align-items-center">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
                                     </div>
-                                    <div class="second-row d-flex flex-row align-items-center justify-content-between ml-md-4">
-                                        <span class="finals mr-3 text-white text-uppercase">
+                                    <div class="second-row d-flex flex-row align-items-center justify-content-between">
+                                        <span class="finals mr-1 text-white text-uppercase">
                                             <b>{{$val->pts}}PTS</b>
                                         </span>
-                                        <span class="finals mr-3 text-white text-uppercase">
+                                        <span class="finals mr-1 text-white text-uppercase">
                                             <b>{{$val->rb}}Rb</b>
                                         </span>
-                                        <span class="finals mr-3 text-white text-uppercase">
+                                        <span class="finals mr-1 text-white text-uppercase">
                                             <b>{{$val->ast}}AST</b>
                                         </span>
                                     </div>
@@ -122,30 +125,37 @@
                             @foreach($upcoming as $key=>$val)
                                 <div class="swiper-slide d-flex flex-column justify-content-center">
                                     <div class="first-row  d-flex justify-content-around align-items-center">
-                                        <div class="left-cont text-center">
+
+                                        <div class="left-cont text-center" style="width: 200px;">
                                             <div class="logo-cont">
                                                 <img src='{{ asset("uploads/clubs")."/".$val->club[0]->image }}'
                                                      class="img-fluid" alt="">
                                             </div>
                                         </div>
-                                        <div class="team-cont left">
-                                            <span class="team">{{$val->club[0]->name}}</span>
+
+                                        <div class="d-flex justify-content-around col-md-5">
+                                            <div class="team-cont">
+                                                <span class="team">{{$val->club[0]->name}}</span>
+                                            </div>
+
+                                            <div class="time-cont mt-2">
+                                                <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                            </div>
+
+                                            <div class="team-cont">
+                                                <span>{{$val->club[1]->name}}</span>
+                                            </div>
                                         </div>
-                                        <div class="time-cont">
-                                            <span
-                                                class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
-                                        </div>
-                                        <div class="team-cont right">
-                                            <span>{{$val->club[1]->name}}</span>
-                                        </div>
-                                        <div class="right-cont text-center">
+
+                                        <div class="right-cont text-center" style="width: 200px;">
                                             <div class="logo-cont">
                                                 <img src='{{ asset("uploads/clubs")."/".$val->club[1]->image }}'
                                                      class="img-fluid" alt="">
                                             </div>
                                         </div>
+
                                     </div>
-                                    <div class="second-row d-flex flex-column align-items-center ml-md-4">
+                                    <div class="second-row d-flex flex-column align-items-center">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span
                                             class="finals mb-3 text-white text-uppercase">{{$val->type}} {{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
@@ -1200,7 +1210,7 @@
                         nextEl: '.next',
                         prevEl: '.prev',
                     },
-                    loopedSlides: 4,
+                    // loopedSlides: 4,
                     breakpoints: {
                         // when window width is >= 320px
                         320: {

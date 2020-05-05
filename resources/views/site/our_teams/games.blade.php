@@ -28,9 +28,9 @@
                 </p>
             </div>
 
-            <div class="col-md-12 d-flex justify-content-around flex-wrap">
+            <div class="col-md-12 d-flex justify-content-start flex-wrap">
                 @foreach($games as $key=>$val)
-                    <div class="games col-md-2 d-inline-block p-0" data-attr="{{json_encode($val)}}" data-toggle="modal"
+                    <div class="games col-md-2 d-inline-block p-2" data-attr="{{json_encode($val)}}" data-toggle="modal"
                          data-target="#myModal">
                         <div class="first-row d-flex flex-column align-items-center">
                             <div class="date-cont">

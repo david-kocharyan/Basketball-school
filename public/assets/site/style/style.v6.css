@@ -15,7 +15,7 @@
     src: url("../fonts/roboto/RobotoCondensed-Light.ttf");
 }
 body{
-    font-family: Roboto-Regular, sans-serif;
+    font-family: Roboto-Condensed-Regular, sans-serif;
 }
 .modal-open .header{
     padding-right: 17px;
@@ -30,7 +30,7 @@ body{
 .dropdown-menu a{
     color: #ffffff;
     font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto-Condensed', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -72,7 +72,7 @@ body{
 }
 .firstline{
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto-Condensed', sans-serif;
     font-weight: 700;
     font-size: 13px;
     text-transform: uppercase;
@@ -289,14 +289,14 @@ span.red {
 }
 .text-about{
     font-size: 14px;
-    font-family: Roboto-Condensed-Regular, sans-serif;
+    font-family: Roboto-Condensed, sans-serif;
     line-height: 24px;
 }
 .footer li a{
     color: white;
     text-decoration: none!important;
     font-size: 14px;
-    font-family: Roboto-Condensed-Regular, sans-serif;
+    font-family: Roboto-Condensed, sans-serif;
 }
 .footer-list li:before{
     content: "";

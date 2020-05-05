@@ -60,17 +60,19 @@
             <!-- /.col-md-4 -->
             <div class="col-xl-9 col-md-9 col-sm-12">
                 <div class="tab-content p-md-3 p-2" id="myTabContent">
-                    <div class="tab-pane fade show row active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                    <div class="tab-pane fade show row active" id="personal" role="tabpanel"
+                         aria-labelledby="personal-tab">
                         <div class="col-md-12">
                             <p><strong>Personal Information</strong></p>
-                            <p>Your <strong>Email and password</strong> can be updated via your <strong class="text-danger">Account Settings</strong></p>
+                            <p>Your <strong>Email and password</strong> can be updated via your <strong
+                                    class="text-danger">Account Settings</strong></p>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <p><b>Full Name: </b> {{$player->full_name}}</p>
                             <p><b>Date of Birthday: </b> {{$player->dob}}</p>
                             <p><b>Emergency Name: </b> {{$player->emergency_name}}</p>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6 p-0">
                             <p><b>Email: </b> {{$player->email}}</p>
                             <p><b>Gender: </b>
                                 @if($player->gender == 0)
@@ -88,7 +90,8 @@
                     <div class="tab-pane fade row" id="player" role="tabpanel" aria-labelledby="player-tab">
                         <div class="col-md-12">
                             <p><strong>Personal Information</strong></p>
-                            <p>Your <strong>payment details history</strong> can be visible on the <strong class="text-danger">Payment Details </strong><b>page.</b></p>
+                            <p>Your <strong>payment details history</strong> can be visible on the <strong
+                                    class="text-danger">Payment Details </strong><b>page.</b></p>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <p><b>Team: </b> {{$player->full_name}}</p>
@@ -109,10 +112,9 @@
                             <div class="form-group col-md-6">
                                 <label for="email"> Email Address <span class="red">*</span></label>
                                 <div class="d-flex col-md-12">
-                                <span class="input-group-text" id="basic-addon1"><img class="img-fluid"
-                                                                                      style="height: 20px"
-                                                                                      src="{{ asset("assets/site/images/auth/user_black.svg") }}"
-                                                                                      alt="Lock"></span>
+                                <span class="input-group-text" id="basic-addon1">
+                                    <img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/auth/user_black.svg") }}"
+                                         alt="Lock"></span>
                                     <input type="text" id="email"
                                            class="form-control @error('email') is-invalid @enderror"
                                            name="email">
@@ -145,7 +147,7 @@
                                 </div>
                             </div>
 
-                                <button class="rounded-button mt-3 red-bg align-self-center text-uppercase">Save</button>
+                            <button class="rounded-button mt-3 red-bg align-self-center text-uppercase">Save</button>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
@@ -213,13 +215,15 @@
 
 @push("head")
     <style>
-        .sticky + .content{
-            padding-top: 70px!important;
+        .sticky + .content {
+            padding-top: 70px !important;
         }
-        .swiper-slide{
+
+        .swiper-slide {
             position: relative;
         }
-        .swiper-slide-container{
+
+        .swiper-slide-container {
             background-color: #ebebeb;
         }
 
@@ -289,7 +293,6 @@
         .tab-content {
             border: 1px solid #dcdcdc;
             border-radius: 15px;
-            margin-left: 30px;
         }
 
         .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -309,8 +312,8 @@
             color: #dc3545 !important;
         }
 
-        .control-tabs .nav-pills .nav-link {
-            border-radius: 0;
+        .nav-pills .nav-link{
+            border-radius: 0 !important;
         }
 
         .control-tabs .nav-item {
@@ -350,34 +353,39 @@
             margin-bottom: 5px;
             width: 33%;
         }
+
         @media (max-width: 991px) {
-            .tab-content{
+            .tab-content {
                 margin-left: 0;
             }
 
-            .tab-pane p{
+            .tab-pane p {
                 font-size: 13px;
             }
         }
 
         @media (max-width: 768px) {
-            .tab-content{
+            .tab-content {
                 margin-left: 0;
             }
-            .tab-pane p{
+
+            .tab-pane p {
                 font-size: 14px;
             }
 
         }
+
         @media (min-width: 768px) and (max-width: 991px) {
-            .container-lg{
+            .container-lg {
                 max-width: 100%;
             }
-            .content .nav-link{
+
+            .content .nav-link {
                 font-size: 15px;
             }
         }
-        .tab-content>.active.row{
+
+        .tab-content > .active.row {
             display: flex;
         }
     </style>
