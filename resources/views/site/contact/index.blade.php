@@ -319,7 +319,7 @@
             position: absolute;
             bottom: 5px;
             font-family: 'Roboto-Condensed', sans-serif;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 26px;
             font-weight: 400;
             color: black;
