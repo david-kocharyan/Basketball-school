@@ -1211,6 +1211,12 @@
                 if ($('.gallery-thumbs').length < 5) {
                     isLoop = false;
                 }
+
+                var slieprev = 5;
+                if($('.swiper-slide-container').length < 5){
+                    slieprev = $('.swiper-slide-container').length;
+                }
+
                 var galleryTop = new Swiper('.gallery-top', {
                     spaceBetween: 10,
                     loop: true,
@@ -1223,7 +1229,7 @@
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 100,
                     centeredSlides: false,
-                    slidesPerView: 5,
+                    slidesPerView: slieprev,
                     touchRatio: 0.2,
                     slideToClickedSlide: true,
                     loop: true,
@@ -1245,7 +1251,7 @@
                         },
                         // when window width is >= 1025
                         1025: {
-                            slidesPerView: 5,
+                            slidesPerView: slieprev,
                             spaceBetween: 10
                         }
                     }
