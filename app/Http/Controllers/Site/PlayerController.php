@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Payment;
 use App\Player;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -16,9 +18,21 @@ class PlayerController extends Controller
 
     public function index()
     {
-        $title = self::TITLE;
         $player = Auth::user();
-        return view(self::VIEW . ".index", compact("title", "player"));
+        $payment = Payment::where('player_id', $player->id)->orderBy("player_id", "DESC")->first();
+
+
+        $day = Carbon::createFromFormat('Y-m-d', $payment->date)->day;
+        $date = Carbon::create($payment->date);
+        $now = Carbon::now();
+        $date->addMonthsNoOverflow(1);
+
+        $pay_day = $date->day(min($day, $date->daysInMonth));
+        $passed = $date->isPast();
+        $diff = $now->diffInDays($date);
+
+        $title = self::TITLE;
+        return view(self::VIEW . ".index", compact("title", "player", "payment", 'passed', 'diff', "pay_day"));
     }
 
     public function settings(Request $request)

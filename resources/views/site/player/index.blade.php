@@ -113,7 +113,8 @@
                                 <label for="email"> Email Address <span class="red">*</span></label>
                                 <div class="d-flex col-md-12">
                                 <span class="input-group-text" id="basic-addon1">
-                                    <img class="img-fluid" style="height: 20px" src="{{ asset("assets/site/images/auth/user_black.svg") }}"
+                                    <img class="img-fluid" style="height: 20px"
+                                         src="{{ asset("assets/site/images/auth/user_black.svg") }}"
                                          alt="Lock"></span>
                                     <input type="text" id="email"
                                            class="form-control @error('email') is-invalid @enderror"
@@ -154,57 +155,60 @@
                         <p><strong>Payment Details</strong></p>
                         <div class="payment-list p-2 row">
 
-                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
-                                <div class="swiper-slide-container">
-                                    <div class="first-row d-flex flex-column align-items-center">
-                                        <div class="date-cont">
-                                            <span class="date text-uppercase">25/JAN/2020</span>
+                            @if($diff <= 3)
+                                <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
+                                    <div class="swiper-slide-container">
+                                        <div class="first-row d-flex flex-column align-items-center">
+                                            <div class="date-cont">
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day)->format(' F d, Y')}}</span>
+                                            </div>
+                                            <div class="score-cont d-flex justify-content-around">
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                            </div>
                                         </div>
-                                        <div class="score-cont d-flex justify-content-around">
-                                            <span class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                        <div class="second-row d-flex align-items-end justify-content-center"
+                                             style="background-color: #d0aa01;">
+                                            <span class="finals text-uppercase"><b>Payment</b></span>
                                         </div>
-                                    </div>
-                                    <div class="second-row d-flex align-items-end justify-content-center"
-                                         style="background-color: #6c6c6e;">
-                                        <span class="finals text-uppercase"><b>10000 AMD</b></span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
-                                <div class="swiper-slide-container">
-                                    <div class="first-row d-flex flex-column align-items-center">
-                                        <div class="date-cont">
-                                            <span class="date text-uppercase">25/JAN/2020</span>
+                            @elseif($passed === true)
+                                <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
+                                    <div class="swiper-slide-container">
+                                        <div class="first-row d-flex flex-column align-items-center">
+                                            <div class="date-cont">
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day)->format(' F d, Y')}}</span>
+                                            </div>
+                                            <div class="score-cont d-flex justify-content-around">
+                                                <span
+                                                    class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                            </div>
                                         </div>
-                                        <div class="score-cont d-flex justify-content-around">
-                                            <span class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                        <div class="second-row d-flex align-items-end justify-content-center"
+                                             style="background-color: #9c1d24;">
+                                            <span class="finals text-uppercase"><b>Due To</b></span>
                                         </div>
-                                    </div>
-                                    <div class="second-row d-flex align-items-end justify-content-center"
-                                         style="background-color: #d0aa01;">
-                                        <span class="finals text-uppercase"><b>Payment</b></span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
-                                <div class="swiper-slide-container">
-                                    <div class="first-row d-flex flex-column align-items-center">
-                                        <div class="date-cont">
-                                            <span class="date text-uppercase">25/JAN/2020</span>
+                            @else
+                                <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
+                                    <div class="swiper-slide-container">
+                                        <div class="first-row d-flex flex-column align-items-center">
+                                            <div class="date-cont">
+                                                <span class="date text-uppercase">{{$payment->date}}</span>
+                                            </div>
+                                            <div class="score-cont d-flex justify-content-around">
+                                                <span class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                            </div>
                                         </div>
-                                        <div class="score-cont d-flex justify-content-around">
-                                            <span class="score-team text-uppercase"><b>{{$player->full_name}}</b></span>
+                                        <div class="second-row d-flex align-items-end justify-content-center"
+                                             style="background-color: #6c6c6e;">
+                                            <span class="finals text-uppercase"><b>{{$payment->price}} AMD</b></span>
                                         </div>
-                                    </div>
-                                    <div class="second-row d-flex align-items-end justify-content-center"
-                                         style="background-color: #9c1d24;">
-                                        <span class="finals text-uppercase"><b>Due To</b></span>
                                     </div>
                                 </div>
-                            </div>
-
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -312,7 +316,7 @@
             color: #dc3545 !important;
         }
 
-        .nav-pills .nav-link{
+        .nav-pills .nav-link {
             border-radius: 0 !important;
         }
 

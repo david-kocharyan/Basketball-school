@@ -269,6 +269,9 @@
             #tab_selector option:checked{
                 background: #9c1d24;
             }
+            .slbWrapOuter {
+                z-index: 5000 !important;
+            }
         </style>
     @endpush
     @push("footer")

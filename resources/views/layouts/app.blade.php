@@ -202,6 +202,10 @@
                         <span class="hide-menu">Schedule</span></a>
                 </li>
 
+                <li><a href="/admin/payments" class="waves-effect"><i class="fas fa-dollar-sign fa-fw"></i>
+                        <span class="hide-menu">Payment</span></a>
+                </li>
+
             </ul>
         </div>
     </div>

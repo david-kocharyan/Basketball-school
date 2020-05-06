@@ -178,7 +178,7 @@
             padding-top: 0;
         }
 
-        p {
+        p, ul, li{
             font-family: Roboto-Condensed-Regular, sans-serif;
         }
 
@@ -318,7 +318,7 @@
         .contact-form .label {
             position: absolute;
             bottom: 5px;
-            font-family: Lusitana, serif;
+            font-family: 'Roboto-Condensed', sans-serif;
             font-size: 20px;
             line-height: 26px;
             font-weight: 400;

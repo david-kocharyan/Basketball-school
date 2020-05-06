@@ -97,6 +97,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::delete('/schedules/{schedule_id}/destroy-date/{id}', 'ScheduleController@destroy_date');
     Route::resource('schedules', 'ScheduleController');
+    Route::resource('payments', 'PaymentController');
+
 });
 
 /**
