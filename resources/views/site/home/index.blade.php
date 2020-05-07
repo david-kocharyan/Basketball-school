@@ -9,7 +9,7 @@
                     <div class="container m-auto">
                         <div class="row">
                             <div class="col-md-7">
-                                <p class="slider-title lg"><span class="red">Love </span> Basketball <span
+                                <p class="slider-title lg"><span class="red love">Love </span> Basketball <span
                                         class="red">?</span>
                                 </p>
                                 <button class="rounded-button header-btn"><a href="/academy-members">GROW WITH US</a>
@@ -324,7 +324,7 @@
                 <div class="col-md-6 d-none d-xl-block img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin <= 2)
-                            <div class="gallery-main-box">
+                            <div class="gallery-main-box gallery-open-link" data-id="{{ $key->album_id }}" style="cursor: pointer !important;">
                                 <div class="rect-camera d-flex align-items-center">
                                     <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
                                 </div>
@@ -333,10 +333,9 @@
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
-                                        <a href="javascript:void(0);" class="gallery-open-link"
-                                           data-id="{{ $key->album_id }}">
+{{--                                        <a href="javascript:void(0);" class="gallery-open-link" >--}}
                                             <button class="gallery-rounded-button rounded-button">Watch Album</button>
-                                        </a>
+{{--                                        </a>--}}
                                     </div>
                                     <div class="triangle">
                                         <span>+</span>
@@ -443,6 +442,12 @@
              aria-hidden="true">
             <div class="modal-dialog  modal-lg" role="document">
                 <div class="modal-content">
+                    <div class="modal-header text-right p-1 border-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none; width: 60px">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
                     <div class="modal-body row pl-4 pt-4">
 
                     </div>
@@ -457,6 +462,9 @@
         <link rel="stylesheet" href="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.css") }}">
         {{--slider style--}}
         <style>
+            .modal .close:hover{
+                color: #9c1d24;
+            }
             .swiper-container {
                 width: 100%;
                 margin: 0 auto;
@@ -1213,8 +1221,12 @@
                 }
 
                 var slieprev = 5;
+                var mobile = 2
                 if($('.swiper-slide-container').length < 5){
                     slieprev = $('.swiper-slide-container').length;
+                }
+                if($('.swiper-slide-container').length < 2){
+                    mobile = $('.swiper-slide-container').length;
                 }
 
                 var galleryTop = new Swiper('.gallery-top', {
@@ -1241,7 +1253,7 @@
                     breakpoints: {
                         // when window width is >= 320px
                         320: {
-                            slidesPerView: 2,
+                            slidesPerView: mobile,
                             spaceBetween: 10
                         },
                         // when window width is >= 768

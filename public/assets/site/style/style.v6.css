@@ -502,7 +502,13 @@ span.red {
 
 @media all and (max-width: 375px) {
     .owl-carousel .slider-title{
-        font-size: 55px !important;
+        font-size: 45px !important;
+    }
+    .owl-carousel .love{
+        display: block !important;
+    }
+    .breadcrumb-cont .title{
+        font-size: 24px !important;
     }
 }
 
@@ -519,6 +525,16 @@ span.red {
     .owl-carousel .slider-title{
         margin: 0;
     }
+    .owl-carousel .love{
+        display: block;
+    }
+    .owl-carousel .slider-title{
+        font-size: 45px !important;
+    }
+    .gallery-top .finals, .gallery-top .stadium{
+        font-size: 16px !important;
+        margin-bottom: 0 !important;
+    }
 }
 
 @media all and (max-width: 768px) {
@@ -530,6 +546,10 @@ span.red {
 
     .sticky + .content {
         padding-top: 0px !important;
+    }
+
+    .breadcrumb-cont .title{
+        font-size: 28px;
     }
 }
 

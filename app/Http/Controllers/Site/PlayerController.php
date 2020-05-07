@@ -21,18 +21,22 @@ class PlayerController extends Controller
         $player = Auth::user();
         $payment = Payment::where('player_id', $player->id)->orderBy("player_id", "DESC")->first();
 
+        if($payment != null){
+            $day = Carbon::createFromFormat('Y-m-d', $payment->date)->day;
+            $date = Carbon::create($payment->date);
+            $now = Carbon::now();
+            $date->addMonthsNoOverflow(1);
 
-        $day = Carbon::createFromFormat('Y-m-d', $payment->date)->day;
-        $date = Carbon::create($payment->date);
-        $now = Carbon::now();
-        $date->addMonthsNoOverflow(1);
+            $pay_day = $date->day(min($day, $date->daysInMonth));
+            $passed = $date->isPast();
+            $diff = $now->diffInDays($date);
 
-        $pay_day = $date->day(min($day, $date->daysInMonth));
-        $passed = $date->isPast();
-        $diff = $now->diffInDays($date);
+            $title = self::TITLE;
+            return view(self::VIEW . ".index", compact("title", "player", "payment", 'passed', 'diff', "pay_day"));
+        }
 
         $title = self::TITLE;
-        return view(self::VIEW . ".index", compact("title", "player", "payment", 'passed', 'diff', "pay_day"));
+        return view(self::VIEW . ".index", compact("title", "player"));
     }
 
     public function settings(Request $request)

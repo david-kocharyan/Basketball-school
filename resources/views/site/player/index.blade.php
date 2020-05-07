@@ -155,12 +155,12 @@
                         <p><strong>Payment Details</strong></p>
                         <div class="payment-list p-2 row">
 
-                            @if($diff <= 3)
+                            @if($diff ?? '' <= 3)
                                 <div class="swiper-slide col-md-4 col-sm-6 col-12 pb-3">
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day)->format(' F d, Y')}}</span>
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day ?? '')->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around">
                                                 <span
@@ -178,7 +178,7 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day)->format(' F d, Y')}}</span>
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($pay_day ?? "now" )->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around">
                                                 <span

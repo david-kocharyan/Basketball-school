@@ -89,6 +89,12 @@
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
+                <div class="modal-header text-right p-1 border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none; width: 60px">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
                 <div class="modal-body row pl-4 pt-4">
 
                 </div>
@@ -218,6 +224,10 @@
                 justify-content: center;
                 margin-top: 10px;
                 padding: 30px 15px;
+            }
+
+            .modal .close:hover{
+                color: #9c1d24;
             }
 
             .modal-content .lSPager li.active {

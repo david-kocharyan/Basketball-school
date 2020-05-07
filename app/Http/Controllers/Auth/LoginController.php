@@ -85,7 +85,8 @@ class LoginController extends Controller
         if (Auth::guard('player')->attempt(array('email' => $request->email, 'password' => $request->password), $remember)) {
             return redirect()->intended('/player');
         }
-        return back()->withInput($request->only('email'));
+        return back()->withInput($request->only('email'))->withErrors(['Wrong Credentials']);
+
     }
 
     public function playerLogout(Request $request)
