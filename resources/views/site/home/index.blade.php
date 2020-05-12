@@ -18,16 +18,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="slider-item d-flex align-items-center" style="background: url('{{ asset("assets/site/images/home/h2.jpg") }}')">
-                    <div class="container m-auto">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <p class="slider-title lg"><span class="red">Summer </span> School
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
