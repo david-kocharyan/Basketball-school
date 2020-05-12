@@ -809,11 +809,11 @@
             }
 
             .owl-carousel {
-                height: 90vh;
+                height: 100vh;
             }
 
             .slider-item {
-                height: 90vh;
+                height: 100vh;
                 width: 100%;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
