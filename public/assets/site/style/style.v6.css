@@ -516,15 +516,28 @@ span.red {
     #partnerGallery img {
         height: 45px !important;
     }
-    .owl-carousel{
-        height: 50vh !important;
+    .owl-carousel {
+        height: 30vh !important;
     }
     .owl-carousel .slider-item{
-        height: 50vh;
+        height: 30vh;
     }
-    .owl-carousel .slider-title{
-        margin: 0;
+    .owl-carousel .slider-title {
+        font-size: 30px !important;
+        line-height: 40px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
+
+    .header-btn {
+        border: 1px solid #9c1d24;
+        padding: 5px 10px;
+        height: unset;
+        margin-bottom: 30px;
+    }
+
+    .rounded-button {font-size: 14px;}
+
     .owl-carousel .love{
         display: block;
     }
