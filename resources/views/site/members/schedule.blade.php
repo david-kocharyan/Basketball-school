@@ -282,7 +282,7 @@
                     elem.append(`
                                 <img src='${url}/${data.image}' alt="${data.full_name}" class="coach-img pl-3 pt-3 pr-3">
                                 <p class="name pt-2 pl-3 m-0">${data.full_name}</p>
-                                <p class="bio pl-3 pr-3 m-0">${data.bio}</p>
+                                <p class="bio pl-3 pr-3 m-0" style="white-space: pre-line">${data.bio}</p>
                     `)
                 })
             })
