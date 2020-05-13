@@ -527,13 +527,14 @@ span.red {
         line-height: 40px;
         padding-top: 0px;
         padding-bottom: 30px;
+        margin-top: 20px;
     }
 
     .header-btn {
         border: 1px solid #9c1d24;
         padding: 5px 10px;
         height: unset;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .rounded-button {font-size: 14px;}
