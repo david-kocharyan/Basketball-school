@@ -53,7 +53,7 @@ class GalleryController extends Controller
         $request->validate([
             "name" => "required",
             "type" => "required",
-            "image" => "max:5000|required",
+            "image" => "required",
         ]);
 
         $gallery = new Gallery;
@@ -108,7 +108,7 @@ class GalleryController extends Controller
         $request->validate([
             "name" => "required",
             "type" => "required",
-            "image" => "max:5000",
+            "image" => "max:30000",
         ]);
 
         $gallery->name = $request->name;

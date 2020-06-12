@@ -42,7 +42,7 @@
                 <div class="title-cont col-md-8 mt-4">
                     <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
-                                                              alt="">NEXT GAME
+                                                              alt="">GAME
                     </h2>
                 </div>
                 <div class="col-lg-12">
@@ -183,7 +183,7 @@
                                         <div
                                             class="second-row gray-bg d-flex align-items-end justify-content-center">
                                             <span
-                                                class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
+                                                class="finals text-uppercase"><b>{{$val->tournament ?? "Friendly"}}</b></span>
                                         </div>
                                     </div>
                                 </div>
@@ -193,8 +193,7 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span
-                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around mt-2">
                                                 <span
@@ -205,8 +204,7 @@
                                                     class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                                             </div>
                                         </div>
-                                        <div
-                                            class="second-row red-bg d-flex align-items-end justify-content-center">
+                                        <div class="second-row red-bg d-flex align-items-end justify-content-center">
                                             <span class="finals text-uppercase"><b>{{$val->type}}</b></span>
                                         </div>
                                     </div>
