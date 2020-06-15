@@ -42,7 +42,7 @@
                 <div class="title-cont col-md-8 mt-4">
                     <h2 class="section-title text-white"><img style="height: 25px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
-                                                              alt="">GAME
+                                                              alt="">GAMES
                     </h2>
                 </div>
                 <div class="col-lg-12">
@@ -76,7 +76,7 @@
                                                       style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                             </div>
                                             <div class="text-center">
-                                                <span class="time d-flex">{{$val->type}}</span>
+                                                <span class="time d-flex">{{$val->tournament ?? "Friendly"}}</span>
                                                 <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                             </div>
 
@@ -102,7 +102,7 @@
                                     <div class="second-row d-flex flex-column align-items-center">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span
-                                            class="finals mb-3 text-white text-uppercase">Best Player: {{$val->best_player}}</span>
+                                            class="finals mb-3 text-white text-uppercase">Performance: {{$val->best_player}}</span>
                                     </div>
                                     <div class="second-row d-flex flex-row align-items-center justify-content-between">
                                         <span class="finals mr-1 text-white text-uppercase">
