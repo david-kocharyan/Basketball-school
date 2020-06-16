@@ -78,7 +78,7 @@
                                             <div class="text-center">
                                                 <p class="final-p">FINAL</p>
                                                 <span class="time d-flex">{{$val->tournament ?? "Friendly"}}</span>
-                                                <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
+                                                <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yyyy')}}</p>
                                             </div>
 
                                             <div class="date-cont d-inline-block game-score right text-md-left"
