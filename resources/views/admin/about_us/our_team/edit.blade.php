@@ -52,7 +52,7 @@
                                 <input type="file" id="image" name="image" class="dropify" data-default-file="{{asset("uploads/our_team/$ourTeam->image")}}"/>
                             </div>
 
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Coach
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Save Team Member
                             </button>
                         </form>
                     </div>

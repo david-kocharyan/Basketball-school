@@ -18,7 +18,7 @@ class CreateOurTeamsTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('status');
-            $table->string('info');
+            $table->text('info');
             $table->timestamps();
         });
     }
