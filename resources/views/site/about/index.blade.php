@@ -72,7 +72,7 @@
                         <div class="main-box"
                              style="background-image: url('{{ asset("uploads/our_team/$key->image") }}')">
                             <div class="red-overlay">
-                                <div class="col-md-12 pt-5">
+                                <div class="col-md-12 pt-3">
                                     <span class="badge badge-light">{{$key->status}}</span>
                                     <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->name}}</h6>
                                     <p class="member-text">{{$key->info}}</p>
@@ -204,6 +204,7 @@
             .member-text {
                 color: #bdc2c6;
                 letter-spacing: 1px;
+                font-size: 15px;
             }
 
             .our-team .col-md-6 {

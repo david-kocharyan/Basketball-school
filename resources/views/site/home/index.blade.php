@@ -182,11 +182,11 @@
                                             </div>
                                             <div class="score-cont d-flex justify-content-around mt-2">
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->game_club[0]->score}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
                                                 <span
-                                                    class="red text-uppercase time-final text-center"><b>Final</b></span>
+                                                    class="red text-uppercase time-final text-center"><b>{{$val->game_club[0]->score." - ".$val->game_club[1]->score}}</b></span>
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->game_club[1]->score}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
                                             </div>
                                         </div>
                                         <div
