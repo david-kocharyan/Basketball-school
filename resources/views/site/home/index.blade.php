@@ -670,8 +670,6 @@
             }
 
             .final-p{
-                position: absolute;
-                top: 40px;
                 padding: 10px 15px;
                 font-size: 20px;
                 color: #9c1d24;
