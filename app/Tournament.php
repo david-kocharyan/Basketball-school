@@ -14,7 +14,7 @@ class Tournament extends Model
 
     public function clubs()
     {
-        return $this->hasManyThrough('App\Club','App\TournamentClub', "tournament_id", "id","id", "club_id");
+        return $this->hasManyThrough('App\Club','App\TournamentClub', "tournament_id", "id","id", "club_id")->orderBy('rank', 'ASC');
     }
 
 }

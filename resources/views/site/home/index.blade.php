@@ -76,6 +76,7 @@
                                                       style="font-weight: bolder;">{{$val->game_club[0]->score}}</span>
                                             </div>
                                             <div class="text-center">
+                                                <p class="final-p">FINAL</p>
                                                 <span class="time d-flex">{{$val->tournament ?? "Friendly"}}</span>
                                                 <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/yy')}}</p>
                                             </div>
@@ -105,15 +106,23 @@
                                             class="finals mb-3 text-white text-uppercase">Performance: {{$val->best_player}}</span>
                                     </div>
                                     <div class="second-row d-flex flex-row align-items-center justify-content-between">
-                                        <span class="finals mr-1 text-white text-uppercase">
-                                            <b>{{$val->pts}}PTS</b>
-                                        </span>
-                                        <span class="finals mr-1 text-white text-uppercase">
-                                            <b>{{$val->rb}}Rb</b>
-                                        </span>
-                                        <span class="finals mr-1 text-white text-uppercase">
-                                            <b>{{$val->ast}}AST</b>
-                                        </span>
+                                        @if($val->pts != NULL)
+                                            <span class="finals mr-1 text-white text-uppercase">
+                                                <b>PTS - {{$val->pts}}</b>
+                                            </span>
+                                        @endif
+                                        @if($val->rb != NULL)
+                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span class="finals mr-1 text-white text-uppercase">
+                                                <b>RB - {{$val->rb}}</b>
+                                            </span>
+                                        @endif
+                                        @if($val->ast != NULL)
+                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span class="finals mr-1 text-white text-uppercase">
+                                                <b>AST - {{$val->ast}}</b>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
@@ -536,6 +545,7 @@
             .gallery-top .finals, .gallery-top .stadium {
                 font-size: 20px;
                 letter-spacing: 1px;
+                padding-left: 5px;
             }
 
             .gallery-thumbs .first-row {
@@ -657,6 +667,15 @@
         <style>
             p {
                 font-family: Roboto-Condensed-Regular, sans-serif;
+            }
+
+            .final-p{
+                position: absolute;
+                top: 40px;
+                padding: 10px 15px;
+                font-size: 20px;
+                color: #9c1d24;
+                font-weight: bold;
             }
 
             .triangle {
