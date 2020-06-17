@@ -1219,16 +1219,9 @@
                     responsiveClass: true,
                 });
 
-                var isLoop = true;
-                if ($('.gallery-thumbs').length < 5) {
-                    isLoop = false;
-                }
 
-                var slieprev = 5;
                 var mobile = 2
-                if($('.swiper-slide-container').length < 5){
-                    slieprev = $('.swiper-slide-container').length;
-                }
+
                 if($('.swiper-slide-container').length < 2){
                     mobile = $('.swiper-slide-container').length;
                 }
@@ -1267,7 +1260,7 @@
                         },
                         // when window width is >= 1025
                         1025: {
-                            slidesPerView: slieprev,
+                            slidesPerView: 5,
                             spaceBetween: 10
                         }
                     }
