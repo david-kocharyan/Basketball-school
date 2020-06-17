@@ -1229,7 +1229,7 @@
                 var galleryTop = new Swiper('.gallery-top', {
                     spaceBetween: 10,
                     loop: true,
-                    loopedSlides: 4,
+                    loopedSlides: 5,
                     navigation: {
                         nextEl: '.next-top',
                         prevEl: '.prev-top',
