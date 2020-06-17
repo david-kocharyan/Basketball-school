@@ -1238,7 +1238,7 @@
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 100,
                     centeredSlides: false,
-                    slidesPerView: slieprev,
+                    slidesPerView: 5,
                     touchRatio: 0.2,
                     slideToClickedSlide: true,
                     loop: true,
