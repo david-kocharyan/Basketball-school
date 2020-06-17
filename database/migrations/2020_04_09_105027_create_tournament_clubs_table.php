@@ -17,7 +17,7 @@ class CreateTournamentClubsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tournament_id');
             $table->unsignedBigInteger('club_id');
-            $table->string('rank');
+            $table->integer('rank');
             $table->integer('win');
             $table->integer('lose');
             $table->integer('points');
