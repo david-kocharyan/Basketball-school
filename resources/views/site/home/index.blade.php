@@ -143,8 +143,8 @@
                                             </div>
 
                                             <div class="time-cont mt-2">
-                                                <span
-                                                    class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                                <p class="upcoming-p">{{$val->tournament ?? "Friendly"}}</p>
+                                                <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
                                             </div>
 
                                             <div class="team-cont">
@@ -674,6 +674,13 @@
                 font-size: 20px;
                 color: #9c1d24;
                 font-weight: bold;
+            }
+
+            .upcoming-p{
+                font-size: 20px;
+                color: #9c1d24;
+                font-weight: bold;
+                padding-bottom: 10px;
             }
 
             .triangle {
