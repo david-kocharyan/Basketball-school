@@ -48,6 +48,7 @@ class ClubController extends Controller
     {
         $request->validate([
             "name" => "required",
+            "short_name" => "required",
             "image" => "required|image|max:2048",
         ]);
 
@@ -57,6 +58,7 @@ class ClubController extends Controller
             $club->image = basename($img_name);
         }
         $club->name = $request->name;
+        $club->short_name = $request->short_name;
         $club->save();
 
         return redirect(self::ROUTE);
@@ -97,6 +99,7 @@ class ClubController extends Controller
     {
         $request->validate([
             "name" => "required",
+            "short_name" => "required",
             "image" => "image|max:2048",
         ]);
 
@@ -106,6 +109,7 @@ class ClubController extends Controller
             $club->image = basename($img_name);
         }
         $club->name = $request->name;
+        $club->short_name = $request->short_name;
         $club->save();
 
         return redirect(self::ROUTE);

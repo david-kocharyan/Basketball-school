@@ -15,6 +15,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Club Name</th>
+                                <th>Club Short Name</th>
                                 <th>Image</th>
                                 <th>Options</th>
                             </tr>
@@ -25,6 +26,7 @@
                             <tr>
                                 <td>{{$key + 1}}</td>
                                 <td>{{$val->name}}</td>
+                                <td>{{$val->short_name}}</td>
                                 <td>
                                     <img src="{{asset("uploads/clubs/$val->image")}}" alt=""
                                          style="width: 150px;" class="img-fluid">

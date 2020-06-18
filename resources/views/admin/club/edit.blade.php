@@ -28,6 +28,15 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="short_name">Short Name</label>
+                                @error('short_name')
+                                <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
+                                @enderror
+                                <input type="text" class="form-control" id="short_name"
+                                       placeholder="Club short name" name="short_name" value="{{$club->short_name}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="image">Upload Club Logo  <b class="text-danger"> ( recommended size 850x1024 ) </b></label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
