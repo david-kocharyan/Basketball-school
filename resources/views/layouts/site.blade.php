@@ -44,7 +44,7 @@
                     <div class="dropdown-menu dropdown-menu-right" style="background: none;">
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item p-3 text-right" href="/academy-members">Academy Members</a>
-                        <a class="dropdown-item p-3 text-right" href="/schedules">Training & Coaches</a>
+                        <a class="dropdown-item p-3 text-right" href="/schedules">Trainings & Coaches</a>
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>
@@ -150,7 +150,7 @@
                                             <hr class="drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/schedules">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Training
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Trainings
                                                 & Coaches</a>
                                         </div>
                                     </div>
@@ -285,7 +285,7 @@
                         <li><a href="#">My Account</a></li>
                     </ul>
                     <ul class="d-inline-block float-right footer-list list-unstyled">
-                        <li><a href="/schedules">Training schedule</a></li>
+                        <li><a href="/schedules">Trainings schedule</a></li>
                         <li><a href="/rosters">Rosters</a></li>
                         <li><a href="/standings">Standings</a></li>
                         <li><a href="/academy-members">Academy members</a></li>
