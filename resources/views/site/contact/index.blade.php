@@ -108,14 +108,28 @@
                              alt="Ball">Training Schedule</p>
                     <div class="text-cont pt-4">
                         <ul style="padding-left: 30px">
-                            <li><b>Under 14y</b></li>
-                            <li><b>Under 16y</b></li>
-                            <li><b>Seniors</b></li>
+                            @foreach($schedule as $key)
+                                <li><b>{{$key->team->name}}</b></li>
+                            @endforeach
                         </ul>
                         <ul>
-                            <li>Monday</li>
-                            <li>Tuesday, Thursday</li>
-                            <li>Wednesday, Friday</li>
+                            @foreach($schedule as $key)
+                                <li>
+                                    @php
+                                        {{$i = 0;$len = count($key->date);}}
+                                    @endphp
+                                    @foreach($key->date as $bin=>$dates)
+                                        @if($i == $len-1)
+                                            {{$dates->day}}
+                                        @else
+                                            {{$dates->day.", "}}
+                                        @endif
+                                        @php
+                                            {{$i++;}}
+                                        @endphp
+                                    @endforeach
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
