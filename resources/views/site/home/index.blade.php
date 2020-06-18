@@ -103,7 +103,7 @@
                                     <div class="second-row d-flex flex-column align-items-center">
                                         <hr style="border-bottom: 1px solid #9c1d24; width: 90%;">
                                         <span
-                                            class="finals mb-3 text-white text-uppercase">Performance: {{$val->best_player}}</span>
+                                            class="finals mb-3 text-white text-uppercase">Top Performance: {{$val->best_player}}</span>
                                     </div>
                                     <div class="second-row d-flex flex-row align-items-center justify-content-between">
                                         @if($val->pts != NULL)
