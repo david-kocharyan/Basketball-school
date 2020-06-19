@@ -302,7 +302,15 @@
                     let day = curr_date + "/" + curr_month + "/" + curr_year;
 
                     let time = data.time.split(":")
-                        time = time[0]+":"+time[1]
+                        time = time[0]+":"+time[1];
+
+
+
+                    let pts = data.pts != null ? data.pts : 0;
+                    let rb = data.rb != null ? data.rb : 0;
+                    let ast = data.ast != null ? data.ast : 0;
+                    let stl = data.stl != null ? data.stl : 0;
+                    let blk = data.blk != null ? data.blk : 0;
 
                     let elem = $(".modal-body");
                     let url = "{{ asset("uploads/clubs/")}}";
@@ -353,19 +361,19 @@
                                             <span  class="finals mb-3 text-white text-uppercase">Top Performance: ${data.best_player}</span>
                                             <div>
                                                 <span class="finals text-white text-uppercase">
-                                                    <b>PTS - ${data.pts}</b>
+                                                    <b>PTS - ${pts}</b>
                                                 </span>
                                                     <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"">
-                                                    <b>RB - ${data.rb}</b>
+                                                    <b>RB - ${rb}</b>
                                                 </span>
                                                 <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>AST - ${data.ast}</b>
+                                                    <b>AST - ${ast}</b>
                                                 </span>
                                                 <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>STL - ${data.stl}</b>
+                                                    <b>STL - ${stl}</b>
                                                 </span>
                                                 <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>BLK - ${data.blk}</b>
+                                                    <b>BLK - ${blk}</b>
                                                 </span>
                                             </div>
                                          </div>
