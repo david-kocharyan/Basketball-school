@@ -14,7 +14,7 @@
                         <p class="subtitle">
                             We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
                             <br>
-                            “The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson
+                            <i>“The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson</i>
                         </p>
                     </div>
                 </div>
@@ -33,14 +33,14 @@
 
             <div class="col-md-12 d-flex justify-content-start flex-wrap">
                 @foreach($games as $key=>$val)
-                    <div class="games col-md-2 d-inline-block p-2" data-attr="{{json_encode($val)}}" data-toggle="modal"
+                    <div class="games col-md-3 d-inline-block p-2" data-attr="{{json_encode($val)}}" data-toggle="modal"
                          data-target="#myModal">
                         <div class="first-row d-flex flex-column align-items-center">
                             <div class="date-cont">
                                 <span
                                     class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                             </div>
-                            <div class="score-cont d-flex justify-content-around pt-3">
+                            <div class="score-cont d-flex justify-content-around pt-2">
                                 <span class="score-team text-uppercase"><b>{{$val->club[0]->short_name}}</b></span>
                                 <span class="red text-uppercase time-final">
                                     <b>
@@ -234,7 +234,7 @@
 
             .date-cont span {
                 font-weight: bolder;
-                font-size: 15px;
+                font-size: 20px;
             }
 
 
@@ -329,8 +329,9 @@
                                                     <span class="team">${data.game_club[0].score}</span>
                                                 </div>
                                                 <div class="time-cont text-center pt-3">
+                                                    <p style="color: #9c1d24; font-size: 20px">Final</p>
                                                     <span class="time">${data.type}</span>
-                                                    <p class="finish_date mt-3">${day}
+                                                    <p class="finish_date mt-3">${day}</p>
                                                 </div>
                                                 <div class="date-cont game-score right text-left">
                                                     <span class="team">${data.game_club[1].score}</span>
@@ -349,16 +350,22 @@
                                         </div>
                                         <div class="second-row d-flex flex-column align-items-center ">
                                             <hr style="border-bottom: 1px solid #9c1d24; width: 30%;">
-                                            <span  class="finals mb-3 text-white text-uppercase">Best Player: ${data.best_player}</span>
+                                            <span  class="finals mb-3 text-white text-uppercase">Top Performance: ${data.best_player}</span>
                                             <div>
                                                 <span class="finals text-white text-uppercase">
-                                                    <b>${data.pts}</b>
+                                                    <b>PTS - ${data.pts}</b>
                                                 </span>
-                                                    <span class="finals ml-3 mr-3 text-white text-uppercase">
-                                                    <b>${data.rb}</b>
+                                                    <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"">
+                                                    <b>RB - ${data.rb}</b>
                                                 </span>
-                                                    <span class="finals text-white text-uppercase">
-                                                    <b>${data.ast}</b>
+                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
+                                                    <b>AST - ${data.ast}</b>
+                                                </span>
+                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
+                                                    <b>STL - ${data.stl}</b>
+                                                </span>
+                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
+                                                    <b>BLK - ${data.blk}</b>
                                                 </span>
                                             </div>
                                          </div>
@@ -381,6 +388,7 @@
 
                                              <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
                                                 <div class="time-cont text-center pt-3">
+                                                    <p style="color: #9c1d24; font-size: 20px">${data.tournament}</p>
                                                     <span class="time">${time}</span>
                                                 </div>
                                              </div>
