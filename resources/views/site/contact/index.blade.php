@@ -9,10 +9,14 @@
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
-                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span
-                                class="greater">&gt;</span> {{ strtoupper($title) }}</p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players
-                            competiting at all levels from local team galas</p>
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
+                            {{ strtoupper($title) }}
+                        </p>
+                        <p class="subtitle">
+                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
+                            <br>
+                            “The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson
+                        </p>
                     </div>
                 </div>
             </div>
@@ -62,7 +66,7 @@
                                 </div>
                                 <div class="form-field col-xl-4 col-md-6">
                                     <input id="p_name" name="p_name" class="input-text js-input" type="email" required>
-                                    <label class="label" for="p_name">Participant's Name</label>
+                                    <label class="label" for="p_name">Last Name</label>
                                 </div>
                             </div>
                             <div class="row m-0">
@@ -153,7 +157,7 @@
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
                         <a href="javascript:void(0);">
-                            <button class="rounded-button">View More</button>
+                            <button class="rounded-button">Shop Now</button>
                         </a>
                     </div>
                 </div>
@@ -169,12 +173,12 @@
                              alt="Ball">Gallery</p>
                     <div class="text-cont pt-4">
                         <div class="col-md-12">
-                            <p style="padding-left: 15px" class="text-white"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis deleniti dolore, doloremque eius eligendi fugit inventore laborum magni mollitia necessitatibus optio!</span></p>
+                            <p style="padding-left: 15px" class="text-white"><span>“The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson</span></p>
                         </div>
                     </div>
                     <div class="button-sec pt-4" style="padding-left: 30px;">
                         <a href="/gallery">
-                            <button class="rounded-button">View More</button>
+                            <button class="rounded-button">Visit Our Gallery</button>
                         </a>
                     </div>
                 </div>

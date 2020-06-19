@@ -9,10 +9,13 @@
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
-                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Teams <span
                                 class="greater">&gt;</span> {{ strtoupper($title) }}</p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players
-                            competiting at all levels from local team galas</p>
+                        <p class="subtitle">
+                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
+                            <br>
+                            “The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson
+                        </p>
                     </div>
                 </div>
             </div>
@@ -37,23 +40,23 @@
                                 <span
                                     class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                             </div>
-                            <div class="score-cont d-flex justify-content-around pt-1">
-                                <span class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                            <div class="score-cont d-flex justify-content-around pt-3">
+                                <span class="score-team text-uppercase"><b>{{$val->club[0]->short_name}}</b></span>
                                 <span class="red text-uppercase time-final">
                                     <b>
                                         @if($val->status == 1)
-                                            Final
+                                            {{$val->game_club[0]->score." - ".$val->game_club[1]->score}}
                                         @else
                                             {{Carbon\Carbon::parse($val->time)->format('H:i')}}
                                         @endif
                                     </b>
                                 </span>
-                                <span class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
+                                <span class="score-team text-uppercase"><b>{{$val->club[1]->short_name}}</b></span>
                             </div>
                         </div>
                         <div
                             class="second-row @if($val->status == 1) gray-bg @else red-bg @endif d-flex align-items-end justify-content-center">
-                            <span class="finals text-uppercase"><b>{{$val->tournament->name ?? "Friendly"}}</b></span>
+                            <span class="finals text-uppercase"><b>{{$val->tournament ?? "Friendly"}}</b></span>
                         </div>
                     </div>
                 @endforeach
@@ -105,7 +108,8 @@
 
             .games .score-cont, .games .score-cont .score-team {
                 color: black;
-                font-size: 15px;
+                font-size: 12px;
+
             }
 
             .games .first-row:after {
@@ -126,8 +130,10 @@
             }
 
             .games .finals {
-                color: #ffffff;
-                font-size: 18px;
+                font-family: Agency, sans-serif;
+                color: white;
+                font-size: 16px;
+                letter-spacing: 2px;
             }
 
             .gray-bg {
@@ -228,6 +234,7 @@
 
             .date-cont span {
                 font-weight: bolder;
+                font-size: 15px;
             }
 
 

@@ -9,10 +9,13 @@
                 <div class="col-md-6 pb-4">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
-                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Home <span
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Teams <span
                                 class="greater">&gt;</span> {{ strtoupper($title) }}</p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players
-                            competiting at all levels from local team galas</p>
+                        <p class="subtitle">
+                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
+                            <br>
+                            “The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson
+                        </p>
                     </div>
                 </div>
             </div>

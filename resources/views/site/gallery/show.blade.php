@@ -13,8 +13,11 @@
                             <span class="greater">&gt;</span> @if($gallery->type == 0) {{strtoupper('academy')}}  @else {{strtoupper('games')}} @endif
                             <span class="greater">&gt;</span> {{strtoupper($gallery->name)}}
                         </p>
-                        <p class="subtitle">We are competitive professional basketball club - with our players
-                            competing at all levels from local team galas</p>
+                        <p class="subtitle">
+                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
+                            <br>
+                            “The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson
+                        </p>
                     </div>
                 </div>
             </div>
