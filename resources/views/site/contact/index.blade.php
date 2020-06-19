@@ -25,17 +25,16 @@
                 <div class="col-xl-4 col-md-4 mb-lg-0 mb-3">
                     <p class="info m-0"><img style="height: 30px; margin-right: 10px"
                                              src="{{ asset("assets/site/images/contact/phone.svg") }}"
-                                             alt="Phone Icone"> +374(33) 93 93 99</p>
+                                             alt="Phone Icone"> +374 55 18 04 18</p>
                 </div>
                 <div class="col-xl-4 col-md-4 mb-lg-0 mb-3">
                     <p class="info m-0"><img style="height: 30px; margin-right: 10px"
-                                             src="{{ asset("assets/site/images/contact/email.svg") }}" alt="Email Svg">info@cilicia.am
-                    </p>
+                                             src="{{ asset("assets/site/images/contact/email.svg") }}" alt="Email Svg">info@ciliciabasketballclub.com</p>
                 </div>
                 <div class="col-xl-4 col-md-4 mb-lg-0 mb-3">
                     <p class="info m-0"><img style="height: 30px; margin-right: 10px"
                                              src="{{ asset("assets/site/images/contact/address.svg") }}"
-                                             alt="Address Icon">Vardanants 3, Yerevan</p>
+                                             alt="Address Icon">1/5 Alek Manukyan St, Yerevan 0025, Armenia</p>
                 </div>
             </div>
         </div>
@@ -53,8 +52,7 @@
                             <p class="title pb-3"><img style="height: 20px" class="img-fluid"
                                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Contact
                                 Us</p>
-                            <p class="subtitle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                                consectetur inventore maxime, quaerat rerum voluptatem. </p>
+                            <p class="subtitle">Our mission is to raise an academy and be part of the growing basketball culture in Armenia as we develop, form and expose the young and the youth to the importance of hard work, discipline and instilling passion and the love for basketball within our community.</p>
                         </div>
                         <form class="contact-form">
                             <div class="row m-0">

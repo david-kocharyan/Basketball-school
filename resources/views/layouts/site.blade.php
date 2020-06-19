@@ -267,11 +267,8 @@
                 <div class="col-md-4">
                     <p class="section-title little mb-4"><img style="height: 15px" class="img-fluid"
                                                               src="{{ asset("assets/site/images/ball-red.svg") }}"
-                                                              alt="">About
-                        Us</p>
-                    <p class="text-white text-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-                        ducimus inventore laboriosam laudantium quae ratione repellat sunt! Ab architecto aut blanditiis
-                        eligendi incidunt laboriosam maiores, molestias obcaecati quaerat repudiandae, totam?</p>
+                                                              alt="">About Us</p>
+                    <p class="text-white text-about">Our mission is to raise an academy and be part of the growing basketball culture in Armenia as we develop, form and expose the young and the youth to the importance of hard work, discipline and instilling passion and the love for basketball within our community.</p>
                 </div>
                 <div class="col-md-3 d-none d-md-block d-lg-block d-lg-block mb-4">
                     <p class="section-title little"><img style="height: 15px" class="img-fluid"
@@ -302,8 +299,7 @@
                                 <img style="height: 15px" src="{{ asset("assets/site/images/home/phone-icon.svg") }}"
                                      alt="Phone Icon">
                             </p>
-                            <p class="left-block d-flex align-items-center justify-content-center left-borders">+374 96
-                                123 456</p>
+                            <p class="left-block d-flex align-items-center justify-content-center left-borders">+374 55 18 04 18</p>
                         </div>
 
                         <div class="block d-flex mb-3">
@@ -312,7 +308,7 @@
                                      alt="Email Icon">
                             </p>
                             <p class="left-block d-flex align-items-center justify-content-center left-borders">
-                                info@cilicia.com</p>
+                                info@ciliciabasketballclub.com</p>
                         </div>
 
                         <div class="block d-flex mb-3">
@@ -321,7 +317,7 @@
                                      alt="Email Icon">
                             </p>
                             <p class="left-block d-flex align-items-center justify-content-center left-borders">
-                                Vardanants 3, Yerevan, Armenia 001</p>
+                                1/5 Alek Manukyan St, Yerevan 0025, Armenia</p>
                         </div>
                     </div>
                 </div>

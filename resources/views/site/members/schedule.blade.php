@@ -22,10 +22,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="title text-center pb-3"><img style="height: 20px" class="img-fluid"
-                                                       src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">The
-                    perfect plan for you
-                </p>
-                <p class="text-center"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nobis quibusdam soluta. Accusantium, adipisci aperiam at consequuntur distinctio dolorem eius enim id, in ipsa nobis, quas tenetur unde veniam voluptate!</span>
+                                                       src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Training schedules</p>
                 </p>
             </div>
             <div class="col-md-12 d-flex justify-content-around flex-wrap">
