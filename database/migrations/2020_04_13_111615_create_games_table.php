@@ -21,6 +21,8 @@ class CreateGamesTable extends Migration
             $table->string('pts')->nullable();
             $table->string('rb')->nullable();
             $table->string('ast')->nullable();
+            $table->string('stl')->nullable();
+            $table->string('blk')->nullable();
             $table->string('type');
             $table->date('date');
             $table->time('time');

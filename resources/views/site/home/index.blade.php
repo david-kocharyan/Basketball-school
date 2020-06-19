@@ -123,6 +123,18 @@
                                                 <b>AST - {{$val->ast}}</b>
                                             </span>
                                         @endif
+                                        @if($val->stl != NULL)
+                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span class="finals mr-1 text-white text-uppercase">
+                                                <b>STL - {{$val->ast}}</b>
+                                            </span>
+                                        @endif
+                                        @if($val->blk != NULL)
+                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span class="finals mr-1 text-white text-uppercase">
+                                                <b>BLK - {{$val->ast}}</b>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
@@ -182,11 +194,11 @@
                                             </div>
                                             <div class="score-cont d-flex justify-content-around mt-2">
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[0]->short_name}}</b></span>
                                                 <span
                                                     class="red text-uppercase time-final text-center"><b>{{$val->game_club[0]->score." - ".$val->game_club[1]->score}}</b></span>
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[1]->short_name}}</b></span>
                                             </div>
                                         </div>
                                         <div
@@ -206,11 +218,11 @@
                                             </div>
                                             <div class="score-cont d-flex justify-content-around mt-2">
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[0]->name[0]}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[0]->short_name}}</b></span>
                                                 <span
                                                     class="red text-uppercase time-final"><b>{{Carbon\Carbon::parse($val->time)->format('H:i')}}</b></span>
                                                 <span
-                                                    class="score-team text-uppercase"><b>{{$val->club[1]->name[0]}}</b></span>
+                                                    class="score-team text-uppercase"><b>{{$val->club[1]->short_name}}</b></span>
                                             </div>
                                         </div>
                                         <div class="second-row red-bg d-flex align-items-end justify-content-center">

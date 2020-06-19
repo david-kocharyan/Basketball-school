@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Cilicia</title>
+    <title>Cilicia Basketball Club</title>
     <link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ asset("assets/site/bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/style/style.v6.css") }}">
@@ -326,10 +326,10 @@
                 </div>
                 <div class="col-md-12 mt-3 text-center">
                     <h3>
-                        <a href="http://aimtech.am" style="padding: 5px; text-decoration: none;">
+                        <a href="https://www.facebook.com/CiliciaBasketballClub/" style="padding: 5px; text-decoration: none;">
                             <div class="facebook"></div>
                         </a>
-                        <a href="http://aimtech.am" style='padding: 5px; text-decoration: none;'>
+                        <a href="https://www.instagram.com/ciliciabasketballclub/?hl=en" style='padding: 5px; text-decoration: none;'>
                             <div class="instagram"></div>
                         </a>
                     </h3>

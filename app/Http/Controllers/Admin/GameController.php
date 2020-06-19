@@ -191,6 +191,8 @@ class GameController extends Controller
         $game->pts = $request->pts;
         $game->rb = $request->rb;
         $game->ast = $request->ast;
+        $game->stl = $request->stl;
+        $game->blk = $request->blk;
         $game->status = 1;
         $game->save();
 
@@ -237,6 +239,8 @@ class GameController extends Controller
         $game->pts = $request->pts;
         $game->rb = $request->rb;
         $game->ast = $request->ast;
+        $game->stl = $request->stl;
+        $game->blk = $request->blk;
         $game->status = 1;
         $game->save();
 

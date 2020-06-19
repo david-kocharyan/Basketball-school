@@ -39,9 +39,11 @@
                             <div class="form-group">
                                 <label for="stats">Stats</label>
                                 <div id="stats" class="form-group" style="display: flex; justify-content: space-evenly;">
-                                    <input type="text" name="pts" value="{{old('pts')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="PTS">
-                                    <input type="text" name="rb" value="{{old('rb')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="RB">
-                                    <input type="text" name="ast" value="{{old('ast')}}" class="form-control" style="width: 30%; display: inline-block;" placeholder="AST">
+                                    <input type="text" name="pts" value="{{old('pts')}}" class="form-control" style="width: 15%; display: inline-block;" placeholder="PTS">
+                                    <input type="text" name="rb" value="{{old('rb')}}" class="form-control" style="width: 15%; display: inline-block;" placeholder="RB">
+                                    <input type="text" name="ast" value="{{old('ast')}}" class="form-control" style="width: 15%; display: inline-block;" placeholder="AST">
+                                    <input type="text" name="stl" value="{{old('stl')}}" class="form-control" style="width: 15%; display: inline-block;" placeholder="STL">
+                                    <input type="text" name="blk" value="{{old('blk')}}" class="form-control" style="width: 15%; display: inline-block;" placeholder="BLK">
                                 </div>
                             </div>
 
