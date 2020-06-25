@@ -36,10 +36,10 @@
                                 <p class="invalid-feedback text-danger" role="alert"> <strong>{{ $message }}</strong> </p>
                                 @enderror
                                 <select name="age" id="age" class="form-control" size="10">
-                                    @for($i = 3; $i < 25; $i++)
+                                    @for($i = 3; $i < 19; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
                                     @endfor
-                                        <option value="25">Senior (25+)</option>
+                                        <option value="19">Senior (19+)</option>
                                 </select>
                             </div>
 

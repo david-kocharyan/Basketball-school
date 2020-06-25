@@ -6,7 +6,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 pb-4">
+                <div class="col-md-12 pb-4">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
                                               src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
@@ -14,7 +14,7 @@
                         </p>
                         <p class="subtitle">
                             We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
-                            <br>
+                            <br><br>
                             <i>“The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson</i>
                         </p>
                     </div>
@@ -46,10 +46,7 @@
             <div class="row">
                 <div class="main-section">
                     <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.5633458799225!2d44.51934171572156!3d40.1742747782727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abcf3e587fac9%3A0xec36682cfc305344!2s3%20Vardanants%20St%2C%20Yerevan%200010%2C%20Armenia!5e0!3m2!1sen!2s!4v1583905385695!5m2!1sen!2s"
-                            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.306628024236!2d44.52437961570116!3d40.17998907792682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abceee0788acb%3A0x94b460f7b777dad6!2s1%2F5%20Alek%20Manukyan%20St%2C%20Yerevan%200025%2C%20Armenia!5e0!3m2!1sen!2s!4v1593086197945!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     <div class="col-md-12 col-xl-6 overlay-part">
                         <div class="col-xl-8 col-sm-12">

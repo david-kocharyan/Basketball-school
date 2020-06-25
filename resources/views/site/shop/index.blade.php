@@ -6,7 +6,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 pb-4">
+                <div class="col-md-12 pb-4">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
                                               src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
@@ -17,7 +17,7 @@
                         </p>
                         <p class="subtitle">
                             We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
-                            <br>
+                            <br><br>
                             <i>“The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson</i>
                         </p>
                     </div>

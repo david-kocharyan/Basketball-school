@@ -260,15 +260,15 @@ class PlayersController extends Controller
     private function add_to_team($id, $gender, $dob)
     {
         $team = Team::where(array(['gender', '=', $gender], ['age', '=', Carbon::parse($dob)->age]))->orderBy('age', 'asc')->get();
-        $senior = Team::where(array(['gender', '=', $gender], ['age', '=', 25]))->get();
+        $senior = Team::where(array(['gender', '=', $gender], ['age', '=', 19]))->get();
 
 
 //      for $senior
-        if ($senior->isEmpty() AND Carbon::parse($dob)->age >= 25) {
+        if ($senior->isEmpty() AND Carbon::parse($dob)->age >= 19) {
             $new_senior = new Team;
-            $new_senior->name = "Senior 25_" . $gender;
+            $new_senior->name = "Senior 19_" . $gender;
             $new_senior->gender = $gender;
-            $new_senior->age = 25;
+            $new_senior->age = 19;
             $new_senior->save();
 
             $team_player = new TeamPlayer;
@@ -276,7 +276,7 @@ class PlayersController extends Controller
             $team_player->team_id = $new_senior->id;
             $team_player->save();
         }
-        if ($senior->isEmpty() == false AND Carbon::parse($dob)->age >= 25) {
+        if ($senior->isEmpty() == false AND Carbon::parse($dob)->age >= 19) {
             $team_player = new TeamPlayer;
             $team_player->player_id = $id;
             $team_player->team_id = $senior->id;
@@ -284,7 +284,7 @@ class PlayersController extends Controller
         }
 
 //      for other team
-        if ($team->isEmpty() AND Carbon::parse($dob)->age < 25) {
+        if ($team->isEmpty() AND Carbon::parse($dob)->age < 19) {
             $new_team = new Team;
             $new_team->name = "U" . Carbon::parse($dob)->age . "_" . $gender;
             $new_team->gender = $gender;

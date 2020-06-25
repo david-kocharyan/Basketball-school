@@ -22,7 +22,7 @@ class OurTeamsController extends Controller
 
     public function games()
     {
-        $games = Game::with(['game_club', 'club', 'center'])->paginate(20);
+        $games = Game::with(['game_club', 'club', 'center'])->orderBy("status", "ASC")->paginate(20);
 
         $title = "Games";
         return view(self::VIEW . ".games", compact('title', 'games'));

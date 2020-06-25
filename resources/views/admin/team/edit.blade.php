@@ -36,7 +36,7 @@
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
                                 <select name="age" id="age" class="form-control" >
-                                    @for($i = 3; $i <= 25; $i++)
+                                    @for($i = 3; $i <= 19; $i++)
                                         <option value="{{$i}}" @if($team->age == $i) selected @endif>{{$i}}</option>
                                     @endfor
                                 </select>

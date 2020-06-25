@@ -155,8 +155,8 @@
                                             </div>
 
                                             <div class="time-cont mt-2">
-                                                <p class="upcoming-p">{{$val->tournament ?? "Friendly"}}</p>
                                                 <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                                <p class="upcoming-p pt-3 text-center">{{$val->tournament ?? "Friendly"}}</p>
                                             </div>
 
                                             <div class="team-cont">
