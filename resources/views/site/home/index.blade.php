@@ -154,7 +154,7 @@
                                                 <span class="team">{{$val->club[0]->name}}</span>
                                             </div>
 
-                                            <div class="time-cont mt-2">
+                                            <div class="time-cont mt-2 d-flex align-items-center flex-column">
                                                 <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
                                                 <p class="upcoming-p pt-3 text-center">{{$val->tournament ?? "Friendly"}}</p>
                                             </div>
