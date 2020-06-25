@@ -304,13 +304,12 @@
                     let time = data.time.split(":")
                         time = time[0]+":"+time[1];
 
+                    let pts = data.pts != null ? `<span class="finals text-white text-uppercase"><b>PTS - ${data.pts}</b></span>` : "";
+                    let rb = data.rb != null ? `<span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"><b>RB - ${data.rb}</b></span>` : "";
+                    let ast = data.ast != null ? `<span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"><b>AST - ${data.ast}</b></span>` : "";
+                    let stl = data.stl != null ? `<span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"><b>STL - ${data.stl}</b></span>` : "";
+                    let blk = data.blk != null ? `<span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"><b>BLK - ${data.blk}</b></span>` : "";
 
-
-                    let pts = data.pts != null ? data.pts : 0;
-                    let rb = data.rb != null ? data.rb : 0;
-                    let ast = data.ast != null ? data.ast : 0;
-                    let stl = data.stl != null ? data.stl : 0;
-                    let blk = data.blk != null ? data.blk : 0;
 
                     let elem = $(".modal-body");
                     let url = "{{ asset("uploads/clubs/")}}";
@@ -360,21 +359,11 @@
                                             <hr style="border-bottom: 1px solid #9c1d24; width: 30%;">
                                             <span  class="finals mb-3 text-white text-uppercase">Top Performance: ${data.best_player}</span>
                                             <div>
-                                                <span class="finals text-white text-uppercase">
-                                                    <b>PTS - ${pts}</b>
-                                                </span>
-                                                    <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"">
-                                                    <b>RB - ${rb}</b>
-                                                </span>
-                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>AST - ${ast}</b>
-                                                </span>
-                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>STL - ${stl}</b>
-                                                </span>
-                                                <span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;">
-                                                    <b>BLK - ${blk}</b>
-                                                </span>
+                                                ${pts}
+                                                ${rb}
+                                                ${ast}
+                                                ${stl}
+                                                ${blk}
                                             </div>
                                          </div>
                                     </div> `)
@@ -396,8 +385,8 @@
 
                                              <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
                                                 <div class="time-cont text-center pt-3">
-                                                    <p style="color: #9c1d24; font-size: 20px">${data.tournament}</p>
                                                     <span class="time">${time}</span>
+                                                    <p class="pt-3 text-center" style="color: #9c1d24; font-size: 20px">${data.tournament}</p>
                                                 </div>
                                              </div>
 

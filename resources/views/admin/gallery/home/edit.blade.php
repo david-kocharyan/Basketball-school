@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="image">Thumbnail Image <b class="text-danger"> ( recommended size 255x255 or 540x255 ) </b></label>
+                                <label for="image">Thumbnail Image <b class="text-danger"> ( recommended size 255x255px or 540x255px ) </b></label>
                                 @error('image')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
