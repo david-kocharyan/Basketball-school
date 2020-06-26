@@ -60,18 +60,10 @@ class PlayersController extends Controller
             "dob" => "required",
             "phone_number" => "required|numeric",
             "gender" => "required|numeric",
-            "height" => "",
             "nationality" => "required",
-            "jersey_number" => "",
-            "jersey_size" => "",
-            "position" => "",
-            "emergency_name" => "",
-            "emergency_phone" => "",
             "email" => "required|unique:players,email",
             "password" => "required|min:6",
-            "notes" => "",
             "image" => "image|max:2048",
-            "doc_image" => "",
         ]);
 
         $player = new Player;
@@ -174,18 +166,10 @@ class PlayersController extends Controller
             "dob" => "required",
             "phone_number" => "required|numeric",
             "gender" => "required|numeric",
-            "height" => "",
             "nationality" => "required",
-            "jersey_number" => "",
-            "jersey_size" => "",
-            "position" => "",
-            "emergency_name" => "",
-            "emergency_phone" => "",
             "email" => "required|unique:players,email," . $id,
             "password" => "required|min:6",
-            "notes" => "",
             "image" => "image|max:2048",
-            "doc_image" => "",
         ]);
 
         $player = Player::find($id);
