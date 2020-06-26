@@ -161,6 +161,8 @@ class PlayersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $request->validate([
             "full_name" => "required",
             "dob" => "required",
@@ -168,7 +170,6 @@ class PlayersController extends Controller
             "gender" => "required|numeric",
             "nationality" => "required",
             "email" => "required|unique:players,email," . $id,
-            "password" => "required|min:6",
             "image" => "image|max:2048",
         ]);
 
