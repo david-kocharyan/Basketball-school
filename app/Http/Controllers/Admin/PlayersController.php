@@ -174,13 +174,18 @@ class PlayersController extends Controller
             "dob" => "required",
             "phone_number" => "required|numeric",
             "gender" => "required|numeric",
-            "height" => "required|numeric",
+            "height" => "",
             "nationality" => "required",
-            "jersey_number" => "required|numeric",
-            "jersey_size" => "required|numeric",
+            "jersey_number" => "",
+            "jersey_size" => "",
             "position" => "",
+            "emergency_name" => "",
+            "emergency_phone" => "",
             "email" => "required|unique:players,email," . $id,
-            "notes" => "required",
+            "password" => "required|min:6",
+            "notes" => "",
+            "image" => "image|max:2048",
+            "doc_image" => "",
         ]);
 
         $player = Player::find($id);
