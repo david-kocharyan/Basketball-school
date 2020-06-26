@@ -5,7 +5,6 @@
     <div class="new-login-box">
         <div class="white-box">
             <h3 class="box-title m-b-0">Sign In to Admin</h3>
-            <small>Example` Email - admin@gmail.com // Password - 123456</small>
 
             <br/>
             @error('email')

@@ -21,7 +21,7 @@
         <div class="lg-info-panel">
             <div class="inner-panel">
                 <div class="lg-content">
-                    <h2>Laravel Admin Panel With Rest Api</h2>
+                    <h2>Cilicia Basketball Club Admin Panel</h2>
                 </div>
             </div>
         </div>
