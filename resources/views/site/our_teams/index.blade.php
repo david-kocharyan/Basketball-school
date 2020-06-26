@@ -52,9 +52,9 @@
                                         <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span
                                                 class="mr-3">{{" ". $val->full_name}}</span></p>
                                     </div>
-                                    <div class="age-box d-flex align-items-center">
-                                        <p class="text-center m-0">{{$key->group}}</p>
-                                    </div>
+{{--                                    <div class="age-box d-flex align-items-center">--}}
+{{--                                        <p class="text-center m-0">{{$key->group}}</p>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         @endforeach

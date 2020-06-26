@@ -28,39 +28,45 @@
                 <ul class="nav nav-tabs d-none d-md-flex form-tabs" style="border-bottom: 0">
                     @foreach($teams as $bin=>$key)
                         <li style="border-right: 1px solid #9c1d24;">
-                            <a class="text-uppercase @if($bin == 0) active @endif"  data-toggle="tab"
-                               href="{{"#menu_".$key->id}}">{{$key->name}}
-                            </a>
+                            @if($key->age < 19 )
+                                <a class="text-uppercase @if($bin == 0) active @endif"  data-toggle="tab"
+                                    href="{{"#menu_".$key->id}}">{{$key->name}}
+                                </a>
+                            @endif
                         </li>
                     @endforeach
                 </ul>
                 <select class="d-block d-md-none" id="tab_selector">
                     @foreach($teams as $bin=>$key)
-                        <option value="{{$bin}}" class="text-uppercase">{{$key->name}}</option>
+                        @if($key->age < 19 )
+                            <option value="{{$bin}}" class="text-uppercase">{{$key->name}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
         </div>
         <div class="tab-content">
             @foreach($teams as $bin => $key)
-                <div id="{{'menu_'.$key->id}}" class="tab-pane fade in @if($bin == 0) active show @endif">
-                    <div class="row">
-                        @foreach($key->players as $val)
-                            <div class="col-xl-3 col-md-6" style="padding: 5px">
-                                <div class="main-box" style="background-image: url('{{ asset("uploads/player/$val->image") }}');transition: all 1s;">
-                                    <div class="name-box d-flex align-items-center">
-                                        <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span class="mr-3">{{" ". $val->full_name}}</span></p>
-                                    </div>
-                                    @if($val->position != NULL)
-                                        <div class="age-box d-flex align-items-center">
-                                            <p class="text-center m-0">{{$val->position}}</p>
+                @if($key->age < 19 )
+                    <div id="{{'menu_'.$key->id}}" class="tab-pane fade in @if($bin == 0) active show @endif">
+                        <div class="row">
+                            @foreach($key->players as $val)
+                                <div class="col-xl-3 col-md-6" style="padding: 5px">
+                                    <div class="main-box" style="background-image: url('{{ asset("uploads/player/$val->image") }}');transition: all 1s;">
+                                        <div class="name-box d-flex align-items-center">
+                                            <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span class="mr-3">{{" ". $val->full_name}}</span></p>
                                         </div>
-                                    @endif
+                                        @if($val->position != NULL)
+                                            <div class="age-box d-flex align-items-center">
+                                                <p class="text-center m-0">{{$val->position}}</p>
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endif
             @endforeach
         </div>
     </div>
