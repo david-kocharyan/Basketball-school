@@ -161,8 +161,6 @@ class PlayersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
         $request->validate([
             "full_name" => "required",
             "dob" => "required",

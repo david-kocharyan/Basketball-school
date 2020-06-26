@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="height">Height (cm) <strong style="color: red;"> &#42; </strong></label>
+                                <label for="height">Height (cm)</label>
                                 @error('height')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="jersey_number">Jersey Number <strong style="color: red;"> &#42; </strong></label>
+                                <label for="jersey_number">Jersey Number </label>
                                 @error('jersey_number')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="jersey_size">Jersey Size <strong style="color: red;"> &#42; </strong></label>
+                                <label for="jersey_size">Jersey Size </label>
                                 @error('jersey_size')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
@@ -162,7 +162,7 @@
 
                             {{--notes and image --}}
                             <div class="form-group">
-                                <label for="notes">Notes <strong style="color: red;"> &#42; </strong></label>
+                                <label for="notes">Notes </label>
                                 @error('notes')
                                 <p class="invalid-feedback text-danger" role="alert"><strong>{{ $message }}</strong></p>
                                 @enderror
