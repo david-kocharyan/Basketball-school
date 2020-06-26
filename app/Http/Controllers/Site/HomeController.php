@@ -35,7 +35,8 @@ class HomeController extends Controller
 
         $best_players = MonthPlayer::with('players')->get();
         $home_gallery = HomeGallery::with('album')->orderBy('order','ASC')->get();
-        $game = Game::with(['game_club', 'club', 'center'])->where('status', 1)->orderBy('date', "ASC")->limit(4)->get()->reverse();
+        $game = Game::with(['game_club', 'club', 'center'])->where('status', 1)->orderBy('date', "ASC")->limit(4)->get();
+        $game = array_reverse($game);
         $upcoming = Game::with(['game_club', 'club', 'center'])->where('status', 0)->orderBy('date', "DESC")->get();
 
         return view(self::VIEW . ".index", compact("products", "standings", "best_players", "home_gallery", "game", 'upcoming'));
