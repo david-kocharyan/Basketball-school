@@ -54,7 +54,7 @@
                        aria-haspopup="true" aria-expanded="false">Our Teams</a>
                     <div class="dropdown-menu dropdown-menu-right" style="background: none;">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item p-3 text-right" href="/rosters">Roster</a>
+                        <a class="dropdown-item p-3 text-right" href="/rosters">Rosters</a>
                         <a class="dropdown-item p-3 text-right" href="/all-games">Games</a>
                         <div class="dropdown-divider"></div>
                     </div>
@@ -164,7 +164,7 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item d-flex align-items-center" href="/rosters">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
-                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Roster</a>
+                                                     src="{{ asset("assets/site/images/ball-white.svg") }}" alt="">Rosters</a>
                                             <hr class="drop-hr">
                                             <a class="dropdown-item d-flex align-items-center" href="/all-games">
                                                 <img style="height: 10px; display: none" class="img-fluid mr-1"
