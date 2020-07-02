@@ -286,7 +286,7 @@
                     border-right: 3px solid #9c1d24;
                 }
             }
-            @media (min-width: 425px){
+            @media (min-width: 425px) and (max-width: 767px){
                 .icon-line_1:before {
                     content: "";
                     height: 35px;
