@@ -1119,6 +1119,10 @@
                     width: 100%;
                 }
 
+                .gallery-top .time{
+                    width: 150px;
+                }
+
                 .finished-games .time {
                     padding: 10px 8px;
                     font-size: 15px;
