@@ -155,7 +155,7 @@
                                             </div>
 
                                             <div class="time-cont mt-2 d-flex align-items-center flex-column">
-                                                <span class="time">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                                <span class="time time-upcoming">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
                                                 <p class="upcoming-p pt-3 text-center">{{$val->tournament ?? "Friendly"}}</p>
                                             </div>
 
@@ -1121,6 +1121,10 @@
 
                 .gallery-top .time{
                     width: 150px;
+                }
+
+                .time-upcoming{
+                    width: 100px !important;
                 }
 
                 .finished-games .time {
