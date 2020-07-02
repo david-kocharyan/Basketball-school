@@ -73,7 +73,7 @@
                 @foreach($members as $key)
                     <div class="col-md-6 text-left">
                         <div class="main-box"
-                             style="background-image: url('{{ asset("uploads/our_team/$key->image") }}'); background-position: -25%, 0;">
+                             style="background-image: url('{{ asset("uploads/our_team/$key->image") }}')">
                             <div class="red-overlay">
                                 <div class="col-md-12 pt-3">
                                     <span class="badge badge-light">{{$key->status}}</span>
@@ -274,6 +274,9 @@
                     bottom: 0;
                     transform: translateY(44%);
                     border-right: 3px solid #9c1d24;
+                }
+                .main-box{
+                    background-position: -25%, 0;
                 }
             }
             @media (min-width: 375px) and (max-width: 424px) {

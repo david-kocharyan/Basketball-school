@@ -1129,7 +1129,7 @@
                 }
 
                 .gallery-top {
-                    height: 500px;
+                    height: 600px;
                 }
 
                 .match-slider .swiper-slide .logo-cont:first-child, .match-slider .swiper-slide .left, .animate .logo-cont:first-child, .animate .left {
