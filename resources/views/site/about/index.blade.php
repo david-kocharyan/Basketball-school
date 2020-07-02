@@ -259,6 +259,8 @@
                     transform: translateX(-98%);
                     border-right: 25px solid #9c1d24
                 }
+            }
+            @media (min-width: 320px) and (max-width: 424px){
                 .value-text{
                     font-size: 13px;
                 }
