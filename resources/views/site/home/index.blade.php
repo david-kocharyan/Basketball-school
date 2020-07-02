@@ -629,6 +629,10 @@
                 cursor: pointer;
             }
 
+            .gallery-thumbs .swiper-buttons .next:focus, .gallery-thumbs .swiper-buttons .prev:focus {
+                outline: none;
+            }
+
             .gallery-top-buttons {
                 position: absolute;
                 left: 0;
