@@ -77,7 +77,7 @@
                                             </div>
                                             <div class="text-center">
                                                 <p class="final-p">FINAL</p>
-                                                <span class="time d-flex">{{$val->tournament ?? "Friendly"}}</span>
+                                                <span class="time d-flex justify-content-center align-items-center">{{$val->tournament ?? "Friendly"}}</span>
                                                 <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/Y')}}</p>
                                             </div>
 
@@ -1121,7 +1121,6 @@
 
                 .gallery-top .time{
                     width: 150px;
-                    text-align: center;
                 }
 
                 .finished-games .time {
