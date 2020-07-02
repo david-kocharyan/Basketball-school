@@ -1124,7 +1124,7 @@
                 }
 
                 .finals-tumb{
-                  font-size: 14px;
+                  font-size: 14px !important;
                 }
 
                 .finished-games .time {
