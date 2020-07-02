@@ -71,9 +71,9 @@
                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Team</p>
             <div class="row">
                 @foreach($members as $key)
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-left">
                         <div class="main-box"
-                             style="background-image: url('{{ asset("uploads/our_team/$key->image") }}')">
+                             style="background-image: url('{{ asset("uploads/our_team/$key->image") }}'); background-position: -25%, 0;">
                             <div class="red-overlay">
                                 <div class="col-md-12 pt-3">
                                     <span class="badge badge-light">{{$key->status}}</span>
