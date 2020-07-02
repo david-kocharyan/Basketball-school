@@ -204,7 +204,7 @@
                                         <div
                                             class="second-row gray-bg d-flex align-items-end justify-content-center">
                                             <span
-                                                class="finals text-uppercase"><b>{{$val->tournament ?? "Friendly"}}</b></span>
+                                                class="finals finals-tumb text-uppercase"><b>{{$val->tournament ?? "Friendly"}}</b></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1121,6 +1121,10 @@
 
                 .gallery-top .time-finals{
                     width: 150px;
+                }
+
+                .finals-tumb{
+                  font-size: 14px;
                 }
 
                 .finished-games .time {
