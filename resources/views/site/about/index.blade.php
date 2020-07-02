@@ -265,15 +265,37 @@
                 .value-text{
                     font-size: 13px;
                 }
+            }
+            @media (min-width: 320px) and (max-width: 374px){
                 .icon-line_1:before {
                     content: "";
-                    height: 30px;
+                    height: 50px;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(44%);
+                    border-right: 3px solid #9c1d24;
+                }
+            }
+            @media (min-width: 375px) and (max-width: 424px) {
+                .icon-line_1:before {
+                    content: "";
+                    height: 35px;
                     position: absolute;
                     bottom: 0;
                     transform: translateY(63%);
                     border-right: 3px solid #9c1d24;
                 }
             }
+            /*@media (min-width: 375px) and (max-width: 424px) {*/
+            /*    .icon-line_1:before {*/
+            /*        content: "";*/
+            /*        height: 35px;*/
+            /*        position: absolute;*/
+            /*        bottom: 0;*/
+            /*        transform: translateY(63%);*/
+            /*        border-right: 3px solid #9c1d24;*/
+            /*    }*/
+            /*}*/
         </style>
     @endpush
 @endsection
