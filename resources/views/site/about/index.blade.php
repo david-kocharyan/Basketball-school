@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="story-section pt-5 pb-5">
+    <div class="story-section pt-5 pb-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
