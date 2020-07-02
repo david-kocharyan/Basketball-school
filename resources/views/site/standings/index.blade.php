@@ -24,7 +24,7 @@
     </div>
     <div class="table-section p-3">
         <div class="container px-0">
-            <div class="row d-flex justify-content-center align-items-center flex-sm-column flex-md-row">
+            <div class="row d-flex justify-content-center align-items-lg-start flex-sm-column flex-md-row">
 
                 @foreach($standings as $key => $val)
                     <div class="d-block @if($key != 0) d-none @endif p-2">
