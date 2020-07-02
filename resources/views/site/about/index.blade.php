@@ -265,7 +265,7 @@
                 .value-text{
                     font-size: 13px;
                 }
-                .icon-line_3:before {
+                .icon-line_1:before {
                     content: "";
                     height: 30px;
                     position: absolute;
