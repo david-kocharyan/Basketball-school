@@ -70,11 +70,11 @@
             <p class="title pb-3"><img style="height: 30px" class="img-fluid"
                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Team</p>
             <div class="row">
-                @foreach($members as $key)
+                @foreach($members as $bin=>$key)
                     <div class="col-md-6">
                         <div class="main-box"
                              style="background-image: url('{{ asset("uploads/our_team/$key->image") }}')">
-                            <div class="red-overlay">
+                            <div class="red-overlay red_{{$bin}}">
                                 <div class="col-md-12 pt-3">
                                     <span class="badge badge-light">{{$key->status}}</span>
                                     <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->name}}</h6>
@@ -188,6 +188,17 @@
                 position: absolute;
                 bottom: 0;
                 transform: translateX(-98%);
+                border-right: 30px solid #9c1d24;
+            }
+            .red_4{
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 147px solid transparent;
+                border-bottom: 148px solid transparent;
+                position: absolute;
+                bottom: 0;
+                transform: translateX(-98%);
                 border-right: 25px solid #9c1d24;
             }
 
@@ -259,6 +270,7 @@
                     transform: translateX(-98%);
                     border-right: 25px solid #9c1d24
                 }
+
             }
             @media (min-width: 320px) and (max-width: 424px){
                 .value-text{
