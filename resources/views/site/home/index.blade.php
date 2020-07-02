@@ -1121,6 +1121,7 @@
 
                 .gallery-top .time{
                     width: 150px;
+                    text-align: center;
                 }
 
                 .finished-games .time {
