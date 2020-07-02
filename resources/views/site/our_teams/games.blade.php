@@ -6,15 +6,18 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 pb-4">
+                <div class="col-md-12 pb-4 ">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
-                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Teams <span
+                                              src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Teams
+                            <span
                                 class="greater">&gt;</span> {{ strtoupper($title) }}</p>
                         <p class="subtitle">
-                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of providing the best platform for basketball to the youth and the young of all ages.
+                            We are Cilicia, a professional Basketball Club / Academy based in Armenia with the aim of
+                            providing the best platform for basketball to the youth and the young of all ages.
                             <br><br>
-                            <i>“The strength of the team is each individual member. The strength of each member is the team.” – Phil Jackson</i>
+                            <i>“The strength of the team is each individual member. The strength of each member is the
+                                team.” – Phil Jackson</i>
                         </p>
                     </div>
                 </div>
@@ -225,6 +228,10 @@
             }
 
             .mid {
+                width: 150px;
+            }
+
+            .mid-1 {
                 width: 300px;
             }
 
@@ -284,6 +291,17 @@
                 color: white;
                 font-size: 14px;
             }
+
+            @media all and (max-width: 768px) {
+                .mid {
+                    width: 300px;
+                }
+
+                .gallery-top .finished-games .team-cont {
+                    width: 200px;
+                }
+
+            }
         </style>
     @endpush
     @push("footer")
@@ -302,7 +320,7 @@
                     let day = curr_date + "/" + curr_month + "/" + curr_year;
 
                     let time = data.time.split(":")
-                        time = time[0]+":"+time[1];
+                    time = time[0] + ":" + time[1];
 
                     let pts = data.pts != null ? `<span class="finals text-white text-uppercase"><b>PTS - ${data.pts}</b></span>` : "";
                     let rb = data.rb != null ? `<span class="finals text-white text-uppercase pl-2" style="border-left: 1px solid #9c1d24;"><b>RB - ${data.rb}</b></span>` : "";
@@ -331,17 +349,17 @@
                                              </div>
 
 
-                                             <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
-                                                <div class="date-cont game-score left text-right">
-                                                    <span class="team">${data.game_club[0].score}</span>
+                                             <div class="mid-1 text-center d-flex justify-content-around pt-3 pb-3">
+                                                <div class="date-cont game-score left text-right"">
+                                                    <span class="team" style="font-size: 35px !important;">${data.game_club[0].score}</span>
                                                 </div>
                                                 <div class="time-cont text-center pt-3">
                                                     <p style="color: #9c1d24; font-size: 20px">Final</p>
                                                     <span class="time">${data.type}</span>
                                                     <p class="finish_date mt-3">${day}</p>
                                                 </div>
-                                                <div class="date-cont game-score right text-left">
-                                                    <span class="team">${data.game_club[1].score}</span>
+                                                <div class="date-cont game-score right text-left"">
+                                                    <span class="team" style="font-size: 35px !important;">${data.game_club[1].score}</span>
                                                 </div>
                                              </div>
 
@@ -370,18 +388,18 @@
                     } else {
                         elem.append(`
                                     <div class="finished-games d-flex flex-column justify-content-center">
-                                        <div class="first-row d-flex flex-wrap justify-content-around align-items-center pt-5">
+                                        <div class="first-row d-flex flex-lg-row flex-md-column flex-wrap justify-content-around align-items-center pt-5">
 
                                              <div class="left-cont text-center">
                                                 <div class="logo-cont">
                                                     <img src='${url}/${data.club[0].image}' class="img-fluid"
                                                          alt="">
                                                 </div>
+
+                                             </div>
                                                 <div class="team-cont left text-center">
                                                     <span class="team">${data.club[0].name}</span>
                                                 </div>
-                                             </div>
-
 
                                              <div class="mid text-center d-flex justify-content-around pt-3 pb-3">
                                                 <div class="time-cont text-center pt-3">
@@ -390,13 +408,13 @@
                                                 </div>
                                              </div>
 
+                                                 <div class="team-cont right text-center">
+                                                         <span>${data.club[1].name}</span>
+                                                 </div>
                                              <div class="right-cont text-center">
                                                  <div class="logo-cont">
                                                      <img src='${url}/${data.club[1].image}' class="img-fluid">
                                                      </div>
-                                                     <div class="team-cont right text-center">
-                                                         <span>${data.club[1].name}</span>
-                                                 </div>
                                              </div>
 
                                         </div>

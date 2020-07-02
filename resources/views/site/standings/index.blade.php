@@ -6,7 +6,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 pb-4">
+                <div class="col-md-12 pb-4 ">
                     <div class="breadcrumb-cont">
                         <p class="title"><img style="height: 30px" class="img-fluid"
                                               src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">
@@ -22,13 +22,13 @@
             </div>
         </div>
     </div>
-    <div class="table-section p-5">
-        <div class="container">
-            <div class="row">
+    <div class="table-section p-3">
+        <div class="container px-0">
+            <div class="row d-flex justify-content-center align-items-center flex-sm-column flex-md-row">
 
                 @foreach($standings as $key => $val)
-                    <div class="d-md-block @if($key != 0) d-none @endif col-md-4">
-                        <table class="table table-striped">
+                    <div class="d-block @if($key != 0) d-none @endif p-2">
+                        <table class="table table-striped text-nowrap table-responsive">
                             <tr>
                                 <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
                             </tr>

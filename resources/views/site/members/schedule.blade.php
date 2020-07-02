@@ -6,7 +6,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 pb-4">
+                <div class="col-md-12 pb-4 ">
                     <div class="breadcrumb-cont">
                         <p class="title" style="font-size: 30px !important;"><img style="height: 30px" class="img-fluid"
                                               src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Academy <span

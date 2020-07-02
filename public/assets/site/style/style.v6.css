@@ -586,7 +586,7 @@ span.red {
         padding-right: 10px;
     }
     .background-section{
-        height: 220px;
+        height: auto;
     }
 }
 @media all and (min-width: 1024px) {
@@ -645,7 +645,7 @@ span.red {
 
     .rounded-button {
         font-size: 12px;
-        padding: 15px 20px;
+        /*padding: 15px 20px;*/
     }
 
     .owl-carousel .love{
