@@ -56,7 +56,7 @@
                                         <img class="img-fluid" src="{{ asset("assets/site/images/checkmark.png") }}"
                                              alt="">
                                     </div>
-                                    <div class="value-part ml-4 d-flex align-items-center">
+                                    <div class="value-part ml-3 d-flex align-items-center">
                                         <p class="value-text">{{$bin->mission_list_text}}</p>
                                     </div>
                                 </div>
@@ -258,6 +258,9 @@
                     bottom: 0;
                     transform: translateX(-98%);
                     border-right: 25px solid #9c1d24
+                }
+                .value-text{
+                    font-size: 13px;
                 }
             }
         </style>
