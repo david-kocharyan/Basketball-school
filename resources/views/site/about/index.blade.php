@@ -279,23 +279,23 @@
             @media (min-width: 375px) and (max-width: 424px) {
                 .icon-line_1:before {
                     content: "";
-                    height: 35px;
+                    height: 31px;
                     position: absolute;
                     bottom: 0;
-                    transform: translateY(63%);
+                    transform: translateY(70%);
                     border-right: 3px solid #9c1d24;
                 }
             }
-            /*@media (min-width: 375px) and (max-width: 424px) {*/
-            /*    .icon-line_1:before {*/
-            /*        content: "";*/
-            /*        height: 35px;*/
-            /*        position: absolute;*/
-            /*        bottom: 0;*/
-            /*        transform: translateY(63%);*/
-            /*        border-right: 3px solid #9c1d24;*/
-            /*    }*/
-            /*}*/
+            @media (min-width: 425px){
+                .icon-line_1:before {
+                    content: "";
+                    height: 35px;
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(60%);
+                    border-right: 3px solid #9c1d24;
+                }
+            }
         </style>
     @endpush
 @endsection
