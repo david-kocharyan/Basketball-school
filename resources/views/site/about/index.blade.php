@@ -303,11 +303,11 @@
             @media (max-width: 768px) {
                 .red-overlay{
                     width: 100%;
-                    height: 45%;
+                    height: 50%;
                     bottom: 0;
                 }
                 .main-box{
-                    height: 600px;
+                    height: 550px;
                     width: 85%;
                 }
                 .main-box img{
