@@ -299,6 +299,32 @@
                     border-right: 3px solid #9c1d24;
                 }
             }
+
+            @media (max-width: 768px) {
+                .red-overlay{
+                    width: 100%;
+                    height: 50%;
+                    bottom: 0;
+                }
+                .main-box{
+                    height: 600px;
+                    width: 85%;
+                }
+                .main-box img{
+                    height: 50% !important;
+                    width: 100%;
+                    top: 0;
+                }
+                .red-overlay:before{
+                    display: none;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1025px) {
+                .red-overlay:before{
+                    content: none;
+                }
+            }
         </style>
     @endpush
 @endsection
