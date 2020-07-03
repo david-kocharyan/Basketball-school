@@ -71,7 +71,7 @@
                         <div class="col-md-6 d-flex justify-content-center align-items-center p-2 coache" data-attr="{{$key}}" data-toggle="modal"
                              data-target="#myModal">
                             <div class="main-box" style="">
-                                <img src="{{ asset("uploads/coaches/$key->image") }}" class="img-fluid" style="height: 100%; position: absolute;" alt="">
+                                <img src="{{ asset("uploads/coaches/$key->image") }}" class="img-fluid" style="height: 100%; position: absolute; object-fit: cover;" alt="">
                                 <div class="red-overlay">
                                     <div class="col-md-12 pt-3 pb-3">
                                         <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
