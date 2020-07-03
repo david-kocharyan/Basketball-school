@@ -71,7 +71,7 @@
                                        src="{{ asset("assets/site/images/ball-red.svg") }}" alt="Ball">Our Team</p>
             <div class="row">
                 @foreach($members as $key)
-                    <div class="col-md-6 text-left">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center text-left">
                         <div class="main-box">
                             <img src="{{ asset("uploads/our_team/$key->image") }}" class="img-fluid" alt="">
                             <div class="red-overlay">
