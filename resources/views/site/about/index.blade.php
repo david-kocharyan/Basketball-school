@@ -73,7 +73,7 @@
                 @foreach($members as $key)
                     <div class="col-md-6 d-flex justify-content-center align-items-center text-left">
                         <div class="main-box">
-                            <img src="{{ asset("uploads/our_team/$key->image") }}" class="img-fluid" alt="">
+                            <img src="{{ asset("uploads/our_team/$key->image") }}" class="img-fluid" style="height: 100%; position: absolute;" alt="">
                             <div class="red-overlay">
                                 <div class="col-md-12 pt-3">
                                     <span class="badge badge-light">{{$key->status}}</span>
