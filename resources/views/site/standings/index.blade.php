@@ -28,7 +28,7 @@
 
                 @foreach($standings as $key => $val)
                     <div class="d-block @if($key != 0) d-none @endif p-2">
-                        <table class="table table-striped text-nowrap table-responsive">
+                        <table class="table table-striped text-nowrap table-responsive" style="width: 310px;">
                             <tr>
                                 <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
                             </tr>
