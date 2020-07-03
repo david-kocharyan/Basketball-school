@@ -318,11 +318,18 @@
                 .red-overlay:before{
                     display: none;
                 }
+
+                .member-text{
+                    font-size: 13px;
+                }
             }
 
             @media (min-width: 769px) and (max-width: 1025px) {
                 .red-overlay:before{
                     content: none;
+                }
+                .member-text{
+                    font-size: 13px;
                 }
             }
         </style>
