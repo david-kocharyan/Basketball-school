@@ -128,6 +128,7 @@
             .modal .coach-img {
                 float: left;
                 display: inline-block;
+                width: 100%;
             }
 
             .modal .name {
