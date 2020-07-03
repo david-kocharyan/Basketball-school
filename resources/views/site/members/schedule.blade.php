@@ -68,10 +68,10 @@
             <div class="container pb-5">
                 <div class="row">
                     @foreach($coaches as $key)
-                        <div class="col-md-6 p-2 coache" data-attr="{{$key}}" data-toggle="modal"
+                        <div class="col-md-6 d-flex justify-content-center align-items-center p-2 coache" data-attr="{{$key}}" data-toggle="modal"
                              data-target="#myModal">
-                            <div class="main-box"
-                                 style="background-image: url('{{ asset("uploads/coaches/$key->image") }}')">
+                            <div class="main-box" style="">
+                                <img src="{{ asset("uploads/coaches/$key->image") }}" class="img-fluid" style="height: 100%; position: absolute;" alt="">
                                 <div class="red-overlay">
                                     <div class="col-md-12 pt-3 pb-3">
                                         <h6 class="member-name text-white text-uppercase mt-2 mb-3">{{$key->full_name}}</h6>
@@ -246,6 +246,7 @@
                 text-overflow: ellipsis;
                 -o-text-overflow: ellipsis;
                 -webkit-line-clamp: 3;
+                overflow: hidden;
             }
 
             .read-btn {
@@ -257,6 +258,32 @@
 
             .read-btn:focus {
                 outline: none;
+            }
+
+            @media (max-width: 768px) {
+                .red-overlay{
+                    width: 100%;
+                    height: 50%;
+                    bottom: 0;
+                }
+                .main-box{
+                    height: 600px;
+                    width: 85%;
+                }
+                .main-box img{
+                    height: 50% !important;
+                    width: 100%;
+                    top: 0;
+                }
+                .red-overlay:before{
+                    display: none;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1025px) {
+                .red-overlay:before{
+                    content: none;
+                }
             }
         </style>
     @endpush
