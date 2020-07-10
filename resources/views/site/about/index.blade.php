@@ -277,6 +277,8 @@
                 }
                 .main-box{
                     background-position: -25%, 0;
+                    height: 550px;
+                    width: 85%;
                 }
             }
             @media (min-width: 375px) and (max-width: 424px) {
@@ -288,6 +290,12 @@
                     transform: translateY(70%);
                     border-right: 3px solid #9c1d24;
                 }
+
+                .main-box{
+                    background-position: -25%, 0;
+                    height: 550px;
+                    width: 75%;
+                }
             }
             @media (min-width: 425px) and (max-width: 767px){
                 .icon-line_1:before {
@@ -297,6 +305,11 @@
                     bottom: 0;
                     transform: translateY(60%);
                     border-right: 3px solid #9c1d24;
+                }
+                .main-box{
+                    background-position: -25%, 0;
+                    height: 500px;
+                    width: 75%;
                 }
             }
 
