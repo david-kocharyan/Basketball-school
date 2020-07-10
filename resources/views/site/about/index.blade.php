@@ -309,7 +309,7 @@
                 .main-box{
                     background-position: -25%, 0;
                     height: 500px;
-                    width: 75%;
+                    width: 75% !important;
                 }
             }
 
