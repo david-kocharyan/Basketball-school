@@ -228,7 +228,7 @@
             }
 
             .mid {
-                width: 150px;
+                width: 160px;
             }
 
             .mid-1 {
