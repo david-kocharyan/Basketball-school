@@ -319,10 +319,7 @@
                     height: 50%;
                     bottom: 0;
                 }
-                .main-box{
-                    height: 550px;
-                    width: 85%;
-                }
+
                 .main-box img{
                     height: 54% !important;
                     width: 100%;
