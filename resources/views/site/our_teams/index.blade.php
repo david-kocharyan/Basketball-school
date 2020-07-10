@@ -47,7 +47,7 @@
                         @foreach($key->leaguePlayers as $val)
                             <div class="col-xl-3 col-md-6 pb-5" style="padding: 5px">
                                 <div class="main-box"
-                                     style="background-image: url('{{ asset("uploads/player/$val->image") }}');transition: all 1s; background-position: center; background-repeat: no-repeat;
+                                     style="background-image: url('{{ asset("uploads/player/$val->image") }}');transition: all 1s; background-position: bottom; background-repeat: no-repeat;
                                          background-origin: padding-box; background-size: contain;">
                                     <div class="name-box d-flex align-items-center">
                                         <p class="pl-5 m-0">{{ "#".$val->jersey_number  }} <span
