@@ -260,6 +260,12 @@
                     border-right: 25px solid #9c1d24
                 }
 
+                .main-box{
+                    background-position: -25%, 0;
+                    height: 500px;
+                    width: 67% !important;
+                }
+
             }
             @media (min-width: 320px) and (max-width: 424px){
                 .value-text{
@@ -297,7 +303,7 @@
                     width: 75%;
                 }
             }
-            @media (min-width: 425px) and (max-width: 768px){
+            @media (min-width: 425px) and (max-width: 767px){
                 .icon-line_1:before {
                     content: "";
                     height: 35px;
@@ -306,11 +312,7 @@
                     transform: translateY(60%);
                     border-right: 3px solid #9c1d24;
                 }
-                .main-box{
-                    background-position: -25%, 0;
-                    height: 500px;
-                    width: 67% !important;
-                }
+
             }
 
             @media (max-width: 768px) {
