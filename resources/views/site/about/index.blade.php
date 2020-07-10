@@ -303,7 +303,7 @@
             @media (max-width: 768px) {
                 .red-overlay{
                     width: 100%;
-                    height: 54%;
+                    height: 50%;
                     bottom: 0;
                 }
                 .main-box{
@@ -311,7 +311,7 @@
                     width: 85%;
                 }
                 .main-box img{
-                    height: 50% !important;
+                    height: 54% !important;
                     width: 100%;
                     top: 0;
                 }
