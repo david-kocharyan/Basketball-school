@@ -297,7 +297,7 @@
                     width: 75%;
                 }
             }
-            @media (min-width: 425px) and (max-width: 767px){
+            @media (min-width: 425px) and (max-width: 768px){
                 .icon-line_1:before {
                     content: "";
                     height: 35px;
@@ -309,7 +309,7 @@
                 .main-box{
                     background-position: -25%, 0;
                     height: 500px;
-                    width: 75% !important;
+                    width: 67% !important;
                 }
             }
 
@@ -319,7 +319,10 @@
                     height: 50%;
                     bottom: 0;
                 }
-
+                .main-box{
+                    height: 550px;
+                    width: 85%;
+                }
                 .main-box img{
                     height: 54% !important;
                     width: 100%;
