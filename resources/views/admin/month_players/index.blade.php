@@ -26,8 +26,8 @@
                         @foreach($month_players as $key=>$val)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td><img src='{{asset("uploads/player")."/".$val->players['image'] ?? ""}}' alt="{{$val->players->full_name}}" class="img-responsive" width="200"></td>
-                                <td>{{$val->players->full_name}}</td>
+                                <td><img src='{{asset("uploads/player")."/".$val->players['image'] ?? ""}}' alt="{{$val->players['full_name']}}" class="img-responsive" width="200"></td>
+                                <td>{{$val->players['full_name']}}</td>
                                 <td>{{$val->team}}</td>
                                 <td>
                                     <a href="{{$route."/".$val->id."/edit"}}" data-toggle="tooltip"
