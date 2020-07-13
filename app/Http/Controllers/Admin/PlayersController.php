@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\PlayersMail;
+use App\MonthPlayer;
 use App\Player;
 use App\Team;
 use App\Document;
@@ -236,6 +237,7 @@ class PlayersController extends Controller
             }
         }
         Player::destroy($player->id);
+        MonthPlayer::where('player_id', $player->id)->delete();
 
         return redirect(self::ROUTE);
     }
