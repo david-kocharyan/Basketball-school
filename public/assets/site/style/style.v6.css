@@ -21,6 +21,11 @@ body{
     padding-right: 17px;
 }
 
+.navbar-collapse.collapse.show {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
 /*dorpdown*/
 .dropdown-menu{
     background: #6c6c6e;
