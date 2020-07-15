@@ -24,9 +24,9 @@
                                     <option value="U12" @if($league->group == "U12") selected @endif>U 12</option>
                                     <option value="U14" @if($league->group == "U14") selected @endif>U 14</option>
                                     <option value="U16" @if($league->group == "U16") selected @endif>U 16</option>
-                                    <option value="A" @if($league->group == "A") selected @endif>A-League</option>
-                                    <option value="B" @if($league->group == "B") selected @endif>B-League</option>
-                                    <option value="C" @if($league->group == "C") selected @endif>Armenian cup</option>
+                                    <option value="A-League" @if($league->group == "A-League") selected @endif>A-League</option>
+                                    <option value="B-League" @if($league->group == "B-League") selected @endif>B-League</option>
+                                    <option value="Armenian cup" @if($league->group == "Armenian cup") selected @endif>Armenian cup</option>
                                 </select>
                             </div>
 
