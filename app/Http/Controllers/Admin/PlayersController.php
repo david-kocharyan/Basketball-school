@@ -121,8 +121,8 @@ class PlayersController extends Controller
 
 //          sending email
             $details = [
-                'title' => 'Your password in Cilicia web page',
-                'body' => "your password is` $request->password",
+                'title' => 'Your password in Cilicia Basketball Club web page',
+                'body' => "Your password is` $request->password",
             ];
             \Mail::to($request->email)->send(new PlayersMail($details));
         }

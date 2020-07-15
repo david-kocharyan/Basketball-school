@@ -249,8 +249,7 @@
             <div class="row">
                 <div class="title-cont col-md-12">
                     <h2 class="section-title"><img style="height: 25px"
-                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
-                        Table</h2>
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings</h2>
                 </div>
 
                 @foreach($standings as $key => $val)
