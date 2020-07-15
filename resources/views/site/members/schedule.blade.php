@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-12 d-flex justify-content-around flex-wrap">
                 @foreach($schedule as $key)
-                    <div class="d-md-block col-md-3">
+                    <div class="d-md-block col-md-4 col-lg-3">
                         <table class="table">
                             <tr>
                                 <th class="text-center text-white bg-red"
