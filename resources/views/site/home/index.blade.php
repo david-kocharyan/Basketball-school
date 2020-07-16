@@ -311,7 +311,7 @@
                                                               alt="">Players Of The Month</h2>
                 </div>
                 @foreach($best_players as $key)
-                    <div class="col-md-3">
+                    <div class="text-center">
                         <div class="main-box"
                              style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}'); transition: all 1s; width: 300px;">
                             <div class="name-box d-flex align-items-center">
