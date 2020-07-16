@@ -261,7 +261,7 @@
                 </div>
 
                 @foreach($standings as $key => $val)
-                    <div class="d-md-block @if($val->show_in_home == 0) d-none @endif">
+                    <div class="d-md-block @if($val->show_in_home == 0) d-none @endif" style="width: 300px; font-size: 14px;">
                         <table class="table table-striped">
                             <tr>
                                 <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
