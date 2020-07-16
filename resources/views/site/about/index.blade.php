@@ -323,7 +323,7 @@
                 }
                 .main-box{
                     height: 550px;
-                    width: 85%;
+                    width: 300px;
                 }
                 .main-box img{
                     height: 54% !important;
