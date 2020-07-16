@@ -339,13 +339,13 @@
                 }
             }
 
-            @media (min-width: 769px) and (max-width: 1023px) {
+            @media (min-width: 769px) and (max-width: 1025px) {
                 .red-overlay:before{
                     content: none;
                 }
                 .red-overlay{
-                    width: 100%;
-                    height: 50%;
+                    width: 100% !important;
+                    height: 50% !important;
                     bottom: 0;
                 }
                 .member-text{
