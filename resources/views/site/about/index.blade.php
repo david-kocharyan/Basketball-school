@@ -343,6 +343,11 @@
                 .red-overlay:before{
                     content: none;
                 }
+                .red-overlay{
+                    width: 100%;
+                    height: 50%;
+                    bottom: 0;
+                }
                 .member-text{
                     font-size: 13px;
                 }
