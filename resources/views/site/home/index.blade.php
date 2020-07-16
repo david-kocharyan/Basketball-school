@@ -304,9 +304,8 @@
                 </div>
                 @foreach($best_players as $key)
                     <div class="col-md-3">
-                        <div class="main-box"
-                             style=" transition: all 1s;">
-                            <img src="{{ asset("uploads/player/")."/".$key->players->image }}" alt="">
+                        <div class="main-box" style=" transition: all 1s;">
+                            <img src="{{ asset("uploads/player/")."/".$key->players->image }}" class="img-fluid" alt="">
                             <div class="name-box d-flex align-items-center">
                                 <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span
                                         class="mr-3">{{" ". $key->players->full_name}}</span></p>
