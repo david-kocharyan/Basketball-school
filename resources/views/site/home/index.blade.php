@@ -1114,8 +1114,12 @@
                     display: none;
                 }
 
-                .playerM{
+                .playerM {
+                    justify-content: center;
+                }
+                .main-box{
                     width: 280px;
+                    padding: 0;
                 }
             }
 
