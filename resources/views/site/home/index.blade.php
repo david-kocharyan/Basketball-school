@@ -1115,11 +1115,11 @@
                 }
 
                 .playerM {
-                    justify-content: center;
+                    justify-content: center !important;
                 }
                 .main-box{
-                    width: 280px;
-                    padding: 0;
+                    width: 280px !important;
+                    padding: 0 !important;
                 }
             }
 
