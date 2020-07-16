@@ -1247,7 +1247,7 @@
             /*!*medias*! 375*/
             @media (max-width: 375px) {
                 .main-box {
-                    height: 420px;
+                    height: 420px !important;
                 }
                 .main-box:hover .name-box {
                     transform: rotate(-90deg) translate(-130px, -210px);
