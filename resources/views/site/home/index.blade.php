@@ -311,7 +311,7 @@
                                                               alt="">Players Of The Month</h2>
                 </div>
             </div>
-            <div class="row d-flex justify-content-sm-center justify-content-start align-items-center">
+            <div class="row d-flex justify-content-start align-items-center playerM">
                 @foreach($best_players as $key)
                     <div class="text-center" style="padding: 15px 15px;">
                         <div class="main-box"
@@ -1112,6 +1112,10 @@
 
                 .gallery-top-buttons {
                     display: none;
+                }
+
+                .playerM{
+                    width: 280px;
                 }
             }
 
