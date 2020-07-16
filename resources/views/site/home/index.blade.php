@@ -1270,18 +1270,7 @@
                 }
             }
 
-            /*!*medias*! 768*/
-            @media (max-width: 768px) {
-                .main-box {
-                    height: 420px !important;
-                }
-                .main-box:hover .name-box {
-                    transform: rotate(-90deg) translate(-130px, -210px);
-                }
-                .name-box {
-                    width: 460px;
-                }
-            }
+
         </style>
     @endpush
     @push("footer")
