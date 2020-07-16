@@ -1247,7 +1247,7 @@
             /*!*medias*! 375*/
             @media (max-width: 375px) {
                 .main-box {
-                    height: 420px !important;
+                    height: 480px !important;
                 }
                 .main-box:hover .name-box {
                     transform: rotate(-90deg) translate(-130px, -210px);
@@ -1260,14 +1260,26 @@
             /*!*medias*! 425*/
             @media (max-width: 425px) {
                 .main-box {
-                    height: 310px;
+                    height: 420px !important;
+                }
+                .main-box:hover .name-box {
+                    transform: rotate(-90deg) translate(-130px, -270px);
+                }
+                .name-box {
+                    width: 580px;
                 }
             }
 
             /*!*medias*! 768*/
             @media (max-width: 768px) {
                 .main-box {
-                    height: 310px;
+                    height: 420px !important;
+                }
+                .main-box:hover .name-box {
+                    transform: rotate(-90deg) translate(-130px, -210px);
+                }
+                .name-box {
+                    width: 460px;
                 }
             }
         </style>
