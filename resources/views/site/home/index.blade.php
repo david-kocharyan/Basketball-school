@@ -310,6 +310,8 @@
                                                               src="{{ asset("assets/site/images/ball-white.svg") }}"
                                                               alt="">Players Of The Month</h2>
                 </div>
+            </div>
+            <div class="row">
                 @foreach($best_players as $key)
                     <div class="text-center">
                         <div class="main-box"
