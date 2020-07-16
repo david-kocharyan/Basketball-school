@@ -260,9 +260,9 @@
                     </h2>
                 </div>
             </div>
-            <div class="row d-flex justify-content-start align-items-center standings_row">
+            <div class="row d-flex justify-content-start align-items-start standings_row">
                 @foreach($standings as $key => $val)
-                    <div class="d-md-block @if($val->show_in_home == 0) d-none @endif" style="width: 300px; font-size: 14px;">
+                    <div class="d-md-block @if($val->show_in_home == 0) d-none @endif stan_table" style="width: 300px; font-size: 14px; margin: 0 10px;">
                         <table class="table table-striped">
                             <tr>
                                 <th class="bg-red text-center text-white table-head" colspan="4">{{$val->name}}</th>
@@ -1124,6 +1124,9 @@
                 }
                 .standings_row{
                     justify-content: center !important;
+                }
+                .stan_table{
+                    margin: 0 !important;
                 }
             }
 
