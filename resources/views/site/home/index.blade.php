@@ -77,7 +77,8 @@
                                             </div>
                                             <div class="text-center">
                                                 <p class="final-p">FINAL</p>
-                                                <span class="time time-finals d-flex justify-content-center align-items-center">{{$val->tournament ?? "Friendly"}}</span>
+                                                <span
+                                                    class="time time-finals d-flex justify-content-center align-items-center">{{$val->tournament ?? "Friendly"}}</span>
                                                 <p class="finish_date mt-3">{{\Carbon\Carbon::parse($val->date)->format('d/m/Y')}}</p>
                                             </div>
 
@@ -112,25 +113,29 @@
                                             </span>
                                         @endif
                                         @if($val->rb != NULL)
-                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span
+                                                style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
                                             <span class="finals mr-1 text-white text-uppercase">
                                                 <b>RB - {{$val->rb}}</b>
                                             </span>
                                         @endif
                                         @if($val->ast != NULL)
-                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span
+                                                style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
                                             <span class="finals mr-1 text-white text-uppercase">
                                                 <b>AST - {{$val->ast}}</b>
                                             </span>
                                         @endif
                                         @if($val->stl != NULL)
-                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span
+                                                style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
                                             <span class="finals mr-1 text-white text-uppercase">
                                                 <b>STL - {{$val->ast}}</b>
                                             </span>
                                         @endif
                                         @if($val->blk != NULL)
-                                            <span style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
+                                            <span
+                                                style="border-right: 1px solid red;height: 25px; padding-right: 5px;"></span>
                                             <span class="finals mr-1 text-white text-uppercase">
                                                 <b>BLK - {{$val->ast}}</b>
                                             </span>
@@ -155,7 +160,8 @@
                                             </div>
 
                                             <div class="time-cont mt-2 d-flex align-items-center flex-column">
-                                                <span class="time time-upcoming">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
+                                                <span
+                                                    class="time time-upcoming">{{Carbon\Carbon::parse($val->time)->format('H:i')}}</span>
                                                 <p class="upcoming-p pt-3 text-center">{{$val->tournament ?? "Friendly"}}</p>
                                             </div>
 
@@ -214,7 +220,8 @@
                                     <div class="swiper-slide-container">
                                         <div class="first-row d-flex flex-column align-items-center">
                                             <div class="date-cont">
-                                                <span class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
+                                                <span
+                                                    class="date text-uppercase">{{Carbon\Carbon::parse($val->date)->format(' F d, Y')}}</span>
                                             </div>
                                             <div class="score-cont d-flex justify-content-around mt-2">
                                                 <span
@@ -249,7 +256,8 @@
             <div class="row">
                 <div class="title-cont col-md-12">
                     <h2 class="section-title"><img style="height: 25px"
-                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings</h2>
+                                                   src="{{ asset("assets/site/images/ball-red.svg") }}" alt="">Standings
+                    </h2>
                 </div>
 
                 @foreach($standings as $key => $val)
@@ -331,7 +339,8 @@
                 <div class="col-md-6 d-none d-xl-block img-box px-0">
                     @foreach($home_gallery as $bin=>$key)
                         @if($bin <= 2)
-                            <div class="gallery-main-box gallery-open-link" data-id="{{ $key->album_id }}" style="cursor: pointer !important;">
+                            <div class="gallery-main-box gallery-open-link" data-id="{{ $key->album_id }}"
+                                 style="cursor: pointer !important;">
                                 <div class="rect-camera d-flex align-items-center">
                                     <img src="{{ asset("assets/site/images/rect-camera.png") }}" alt="">
                                 </div>
@@ -340,9 +349,9 @@
                                 <div class="overlay-hover">
                                     <div class="detail">
                                         <p class="text-capitalize text-white m-0">{{$key->album->name}}</p>
-{{--                                        <a href="javascript:void(0);" class="gallery-open-link" >--}}
-                                            <button class="gallery-rounded-button rounded-button">Watch Album</button>
-{{--                                        </a>--}}
+                                        {{--                                        <a href="javascript:void(0);" class="gallery-open-link" >--}}
+                                        <button class="gallery-rounded-button rounded-button">Watch Album</button>
+                                        {{--                                        </a>--}}
                                     </div>
                                     <div class="triangle">
                                         <span>+</span>
@@ -450,7 +459,8 @@
             <div class="modal-dialog  modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-right p-1 border-0">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none; width: 60px">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline: none; width: 60px">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -469,9 +479,10 @@
         <link rel="stylesheet" href="{{ asset("assets/plugins/dbLightbox/dist/simpleLightbox.min.css") }}">
         {{--slider style--}}
         <style>
-            .modal .close:hover{
+            .modal .close:hover {
                 color: #9c1d24;
             }
+
             .swiper-container {
                 width: 100%;
                 margin: 0 auto;
@@ -684,14 +695,14 @@
                 font-family: Roboto-Condensed-Regular, sans-serif;
             }
 
-            .final-p{
+            .final-p {
                 padding: 10px 15px;
                 font-size: 20px;
                 color: #9c1d24;
                 font-weight: bold;
             }
 
-            .upcoming-p{
+            .upcoming-p {
                 font-size: 20px;
                 color: #9c1d24;
                 font-weight: bold;
@@ -1122,12 +1133,12 @@
                     width: 100%;
                 }
 
-                .gallery-top .time-finals{
+                .gallery-top .time-finals {
                     width: 150px;
                 }
 
-                .finals-tumb{
-                  font-size: 14px !important;
+                .finals-tumb {
+                    font-size: 14px !important;
                 }
 
                 .finished-games .time {
@@ -1209,6 +1220,8 @@
                 color: #5b5b5b;
             }
 
+
+            /*medias*/
             @media (max-width: 768px) {
                 .img-box {
                     display: block;
@@ -1216,6 +1229,45 @@
 
                 .game-score {
                     text-align: center;
+                }
+
+                .main-box {
+                    min-height: 310px;
+                    height: auto;
+                }
+            }
+
+            /*!*medias*! 320 */
+            @media (max-width: 320px) {
+                .main-box {
+                    height: 310px;
+                }
+            }
+
+            /*!*medias*! 375*/
+            @media (max-width: 375px) {
+                .main-box {
+                    height: 420px;
+                }
+                .main-box:hover .name-box {
+                    transform: rotate(-90deg) translate(-130px, -210px);
+                }
+                .name-box {
+                    width: 460px;
+                }
+            }
+
+            /*!*medias*! 425*/
+            @media (max-width: 425px) {
+                .main-box {
+                    height: 310px;
+                }
+            }
+
+            /*!*medias*! 768*/
+            @media (max-width: 768px) {
+                .main-box {
+                    height: 310px;
                 }
             }
         </style>
@@ -1252,7 +1304,7 @@
 
                 var mobile = 2
 
-                if($('.swiper-slide-container').length < 2){
+                if ($('.swiper-slide-container').length < 2) {
                     mobile = $('.swiper-slide-container').length;
                 }
 
