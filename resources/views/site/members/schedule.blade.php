@@ -269,7 +269,7 @@
                 }
                 .main-box{
                     height: 600px;
-                    width: 85%;
+                    width: 300px !important;
                 }
                 .main-box img{
                     height: 50% !important;
@@ -284,6 +284,20 @@
             @media (min-width: 769px) and (max-width: 1025px) {
                 .red-overlay:before{
                     content: none;
+                }
+                .red-overlay{
+                    width: 100%;
+                    height: 50%;
+                    bottom: 0;
+                }
+                .main-box{
+                    height: 600px;
+                    width: 300px !important;
+                }
+                .main-box img{
+                    height: 50% !important;
+                    width: 100%;
+                    top: 0;
                 }
             }
         </style>
