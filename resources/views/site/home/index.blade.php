@@ -311,8 +311,7 @@
                                                               alt="">Players Of The Month</h2>
                 </div>
                 @foreach($best_players as $key)
-                    <div class="col-md-3">
-                        <div class="main-box"
+                        <div class="main-box col-md-3"
                              style="background-image: url('{{ asset("uploads/player/")."/".$key->players->image }}'); transition: all 1s;">
                             <div class="name-box d-flex align-items-center">
                                 <p class="pl-5 m-0">{{ "#".$key->players->jersey_number  }} <span
@@ -322,7 +321,6 @@
                                 <p class="text-center m-0">{{$key->team}}</p>
                             </div>
                         </div>
-                    </div>
                 @endforeach
             </div>
         </div>
