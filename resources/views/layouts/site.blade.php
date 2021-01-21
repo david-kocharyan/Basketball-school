@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset("assets/site/style/style.v6.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/lightslider/dist/css/lightslider.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/site/swiper/package/css/swiper.min.css") }}">
-
+    <script data-ad-client="ca-pub-7570030724439240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     @stack('head')
 </head>
 

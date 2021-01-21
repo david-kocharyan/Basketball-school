@@ -22,6 +22,7 @@
     <!--This is a datatable style -->
     <link href="{{asset('assets/plugins/datatables/media/css/dataTables.bootstrap.css')}}" rel="stylesheet"
           type="text/css"/>
+    <script data-ad-client="ca-pub-7570030724439240" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     @stack('datepicker')
     @stack('dropify')
